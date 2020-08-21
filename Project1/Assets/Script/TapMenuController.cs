@@ -5,27 +5,17 @@ using UnityEngine.UI;
 
 public class TapMenuController : MonoBehaviour
 {
-    //public GameObject Panel_weapon;
-    //public GameObject Panel_Training;
-    //public GameObject Panel_Shop;
-    //public GameObject Panel_BattleField;
-    //public GameObject Panel_Teasure;
     public Button[] Button_;
     public GameObject[] Tap_Panel;
     public int index;
 
     private void Start()
     {
-        Tap_Panel[0].SetActive(true);
-        for (int i = 1; i < index; i++)
+        for (int i = 0; i < index; i++)
         {
             Tap_Panel[i].SetActive(false);
         }
-        //Panel_weapon.SetActive(false);
-        //Panel_Training.SetActive(true);
-        //Panel_Shop.SetActive(false);
-        //Panel_BattleField.SetActive(false);
-        //Panel_Teasure.SetActive(false);
+        Tap_Panel[0].SetActive(true);
     }
     public void TrainingOnActive()
     {
