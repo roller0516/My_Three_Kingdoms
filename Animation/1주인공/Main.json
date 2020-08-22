@@ -1,0 +1,88 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/1주인공/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "back top hair", "bone": "root", "attachment": "back top hair" },
+	{ "name": "back hair l", "bone": "root", "attachment": "back hair l" },
+	{ "name": "back hair r", "bone": "root", "attachment": "back hair r" },
+	{ "name": "body 2", "bone": "root", "attachment": "body 2" },
+	{ "name": "body 1", "bone": "root", "attachment": "body 1" },
+	{ "name": "r arm back", "bone": "root", "attachment": "r arm back" },
+	{ "name": "wep 1", "bone": "root", "attachment": "wep 1" },
+	{ "name": "무기류", "bone": "root", "attachment": "무기류" },
+	{ "name": "r hand", "bone": "root", "attachment": "r hand" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "l arm back", "bone": "root", "attachment": "l arm back" },
+	{ "name": "l hand", "bone": "root", "attachment": "l hand" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye2", "bone": "root", "attachment": "eye2" },
+	{ "name": "eye1", "bone": "root", "attachment": "eye1" },
+	{ "name": "front hair", "bone": "root", "attachment": "front hair" },
+	{ "name": "l foot", "bone": "root", "attachment": "l foot" },
+	{ "name": "r foot", "bone": "root", "attachment": "r foot" }
+],
+"skins": {
+	"default": {
+		"back top hair": {
+			"back top hair": { "x": 144, "y": -97, "width": 22, "height": 20 }
+		},
+		"back hair l": {
+			"back hair l": { "x": 131.5, "y": -162.5, "width": 29, "height": 51 }
+		},
+		"back hair r": {
+			"back hair r": { "x": 175, "y": -167.5, "width": 20, "height": 41 }
+		},
+		"body 2": {
+			"body 2": { "x": 153.5, "y": -201.5, "width": 31, "height": 23 }
+		},
+		"body 1": {
+			"body 1": { "x": 154.5, "y": -182, "width": 31, "height": 24 }
+		},
+		"r arm back": {
+			"r arm back": { "x": 173, "y": -193, "width": 12, "height": 24 }
+		},
+		"wep 1": {
+			"wep 1": { "x": 202, "y": -165, "width": 26, "height": 70 }
+		},
+		"무기류": {
+			"무기류": { "x": 240, "y": -172, "width": 40, "height": 124 }
+		},
+		"r hand": {
+			"r hand": { "x": 174.5, "y": -189, "width": 13, "height": 12 }
+		},
+		"r arm": {
+			"r arm": { "x": 171.5, "y": -187, "width": 15, "height": 34 }
+		},
+		"l arm back": {
+			"l arm back": { "x": 134.5, "y": -195, "width": 13, "height": 20 }
+		},
+		"l hand": {
+			"l hand": { "x": 132.5, "y": -191, "width": 11, "height": 12 }
+		},
+		"l arm": {
+			"l arm": { "x": 138.5, "y": -186.5, "width": 23, "height": 33 }
+		},
+		"head": {
+			"head": { "x": 151, "y": -138, "width": 72, "height": 74 }
+		},
+		"eye2": {
+			"eye2": { "x": 161, "y": -154, "width": 40, "height": 10 }
+		},
+		"eye1": {
+			"eye1": { "x": 161, "y": -153.5, "width": 40, "height": 11 }
+		},
+		"front hair": {
+			"front hair": { "x": 136.5, "y": -165, "width": 17, "height": 48 }
+		},
+		"l foot": {
+			"l foot": { "x": 145, "y": -212, "width": 10, "height": 6 }
+		},
+		"r foot": {
+			"r foot": { "x": 164, "y": -212, "width": 10, "height": 6 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
