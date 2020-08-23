@@ -28,8 +28,7 @@ public class MonsterSpawn : MonoBehaviour
             
             //int y = Random.Range(0, SpawnPoints.Length);
             SpawnMonster(x, 0);
-            SpawnMonster(y, 1);
-            SpawnMonster(z, 2);
+            
         }
         CurTime +=Time.deltaTime;
     }
