@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class TapMenuController : MonoBehaviour
 {
     public Button[] Button_;
+    public Button[] Button_event;
     public GameObject[] Tap_Panel;
+
+
     public int index;
+    public float time;
 
     private void Start()
     {
@@ -16,7 +20,9 @@ public class TapMenuController : MonoBehaviour
             Tap_Panel[i].SetActive(false);
         }
         Tap_Panel[0].SetActive(true);
+        
     }
+
     public void TrainingOnActive()
     {
         for (int i = 0; i < index; i++)
@@ -35,6 +41,7 @@ public class TapMenuController : MonoBehaviour
                 
         }
     }
+
     public void WeaponOnActive()
     {
         for (int i = 0; i < index; i++)
@@ -70,6 +77,7 @@ public class TapMenuController : MonoBehaviour
             }
         }
     }
+
     public void ShopOnActive()
     {
         for (int i = 0; i < index; i++)
@@ -87,6 +95,7 @@ public class TapMenuController : MonoBehaviour
             }
         }
     }
+
     public void BattleFieldOnActive()
     {
         for (int i = 0; i < index; i++)
@@ -104,6 +113,33 @@ public class TapMenuController : MonoBehaviour
             }
         }
     }
+  
+    void TeasureOpen()//조건의 맞는 상황이 되면 보물창 열림 시스템
+    {
+        if (time > 5 && Button_event[0] != null)
+        {
+            Button_event[0].gameObject.SetActive(false);
+            time = 0;
+            Destroy(Button_event[0].gameObject);
+        }
+    }
 
+    void BattleFieldOpen()//조건의 맞는 상황이 되면 전장창 열림 시스템
+    {
+        if (time > 10 && Button_event[1] != null)
+        {
+            Button_event[1].gameObject.SetActive(false);
+            time = 0;
+            Destroy(Button_event[1].gameObject);
+        }
+    }
 
+    private void Update()
+    {
+        TeasureOpen();
+        BattleFieldOpen();
+        time += Time.deltaTime;
+    }
+
+  
 }
