@@ -20,7 +20,6 @@ public class TapMenuController : MonoBehaviour
             Tap_Panel[i].SetActive(false);
         }
         Tap_Panel[0].SetActive(true);
-        
     }
 
     public void TrainingOnActive()
@@ -46,6 +45,8 @@ public class TapMenuController : MonoBehaviour
     {
         for (int i = 0; i < index; i++)
         {
+            if (i ==0)
+                continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[1])
             {
@@ -64,6 +65,8 @@ public class TapMenuController : MonoBehaviour
     {
         for (int i = 0; i < index; i++)
         {
+            if (i == 0)
+                continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[2])
             {
@@ -82,6 +85,8 @@ public class TapMenuController : MonoBehaviour
     {
         for (int i = 0; i < index; i++)
         {
+            if (i == 0)
+                continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[3])
             {
@@ -100,6 +105,8 @@ public class TapMenuController : MonoBehaviour
     {
         for (int i = 0; i < index; i++)
         {
+            if (i == 0)
+                continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[4])
             {
