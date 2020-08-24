@@ -5,45 +5,84 @@ using UnityEngine.UI;
 
 public class DataController : MonoBehaviour
 {
-    public Text Text_;
-    private int Count = 4 ;
-    private int Food;
-    [SerializeField]
-    private TimeScroll[] time_scroll;
-    void Start()
+    private static DataController instance;
+
+    public static DataController GetInstance()
     {
-        time_scroll = new TimeScroll[Count];
-        Count = 1;
-        for (int i = 0; i<time_scroll.Length;++i) 
+        if (instance == null)
         {
-            time_scroll[i] = GameObject.Find("TimeSlider"+Count).GetComponent<TimeScroll>();
-            Count++;
+            instance = FindObjectOfType<DataController>();
+            if (instance == null)
+            {
+                GameObject container = new GameObject("DataController");
+
+                instance = container.AddComponent<DataController>();
+            }
         }
+        return instance;
+    }
+    private int m_gold = 0;
+    private int m_goldperClick = 0;
+
+    private void Awake()
+    {
+        m_gold = PlayerPrefs.GetInt("Gold");
+        m_goldperClick = PlayerPrefs.GetInt("GoldPerClick",1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetGold(int newGold)
     {
-        if (time_scroll[0].isDone == true)
-        {
-            time_scroll[0].isDone = false;
-            Food += 100;
-        }
-        if (time_scroll[1].isDone == true)
-        {
-            time_scroll[1].isDone = false;
-            Food += 1000;
-        }
-        if (time_scroll[2].isDone == true)
-        {
-            time_scroll[2].isDone = false;
-            Food += 10000;
-        }
-        if (time_scroll[3] != null && time_scroll[3].isDone == true)
-        {
-            time_scroll[3].isDone = false;
-            Food += 100000;
-        }
-        Text_.text = "" + Food;
+        m_gold = newGold;
+        PlayerPrefs.SetInt("Gold", m_gold);
+    }
+
+    public void AddGold(int newGold)
+    {
+        m_gold += newGold;
+        SetGold(m_gold);
+    }
+    public void SubGold(int newGold)
+    {
+        m_gold -= newGold;
+        SetGold(m_gold);
+    }
+    public int GetGold()
+    {
+        return m_gold;
+    }
+    public int GetGoldPerClick()
+    {
+        return m_goldperClick;
+    }
+    public void SetGoldPerClick(int newGoldPerClick)
+    {
+        m_goldperClick = newGoldPerClick;
+        PlayerPrefs.SetInt("GoldPerClick", m_goldperClick);
+    }
+    public void AddGoldPerClick(int newGoldPerClick)
+    {
+        m_goldperClick += newGoldPerClick;
+        SetGoldPerClick(m_goldperClick); 
+    }
+    public void LoadUpgradeButton(UpgradeButton upGradeButton)
+    {
+        string key = upGradeButton.UpgradeName;
+
+        upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level",1);
+        upGradeButton.goldByUpgrade = PlayerPrefs.GetInt(key + "_goldByUpgrade", upGradeButton.StartGoldByUpgrade);
+        upGradeButton.CurrentCost = PlayerPrefs.GetInt(key + "+CurrentCost", upGradeButton.StartCurrentCost);
+
+    }
+    public void SaveUpgradeButton(UpgradeButton upGradeButton)
+    {
+        string key = upGradeButton.UpgradeName;
+
+        PlayerPrefs.SetInt(key + "_Level",upGradeButton.Level);
+        PlayerPrefs.SetInt(key + "_goldByUpgrade", upGradeButton.goldByUpgrade);
+        PlayerPrefs.SetInt(key + "+CurrentCost", upGradeButton.CurrentCost);
     }
 }
+
+
+
+// Update is called once per frame

@@ -9,7 +9,7 @@ public class GameM : MonoBehaviour
     public int SceneNumber_cur = 0;
 
     private static GameM s_instance = null;
-
+    
     public static GameM Instance 
     {
         get 
@@ -29,10 +29,16 @@ public class GameM : MonoBehaviour
         }
         s_instance = this;
 
+        PlayerPrefs.DeleteAll();
+
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(1080, 1920, true);
+    }
+    public void Init()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     public void SceneChagne(int number) 
