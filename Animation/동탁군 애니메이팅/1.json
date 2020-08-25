@@ -1,0 +1,40 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/동탁군 애니메이팅/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "middle", "bone": "root", "attachment": "middle" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "head", "bone": "root", "attachment": "head" }
+],
+"skins": {
+	"default": {
+		"r arm": {
+			"r arm": { "x": 165.5, "y": -180, "width": 23, "height": 26 }
+		},
+		"l leg": {
+			"l leg": { "x": 141.5, "y": -202, "width": 13, "height": 22 }
+		},
+		"middle": {
+			"middle": { "x": 146.5, "y": -195.5, "width": 31, "height": 11 }
+		},
+		"r leg": {
+			"r leg": { "x": 158.5, "y": -202, "width": 13, "height": 22 }
+		},
+		"body": {
+			"body": { "x": 150, "y": -181, "width": 30, "height": 24 }
+		},
+		"l arm": {
+			"l arm": { "x": 133.5, "y": -180, "width": 21, "height": 26 }
+		},
+		"head": {
+			"head": { "x": 151, "y": -131, "width": 68, "height": 84 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
