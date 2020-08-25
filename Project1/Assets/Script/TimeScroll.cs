@@ -17,7 +17,7 @@ public class TimeScroll : MonoBehaviour
     {
         Timebar = GetComponent<Slider>();
         this.Timebar.value = (float)CurTime / (float)MaxTime;
-        UpGradeButton = GameObject.Find("Canvas").GetComponent<UpgradeButton>();
+        UpGradeButton = GameObject.Find("Button1").GetComponent<UpgradeButton>();
     }
     void Update()
     {

@@ -811,8 +811,9 @@ GameObject:
   - component: {fileID: 119276543}
   - component: {fileID: 119276542}
   - component: {fileID: 119276541}
+  - component: {fileID: 119276545}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +895,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1554909197}
+      - m_Target: {fileID: 119276545}
         m_MethodName: PurChaseUpgrade
         m_Mode: 1
         m_Arguments:
@@ -941,6 +942,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119276539}
   m_CullTransparentMesh: 0
+--- !u!114 &119276545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119276539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upGradeTex: {fileID: 1888695806}
+  LevelTex: {fileID: 1961197433}
+  button_:
+  - {fileID: 119276542}
+  GoldPerClickDisPlayer: {fileID: 363576258}
+  UpgradeName: 
+  goldByUpgrade: 0
+  StartGoldByUpgrade: 500
+  CurrentCost: 1
+  StartCurrentCost: 10000
+  Level: 0
+  MaxLevel: 100
+  UpgradePow: 1.07
+  costPow: 3.14
 --- !u!1 &136395561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 0.1
+  MaxTime: 1
   CurTime: 0
   isDone: 0
   UpGradeButton: {fileID: 0}
@@ -2011,8 +2038,9 @@ GameObject:
   - component: {fileID: 300530862}
   - component: {fileID: 300530861}
   - component: {fileID: 300530860}
+  - component: {fileID: 300530864}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2094,7 +2122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1554909197}
+      - m_Target: {fileID: 300530864}
         m_MethodName: PurChaseUpgrade
         m_Mode: 1
         m_Arguments:
@@ -2141,6 +2169,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300530858}
   m_CullTransparentMesh: 0
+--- !u!114 &300530864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300530858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upGradeTex: {fileID: 97960083}
+  LevelTex: {fileID: 1016934942}
+  button_:
+  - {fileID: 300530861}
+  GoldPerClickDisPlayer: {fileID: 1895319432}
+  UpgradeName: 
+  goldByUpgrade: 0
+  StartGoldByUpgrade: 200
+  CurrentCost: 1
+  StartCurrentCost: 2000
+  Level: 0
+  MaxLevel: 100
+  UpgradePow: 1.07
+  costPow: 3.14
 --- !u!1 &302717961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,8 +3614,9 @@ GameObject:
   - component: {fileID: 595139944}
   - component: {fileID: 595139943}
   - component: {fileID: 595139942}
+  - component: {fileID: 595139946}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3643,7 +3698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1554909197}
+      - m_Target: {fileID: 595139946}
         m_MethodName: PurChaseUpgrade
         m_Mode: 1
         m_Arguments:
@@ -3690,6 +3745,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595139940}
   m_CullTransparentMesh: 0
+--- !u!114 &595139946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595139940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upGradeTex: {fileID: 213086117}
+  LevelTex: {fileID: 1374938508}
+  button_:
+  - {fileID: 595139943}
+  GoldPerClickDisPlayer: {fileID: 1394991972}
+  UpgradeName: 
+  goldByUpgrade: 0
+  StartGoldByUpgrade: 150
+  CurrentCost: 1
+  StartCurrentCost: 1000
+  Level: 0
+  MaxLevel: 100
+  UpgradePow: 1.07
+  costPow: 3.14
 --- !u!1 &604044834
 GameObject:
   m_ObjectHideFlags: 0
@@ -8295,7 +8376,7 @@ GameObject:
   - component: {fileID: 1374938509}
   - component: {fileID: 1374938508}
   m_Layer: 5
-  m_Name: LevelText
+  m_Name: LevelText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9738,7 +9819,6 @@ GameObject:
   - component: {fileID: 1554909191}
   - component: {fileID: 1554909195}
   - component: {fileID: 1554909196}
-  - component: {fileID: 1554909197}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9871,32 +9951,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldDisPlayer: {fileID: 1121501905}
-  GoldPerClickDisPlayer: {fileID: 1854016897}
---- !u!114 &1554909197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554909190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upGradeTex: {fileID: 1122050265}
-  LevelTex: {fileID: 39067399}
-  button_:
-  - {fileID: 1577242725}
-  UpgradeName: 
-  goldByUpgrade: 0
-  StartGoldByUpgrade: 5
-  CurrentCost: 1
-  StartCurrentCost: 100
-  Level: 1
-  MaxLevel: 100
-  UpgradePow: 1.07
-  costPow: 3.14
 --- !u!1 &1574276112
 GameObject:
   m_ObjectHideFlags: 0
@@ -9910,8 +9964,9 @@ GameObject:
   - component: {fileID: 1574276116}
   - component: {fileID: 1574276115}
   - component: {fileID: 1574276114}
+  - component: {fileID: 1574276118}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9993,7 +10048,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1554909197}
+      - m_Target: {fileID: 1574276118}
         m_MethodName: PurChaseUpgrade
         m_Mode: 1
         m_Arguments:
@@ -10040,6 +10095,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574276112}
   m_CullTransparentMesh: 0
+--- !u!114 &1574276118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574276112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upGradeTex: {fileID: 794252709}
+  LevelTex: {fileID: 544549899}
+  button_:
+  - {fileID: 1574276115}
+  GoldPerClickDisPlayer: {fileID: 269567335}
+  UpgradeName: 
+  goldByUpgrade: 0
+  StartGoldByUpgrade: 2000
+  CurrentCost: 1
+  StartCurrentCost: 20000
+  Level: 0
+  MaxLevel: 100
+  UpgradePow: 1.07
+  costPow: 3.14
 --- !u!1 &1575368653
 GameObject:
   m_ObjectHideFlags: 0
@@ -10127,8 +10208,9 @@ GameObject:
   - component: {fileID: 1577242726}
   - component: {fileID: 1577242725}
   - component: {fileID: 1577242728}
+  - component: {fileID: 1577242729}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10198,7 +10280,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1554909197}
+      - m_Target: {fileID: 1577242729}
         m_MethodName: PurChaseUpgrade
         m_Mode: 1
         m_Arguments:
@@ -10257,6 +10339,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267e0cb1bca24ef4eae6e74e600a0c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1577242729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577242723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upGradeTex: {fileID: 1122050265}
+  LevelTex: {fileID: 39067399}
+  button_:
+  - {fileID: 1577242725}
+  GoldPerClickDisPlayer: {fileID: 1854016897}
+  UpgradeName: 
+  goldByUpgrade: 0
+  StartGoldByUpgrade: 5
+  CurrentCost: 1
+  StartCurrentCost: 100
+  Level: 10
+  MaxLevel: 100
+  UpgradePow: 1.07
+  costPow: 3.14
 --- !u!1 &1585189906
 GameObject:
   m_ObjectHideFlags: 0
