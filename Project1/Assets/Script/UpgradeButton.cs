@@ -8,7 +8,9 @@ public class UpgradeButton : MonoBehaviour
     public Text upGradeTex;
     public Text LevelTex;
     public Button[] button_;
+    public Text GoldPerClickDisPlayer;
 
+    
     public string UpgradeName;
 
     [HideInInspector]
@@ -42,6 +44,7 @@ public class UpgradeButton : MonoBehaviour
     private void Update()
     {
         ScarceCost_textColor();
+        GoldPerClickDisPlayer.text = "" + DataController.GetInstance().GetGoldPerClick();
     }
     public void PurChaseUpgrade()
     {
