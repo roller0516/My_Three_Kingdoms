@@ -100,10 +100,13 @@
     <Compile Include="Assets\Script\TimeScroll.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
     <Compile Include="Assets\Script\UpgradeButton.cs" />
+    <Compile Include="Assets\Test\ItemSlot.cs" />
+    <Compile Include="Assets\Test\Player.cs" />
     <None Include="Assets\Animation\Hwang - Axe\Hwang 1.atlas.txt" />
     <None Include="Assets\Animation\Hwang - scythe\Hwang 2.atlas.txt" />
     <None Include="Assets\Spine\version.txt" />
     <None Include="Assets\Animation\Hwang - spear\Hwang 3.atlas.txt" />
+    <None Include="Assets\Test\주인공 또다시 수정본\Main.atlas.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/원형/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
