@@ -85,6 +85,10 @@ public class Player : MonoBehaviour
     {
         skeletonAnimation.skeleton.SetAttachment("wep 1", "wep 2");
     }
+    public void ButtonON3()
+    {
+        skeletonAnimation.skeleton.SetAttachment("wep 1", "weapon 3");
+    }
     public void DoubleSpeed()
     {
         Time.timeScale = 2;
