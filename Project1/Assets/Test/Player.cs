@@ -79,22 +79,24 @@ public class Player : MonoBehaviour
     }
     public void ButtonON()
     {
-        skeletonAnimation.skeleton.SetAttachment("wep 1", "wep 1");
+        skeletonAnimation.Skeleton.SetSkin("animation/2");
+        skeletonAnimation.Skeleton.SetAttachment("Onehand01", "Sword01");
     }
     public void ButtonON2()
     {
-        skeletonAnimation.skeleton.SetAttachment("wep 1", "wep 2");
+        skeletonAnimation.Skeleton.SetSkin("animation/1");
+        skeletonAnimation.skeleton.SetAttachment("back hair r", "Sword01");
     }
     public void ButtonON3()
     {
-        skeletonAnimation.skeleton.SetAttachment("wep 1", "weapon 3");
+        skeletonAnimation.skeleton.SetAttachment("Sword01", "Sword01");
     }
-    public void DoubleSpeed()
-    {
-        Time.timeScale = 2;
-        //i = 2;
-        //print(i);
-        //SetCurrentAnimation(_AniState, i);
+    //public void DoubleSpeed()
+    //{
+    //    Time.timeScale = 2;
+    //    //i = 2;
+    //    //print(i);
+    //    //SetCurrentAnimation(_AniState, i);
 
-    }
+    //}
 }
