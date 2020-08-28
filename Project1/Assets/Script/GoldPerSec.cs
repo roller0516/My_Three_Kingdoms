@@ -22,31 +22,15 @@ public class GoldPerSec : MonoBehaviour
    
     void Update()
     {
-        if (time_scroll[0].isDone == true)
+        for (int i = 0; i < time_scroll.Length; i++) 
         {
-            time_scroll[0].isDone = false;
-            int goldPerClick = DataController.GetInstance().GetGoldPerClick();
-            DataController.GetInstance().AddGold(goldPerClick);
+            if (time_scroll[i].isDone == true)
+            {
+                time_scroll[i].isDone = false;
+                int goldPerClick = DataController.GetInstance().GetGoldPerClick();
+                DataController.GetInstance().AddGold(goldPerClick);
+            }
         }
-        if (time_scroll[1].isDone == true)
-        {
-            time_scroll[1].isDone = false;
-            int goldPerClick = DataController.GetInstance().GetGoldPerClick();
-            DataController.GetInstance().AddGold(goldPerClick);
-        }
-        if (time_scroll[2].isDone == true)
-        {
-            time_scroll[2].isDone = false;
-            int goldPerClick = DataController.GetInstance().GetGoldPerClick();
-            DataController.GetInstance().AddGold(goldPerClick);
-        }
-        if (time_scroll[3] != null && time_scroll[3].isDone == true)
-        {
-            time_scroll[3].isDone = false;
-            int goldPerClick = DataController.GetInstance().GetGoldPerClick();
-            DataController.GetInstance().AddGold(goldPerClick);
-        }
-
     }
    
 }
