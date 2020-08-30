@@ -1,0 +1,56 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/보스 장량/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "r hair", "bone": "root", "attachment": "r hair" },
+	{ "name": "l hair", "bone": "root", "attachment": "l hair" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "r foot", "bone": "root", "attachment": "r foot" },
+	{ "name": "l foot", "bone": "root", "attachment": "l foot" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye", "bone": "root", "attachment": "eye" },
+	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" },
+	{ "name": "front hair", "bone": "root", "attachment": "front hair" }
+],
+"skins": {
+	"default": {
+		"r hair": {
+			"r hair": { "x": 225, "y": -206, "width": 28, "height": 54 }
+		},
+		"l hair": {
+			"l hair": { "x": 181, "y": -210.5, "width": 28, "height": 47 }
+		},
+		"l arm": {
+			"l arm": { "x": 181, "y": -234, "width": 16, "height": 26 }
+		},
+		"r arm": {
+			"r arm": { "x": 227.5, "y": -233, "width": 15, "height": 28 }
+		},
+		"body": {
+			"body": { "x": 203, "y": -241, "width": 64, "height": 48 }
+		},
+		"r foot": {
+			"r foot": { "x": 212, "y": -262, "width": 10, "height": 6 }
+		},
+		"l foot": {
+			"l foot": { "x": 197.5, "y": -262, "width": 13, "height": 6 }
+		},
+		"head": {
+			"head": { "x": 200, "y": -179, "width": 78, "height": 88 }
+		},
+		"eye": {
+			"eye": { "x": 211.5, "y": -200, "width": 43, "height": 6 }
+		},
+		"eye clos": {
+			"eye clos": { "x": 211.5, "y": -201, "width": 43, "height": 6 }
+		},
+		"front hair": {
+			"front hair": { "x": 183.5, "y": -210.5, "width": 19, "height": 55 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
