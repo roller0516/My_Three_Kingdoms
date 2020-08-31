@@ -1,0 +1,55 @@
+
+doo roo ma ri.png
+size: 379,53
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 2
+  size: 155, 49
+  orig: 155, 49
+  offset: 0, 0
+  index: -1
+l
+  rotate: true
+  xy: 197, 3
+  size: 48, 36
+  orig: 50, 38
+  offset: 2, 1
+  index: -1
+l light
+  rotate: true
+  xy: 159, 3
+  size: 48, 36
+  orig: 50, 38
+  offset: 2, 1
+  index: -1
+l roll
+  rotate: true
+  xy: 311, 30
+  size: 21, 66
+  orig: 23, 68
+  offset: 1, 1
+  index: -1
+r
+  rotate: true
+  xy: 235, 3
+  size: 48, 36
+  orig: 50, 38
+  offset: 1, 1
+  index: -1
+r light
+  rotate: true
+  xy: 273, 3
+  size: 48, 36
+  orig: 50, 38
+  offset: 1, 1
+  index: -1
+r roll
+  rotate: true
+  xy: 311, 8
+  size: 20, 66
+  orig: 22, 68
+  offset: 1, 1
+  index: -1
