@@ -23,9 +23,7 @@ public class MonsterSpawn : MonoBehaviour
         if (CurTime >= SpawnTime && MonsterCount<MaxCount)
         {
             int x = Random.Range(0, Monster.Length);
-            int y = Random.Range(0, Monster.Length);
-            int z = Random.Range(0, Monster.Length);
-            
+
             //int y = Random.Range(0, SpawnPoints.Length);
             SpawnMonster(x, 0);
             

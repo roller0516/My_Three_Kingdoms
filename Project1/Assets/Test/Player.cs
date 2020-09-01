@@ -5,98 +5,137 @@ using Spine.Unity;
 
 public class Player : MonoBehaviour
 {
-    public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset[] AnimClip;
-    private SkeletonRenderer skeletonRenderer;
-    public float i = 1;
-
     public enum AnimState
     {
         Idle, move, Attack
     }
 
-    private AnimState _AniState;
-    //현재 애니메이션이 재생되고 있는지에 대한 변수
-    private string CurrentAnimation;
-    //움직임
+    private static Player s_instance = null;
+
+    public static Player Instance
+    {
+        get
+        {
+            if (s_instance == null)
+            {
+                s_instance = FindObjectOfType(typeof(Player)) as Player;
+            }
+            return s_instance;
+        }
+    }
+    private Animator ani;
+    public float Curtime;
+    public float coolTime = 1;
+    public bool isAttack = false;
+    public bool monsterhit = false;
+    public Transform pos;
+    public Vector2 boxSize;
+    public float moveSpeed = 2;
+    private SkeletonRenderer skeletonRenderer;
+    public AnimState _AniState;
     private Rigidbody2D rig;
     private float x;
 
+
     private void Awake() => rig = GetComponent<Rigidbody2D>();
+
     private void Start()
     {
-        //skeletonAnimation.Skeleton.SetSkin("1");
-        
-        //해당스킨으로 변경
+        ani = GetComponent<Animator>();
+        ani.SetBool("attack", false);
     }
 
     private void Update()
     {
-        x = Input.GetAxisRaw("Horizontal");
-      
-        if (x == 0f)
-            _AniState = AnimState.Idle;
-        else
+        transform.Translate(new Vector2(1f * moveSpeed * Time.deltaTime, 0)); //플레이어 이동
+        SetCurrentAnimation(_AniState);
+        
+        if(isAttack == true)
         {
-            _AniState = AnimState.move;
-
-            transform.localScale = new Vector2(x, 1);
+            Curtime += Time.deltaTime;
+            if (Curtime >= coolTime)
+            {
+                monsterhit = true;
+                Attack();
+            }
         }
-        if (Input.GetKey(KeyCode.Space) == true)
-        {
-            _AniState = AnimState.Attack;
-        }
-        SetCurrentAnimation(_AniState,i);
+        
     }
+    //-------------------------------------------------------Player움직임----------------------------------------------------------
+
+     
+
+    //-------------------------------------------------------Player물리------------------------------------------------------------
     private void FixedUpdate()
     {
-        rig.velocity = new Vector2(x * 300 * Time.deltaTime, rig.velocity.y);
+       
     }
-    private void _AsncAnimation(AnimationReferenceAsset aniClip, bool loop, float timeScale)//해당애니메이션으로 변경한다
-    {
-        if (aniClip.name.Equals(CurrentAnimation))//같은 애니메이션을 재생하려고 한다면 아래코드를 실행하지 않는다.
-            return;
-        skeletonAnimation.state.SetAnimation(0, aniClip, loop).TimeScale = timeScale;
-        skeletonAnimation.loop = loop;
-        skeletonAnimation.timeScale = timeScale;
 
-        CurrentAnimation = aniClip.name;//현재 재생되고 있는 애니메이션 이름으로 변경
-    }
-    private void SetCurrentAnimation(AnimState _state,float _num)
+
+    //---------------------------------------------Player Ani----------------------------------------------------------------------
+    //private void _AsncAnimation(AnimationReferenceAsset aniClip, bool loop, float timeScale)//해당애니메이션으로 변경한다
+    //{
+    //    if (aniClip.name.Equals(CurrentAnimation))//같은 애니메이션을 재생하려고 한다면 아래코드를 실행하지 않는다.
+    //        return;
+    //    skeletonAnimation.state.SetAnimation(0, aniClip, loop).TimeScale = timeScale;
+    //    skeletonAnimation.loop = loop;
+    //    skeletonAnimation.timeScale = timeScale;
+
+    //    CurrentAnimation = aniClip.name;//현재 재생되고 있는 애니메이션 이름으로 변경
+    //}
+    private void SetCurrentAnimation(AnimState _state)
     {
         switch (_state)
         {
-            case AnimState.Idle:
-                _AsncAnimation(AnimClip[(int)AnimState.Idle], true, 1f* _num);
-                break;
             case AnimState.move:
-                _AsncAnimation(AnimClip[(int)AnimState.move], true, 1f* _num);
+                ani.SetBool("attack", false);
                 break;
             case AnimState.Attack:
-                _AsncAnimation(AnimClip[(int)AnimState.Attack], true, 1f* _num);
+                ani.SetBool("attack", true);
                 break;
         }
     }
-    public void ButtonON()
+    public void Attack() //공격 
     {
-        skeletonAnimation.Skeleton.SetSkin("animation/2");
-        skeletonAnimation.Skeleton.SetAttachment("Onehand01", "Sword01");
+        Curtime = 0;
+        isAttack = true;
+        Collider2D[] collier2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+        foreach (Collider2D collider in collier2Ds)
+        {
+            if (collider.tag == "Monster")
+            {
+                collider.GetComponent<EnemyTest>().TakeDamage(1);
+                
+                if (collider.GetComponent<EnemyTest>().Hp <= 0)
+                {
+                    isAttack = false;
+                    moveSpeed = 1;
+                    _AniState = AnimState.move;
+                   
+                }
+                
+            }
+        }
     }
-    public void ButtonON2()
+   
+    private void OnDrawGizmos()
     {
-        skeletonAnimation.Skeleton.SetSkin("animation/1");
-        skeletonAnimation.skeleton.SetAttachment("back hair r", "Sword01");
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(pos.position, boxSize);
     }
-    public void ButtonON3()
-    {
-        skeletonAnimation.skeleton.SetAttachment("Sword01", "Sword01");
-    }
-    //public void DoubleSpeed()
-    //{
-    //    Time.timeScale = 2;
-    //    //i = 2;
-    //    //print(i);
-    //    //SetCurrentAnimation(_AniState, i);
 
+    //public void ButtonON()
+    //{
+    //    skeletonAnimation.Skeleton.SetSkin("animation/2");
+    //    skeletonAnimation.Skeleton.SetAttachment("weapon", "Sword01");
+    //}
+    //public void ButtonON2()
+    //{
+    //    skeletonAnimation.Skeleton.SetSkin("animation/1");
+    //    skeletonAnimation.skeleton.SetAttachment("weapon", "Spear01");
+    //}
+    //public void ButtonON3()
+    //{
+    //    skeletonAnimation.skeleton.SetAttachment("weapon", "Onehand01");
     //}
 }
