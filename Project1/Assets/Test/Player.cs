@@ -24,41 +24,42 @@ public class Player : MonoBehaviour
         }
     }
     private Animator ani;
-    public float Curtime;
-    public float coolTime = 1;
+    private SkeletonRenderer skeletonRenderer;
+    private Rigidbody2D rig;
+    private float x;
+
     public bool isAttack = false;
     public bool monsterhit = false;
     public Transform pos;
     public Vector2 boxSize;
     public float moveSpeed = 2;
-    private SkeletonRenderer skeletonRenderer;
+    public GameObject Monster;
+    
     public AnimState _AniState;
-    private Rigidbody2D rig;
-    private float x;
-
+    
 
     private void Awake() => rig = GetComponent<Rigidbody2D>();
 
     private void Start()
     {
         ani = GetComponent<Animator>();
-        ani.SetBool("attack", false);
+        _AniState = AnimState.move;
     }
 
     private void Update()
     {
         transform.Translate(new Vector2(1f * moveSpeed * Time.deltaTime, 0)); //플레이어 이동
         SetCurrentAnimation(_AniState);
-        
-        if(isAttack == true)
-        {
-            Curtime += Time.deltaTime;
-            if (Curtime >= coolTime)
-            {
-                monsterhit = true;
-                Attack();
-            }
-        }
+
+        //if(isAttack == true)
+        //{
+        //    Curtime += Time.deltaTime;
+        //    if (Curtime >= coolTime)
+        //    {
+        //        monsterhit = true;
+        //        Attack();
+        //    }
+        //}
         
     }
     //-------------------------------------------------------Player움직임----------------------------------------------------------
@@ -87,35 +88,42 @@ public class Player : MonoBehaviour
     {
         switch (_state)
         {
+            case AnimState.Idle:
+                ani.SetInteger("AniState", (int)AnimState.Idle);
+                break;
             case AnimState.move:
-                ani.SetBool("attack", false);
+                ani.SetInteger("AniState", (int)AnimState.move);
                 break;
             case AnimState.Attack:
-                ani.SetBool("attack", true);
+                ani.SetInteger("AniState", (int)AnimState.Attack);
                 break;
         }
     }
+    //----------------------------------------------------------------플레이어 모션
     public void Attack() //공격 
     {
-        Curtime = 0;
-        isAttack = true;
-        Collider2D[] collier2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
-        foreach (Collider2D collider in collier2Ds)
-        {
-            if (collider.tag == "Monster")
-            {
-                collider.GetComponent<EnemyTest>().TakeDamage(1);
+        //Curtime = 0;
+        
+        Monster.GetComponent<EnemyTest>().TakeDamage(1);
+        //Monster.GetComponent<EnemyTest>().TakeDamage(1);
+
+        //Collider2D[] collier2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0); // 충돌처리
+        //foreach (Collider2D collider in collier2Ds)
+        //{
+        //    if (collider.tag == "Monster")
+        //    {
+        //        collider.GetComponent<EnemyTest>().TakeDamage(1);
                 
-                if (collider.GetComponent<EnemyTest>().Hp <= 0)
-                {
-                    isAttack = false;
-                    moveSpeed = 1;
-                    _AniState = AnimState.move;
+        //        if (collider.GetComponent<EnemyTest>().Hp <= 0)
+        //        {
+        //            isAttack = false;
+        //            moveSpeed = 1;
+        //            _AniState = AnimState.move;
                    
-                }
+        //        }
                 
-            }
-        }
+        //    }
+        //}
     }
    
     private void OnDrawGizmos()
@@ -123,19 +131,4 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawCube(pos.position, boxSize);
     }
-
-    //public void ButtonON()
-    //{
-    //    skeletonAnimation.Skeleton.SetSkin("animation/2");
-    //    skeletonAnimation.Skeleton.SetAttachment("weapon", "Sword01");
-    //}
-    //public void ButtonON2()
-    //{
-    //    skeletonAnimation.Skeleton.SetSkin("animation/1");
-    //    skeletonAnimation.skeleton.SetAttachment("weapon", "Spear01");
-    //}
-    //public void ButtonON3()
-    //{
-    //    skeletonAnimation.skeleton.SetAttachment("weapon", "Onehand01");
-    //}
 }
