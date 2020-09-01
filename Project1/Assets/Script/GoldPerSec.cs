@@ -9,7 +9,6 @@ public class GoldPerSec : MonoBehaviour
     public Text GoldText;
     private int Count = 2;
     private TimeScroll[] time_scroll;
-    private UpgradeButton UpgradeButton;
     void Start()
     {
         time_scroll = new TimeScroll[Count];
@@ -19,7 +18,6 @@ public class GoldPerSec : MonoBehaviour
             time_scroll[i] = GameObject.Find("TimeSlider" + Count).GetComponent<TimeScroll>();
             Count++;
         }
-        UpgradeButton = GameObject.Find("Button1").GetComponent<UpgradeButton>();
     }
    
     void Update()
@@ -33,6 +31,7 @@ public class GoldPerSec : MonoBehaviour
                 DataController.GetInstance().AddGold(goldPerClick);
             }
         }
+        
     }
    
 }
