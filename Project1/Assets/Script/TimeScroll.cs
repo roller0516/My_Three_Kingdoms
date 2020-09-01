@@ -5,34 +5,27 @@ using UnityEngine.UI;
 
 public class TimeScroll : MonoBehaviour
 {
-    private Slider Timebar;
-    public UpgradeButton UpGradeButton;
+
+    //public UpgradeButton UpGradeButton;
     public float MaxTime;
     public float CurTime = 0;
     public bool isDone = false;
-   
 
-    void Start()
+
+   
+    public void HandleTime(TimeScrollManager timescroll)
     {
-        Timebar = GetComponent<Slider>();
-        Timebar.value = (float)CurTime / (float)MaxTime;
-        UpGradeButton = GameObject.Find("Button1").GetComponent<UpgradeButton>();
-    }
-    void Update()
-    {
-        if (UpGradeButton.Level > 0)
+        for (int i = 0; i < timescroll.Timebar.Length; i++)
         {
-            CurTime += Time.deltaTime;
-            if (CurTime >= MaxTime)
-            {
-                CurTime = 0;
-                this.isDone = true;
-            }
-            HandleTime();
+           timescroll.Timebar[i].value = (float)CurTime / (float)MaxTime;
         }
     }
-    void HandleTime() 
+    public void isDoneFuc()
     {
-        this.Timebar.value = (float)CurTime / (float)MaxTime;
+        CurTime += Time.deltaTime;
+    }
+    public void TimerValue(Slider slider)
+    {
+        slider.value = (float)CurTime / (float)MaxTime;
     }
 }

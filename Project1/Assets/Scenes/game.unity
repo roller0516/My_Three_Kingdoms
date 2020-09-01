@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 293745335}
   - component: {fileID: 293745334}
   m_Layer: 5
-  m_Name: GoldText
+  m_Name: GoldText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1674,9 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeName: 
-  upGradeTex: {fileID: 1555393061}
-  LevelTex: {fileID: 2138646293}
+  UpgradeName: Gold
   button_: {fileID: 337427825}
   goldByUpgrade: 0
   goldByUpgrade1: 0
@@ -1684,8 +1682,9 @@ MonoBehaviour:
   CurrentCost: 1
   StartCurrentCost: 1
   Level: 1
+  Level2: 1
   MaxLevel: 100
-  UpgradePow: 1.07
+  UpgradePow: 1.2
   costPow: 2
 --- !u!114 &337427825
 MonoBehaviour:
@@ -1731,7 +1730,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 337427823}
-        m_MethodName: PurChaseUpgrade1
+        m_MethodName: PurChaseUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3522,7 +3521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 4f30ee73a11426047aac53f6cd1072d9, type: 2}
-  initialSkinName: animation/2
+  initialSkinName: animation/1
   initialFlipX: 0
   initialFlipY: 0
   updateMode: 3
@@ -4568,6 +4567,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007517597}
   m_CullTransparentMesh: 0
+--- !u!1 &1028692247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028692248}
+  - component: {fileID: 1028692250}
+  - component: {fileID: 1028692249}
+  m_Layer: 5
+  m_Name: LevelText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1028692248
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028692247}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2050262561}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -196, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1028692249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028692247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Level
+--- !u!222 &1028692250
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028692247}
+  m_CullTransparentMesh: 0
 --- !u!1 &1044527170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,7 +5548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpGradeButton: {fileID: 0}
   MaxTime: 1
   CurTime: 0
   isDone: 0
@@ -7384,7 +7459,7 @@ GameObject:
   - component: {fileID: 1554909196}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7514,6 +7589,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldDisPlayer: {fileID: 1121501905}
+  LevelTex:
+  - {fileID: 1028692249}
+  - {fileID: 977495846}
+  upGradeTex:
+  - {fileID: 1555393061}
+  - {fileID: 293745334}
 --- !u!1 &1555393059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7674,7 +7755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571539780}
   m_Layer: 5
-  m_Name: Training_Button (1)
+  m_Name: Training_Button_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8562,19 +8643,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeName: 
-  upGradeTex: {fileID: 293745334}
-  LevelTex: {fileID: 977495846}
+  UpgradeName: Gold1
   button_: {fileID: 1691451470}
   goldByUpgrade: 0
   goldByUpgrade1: 0
-  StartGoldByUpgrade: 50
+  StartGoldByUpgrade: 1
   CurrentCost: 1
-  StartCurrentCost: 1000
+  StartCurrentCost: 1
   Level: 1
+  Level2: 0
   MaxLevel: 100
   UpgradePow: 1.07
-  costPow: 2
+  costPow: 3.14
 --- !u!114 &1691451470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10412,8 +10492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpGradeButton: {fileID: 0}
-  MaxTime: 10
+  MaxTime: 1
   CurTime: 0
   isDone: 0
 --- !u!114 &2048177485
@@ -10572,7 +10651,7 @@ RectTransform:
   - {fileID: 912172899}
   - {fileID: 337427822}
   - {fileID: 1580802837}
-  - {fileID: 2138646292}
+  - {fileID: 1028692248}
   m_Father: {fileID: 1657969812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11162,6 +11241,7 @@ GameObject:
   - component: {fileID: 2131190497}
   - component: {fileID: 2131190498}
   - component: {fileID: 2131190496}
+  - component: {fileID: 2131190499}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: DataController
@@ -11211,6 +11291,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldText: {fileID: 1121501905}
+--- !u!114 &2131190499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131190495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb78d8e654246441bc32073f925b40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timebar:
+  - {fileID: 1225606117}
+  - {fileID: 2048177485}
 --- !u!1 &2133149170
 GameObject:
   m_ObjectHideFlags: 0
@@ -11327,81 +11422,4 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133149170}
-  m_CullTransparentMesh: 0
---- !u!1 &2138646291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2138646292}
-  - component: {fileID: 2138646294}
-  - component: {fileID: 2138646293}
-  m_Layer: 5
-  m_Name: LevelText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2138646292
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138646291}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2050262561}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -196, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2138646293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138646291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Level
---- !u!222 &2138646294
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138646291}
   m_CullTransparentMesh: 0
