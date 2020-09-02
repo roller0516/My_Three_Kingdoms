@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;                   // 에니메이션
    /* public SkeletonAnimation skeleton3D; */       // 3D용 스파인 컴포넌트
 
-    Rigidbody rigidbody;
+    private Rigidbody rigidbody;
 
     string anim_name = "idle";
 

@@ -9,10 +9,10 @@ public class UpgradeButton : MonoBehaviour
 
    
     public Button button_;
-
+    public Text LevelTex;
+    public Text upGradeTex;
 
     [HideInInspector]
-
     public int goldByUpgrade;
     [HideInInspector]
     public int goldByUpgrade1;
@@ -20,14 +20,11 @@ public class UpgradeButton : MonoBehaviour
     public int StartGoldByUpgrade =1;
 
     [HideInInspector]
-
     public int CurrentCost = 1;
 
     public int StartCurrentCost;
-
+    [HideInInspector]
     public int Level = 0;
-
-    public int Level2 = 0;
     [HideInInspector]
     public int MaxLevel = 100;
 
@@ -35,28 +32,20 @@ public class UpgradeButton : MonoBehaviour
 
     public float costPow = 3.14f;
 
-    UIManager ui;
-
     private void Start()
     {
-        
         DataController.GetInstance().LoadUpgradeButton(this);
-        ui = GameObject.FindWithTag("Canvas").GetComponent<UIManager>();
-
-
-        for (int i = 1; i < ui.LevelTex.Length+1; i++)
-        {
-            ui.UpdateUI(i);
-        }
-
+        UpdateUI();
     }
     private void Update()
     {
         ScarceCost_textColor();
         DataController.GetInstance().GoldPerClickDisPlayer[0].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick0");
         DataController.GetInstance().GoldPerClickDisPlayer[1].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick1");
+        DataController.GetInstance().GoldPerClickDisPlayer[2].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick2");
+        DataController.GetInstance().GoldPerClickDisPlayer[3].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick3");
     }
-    public void PurChaseUpgrade()
+    public void PurChaseUpgrade() //구매 함수
     {
         
         if (Level < MaxLevel)
@@ -68,45 +57,69 @@ public class UpgradeButton : MonoBehaviour
                 DataController.GetInstance().AddGoldPerClick("GoldPerClick0", goldByUpgrade);
 
                 UpdateUpgrade();
-                ui.UpdateUI(1);
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
-                //print("구매했습니다");
-            }
-            else
-            {
-                //print("돈이부족합니다");
+
             }
         }
     }
-    public void PurChaseUpgrade1()
+    public void PurChaseUpgrade1()//구매 함수 1
     {
-        if (Level2 < MaxLevel)
+        if (Level < MaxLevel)
         {
-            print(Level2);
             if (DataController.GetInstance().GetGold() >= CurrentCost)
             {
                 DataController.GetInstance().SubGold(CurrentCost);
-                Level2++;
-                DataController.GetInstance().AddGoldPerClick("GoldPerClick1", goldByUpgrade1);
+                Level++;
+                DataController.GetInstance().AddGoldPerClick("GoldPerClick1", goldByUpgrade);
 
                 UpdateUpgrade();
-                ui.UpdateUI(2);
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
-                //print("구매했습니다");
-            }
-            else
-            {
-                //print("돈이부족합니다");
+
             }
         }
     }
+    public void PurChaseUpgrade2()//구매 함수 2
+    {
+        if (Level < MaxLevel)
+        {
+            print(Level);
+            if (DataController.GetInstance().GetGold() >= CurrentCost)
+            {
+                DataController.GetInstance().SubGold(CurrentCost);
+                Level++;
+                DataController.GetInstance().AddGoldPerClick("GoldPerClick2", goldByUpgrade);
 
+                UpdateUpgrade();
+                UpdateUI();
+                DataController.GetInstance().SaveUpgradeButton(this);
+
+            }
+        }
+    }
+    public void PurChaseUpgrade3()//구매 함수 3
+    {
+        if (Level < MaxLevel)
+        {
+            print(Level);
+            if (DataController.GetInstance().GetGold() >= CurrentCost)
+            {
+                DataController.GetInstance().SubGold(CurrentCost);
+                Level++;
+                DataController.GetInstance().AddGoldPerClick("GoldPerClick3", goldByUpgrade);
+
+                UpdateUpgrade();
+                UpdateUI();
+                DataController.GetInstance().SaveUpgradeButton(this);
+
+            }
+        }
+    }
     public void UpdateUpgrade() // 업그레이드 공식
     {
         goldByUpgrade = StartGoldByUpgrade *(int) Mathf.Pow(UpgradePow, Level);//Mathf.Pow는 제곱이다.
-        goldByUpgrade1 = StartGoldByUpgrade * (int)Mathf.Pow(UpgradePow+1, Level2);
+        goldByUpgrade1 = StartGoldByUpgrade * (int)Mathf.Pow(UpgradePow+1, Level);
         CurrentCost = StartCurrentCost * (int)Mathf.Pow(costPow, Level); // 식량 공식
     }
     
@@ -116,52 +129,31 @@ public class UpgradeButton : MonoBehaviour
         {
             if (DataController.GetInstance().GetGold() < CurrentCost)
             {
-                ui.upGradeTex[0].color = Color.red;
+                upGradeTex.color = Color.red;
                 button_.image.color = Color.gray;
             }
             else
             {
-                ui.upGradeTex[0].color = Color.yellow;
+                upGradeTex.color = Color.yellow;
                 button_.image.color = Color.red;
             }
         }
-        else if (Level2 != MaxLevel)
-        {
-            if (DataController.GetInstance().GetGold() < CurrentCost)
-            {
-                ui.upGradeTex[1].color = Color.red;
-                button_.image.color = Color.gray;
-            }
-            else
-            {
-                ui.upGradeTex[1].color = Color.yellow;
-                button_.image.color = Color.red;
-            }
-        }
-        
     }
-    public void UpdateUI()
+    public void UpdateUI()//ui의 변화를 받아온다
     {
+        LevelTex.text = "Lv" + Level.ToString();
+
+        upGradeTex.text = "" + CurrentCost;
+
         if (Level == MaxLevel)
         {
-            ui.upGradeTex[0].rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-            ui.upGradeTex[0].text = "최대레벨";
-            ui.LevelTex[0].text = "최대레벨";
+            upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
+            upGradeTex.text = "최대레벨";
+            LevelTex.text = "최대레벨";
             button_.image.color = Color.gray;
             button_.interactable = false;
             GameObject go = GameObject.Find("FoodIm").gameObject;
             Destroy(go);
         }
-        else if (Level2 == MaxLevel)
-        {
-            ui.upGradeTex[1].rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-            ui.upGradeTex[1].text = "최대레벨";
-            ui.LevelTex[1].text = "최대레벨";
-            button_.image.color = Color.gray;
-            button_.interactable = false;
-            GameObject go = GameObject.Find("FoodIm").gameObject;
-            Destroy(go);
-        }
-
     }
 }

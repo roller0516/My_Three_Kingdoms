@@ -6,46 +6,34 @@ using UnityEngine.UI;
 public class TimeScrollManager : MonoBehaviour
 {
     public Slider[] Timebar;
-    TimeScroll timeScroll;
-    private UpgradeButton upgradebutton;
+    public TimeScroll[] time;
+    UIManager uimanager;
     private void Start()
     {
-        timeScroll = GameObject.Find("TimeSlider1").GetComponent<TimeScroll>();
-        upgradebutton = GameObject.Find("Button1").GetComponent<UpgradeButton>();
-        timeScroll.HandleTime(this);
+        uimanager = GameObject.FindWithTag("Canvas").GetComponent<UIManager>();
+        for (int i = 1; i < Timebar.Length+1; i++) 
+        {
+            time[i-1] = GameObject.Find("TimeSlider"+i).GetComponent<TimeScroll>();
+        }
     }
     private void Update()
     {
-        timeScroll.isDoneFuc();
+        HandleTime();
         
-        if (upgradebutton.Level > 0)
+        time[0].CurTimeFuc();
+        //각 스크립트마다 레벨을 받아서 실행시킨다
+        if(uimanager.Level[1]> 0)
+            time[1].CurTimeFuc();
+        if(uimanager.Level[2] > 0)
+            time[2].CurTimeFuc();
+        if (uimanager.Level[3] > 0)
+            time[3].CurTimeFuc();
+    }
+    public void HandleTime()
+    {
+        for (int i = 0; i < Timebar.Length; i++) 
         {
-            timeScroll.TimerValue(Timebar[0]);
-
-            if (timeScroll.CurTime >= timeScroll.MaxTime)
-            {
-                timeScroll.CurTime = 0;
-                timeScroll.isDone = true;
-                print(upgradebutton.Level);
-            }
-            else
-                timeScroll.isDone = false;
-            
+            Timebar[i].value = (float)time[i].CurTime / (float)time[i].MaxTime;
         }
-        if (upgradebutton.Level2 > 1)
-        {
-            timeScroll.TimerValue(Timebar[1]);
-
-            if (timeScroll.CurTime >= timeScroll.MaxTime)
-            {
-                timeScroll.CurTime = 0;
-                timeScroll.isDone = true;
-                print(upgradebutton.Level2);
-            }
-            else
-                timeScroll.isDone = false;
-        }
-        
-       
     }
 }

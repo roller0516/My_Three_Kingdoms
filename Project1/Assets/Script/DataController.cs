@@ -21,15 +21,21 @@ public class DataController : MonoBehaviour
         }
         return instance;
     }
+
     private int m_gold = 0;
     private int m_goldperClick = 0;
     private int m_goldperClick1 = 0;
+    private int m_goldperClick2 = 0;
+    private int m_goldperClick3 = 0;
+
     public Text[] GoldPerClickDisPlayer;
     private void Awake()
     {
         m_gold = PlayerPrefs.GetInt("Gold", 100);
         m_goldperClick = PlayerPrefs.GetInt("GoldPerClick0", 1);
         m_goldperClick1 = PlayerPrefs.GetInt("GoldPerClick1", 100);
+        m_goldperClick2 = PlayerPrefs.GetInt("GoldPerClick2", 1000);
+        m_goldperClick3 = PlayerPrefs.GetInt("GoldPerClick3", 10000);
     }
     
     public void SetGold(int newGold)
@@ -59,6 +65,10 @@ public class DataController : MonoBehaviour
             return m_goldperClick;
         else if (num == "GoldperClick1")
             return m_goldperClick1;
+        else if (num == "GoldperClick2")
+            return m_goldperClick2;
+        else if (num == "GoldperClick3")
+            return m_goldperClick3;
         return 0;
     }
     public void SetGoldPerClick(string name_,int newGoldPerClick)
@@ -73,6 +83,16 @@ public class DataController : MonoBehaviour
         {
             m_goldperClick1 = newGoldPerClick;
             PlayerPrefs.SetInt("GoldPerClick1", m_goldperClick1);
+        }
+        else if (name == "GoldPerClick2")
+        {
+            m_goldperClick2 = newGoldPerClick;
+            PlayerPrefs.SetInt("GoldPerClick2", m_goldperClick2);
+        }
+        else if (name == "GoldPerClick3")
+        {
+            m_goldperClick3 = newGoldPerClick;
+            PlayerPrefs.SetInt("GoldPerClick3", m_goldperClick3);
         }
     }
     public void AddGoldPerClick(string name_ ,int newGoldPerClick)
@@ -89,14 +109,40 @@ public class DataController : MonoBehaviour
             m_goldperClick1 += newGoldPerClick;
             SetGoldPerClick(name, m_goldperClick1);
         }
+        else if (name == "GoldPerClick2")
+        {
+            m_goldperClick2 += newGoldPerClick;
+            SetGoldPerClick(name, m_goldperClick2);
+        }
+        else if (name == "GoldPerClick3")
+        {
+            m_goldperClick3 += newGoldPerClick;
+            SetGoldPerClick(name, m_goldperClick3);
+        }
     }
     
     public void LoadUpgradeButton(UpgradeButton upGradeButton)
     {
         string key = upGradeButton.UpgradeName;
+        
 
-        upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level", 1);
-        upGradeButton.Level2 = PlayerPrefs.GetInt(key + "_Level2",1);
+        if (key == "Gold")
+        {
+            upGradeButton.Level = PlayerPrefs.GetInt(key+"_Level", 1);
+        }
+        else if (key == "Gold1") 
+        {
+            upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level", 0);
+        }
+        else if (key == "Gold2")
+        {
+            upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level", 0);
+        }
+        else if (key == "Gold3")
+        {
+            upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level", 0);
+        }
+
         upGradeButton.goldByUpgrade = PlayerPrefs.GetInt(key + "_goldByUpgrade", upGradeButton.StartGoldByUpgrade);
         upGradeButton.CurrentCost = PlayerPrefs.GetInt(key + "+CurrentCost", upGradeButton.StartCurrentCost);
     }
@@ -106,7 +152,6 @@ public class DataController : MonoBehaviour
 
         
         PlayerPrefs.SetInt(key + "_Level", upGradeButton.Level);
-        PlayerPrefs.SetInt(key + "_Level2", upGradeButton.Level2);
         PlayerPrefs.SetInt(key + "_goldByUpgrade", upGradeButton.goldByUpgrade);
         PlayerPrefs.SetInt(key + "+CurrentCost", upGradeButton.CurrentCost);
     }
