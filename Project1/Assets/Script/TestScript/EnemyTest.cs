@@ -92,10 +92,7 @@ public class EnemyTest : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        
-        
         ani.SetTrigger("hit");
-        Debug.Log(_AniState);
         Hp -= damage;
         if (Hp == 0)
         {

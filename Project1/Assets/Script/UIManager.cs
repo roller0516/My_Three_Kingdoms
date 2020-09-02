@@ -6,39 +6,23 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Text GoldDisPlayer;
-    public Text[] LevelTex;
-    public Text[] upGradeTex;
-
-    UpgradeButton UpgradeButton;
-    private void Awake()
+    public int[] Level;
+    public UpgradeButton[] UpgradeButton;
+    private void Start()
     {
-        UpgradeButton = GameObject.Find("Button1").GetComponent<UpgradeButton>();
+        
+        for (int i = 1; i < UpgradeButton.Length+1; i++) 
+        {
+            UpgradeButton[i-1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
+        }
     }
     private void Update()
     {
-        
+        for (int i=0; i < UpgradeButton.Length;i++) 
+        {
+            Level[i] = UpgradeButton[i].Level;
+        }
         GoldDisPlayer.text = "" + DataController.GetInstance().GetGold();
     }
-    public void UpdateUI(int num_)
-    {
-        
-        switch (num_)
-        {
-            case 1:
-                LevelTex[0].text = "Lv" + UpgradeButton.Level.ToString();
-
-                upGradeTex[0].text = "" + UpgradeButton.CurrentCost;
-
-                print("1로들어옴");
-                break;
-            case 2:
-                LevelTex[1].text = "Lv" + UpgradeButton.Level2.ToString();
-
-                upGradeTex[1].text = "" + UpgradeButton.CurrentCost;
-
-                print("2로들어옴");
-                break;
-
-        }
-    }
+    
 }

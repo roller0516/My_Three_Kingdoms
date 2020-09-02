@@ -9,23 +9,18 @@ public class TimeScroll : MonoBehaviour
     //public UpgradeButton UpGradeButton;
     public float MaxTime;
     public float CurTime = 0;
+    [HideInInspector]
     public bool isDone = false;
 
-
-   
-    public void HandleTime(TimeScrollManager timescroll)
-    {
-        for (int i = 0; i < timescroll.Timebar.Length; i++)
-        {
-           timescroll.Timebar[i].value = (float)CurTime / (float)MaxTime;
-        }
-    }
-    public void isDoneFuc()
+    public void CurTimeFuc() // 시간을 계산
     {
         CurTime += Time.deltaTime;
-    }
-    public void TimerValue(Slider slider)
-    {
-        slider.value = (float)CurTime / (float)MaxTime;
+        if (CurTime >= MaxTime)
+        {
+            CurTime = 0;
+            isDone = true;
+        }
+        else
+            isDone = false;
     }
 }
