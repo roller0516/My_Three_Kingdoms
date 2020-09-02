@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\BackGroundScroll.cs" />
-    <Compile Include="Assets\Script\ClickButton.cs" />
     <Compile Include="Assets\Script\DataController.cs" />
     <Compile Include="Assets\Script\GameBase\GameBase\Blink.cs" />
     <Compile Include="Assets\Script\GameBase\GameBase\Blink2.cs" />
@@ -98,11 +97,13 @@
     <Compile Include="Assets\Script\TapMenuController.cs" />
     <Compile Include="Assets\Script\TestScript\EnemyTest.cs" />
     <Compile Include="Assets\Script\TimeScroll.cs" />
+    <Compile Include="Assets\Script\TimeScrollManager.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
     <Compile Include="Assets\Script\UpgradeButton.cs" />
     <Compile Include="Assets\Test\ItemSlot.cs" />
     <Compile Include="Assets\Test\Player.cs" />
     <None Include="Assets\Animation\Hwang - Axe\Hwang 1.atlas.txt" />
+    <None Include="Assets\Resource\UI\두루마리 촤르륵\doo roo ma ri.atlas.txt" />
     <None Include="Assets\Script\TestScript\OutlineEffect\OutlineShader.shader" />
     <None Include="Assets\Script\TestScript\OutlineEffect\OutlineBufferShader.shader" />
     <None Include="Assets\Animation\Hwang - scythe\Hwang 2.atlas.txt" />

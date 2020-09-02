@@ -12,27 +12,15 @@ public class EnemyTest : MonoBehaviour
    
 
     private Animator ani;
-
     bool isIdle;
-     
     public Transform target;
-
-    public float knockbackPower = 10;
+    public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
-
-
     public int Hp = 3;
-
-
     private SkeletonRenderer skeletonRenderer;
-
-
     private AnimState _AniState;
-
-
     //현재 애니메이션이 재생되고 있는지에 대한 변수
-    private string CurrentAnimation; 
-    
+    //private string CurrentAnimation; 
     //움직임
     private Rigidbody2D rig;
 
@@ -47,8 +35,9 @@ public class EnemyTest : MonoBehaviour
 
     private void Start()
     {
+        target = Player.Instance.transform;
         ani = GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        Player.Instance.Monster = this.gameObject;
         _AniState = AnimState.move;
     }
 
@@ -62,11 +51,11 @@ public class EnemyTest : MonoBehaviour
     {
         switch (_state)
         {
-            case AnimState.move:
-                ani.SetBool("Idle", false);
-                break;
             case AnimState.Idle:
-                ani.SetBool("Idle", true);
+                ani.SetInteger("AniState", (int)AnimState.Idle);
+                break;
+            case AnimState.move:
+                ani.SetInteger("AniState", (int)AnimState.move);
                 break;
             case AnimState.Hit:
                 ani.SetTrigger("hit");
@@ -87,34 +76,27 @@ public class EnemyTest : MonoBehaviour
     {
         if (Vector2.Distance(target.position, transform.position) < 2f)
         {
-            isIdle = true;
-            if (isIdle == true)
-                _AniState = AnimState.Idle;
-            isIdle = false;
+            _AniState = AnimState.Idle;
             moveSpeed = 0;
             Player.Instance.moveSpeed = 0;
-            Player.Instance.isAttack = true;
-            if (Player.Instance.isAttack == true)
-            {
-                Player.Instance._AniState = Player.AnimState.Attack;
-            }
+            Player.Instance._AniState = Player.AnimState.Attack;
+            
         }
         else
         {
+            Player.Instance._AniState = Player.AnimState.move;
+            Player.Instance.moveSpeed = 1;
             _AniState = AnimState.move;
             moveSpeed = 1f;
-            
         }
     }
     public void TakeDamage(int damage)
     {
-        if (Player.Instance.monsterhit == true)
-        {
-            ani.SetTrigger("hit");
-            KnockBack(transform.position);
-        }
-        Hp -= damage;
         
+        
+        ani.SetTrigger("hit");
+        Debug.Log(_AniState);
+        Hp -= damage;
         if (Hp == 0)
         {
             MonsterSpawn._instance.MonsterCount--;

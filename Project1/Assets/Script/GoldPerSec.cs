@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GoldPerSec : MonoBehaviour
 {
     public Text GoldText;
-    private int Count = 4;
-    [SerializeField]
+    private int Count = 2;
     private TimeScroll[] time_scroll;
     void Start()
     {
@@ -27,10 +27,11 @@ public class GoldPerSec : MonoBehaviour
             if (time_scroll[i].isDone == true)
             {
                 time_scroll[i].isDone = false;
-                int goldPerClick = DataController.GetInstance().GetGoldPerClick();
+                int goldPerClick = DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
                 DataController.GetInstance().AddGold(goldPerClick);
             }
         }
+        
     }
    
 }
