@@ -130,12 +130,12 @@ public class UpgradeButton : MonoBehaviour
             if (DataController.GetInstance().GetGold() < CurrentCost)
             {
                 upGradeTex.color = Color.red;
-                button_.image.color = Color.gray;
+                button_.image.color = new Color(180f/255f, 180f/255f, 180f/255f,255f/255f);
             }
             else
             {
                 upGradeTex.color = Color.yellow;
-                button_.image.color = Color.red;
+                button_.image.color = Color.white;
             }
         }
     }

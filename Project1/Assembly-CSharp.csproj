@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\BackGroundScroll.cs" />
+    <Compile Include="Assets\Script\Data\Player.cs" />
     <Compile Include="Assets\Script\DataController.cs" />
     <Compile Include="Assets\Script\GameBase\GameBase\Blink.cs" />
     <Compile Include="Assets\Script\GameBase\GameBase\Blink2.cs" />
@@ -95,22 +96,39 @@
     <Compile Include="Assets\Script\GameM.cs" />
     <Compile Include="Assets\Script\GoldPerSec.cs" />
     <Compile Include="Assets\Script\MonsterSpawn.cs" />
+    <Compile Include="Assets\Script\PlayerData.cs" />
     <Compile Include="Assets\Script\TapMenuController.cs" />
     <Compile Include="Assets\Script\TestScript\EnemyTest.cs" />
     <Compile Include="Assets\Script\TimeScroll.cs" />
     <Compile Include="Assets\Script\TimeScrollManager.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
     <Compile Include="Assets\Script\UpgradeButton.cs" />
-    <Compile Include="Assets\Test\ItemSlot.cs" />
-    <Compile Include="Assets\Test\Player.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Animation\Hwang - Axe\Hwang 1.atlas.txt" />
     <None Include="Assets\Resource\UI\두루마리 촤르륵\doo roo ma ri.atlas.txt" />
     <None Include="Assets\Script\TestScript\OutlineEffect\OutlineShader.shader" />
     <None Include="Assets\Script\TestScript\OutlineEffect\OutlineBufferShader.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Animation\Hwang - scythe\Hwang 2.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Spine\version.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Animation\Hwang - spear\Hwang 3.atlas.txt" />
-    <None Include="Assets\Test\주인공 수정본\Main.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\Animation\Player_ani\Main.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/원형/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

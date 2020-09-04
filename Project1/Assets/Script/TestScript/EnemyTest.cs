@@ -7,16 +7,15 @@ public class EnemyTest : MonoBehaviour
 {
     public enum AnimState
     {
-        Idle, move, Hit
+        Idle, move, Hit, die
     }
-   
+
 
     private Animator ani;
-    bool isIdle;
     public Transform target;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
-    public int Hp = 3;
+    public int Hp;
     private SkeletonRenderer skeletonRenderer;
     private AnimState _AniState;
     //현재 애니메이션이 재생되고 있는지에 대한 변수
@@ -31,7 +30,7 @@ public class EnemyTest : MonoBehaviour
     private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
-    } 
+    }
 
     private void Start()
     {
@@ -44,8 +43,11 @@ public class EnemyTest : MonoBehaviour
     private void Update()
     {
         transform.Translate(new Vector2(-1f * moveSpeed * Time.deltaTime, 0));
-        Distance();
         SetCurrentAnimation(_AniState);
+        Distance();
+
+        print(Vector2.Distance(target.position, transform.position));
+
     }
     private void SetCurrentAnimation(AnimState _state)
     {
@@ -74,25 +76,31 @@ public class EnemyTest : MonoBehaviour
     //}
     public void Distance()
     {
-        if (Vector2.Distance(target.position, transform.position) < 2f)
+        float d = Vector2.Distance(target.position, transform.position);
+
+        if (d > 2.8f && d < 3f) // 거리가 2보단크고 5보다 작을때 ex 2.5f
+        {
+            Player.Instance.moveSpeed = 3;
+        }
+        else if (d <= 2f) // 2보다 작거나 같을때 ex) 1.9f
         {
             _AniState = AnimState.Idle;
             moveSpeed = 0;
             Player.Instance.moveSpeed = 0;
             Player.Instance._AniState = Player.AnimState.Attack;
-            
         }
         else
         {
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 1;
+            moveSpeed = 2f;
             _AniState = AnimState.move;
-            moveSpeed = 1f;
         }
     }
     public void TakeDamage(int damage)
     {
         ani.SetTrigger("hit");
+        KnockBack();
         Hp -= damage;
         if (Hp == 0)
         {
@@ -100,11 +108,9 @@ public class EnemyTest : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    void KnockBack(Vector2 pos)
+    public void KnockBack()
     {
-        // 반작용. 플레이어의 포지션 x값에서  충돌체의 포지션 x값을 뺀 값이  0보다 크다면 1 작다면 -1
-        // 즉 부딪힌 목표물보다 왼쪽에서 맞았으면 왼쪽에서 튕겨나감. 반대는 오른쪽
-        int reaction = transform.position.x - pos.x > 0 ? -2 : 2;
-        rig.AddForce(new Vector2(reaction, 1) * knockbackPower, ForceMode2D.Impulse);
+        //int reaction = transform.position.x - pos.x > 0 ? 1 : -1;
+        rig.AddForce(new Vector2(3, 2) * knockbackPower, ForceMode2D.Impulse);
     }
 }
