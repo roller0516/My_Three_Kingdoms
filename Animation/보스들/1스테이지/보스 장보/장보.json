@@ -1,0 +1,72 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/보스 장보/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "l ar", "bone": "root", "attachment": "l ar" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye", "bone": "root", "attachment": "eye" },
+	{ "name": "eye close", "bone": "root", "attachment": "eye close" },
+	{ "name": "sword", "bone": "root", "attachment": "sword" },
+	{ "name": "l hair", "bone": "root", "attachment": "l hair" },
+	{ "name": "r hair", "bone": "root", "attachment": "r hair" },
+	{ "name": "1", "bone": "root", "attachment": "1" },
+	{ "name": "2", "bone": "root", "attachment": "2" },
+	{ "name": "3", "bone": "root", "attachment": "3" },
+	{ "name": "4", "bone": "root", "attachment": "4" }
+],
+"skins": {
+	"default": {
+		"l leg": {
+			"l leg": { "x": 193.5, "y": -250, "width": 17, "height": 28 }
+		},
+		"r leg": {
+			"r leg": { "x": 208, "y": -250, "width": 14, "height": 28 }
+		},
+		"r arm": {
+			"r arm": { "x": 218.5, "y": -228.5, "width": 25, "height": 31 }
+		},
+		"body": {
+			"body": { "x": 200, "y": -233, "width": 38, "height": 38 }
+		},
+		"l ar": {
+			"l ar": { "x": 178, "y": -229, "width": 22, "height": 34 }
+		},
+		"head": {
+			"head": { "x": 200, "y": -178, "width": 82, "height": 84 }
+		},
+		"eye": {
+			"eye": { "x": 205, "y": -195, "width": 44, "height": 12 }
+		},
+		"eye close": {
+			"eye close": { "x": 205, "y": -196, "width": 44, "height": 12 }
+		},
+		"sword": {
+			"sword": { "x": 142, "y": -200, "width": 18, "height": 118 }
+		},
+		"l hair": {
+			"l hair": { "x": 174.5, "y": -197, "width": 13, "height": 44 }
+		},
+		"r hair": {
+			"r hair": { "x": 232, "y": -199.5, "width": 10, "height": 35 }
+		},
+		"1": {
+			"1": { "x": 182.5, "y": -183.5, "width": 359, "height": 261 }
+		},
+		"2": {
+			"2": { "x": 164, "y": -187.5, "width": 328, "height": 227 }
+		},
+		"3": {
+			"3": { "x": 190, "y": -199, "width": 364, "height": 244 }
+		},
+		"4": {
+			"4": { "x": 188.5, "y": -185.5, "width": 357, "height": 251 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

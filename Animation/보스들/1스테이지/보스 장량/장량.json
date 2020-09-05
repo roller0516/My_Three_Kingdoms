@@ -1,0 +1,24 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/보스 장량/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "1", "bone": "root", "attachment": "1" },
+	{ "name": "2", "bone": "root", "attachment": "2" },
+	{ "name": "3", "bone": "root", "attachment": "3" }
+],
+"skins": {
+	"default": {
+		"1": {
+			"1": { "x": 200, "y": -202.5, "width": 402, "height": 397 }
+		},
+		"2": {
+			"2": { "x": 192, "y": -190, "width": 368, "height": 346 }
+		},
+		"3": {
+			"3": { "x": 208.5, "y": -171, "width": 349, "height": 344 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
