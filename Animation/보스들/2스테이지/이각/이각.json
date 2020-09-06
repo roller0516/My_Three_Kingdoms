@@ -1,0 +1,60 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/2스테이지/이각/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "leg armor", "bone": "root", "attachment": "leg armor" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "r shold", "bone": "root", "attachment": "r shold" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "l shold", "bone": "root", "attachment": "l shold" },
+	{ "name": "r head back", "bone": "root", "attachment": "r head back" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
+	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" }
+],
+"skins": {
+	"default": {
+		"r leg": {
+			"r leg": { "x": 149.5, "y": -191, "width": 15, "height": 28 }
+		},
+		"l leg": {
+			"l leg": { "x": 136.5, "y": -191, "width": 19, "height": 28 }
+		},
+		"leg armor": {
+			"leg armor": { "x": 142, "y": -187, "width": 42, "height": 20 }
+		},
+		"r arm": {
+			"r arm": { "x": 162.5, "y": -170, "width": 21, "height": 30 }
+		},
+		"body": {
+			"body": { "x": 141.5, "y": -168.5, "width": 47, "height": 29 }
+		},
+		"r shold": {
+			"r shold": { "x": 168.5, "y": -164, "width": 21, "height": 18 }
+		},
+		"l arm": {
+			"l arm": { "x": 122, "y": -171.5, "width": 22, "height": 29 }
+		},
+		"l shold": {
+			"l shold": { "x": 117, "y": -163, "width": 24, "height": 16 }
+		},
+		"r head back": {
+			"r head back": { "x": 169.5, "y": -154.5, "width": 19, "height": 19 }
+		},
+		"head": {
+			"head": { "x": 143, "y": -123, "width": 88, "height": 84 }
+		},
+		"eye open": {
+			"eye open": { "x": 148, "y": -125, "width": 42, "height": 8 }
+		},
+		"eye clos": {
+			"eye clos": { "x": 148, "y": -126, "width": 42, "height": 6 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
