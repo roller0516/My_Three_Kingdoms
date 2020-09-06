@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GoldPerSec : MonoBehaviour
 {
-    public Text GoldText;
     private int Count = 4;
     private TimeScroll[] time_scroll;
     void Start()

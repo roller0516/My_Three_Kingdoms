@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UpgradeButton : MonoBehaviour
 {
@@ -40,10 +41,11 @@ public class UpgradeButton : MonoBehaviour
     private void Update()
     {
         ScarceCost_textColor();
-        DataController.GetInstance().GoldPerClickDisPlayer[0].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick0");
-        DataController.GetInstance().GoldPerClickDisPlayer[1].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick1");
-        DataController.GetInstance().GoldPerClickDisPlayer[2].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick2");
-        DataController.GetInstance().GoldPerClickDisPlayer[3].text = "" + DataController.GetInstance().GetGoldPerClick("GoldperClick3");
+        for (int i = 0; i < DataController.GetInstance().GoldPerClickDisPlayer.Length; i++)
+        {
+            GoldPerClickText(DataController.GetInstance().GetGoldPerClick("GoldperClick" + i), DataController.GetInstance().GoldPerClickDisPlayer[i]);
+        }
+       
     }
     public void PurChaseUpgrade() //구매 함수
     {
@@ -155,5 +157,23 @@ public class UpgradeButton : MonoBehaviour
             GameObject go = GameObject.Find("FoodIm").gameObject;
             Destroy(go);
         }
+    }
+    public void GoldPerClickText(float gold, TextMeshProUGUI text_)
+    {
+
+       if (gold >= 100000)// B 십만
+        {
+           gold = gold / 100000;
+           text_.text = gold.ToString("0.00") + "B";
+       }
+       else if (gold >= 10000)// A 만
+        {
+           gold = gold / 10000;
+           text_.text = gold.ToString("0.00") + "A";
+       }
+       else if (gold < 100000)
+       {
+           text_.text = gold.ToString("0");
+       }
     }
 }

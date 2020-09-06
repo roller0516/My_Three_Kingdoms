@@ -5,39 +5,38 @@ using Spine.Unity;
 
 public class EnemyTest : MonoBehaviour
 {
-    public enum AnimState
+    public enum AnimState //몬스터 상태
     {
         Idle, move, Hit, die
     }
 
-
+    private SkeletonRenderer skeletonRenderer;
+    private AnimState _AniState;
+    private Rigidbody rig;
     private Animator ani;
     public Transform target;
+    public GameObject obj;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
     public int Hp;
-    private SkeletonRenderer skeletonRenderer;
-    private AnimState _AniState;
-    //현재 애니메이션이 재생되고 있는지에 대한 변수
-    //private string CurrentAnimation; 
-    //움직임
-    private Rigidbody2D rig;
-
-
-    private float x;
-
+    
 
     private void Awake()
     {
-        rig = GetComponent<Rigidbody2D>();
+        rig = GetComponent<Rigidbody>();
+        
     }
+
 
     private void Start()
     {
-        target = Player.Instance.transform;
+        moveSpeed = 0f;
         ani = GetComponent<Animator>();
-        Player.Instance.Monster = this.gameObject;
+        skeletonRenderer = GetComponent<SkeletonRenderer>();
+        target = Player.Instance.transform;
         _AniState = AnimState.move;
+        
+        SetAttechment(MonsterSpawn._instance.RandomRange2 + 1);
     }
 
     private void Update()
@@ -45,11 +44,10 @@ public class EnemyTest : MonoBehaviour
         transform.Translate(new Vector2(-1f * moveSpeed * Time.deltaTime, 0));
         SetCurrentAnimation(_AniState);
         Distance();
-
-        print(Vector2.Distance(target.position, transform.position));
-
+        //print(Vector2.Distance(target.position, transform.position));
     }
-    private void SetCurrentAnimation(AnimState _state)
+    //-------------------------------------------------------애니메이션
+    private void SetCurrentAnimation(AnimState _state) //애니메이션 
     {
         switch (_state)
         {
@@ -62,55 +60,80 @@ public class EnemyTest : MonoBehaviour
             case AnimState.Hit:
                 ani.SetTrigger("hit");
                 break;
+            case AnimState.die:
+                ani.SetBool("Die",true);
+                break;
         }
     }
-    //private void _AsncAnimation(AnimationReferenceAsset aniClip, bool loop, float timeScale)//해당애니메이션으로 변경한다
-    //{
-    //    if (aniClip.name.Equals(CurrentAnimation))//같은 애니메이션을 재생하려고 한다면 아래코드를 실행하지 않는다.
-    //        return;
-    //    skeletonAnimation.state.SetAnimation(0, aniClip, loop).TimeScale = timeScale;
-    //    skeletonAnimation.loop = loop;
-    //    skeletonAnimation.timeScale = timeScale;
-
-    //    CurrentAnimation = aniClip.name;//현재 재생되고 있는 애니메이션 이름으로 변경
-    //}
+    //-----------------------------------------이벤트 효과
     public void Distance()
     {
         float d = Vector2.Distance(target.position, transform.position);
 
-        if (d > 2.8f && d < 3f) // 거리가 2보단크고 5보다 작을때 ex 2.5f
+        if (d >3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
         {
-            Player.Instance.moveSpeed = 3;
+           Player.Instance.Monster = this.gameObject;
+           Player.Instance.moveSpeed = 3f;
+           Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
+           Player.Instance._AniState = Player.AnimState.moveSpeedup;
+            print("여기");
         }
-        else if (d <= 2f) // 2보다 작거나 같을때 ex) 1.9f
+        else if (d > 2f && d <= 3f) // 2.1 ~ 3f
         {
+            Player.Instance._AniState = Player.AnimState.Idle;
+
+            if (_AniState == AnimState.die)
+                moveSpeed = 0f;
+            else
+            {
+                _AniState = AnimState.move;
+                moveSpeed = 2f;
+            }
+        }
+        else if (d <= 2f&& Hp>0) // 2보다 작거나 같을때 ex) 1.9f
+        {
+            Player.Instance._AniState = Player.AnimState.Attack;
+            Player.Instance.moveSpeed = 0f;
             _AniState = AnimState.Idle;
             moveSpeed = 0;
-            Player.Instance.moveSpeed = 0;
-            Player.Instance._AniState = Player.AnimState.Attack;
         }
-        else
+        else if (d > 4f)
         {
             Player.Instance._AniState = Player.AnimState.move;
-            Player.Instance.moveSpeed = 1;
+            Player.Instance.moveSpeed = 2f;
             moveSpeed = 2f;
             _AniState = AnimState.move;
         }
     }
     public void TakeDamage(int damage)
     {
+        GameObject G = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0), Quaternion.identity);
+        G.transform.parent = this.transform;
+        G.GetComponent<DamageText>().Damage = damage;
+        
         ani.SetTrigger("hit");
-        KnockBack();
+
         Hp -= damage;
-        if (Hp == 0)
+
+        KnockBack();
+
+        if (Hp <= 0)
         {
+            _AniState = AnimState.die;
             MonsterSpawn._instance.MonsterCount--;
-            Destroy(this.gameObject);
+            MonsterSpawn._instance.IsDie = true;
+            Destroy(this.gameObject,2f);
         }
     }
     public void KnockBack()
     {
-        //int reaction = transform.position.x - pos.x > 0 ? 1 : -1;
-        rig.AddForce(new Vector2(3, 2) * knockbackPower, ForceMode2D.Impulse);
+        rig.AddForce(new Vector3(2.5f, 2, 0) * knockbackPower, ForceMode.Impulse);
     }
+    //-----------------------------------------------어태치먼트
+    public void SetAttechment(int num)
+    {
+        skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon "+num);
+    }
+    //----------------------------------------------------------코루틴
+    
 }

@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class TimeScroll : MonoBehaviour
 {
-
-    //public UpgradeButton UpGradeButton;
     public float MaxTime;
     public float CurTime = 0;
     [HideInInspector]

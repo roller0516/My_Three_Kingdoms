@@ -5,21 +5,18 @@ using UnityEngine;
 public class BackGroundScroll : MonoBehaviour
 {
   
-    private MeshRenderer render;
-    public float Speed;
-    private float offset;
+    //private MeshRenderer render;
+    //public float Speed;
+    //private float offset;
 
-    void Start()
-    {
-    
+    //void Start()
+    //{
+    //    render = GetComponent<MeshRenderer>();
+    //}
 
-        render = GetComponent<MeshRenderer>();
-    }
-
-    void Update()
-    {
-       
-        offset += Time.deltaTime * Speed;
-        render.material.mainTextureOffset = new Vector2(offset, 0);
-    }
+    //void Update()
+    //{
+    //    offset += Time.deltaTime * Speed;
+    //    render.material.mainTextureOffset = new Vector2(offset, 0);
+    //}
 }

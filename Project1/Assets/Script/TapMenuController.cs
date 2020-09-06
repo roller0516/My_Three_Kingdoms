@@ -10,12 +10,11 @@ public class TapMenuController : MonoBehaviour
     public GameObject[] Tap_Panel;
 
 
-    public int index;
     public float time;
 
     private void Start()
     {
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < Tap_Panel.Length; i++)
         {
             Tap_Panel[i].SetActive(false);
         }
@@ -24,12 +23,12 @@ public class TapMenuController : MonoBehaviour
 
     public void TrainingOnActive()
     {
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < Tap_Panel.Length; i++)
         {
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[0])
             {
-                for (int j = 0; j < index; j++)
+                for (int j = 0; j < Button_.Length; j++)
                 {
                     Button_[j].interactable = true;
                     if (Button_[0])
@@ -43,14 +42,14 @@ public class TapMenuController : MonoBehaviour
 
     public void WeaponOnActive()
     {
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < Tap_Panel.Length; i++)
         {
             if (i ==0)
                 continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[1])
             {
-                for (int j = 0; j < index; j++)
+                for (int j = 0; j < Button_.Length; j++)
                 {
                     Button_[j].interactable = true;
                     if (Button_[1])
@@ -63,14 +62,14 @@ public class TapMenuController : MonoBehaviour
    
     public void TeasureOnActive()
     {
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < Tap_Panel.Length; i++)
         {
             if (i == 0)
                 continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[2])
             {
-                for (int j = 0; j < index; j++)
+                for (int j = 0; j < Button_.Length; j++)
                 {
                     Button_[j].interactable = true;
                     if (Button_[2])
@@ -83,14 +82,14 @@ public class TapMenuController : MonoBehaviour
 
     public void ShopOnActive()
     {
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < Tap_Panel.Length; i++)
         {
             if (i == 0)
                 continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[3])
             {
-                for (int j = 0; j < index; j++)
+                for (int j = 0; j < Button_.Length; j++)
                 {
                     Button_[j].interactable = true;
                     if (Button_[3])
@@ -103,14 +102,14 @@ public class TapMenuController : MonoBehaviour
 
     public void BattleFieldOnActive()
     {
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < Tap_Panel.Length; i++)
         {
             if (i == 0)
                 continue;
             Tap_Panel[i].SetActive(false);
             if (Tap_Panel[4])
             {
-                for (int j = 0; j < index; j++)
+                for (int j = 0; j < Button_.Length; j++)
                 {
                     Button_[j].interactable = true;
                     if (Button_[4])
@@ -147,6 +146,4 @@ public class TapMenuController : MonoBehaviour
         BattleFieldOpen();
         time += Time.deltaTime;
     }
-
-  
 }
