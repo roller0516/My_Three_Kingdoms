@@ -12,7 +12,7 @@ public class UpgradeButton : MonoBehaviour
     public Button button_;
     public Text LevelTex;
     public Text upGradeTex;
-
+    public GameObject Level_img;
     [HideInInspector]
     public int goldByUpgrade;
     [HideInInspector]
@@ -36,6 +36,7 @@ public class UpgradeButton : MonoBehaviour
     private void Start()
     {
         DataController.GetInstance().LoadUpgradeButton(this);
+        Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
     }
     private void Update()
@@ -131,11 +132,13 @@ public class UpgradeButton : MonoBehaviour
         {
             if (DataController.GetInstance().GetGold() < CurrentCost)
             {
+                Level_img.SetActive(false);
                 upGradeTex.color = Color.red;
                 button_.image.color = new Color(180f/255f, 180f/255f, 180f/255f,255f/255f);
             }
             else
             {
+                Level_img.SetActive(true);
                 upGradeTex.color = Color.yellow;
                 button_.image.color = Color.white;
             }
