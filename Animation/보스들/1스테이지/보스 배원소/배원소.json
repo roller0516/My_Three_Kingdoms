@@ -1,0 +1,84 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/보스 배원소/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "sha", "bone": "root", "attachment": "sha" },
+	{ "name": "hair ribbon", "bone": "root", "attachment": "hair ribbon" },
+	{ "name": "axe", "bone": "root", "attachment": "axe" },
+	{ "name": "1", "bone": "root", "attachment": "1" },
+	{ "name": "2", "bone": "root", "attachment": "2" },
+	{ "name": "3", "bone": "root", "attachment": "3" },
+	{ "name": "4", "bone": "root", "attachment": "4" },
+	{ "name": "5", "bone": "root", "attachment": "5" },
+	{ "name": "6", "bone": "root", "attachment": "6" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "leg armor", "bone": "root", "attachment": "leg armor" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
+	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" }
+],
+"skins": {
+	"default": {
+		"sha": {
+			"sha": { "x": 202, "y": -255, "width": 50, "height": 12 }
+		},
+		"hair ribbon": {
+			"hair ribbon": { "x": 163, "y": -184.5, "width": 34, "height": 43 }
+		},
+		"axe": {
+			"axe": { "x": 123, "y": -200, "width": 50, "height": 104 }
+		},
+		"1": {
+			"1": { "x": 138.5, "y": -192, "width": 229, "height": 264 }
+		},
+		"2": {
+			"2": { "x": 93, "y": -222, "width": 142, "height": 210 }
+		},
+		"3": {
+			"3": { "x": 106, "y": -204.5, "width": 150, "height": 247 }
+		},
+		"4": {
+			"4": { "x": 104.5, "y": -267, "width": 139, "height": 110 }
+		},
+		"5": {
+			"5": { "x": 102.5, "y": -283.5, "width": 131, "height": 69 }
+		},
+		"6": {
+			"6": { "x": 94, "y": -233, "width": 148, "height": 184 }
+		},
+		"r arm": {
+			"r arm": { "x": 220.5, "y": -220, "width": 25, "height": 30 }
+		},
+		"l leg": {
+			"l leg": { "x": 195.5, "y": -241, "width": 17, "height": 28 }
+		},
+		"r leg": {
+			"r leg": { "x": 210, "y": -241, "width": 14, "height": 28 }
+		},
+		"leg armor": {
+			"leg armor": { "x": 203, "y": -234.5, "width": 36, "height": 15 }
+		},
+		"body": {
+			"body": { "x": 201.5, "y": -217.5, "width": 35, "height": 23 }
+		},
+		"l arm": {
+			"l arm": { "x": 183, "y": -220, "width": 24, "height": 30 }
+		},
+		"head": {
+			"head": { "x": 202, "y": -175, "width": 66, "height": 72 }
+		},
+		"eye open": {
+			"eye open": { "x": 207.5, "y": -186.5, "width": 47, "height": 11 }
+		},
+		"eye clos": {
+			"eye clos": { "x": 207.5, "y": -188.5, "width": 47, "height": 11 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
