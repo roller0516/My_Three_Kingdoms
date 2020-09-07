@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour
             if (Mathf.Abs(transform.position.x - pos1.position.x) < 0.5f) enemy_move_pos = 0;
         }
 
-
     }
 
     void FixedUpdate()

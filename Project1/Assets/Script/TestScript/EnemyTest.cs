@@ -108,7 +108,6 @@ public class EnemyTest : MonoBehaviour
     public void TakeDamage(int damage)
     {
         GameObject G = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0), Quaternion.identity);
-        G.transform.parent = this.transform;
         G.GetComponent<DamageText>().Damage = damage;
         
         ani.SetTrigger("hit");
