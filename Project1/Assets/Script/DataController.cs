@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class DataController : MonoBehaviour
 {
@@ -15,7 +15,6 @@ public class DataController : MonoBehaviour
             if (instance == null)
             {
                 GameObject container = new GameObject("DataController");
-
                 instance = container.AddComponent<DataController>();
             }
         }
@@ -28,14 +27,15 @@ public class DataController : MonoBehaviour
     private int m_goldperClick2 = 0;
     private int m_goldperClick3 = 0;
 
-    public Text[] GoldPerClickDisPlayer;
+    public TextMeshProUGUI[] GoldPerClickDisPlayer;
+
     private void Awake()
     {
         m_gold = PlayerPrefs.GetInt("Gold", 100);
         m_goldperClick = PlayerPrefs.GetInt("GoldPerClick0", 1);
-        m_goldperClick1 = PlayerPrefs.GetInt("GoldPerClick1", 100);
-        m_goldperClick2 = PlayerPrefs.GetInt("GoldPerClick2", 1000);
-        m_goldperClick3 = PlayerPrefs.GetInt("GoldPerClick3", 10000);
+        m_goldperClick1 = PlayerPrefs.GetInt("GoldPerClick1", 1000);
+        m_goldperClick2 = PlayerPrefs.GetInt("GoldPerClick2", 10000);
+        m_goldperClick3 = PlayerPrefs.GetInt("GoldPerClick3", 100000);
     }
     
     public void SetGold(int newGold)
@@ -125,10 +125,9 @@ public class DataController : MonoBehaviour
     {
         string key = upGradeButton.UpgradeName;
         
-
         if (key == "Gold")
         {
-            upGradeButton.Level = PlayerPrefs.GetInt(key+"_Level", 1);
+            upGradeButton.Level = PlayerPrefs.GetInt(key+"_Level", 0);
         }
         else if (key == "Gold1") 
         {
@@ -150,7 +149,6 @@ public class DataController : MonoBehaviour
     {
         string key = upGradeButton.UpgradeName;
 
-        
         PlayerPrefs.SetInt(key + "_Level", upGradeButton.Level);
         PlayerPrefs.SetInt(key + "_goldByUpgrade", upGradeButton.goldByUpgrade);
         PlayerPrefs.SetInt(key + "+CurrentCost", upGradeButton.CurrentCost);
