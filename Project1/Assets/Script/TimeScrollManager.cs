@@ -19,9 +19,10 @@ public class TimeScrollManager : MonoBehaviour
     private void Update()
     {
         HandleTime();
-        
-        time[0].CurTimeFuc();
-        //각 스크립트마다 레벨을 받아서 실행시킨다
+
+        if (uimanager.Level[0] > 0)
+            time[0].CurTimeFuc();
+        //각 스크립트마다 레벨을 받아서 실행시킨다 
         if(uimanager.Level[1]> 0)
             time[1].CurTimeFuc();
         if(uimanager.Level[2] > 0)
