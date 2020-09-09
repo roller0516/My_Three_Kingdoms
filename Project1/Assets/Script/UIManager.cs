@@ -31,12 +31,12 @@ public class UIManager : MonoBehaviour
         {
             gold = gold / 100000;
             
-            GoldDisPlayer.text = gold.ToString("0.00") + "B";
+            GoldDisPlayer.text = gold.ToString("0.00") + "b";
         }
         else if (gold >= 10000)// A 만
         {
             gold = gold / 10000;
-            GoldDisPlayer.text = gold.ToString("0.00") + "A";
+            GoldDisPlayer.text = gold.ToString("0.00") + "a";
         }
         else if (gold < 10000)
         {

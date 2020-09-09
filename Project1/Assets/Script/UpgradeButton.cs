@@ -146,7 +146,7 @@ public class UpgradeButton : MonoBehaviour
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
-        LevelTex.text = "Lv" + Level.ToString();
+        LevelTex.text = "Lv" +"."+ Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
 
@@ -167,16 +167,16 @@ public class UpgradeButton : MonoBehaviour
        if (gold >= 100000)// B 십만
         {
            gold = gold / 100000;
-           text_.text = gold.ToString("0.00") + "B";
+           text_.text = "+"+gold.ToString("0.00") + "b";
        }
        else if (gold >= 10000)// A 만
         {
            gold = gold / 10000;
-           text_.text = gold.ToString("0.00") + "A";
+           text_.text = "+"+gold.ToString("0.00") + "a";
        }
        else if (gold < 100000)
        {
-           text_.text = gold.ToString("0");
+           text_.text = "+"+gold.ToString("0");
        }
     }
 }
