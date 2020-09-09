@@ -10,7 +10,7 @@ public class UpgradeButton : MonoBehaviour
 
    
     public Button button_;
-    public Text LevelTex;
+    public TextMeshProUGUI LevelTex;
     public Text upGradeTex;
     public GameObject Level_img;
     [HideInInspector]
