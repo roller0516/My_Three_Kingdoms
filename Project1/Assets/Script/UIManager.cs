@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI GoldDisPlayer;
+    public TextMeshProUGUI Gold;
+    public TextMeshProUGUI[] GoldPerClickDisPlayer;
+    public UpgradeButton[] UpgradeButton;
     [HideInInspector]
     public int[] Level;
     
-    public UpgradeButton[] UpgradeButton;
     private void Start()
     {
         for (int i = 1; i < UpgradeButton.Length+1; i++) 
@@ -23,26 +25,62 @@ public class UIManager : MonoBehaviour
         {
             Level[i] = UpgradeButton[i].Level;
         }
+        GoldPerClickText(GoldPerClickDisPlayer);
         GoldText(DataController.GetInstance().GetGold());
     }
+
     public void GoldText(float gold)
     {
         if (gold >= 100000) // B 십만
         {
             gold = gold / 100000;
-            
-            GoldDisPlayer.text = gold.ToString("0.00") + "b";
+
+            Gold.text = gold.ToString("0.00") + "b";
         }
         else if (gold >= 10000)// A 만
         {
             gold = gold / 10000;
-            GoldDisPlayer.text = gold.ToString("0.00") + "a";
+            Gold.text = gold.ToString("0.00") + "a";
         }
         else if (gold < 10000)
         {
-            GoldDisPlayer.text = gold.ToString("0");
+            Gold.text = gold.ToString("0");
         }
     }
-    
-   
+
+    public void GoldPerClickText(TextMeshProUGUI[] txt)
+    {
+        
+        txt = GoldPerClickDisPlayer;
+       
+        for (int i = 0;i< GoldPerClickDisPlayer.Length;i++)
+        {
+            int gold = DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
+            
+            if (gold >= 100000)// B 십만
+            {
+                gold = gold / 100000;
+                txt[i].text = "+" + gold.ToString("0.00") + "b";
+                
+            }
+            else if (gold >= 10000)// A 만
+            {
+                gold = gold / 10000;
+                txt[i].text = "+" + gold.ToString("0.00") + "a";
+            }
+            else if (gold >= 1000)
+            {
+                txt[i].text = "+" + gold.ToString("0");
+
+            }
+            else if (gold < 1000)
+            {
+                txt[i].text = "+" + gold.ToString("0");
+
+            }
+        }
+        
+    }
+
+
 }

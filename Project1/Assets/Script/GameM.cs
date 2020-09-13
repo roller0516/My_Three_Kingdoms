@@ -35,6 +35,7 @@ public class GameM : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(1080, 1920, true);
+
     }
     public void Init()
     {

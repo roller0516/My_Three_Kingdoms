@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2488127560412177748}
   - component: {fileID: 140711669472883983}
   m_Layer: 0
-  m_Name: Hwang 1
+  m_Name: Hwang 2
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc448399c4be3f24c8d3456ffaa277dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  obj: {fileID: 443137311996352052, guid: 34b8ad3cc2e0b404ab4abc8b71b9109f, type: 3}
+  damageText: {fileID: 443137311996352052, guid: 34b8ad3cc2e0b404ab4abc8b71b9109f,
+    type: 3}
   knockbackPower: 1
   moveSpeed: 5
   Hp: 10
