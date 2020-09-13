@@ -11,10 +11,13 @@
 	{ "name": "body", "bone": "root", "attachment": "body" },
 	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
 	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "headcrying", "bone": "root", "attachment": "headcrying" },
+	{ "name": "spear", "bone": "root", "attachment": "spear" },
+	{ "name": "spear_hair", "bone": "root", "attachment": "spear_hair" },
 	{ "name": "hair 2", "bone": "root", "attachment": "hair 2" },
 	{ "name": "hair 1", "bone": "root", "attachment": "hair 1" },
-	{ "name": "eye open", "bone": "root" },
-	{ "name": "eye clos", "bone": "root" }
+	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
+	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" }
 ],
 "skins": {
 	"default": {
@@ -41,6 +44,15 @@
 		},
 		"head": {
 			"head": { "x": 145, "y": -140.5, "width": 74, "height": 85 }
+		},
+		"headcrying": {
+			"headcrying": { "x": 145, "y": -140.5, "width": 74, "height": 85 }
+		},
+		"spear": {
+			"spear": { "x": 68, "y": -145.5, "width": 30, "height": 205 }
+		},
+		"spear_hair": {
+			"spear_hair": { "x": 89, "y": -115, "width": 20, "height": 38 }
 		},
 		"hair 2": {
 			"hair 2": { "x": 132, "y": -86.5, "width": 16, "height": 31 }
