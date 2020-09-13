@@ -108,6 +108,9 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -309,38 +312,53 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.Extensions">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXml4Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.Documents">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.AccessControl">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.AccessControl.DLL</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.Spreadsheets">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Spreadsheets.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXmlFormats.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OOXML">
       <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OOXML.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Newtonsoft.Json.dll</HintPath>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.AccessControl">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.AccessControl.DLL</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
       <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Client.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="Google.GData.Documents">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Spreadsheets">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Spreadsheets.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
