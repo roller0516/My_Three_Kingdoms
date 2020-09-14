@@ -131,10 +131,13 @@ public class UpgradeButton : MonoBehaviour
             }
         }
     }
-
-    public void UpdateUI()//ui의 변화를 받아온다
+    public void Update()
     {
         ScarceCost_textColor();
+    }
+    public void UpdateUI()//ui의 변화를 받아온다
+    {
+        
 
         LevelTex.text = "Lv" +"."+ Level.ToString();
 
