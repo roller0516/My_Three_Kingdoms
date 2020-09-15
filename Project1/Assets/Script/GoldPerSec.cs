@@ -7,14 +7,17 @@ using UnityEngine.UI;
 public class GoldPerSec : MonoBehaviour
 {
     private int Count = 4;
-    private TimeScroll[] time_scroll;
+    private ScrollTime[] time_scroll;
+
     void Start()
     {
-        time_scroll = new TimeScroll[Count];
+        time_scroll = new ScrollTime[Count];
+
         Count = 1;
+
         for (int i = 0; i < time_scroll.Length; ++i)
         {
-            time_scroll[i] = GameObject.Find("TimeSlider" + Count).GetComponent<TimeScroll>();
+            time_scroll[i] = GameObject.Find("TimeSlider" + Count).GetComponent<ScrollTime>();
             Count++;
         }
     }
@@ -25,11 +28,10 @@ public class GoldPerSec : MonoBehaviour
             if (time_scroll[i].isDone == true)
             {
                 time_scroll[i].isDone = false;
+
                 int goldPerClick = DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
                 
                 DataController.GetInstance().AddGold(goldPerClick);
-
-                print("GoldperClick" + i + ":" + DataController.GetInstance().GetGoldPerClick("GoldperClick" + i));
             }
         }
     }
