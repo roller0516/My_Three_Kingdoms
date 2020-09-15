@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI GoldDisPlayer;
+    public TextMeshProUGUI Gold;
+    public TextMeshProUGUI[] GoldPerClickDisPlayer;
+    public UpgradeButton[] UpgradeButton;
     [HideInInspector]
     public int[] Level;
     
-    public UpgradeButton[] UpgradeButton;
     private void Start()
     {
         for (int i = 1; i < UpgradeButton.Length+1; i++) 
@@ -23,26 +25,70 @@ public class UIManager : MonoBehaviour
         {
             Level[i] = UpgradeButton[i].Level;
         }
-        GoldText(DataController.GetInstance().GetGold());
+        GoldPerClickText(GoldPerClickDisPlayer);
+        GoldText((float)DataController.GetInstance().GetGold());
     }
+
     public void GoldText(float gold)
     {
-        if (gold >= 100000) // B 십만
+        if (gold >= 100000) // c 십만
         {
             gold = gold / 100000;
-            
-            GoldDisPlayer.text = gold.ToString("0.00") + "b";
+
+            Gold.text = gold.ToString("0.00") + "c";
         }
-        else if (gold >= 10000)// A 만
+        else if (gold >= 10000)// b 만
         {
             gold = gold / 10000;
-            GoldDisPlayer.text = gold.ToString("0.00") + "a";
+            Gold.text = gold.ToString("0.00") + "b";
         }
-        else if (gold < 10000)
+        else if (gold >= 1000)// a 천
         {
-            GoldDisPlayer.text = gold.ToString("0");
+            gold = gold / 1000;
+            Gold.text = gold.ToString("0.00") + "a";
+        }
+        else if (gold < 1000)
+        {
+            Gold.text = gold.ToString("0");
         }
     }
-    
-   
+
+    public void GoldPerClickText(TextMeshProUGUI[] txt)
+    {
+        
+        txt = GoldPerClickDisPlayer;
+       
+        for (int i = 0;i< GoldPerClickDisPlayer.Length;i++)
+        {
+            float gold = (float)DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
+            
+            if (gold >= 100000)// c 십만
+            {
+                gold = gold/100000;
+
+                txt[i].text = "+" + gold.ToString("0.00") + "c";
+            }
+            else if (gold >= 10000)// b 만
+            {
+                gold = gold/10000;
+
+                txt[i].text = "+" + gold.ToString("0.00") + "b";
+            }
+            else if (gold >= 1000)// a 천
+            {
+                gold = gold/1000;
+
+                txt[i].text = "+" + gold.ToString("0.00") + "a";
+
+            }
+            else if (gold < 1000)
+            {
+                txt[i].text = "+" + gold.ToString("0");
+
+            }
+        }
+        
+    }
+
+
 }

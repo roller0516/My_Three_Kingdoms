@@ -5,21 +5,22 @@ using TMPro;
 
 public class DamageText : MonoBehaviour
 {
-    TextMeshPro text;
-    Color Color_;
+    private TextMeshPro text;
+    private Color Color_;
+    private Transform myTransform;
+    private float DestroyTime = 2f;
+    private float firingAngle = 45.0f;
+    private float gravity = 9.8f;
 
-    public float speed; // 텍스트 이동속도
     public float alphaSpeed;//알파값 
     public int Damage;
-    private float DestroyTime = 2f;
-   
-    public float VelocityPower;
-    public float firingAngle = 45.0f;
-    public float gravity = 9.8f;
-
     public Transform Target;
     public Transform Projectile;
-    private Transform myTransform;
+    public float VelocityPower;
+    
+
+   
+    
 
     void Awake()
     {
@@ -29,9 +30,13 @@ public class DamageText : MonoBehaviour
     private void Start()
     {
         StartCoroutine("SimulateProjectile");
+
         text = GetComponent<TextMeshPro>();
+
         Target = Player.Instance.transform;
+
         Color_ = text.color;
+
         Invoke("DestroyText", DestroyTime);
     }
     private void Update()
@@ -46,7 +51,7 @@ public class DamageText : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-    IEnumerator SimulateProjectile() 
+    IEnumerator SimulateProjectile() // 포물선 공식
     {
         yield return new WaitForSeconds(0.1f);
         
