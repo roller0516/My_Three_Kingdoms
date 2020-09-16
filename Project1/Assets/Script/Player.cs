@@ -43,10 +43,8 @@ public class Player : MonoBehaviour
         
         //컴포넌트
         ani = GetComponent<Animator>();
-        
         skeletonRenderer = GetComponent<SkeletonRenderer>();
         itemlist = FindObjectOfType<ItemList>();
-
         _AniState = AnimState.move;
 
         
@@ -82,7 +80,12 @@ public class Player : MonoBehaviour
 
     public void Attack() //공격 
     {
-       
-        Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
+
+        if (Monster.tag == "Boss")
+            Monster.GetComponent<Boss>().TakeDamage(my_PlayerDamage);
+        else 
+        {
+            Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
+        }
     }
 }

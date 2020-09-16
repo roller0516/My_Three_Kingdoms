@@ -126,6 +126,7 @@ public class EnemyTest : MonoBehaviour
             MonsterSpawn._instance.IsDie = true;
             Destroy(this.gameObject,2f);
         }
+
     }
     public void KnockBack()// 넉백
     {
