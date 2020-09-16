@@ -17,6 +17,7 @@ public class Boss : MonoBehaviour
     private Transform target;
     private int hitCount = 0;
     private int MaxhitCount = 1;
+
     public GameObject damageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
@@ -130,7 +131,9 @@ public class Boss : MonoBehaviour
         {
             _AniState = AnimState.die;
             MonsterSpawn._instance.MonsterCount--;
-            MonsterSpawn._instance.IsDie = true;
+            MonsterSpawn._instance.boss_IsDie = true;
+            Player.Instance._AniState = Player.AnimState.move;
+            Player.Instance.moveSpeed = 2f;
             Destroy(this.gameObject, 2f);
         }
     }
