@@ -1,0 +1,68 @@
+아이템, 미션명 등의 코드명 생성규칙 o
+db값 들 산출근거 o
+몬스터 배치 테이블 또는 설계 o
+스폐셜 보물 설계 o
+지역별 보물 획득 기준 설계 o
+수색 시스템 기획 o
+보스도감 x
+uid - 유니티에서 입력할 이름
+icon - 아이콘 이름
+string - 게임에서 보여질 이름
+seed_tak - 레벨 1 공격력
+cost - 소비되는 재화 이름
+amount - 구입할 때 소모되는 가격
+increase_2 ~ 5 - 가격이 늘어날 수록 어떻게 늘어나는지
+=power(((7+0.4)),2)
+
+11.4/0.023= 495.65*
+0 → 5 = 2배
+5 → 10 = 8배
+10 → 15 = 32배
+15 → 20 = 128배 
+20 → 25 = 496배
+25 → 30 = 1984배
+
+보스를 죽이기 위해 필요한 최소 공격력 12 14 16 18 20 22 24 26 28 30 210
+1층 보스 54 증가 값 183
+2층 보스 66
+3층 보스 80
+10층 보스 237 증가 값 442
+20층 보스 679 증가 값 765
+30층 보스 1444
+100층 보스 22550
+
+낫		= sickle
+부적		= amulet
+말		=horse
+티켓		=ticket
+깃털목걸이	=Feather necklace
+반지		=ring
+천둥 징표		=thunder sign
+
+쌍철극		=ssangcheolgeug
+칠성검		=seven sword
+맹획 머리띠	=maenghoeg headband
+비도		=bido
+조황비전		=johwangbijeon
+청공검		=blue sword
+방천화극		=bangcheonhwageug
+옥새		=ogsae
+
+treasure_special_ssangcheolgeug
+treasure_special_seven sword
+treasure_special_maenghoeg band
+treasure_special_bido
+treasure_special_johwangbijeon
+treasure_special_blue sword
+treasure_special_bangcheonhwageug
+treasure_special_ogsae
+
+나무 막대기 	= wooden bar
+나무 몽둥이 	= wooden stick
+목검		= wooden sword
+녹슨 검		= rusty sword
+단도		= dagger
+토막 칼		= slicing sword
+전쟁 도끼		= war ax
+양날 도끼		= double-edged ax
+

@@ -29,13 +29,11 @@ public class GameM : MonoBehaviour
         }
         s_instance = this;
 
-        PlayerPrefs.DeleteAll();
-
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(1080, 1920, true);
-
+        //Screen.SetResolution(1080, 1920, true);
+        
     }
     public void Init()
     {

@@ -39,8 +39,7 @@ public class ItemList : MonoBehaviour
         AllitemList.Add(new Item("녹슨검2", 50, 0, false));
         AllitemList.Add(new Item("녹슨검3", 60, 0, false));
         AllitemList.Add(new Item("녹슨검4", 70, 0, false));
-        AllitemList.Add(new Item("녹슨검5", 80, 0, false));
-        AllitemList.Add(new Item("녹슨검6", 90, 0, false));
+
 
         item_Attack = AllitemList[0].Attack;
         DataController.GetInstance().LoadUpgradeButton(this);
@@ -106,7 +105,7 @@ public class ItemList : MonoBehaviour
     }
     public void AttechmentPlayeritem(string itemname) 
     {
-        Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", itemname);
+        Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "Spear01");
     }
     public void AttachmentCheck() 
     {

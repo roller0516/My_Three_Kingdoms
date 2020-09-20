@@ -1,0 +1,29 @@
+나무 막대기lv 1은 공격력 10이다
+10레벨은 공격력은 100이다
+그럼 왜 100임?
+= 그냥 1렙 당 10씩 쳐줬다
+
+아이템 미션명 등의 코드명 생성 규칙
+db값들 산출근거 
+몬스터 배치 테이블 또는 설계
+스폐셜 보물 설계
+지역별 보물 획득 기준 설계
+수색 시스템 기획
+보스도감
+
+보물
+trasure_normal_horse는 move_speed를
+ value=0.01 씩 증가시키고 max value는 1이다
+((스테이지 +8 )*4*0.5)^2
+
+보스도감
+시스템 설계랑 DB 기초기획 설명
+
+training_yard sweep
+training_armory
+Training_Rabbit
+training_Battle
+
+Search_name / string(ko_kr) / cost / treasure / percentage
+search_hyeongnam / 형남 / pass / 칠성검, 쌍철극 / 0.3
+

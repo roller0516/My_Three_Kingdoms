@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     }
     private Animator ani;
     private ItemList itemlist;
-
+    public Vector3 startPosition;
     public SkeletonRenderer skeletonRenderer;
    
    
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         itemlist = FindObjectOfType<ItemList>();
         _AniState = AnimState.move;
 
-        
+        startPosition = this.transform.position;
     }
 
     private void Update()
