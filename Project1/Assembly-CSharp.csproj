@@ -104,6 +104,7 @@
     <Compile Include="Assets\Script\GameM.cs" />
     <Compile Include="Assets\Script\GoldPerSec.cs" />
     <Compile Include="Assets\Script\ItemList.cs" />
+    <Compile Include="Assets\Script\MC_Slider.cs" />
     <Compile Include="Assets\Script\MonsterSpawn.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\ScrollTime.cs" />

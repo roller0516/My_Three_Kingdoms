@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
 {
     public TextMeshProUGUI[] text;
-    public int MonsterCount = 1;
-    public int curStage = 1;
-    public int MaxStage =10;
+    public Slider MonsterCountSlider;
+    public float MonsterCount = 1;
+    public float curStage = 1;
+    public float MaxStage =10;
 
     private void Update()
     {
+        MonsterCounting();
         stageCount();
+        
+    }
+    private void MonsterCounting()
+    {
+        MonsterCountSlider.value = MonsterCount / MaxStage;
     }
     private void stageCount() 
     {
