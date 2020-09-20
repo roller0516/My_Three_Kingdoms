@@ -42,7 +42,6 @@ public class MonsterSpawn : MonoBehaviour
         if (MonsterCount == 0)
         {
             CurTime += Time.deltaTime;
-            
         }
         if (IsDie == true)
         {
