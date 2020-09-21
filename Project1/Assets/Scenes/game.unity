@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 15
+  MaxTime: 60
   CurTime: 0
   isDone: 0
 --- !u!114 &185123928
@@ -2302,10 +2302,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 1555393061}
   button_: {fileID: 337427825}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 1
-  StartCurrentCost: 1
-  UpgradePow: 1.2
-  costPow: 2
+  StartGoldByUpgrade: 7
+  StartCurrentCost: 44
+  UpgradePow: 7
+  costPow: 0.4
 --- !u!114 &337427825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,10 +3111,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 1667105555}
   button_: {fileID: 402943827}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 1
-  StartCurrentCost: 1
-  UpgradePow: 1.07
-  costPow: 3.14
+  StartGoldByUpgrade: 632
+  StartCurrentCost: 3795
+  UpgradePow: 60
+  costPow: 1.6
 --- !u!114 &402943827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4395,7 +4395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1
+  MaxTime: 10
   CurTime: 0
   isDone: 0
 --- !u!114 &584132224
@@ -5077,7 +5077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeName: Gold3
+  UpgradeName: Gold1
   CurrentCost: 1
   goldByUpgrade: 0
   Level: 1
@@ -5086,10 +5086,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 1055135276}
   button_: {fileID: 656925007}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 50
-  StartCurrentCost: 100
-  UpgradePow: 1.07
-  costPow: 3.14
+  StartGoldByUpgrade: 41
+  StartCurrentCost: 250
+  UpgradePow: 15
+  costPow: 0.8
 --- !u!114 &656925007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7352,7 +7352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 10
+  MaxTime: 30
   CurTime: 0
   isDone: 0
 --- !u!114 &877297601
@@ -15873,7 +15873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeName: Gold1
+  UpgradeName: Gold3
   CurrentCost: 1
   goldByUpgrade: 0
   Level: 1
@@ -15882,10 +15882,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 293745334}
   button_: {fileID: 1691451470}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 1
-  StartCurrentCost: 1
-  UpgradePow: 1.07
-  costPow: 3.14
+  StartGoldByUpgrade: 9600
+  StartCurrentCost: 57600
+  UpgradePow: 240
+  costPow: 2.2
 --- !u!114 &1691451470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18673,7 +18673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 20
+  MaxTime: 90
   CurTime: 0
   isDone: 0
 --- !u!114 &2048177485

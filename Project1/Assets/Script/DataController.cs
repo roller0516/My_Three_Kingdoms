@@ -34,10 +34,10 @@ public class DataController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         m_gold = PlayerPrefs.GetInt("Gold", 100);
-        m_goldperClick = PlayerPrefs.GetInt("GoldPerClick0", 1);
-        m_goldperClick1 = PlayerPrefs.GetInt("GoldPerClick1", 1500);
-        m_goldperClick2 = PlayerPrefs.GetInt("GoldPerClick2", 15000);
-        m_goldperClick3 = PlayerPrefs.GetInt("GoldPerClick3", 150000);
+        m_goldperClick = PlayerPrefs.GetInt("GoldPerClick0", 9);
+        m_goldperClick1 = PlayerPrefs.GetInt("GoldPerClick1", 41);
+        m_goldperClick2 = PlayerPrefs.GetInt("GoldPerClick2", 632);
+        m_goldperClick3 = PlayerPrefs.GetInt("GoldPerClick3", 9600);
     }
     
     public void SetGold(int newGold)

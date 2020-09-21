@@ -31,14 +31,14 @@ public class ItemList : MonoBehaviour
     
     private void Start()
     {
-        AllitemList.Add(new Item("Onehand01",1, 1, true));
-        AllitemList.Add(new Item("Sword01", 10, 0, false));
-        AllitemList.Add(new Item("Spear01", 20, 0, false));
-        AllitemList.Add(new Item("녹슨검", 30, 0, false));
-        AllitemList.Add(new Item("녹슨검1", 40, 0, false));
-        AllitemList.Add(new Item("녹슨검2", 50, 0, false));
-        AllitemList.Add(new Item("녹슨검3", 60, 0, false));
-        AllitemList.Add(new Item("녹슨검4", 70, 0, false));
+        //AllitemList.Add(new Item("Onehand01",1, 1, true));
+        //AllitemList.Add(new Item("Sword01", 10, 0, false));
+        //AllitemList.Add(new Item("Spear01", 20, 0, false));
+        //AllitemList.Add(new Item("녹슨검", 30, 0, false));
+        //AllitemList.Add(new Item("녹슨검1", 40, 0, false));
+        //AllitemList.Add(new Item("녹슨검2", 50, 0, false));
+        //AllitemList.Add(new Item("녹슨검3", 60, 0, false));
+        //AllitemList.Add(new Item("녹슨검4", 70, 0, false));
 
 
         item_Attack = AllitemList[0].Attack;
@@ -56,8 +56,7 @@ public class ItemList : MonoBehaviour
 
                 AllitemList[i].isUsing = true; //착용한상태로변경
                 AllitemList[i].level++; //레벨을 올려주고 
-                //강화칸을 증가시켜줌
-                                                                                           // 업그레이드 공식
+                
                 
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
@@ -65,7 +64,6 @@ public class ItemList : MonoBehaviour
                         AttechmentPlayeritem(AllitemList[i].name);
                     AllitemList[i - 1].isUsing = false;
                 }
-
                 UpgradeWeapon();
                 item_Attack = AllitemList[i].Attack + AttackUpgrade;
             }
@@ -120,4 +118,5 @@ public class ItemList : MonoBehaviour
             WeaponGradeSlider[i].value = (float)AllitemList[i].level / (float)maxLevel;
         }
     }
+
 }

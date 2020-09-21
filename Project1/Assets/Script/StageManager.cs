@@ -14,20 +14,23 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-        MonsterCounting();
         stageCount();
-        
     }
-    private void MonsterCounting()
-    {
-        MonsterCountSlider.value = MonsterCount / MaxStage;
-    }
+ 
     private void stageCount() 
     {
-        if(MonsterCount%10 >0)
-            text[0].text = (MonsterCount %10).ToString() + "/" + MaxStage.ToString();
-        else if (MonsterCount%MaxStage == 0)
-            text[0].text = (MonsterCount/curStage).ToString() + "/" + MaxStage.ToString();
+        if (MonsterCount % MaxStage > 0)
+        {
+            text[0].text = (MonsterCount % MaxStage).ToString() + "/" + MaxStage.ToString();
+            MonsterCountSlider.value = (MonsterCount % MaxStage) / MaxStage;
+        }
+
+        else if (MonsterCount % MaxStage == 0) 
+        {
+            text[0].text = (MonsterCount / curStage).ToString() + "/" + MaxStage.ToString();
+            MonsterCountSlider.value = 1f;
+        }
+            
         text[1].text = curStage.ToString() + "stage";
     }
 }
