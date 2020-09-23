@@ -152,10 +152,10 @@ public class UpgradeButton : MonoBehaviour
         {
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
             upGradeTex.text = "최대레벨";
-            LevelTex.text = "최대레벨";
+            LevelTex.text = "Lv"+"."+MaxLevel.ToString();
             button_.image.color = Color.gray;
             button_.interactable = false;
-            GameObject go = GameObject.Find("FoodIm").gameObject;
+            GameObject go = GameObject.Find("LevelUp_img").gameObject;
             Destroy(go);
         }
     }

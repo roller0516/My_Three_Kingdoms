@@ -13,16 +13,12 @@ public class weaponDataData
   public string UID { get {return uid; } set { this.uid = value;} }
   
   [SerializeField]
-  string string(ko_kr);
-  public string String(Ko_Kr) { get {return string(ko_kr); } set { this.string(ko_kr) = value;} }
-  
-  [SerializeField]
   int leveled_atk;
   public int Leveled_Atk { get {return leveled_atk; } set { this.leveled_atk = value;} }
   
   [SerializeField]
-  int cost;
-  public int Cost { get {return cost; } set { this.cost = value;} }
+  int level;
+  public int Level { get {return level; } set { this.level = value;} }
   
   [SerializeField]
   int atk;
@@ -63,5 +59,9 @@ public class weaponDataData
   [SerializeField]
   int atk_10;
   public int Atk_10 { get {return atk_10; } set { this.atk_10 = value;} }
+  
+  [SerializeField]
+  bool isusing;
+  public bool Isusing { get {return isusing; } set { this.isusing = value;} }
   
 }

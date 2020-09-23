@@ -33,7 +33,7 @@ public class DataController : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        m_gold = PlayerPrefs.GetInt("Gold", 100);
+        m_gold = PlayerPrefs.GetInt("Gold", 100000);
         m_goldperClick = PlayerPrefs.GetInt("GoldPerClick0", 9);
         m_goldperClick1 = PlayerPrefs.GetInt("GoldPerClick1", 41);
         m_goldperClick2 = PlayerPrefs.GetInt("GoldPerClick2", 632);
@@ -156,38 +156,38 @@ public class DataController : MonoBehaviour
         PlayerPrefs.SetInt(key + "+CurrentCost", upGradeButton.CurrentCost);
 
     }
-    public void LoadUpgradeButton(ItemList itemlist)
-    {
-        string[] Value = new string[itemlist.AllitemList.Count];
+    //public void LoadUpgradeButton(ItemList itemlist)
+    //{
+    //    string[] Value = new string[itemlist.AllitemList.Count];
 
 
 
-        for (int i =0;i< itemlist.AllitemList.Count;i++)
-        {
-            string key = itemlist.AllitemList[i].name;
-            itemlist.AllitemList[i].name = PlayerPrefs.GetString(key + "item", itemlist.AllitemList[i].name);
-            itemlist.AllitemList[i].level = PlayerPrefs.GetInt(key + "_Level", itemlist.AllitemList[i].level);
-            itemlist.WeaponGradeSlider[i].value = PlayerPrefs.GetFloat(key + "UpgradeValue", itemlist.WeaponGradeSlider[i].value);
-            Value[i]= PlayerPrefs.GetString(key + "itemPuton", itemlist.AllitemList[i].isUsing.ToString());
-            itemlist.AllitemList[i].isUsing = System.Convert.ToBoolean(Value[i]);
-        }
-        itemlist.item_Attack = PlayerPrefs.GetInt("WeaponUpgradeValue", itemlist.item_Attack);
-        itemlist.AttackUpgrade =  PlayerPrefs.GetInt("Upgrade", 0);
-    }
+    //    for (int i =0;i< itemlist.AllitemList.Count;i++)
+    //    {
+    //        string key = itemlist.AllitemList[i].name;
+    //        itemlist.AllitemList[i].name = PlayerPrefs.GetString(key + "item", itemlist.AllitemList[i].name);
+    //        itemlist.AllitemList[i].level = PlayerPrefs.GetInt(key + "_Level", itemlist.AllitemList[i].level);
+    //        itemlist.WeaponGradeSlider[i].value = PlayerPrefs.GetFloat(key + "UpgradeValue", itemlist.WeaponGradeSlider[i].value);
+    //        Value[i]= PlayerPrefs.GetString(key + "itemPuton", itemlist.AllitemList[i].isUsing.ToString());
+    //        itemlist.AllitemList[i].isUsing = System.Convert.ToBoolean(Value[i]);
+    //    }
+    //    itemlist.item_Attack = PlayerPrefs.GetInt("WeaponUpgradeValue", itemlist.item_Attack);
+    //    itemlist.AttackUpgrade =  PlayerPrefs.GetInt("Upgrade", 0);
+    //}
     
-    public void SaveUpgradeButton(ItemList itemlist)
-    {
-        for (int i = 0; i< itemlist.AllitemList.Count;i++)
-        {
-            string key = itemlist.AllitemList[i].name;
-            PlayerPrefs.SetString(key + "item", itemlist.AllitemList[i].name);
-            PlayerPrefs.SetInt(key + "_Level", itemlist.AllitemList[i].level);
-            PlayerPrefs.SetFloat(key + "UpgradeValue",itemlist.WeaponGradeSlider[i].value);
-            PlayerPrefs.SetString(key + "itemPuton", itemlist.AllitemList[i].isUsing.ToString());
-        }
-        PlayerPrefs.SetInt("WeaponUpgradeValue", itemlist.item_Attack);
-        PlayerPrefs.SetInt("Upgrade", itemlist.AttackUpgrade);
-    }
+    //public void SaveUpgradeButton(ItemList itemlist)
+    //{
+    //    for (int i = 0; i< itemlist.AllitemList.Count;i++)
+    //    {
+    //        string key = itemlist.AllitemList[i].name;
+    //        PlayerPrefs.SetString(key + "item", itemlist.AllitemList[i].name);
+    //        PlayerPrefs.SetInt(key + "_Level", itemlist.AllitemList[i].level);
+    //        PlayerPrefs.SetFloat(key + "UpgradeValue",itemlist.WeaponGradeSlider[i].value);
+    //        PlayerPrefs.SetString(key + "itemPuton", itemlist.AllitemList[i].isUsing.ToString());
+    //    }
+    //    PlayerPrefs.SetInt("WeaponUpgradeValue", itemlist.item_Attack);
+    //    PlayerPrefs.SetInt("Upgrade", itemlist.AttackUpgrade);
+    //}
 }
 
 

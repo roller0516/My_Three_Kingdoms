@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80e14a72067f1ad408ec8d661bc560ce, type: 3}
-  m_Name: weaponDb
+  m_Name: New Import Setting
   m_EditorClassIdentifier: 
   templatePath: QuickSheet/ExcelPlugin/Templates
-  scriptFilePath: 
-  editorScriptFilePath: 
+  scriptFilePath: Script/Data/Runtime
+  editorScriptFilePath: Script/Data/Editor
   sheetName: weaponDB.xlsx
   workSheetName: weaponData
   columnHeaderList:
-  - type: 0
+  - type: 1
     name: UID
-    isEnable: 0
-    isArray: 0
-  - type: 0
-    name: string(ko_kr)
     isEnable: 0
     isArray: 0
   - type: 3
@@ -31,7 +27,7 @@ MonoBehaviour:
     isEnable: 0
     isArray: 0
   - type: 3
-    name: cost
+    name: level
     isEnable: 0
     isArray: 0
   - type: 3
@@ -74,12 +70,17 @@ MonoBehaviour:
     name: atk_10
     isEnable: 0
     isArray: 0
+  - type: 8
+    name: isUsing
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Script/Data/weaponDB.xlsx
   SheetNames:
   - "\uC2DC\uC2A4\uD15C \uAE30\uD68D"
   - "\uD6C8\uB828DB"
   - "\uBAAC\uC2A4\uD130DB"
   - weaponData
+  - Sheet1
   - "\uBCF4\uBB3C"
   - "\uBCF4\uBB3C DB"
   - "\uC218\uC0C9 DB"

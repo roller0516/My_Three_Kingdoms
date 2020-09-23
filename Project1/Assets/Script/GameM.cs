@@ -32,7 +32,7 @@ public class GameM : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(1080, 1920, true);
+
         
     }
     public void Init()

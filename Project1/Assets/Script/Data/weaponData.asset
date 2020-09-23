@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af43e16620db8bf43ad80222e0474ddb, type: 3}
+  m_Name: weaponData
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Script/Data/weaponDB.xlsx
+  WorksheetName: weaponData
+  dataArray:
+  - uid: weapon_wooden-branch
+    leveled_atk: 1
+    level: 1
+    atk: 50
+    atk_2: 70
+    atk_3: 90
+    atk_4: 110
+    atk_5: 130
+    atk_6: 150
+    atk_7: 170
+    atk_8: 190
+    atk_9: 210
+    atk_10: 230
+    isusing: 1
+  - uid: weapon_wooden-stick
+    leveled_atk: 2
+    level: 0
+    atk: 430
+    atk_2: 460
+    atk_3: 490
+    atk_4: 520
+    atk_5: 550
+    atk_6: 580
+    atk_7: 610
+    atk_8: 640
+    atk_9: 670
+    atk_10: 700
+    isusing: 0
+  - uid: weapon_wooden-sword
+    leveled_atk: 3
+    level: 0
+    atk: 700
+    atk_2: 740
+    atk_3: 780
+    atk_4: 820
+    atk_5: 860
+    atk_6: 900
+    atk_7: 940
+    atk_8: 980
+    atk_9: 1020
+    atk_10: 1060
+    isusing: 0
+  - uid: weapom_rusty-sword
+    leveled_atk: 4
+    level: 0
+    atk: 1200
+    atk_2: 1250
+    atk_3: 1300
+    atk_4: 1350
+    atk_5: 1400
+    atk_6: 1450
+    atk_7: 1500
+    atk_8: 1550
+    atk_9: 1600
+    atk_10: 1650
+    isusing: 0
+  - uid: weapon_dagger
+    leveled_atk: 5
+    level: 0
+    atk: 2000
+    atk_2: 2100
+    atk_3: 2200
+    atk_4: 2300
+    atk_5: 2400
+    atk_6: 2500
+    atk_7: 2600
+    atk_8: 2700
+    atk_9: 2800
+    atk_10: 2900
+    isusing: 0
+  - uid: weapon_slicing-sword
+    leveled_atk: 6
+    level: 0
+    atk: 4500
+    atk_2: 4650
+    atk_3: 4800
+    atk_4: 4950
+    atk_5: 5100
+    atk_6: 5250
+    atk_7: 5400
+    atk_8: 5550
+    atk_9: 5700
+    atk_10: 5850
+    isusing: 0
+  - uid: weapon_war-ax
+    leveled_atk: 7
+    level: 0
+    atk: 7000
+    atk_2: 7200
+    atk_3: 7400
+    atk_4: 7600
+    atk_5: 7800
+    atk_6: 8000
+    atk_7: 8200
+    atk_8: 8400
+    atk_9: 8600
+    atk_10: 8800
+    isusing: 0
+  - uid: weapon_double-edged-ax
+    leveled_atk: 8
+    level: 0
+    atk: 10000
+    atk_2: 10500
+    atk_3: 11000
+    atk_4: 11500
+    atk_5: 12000
+    atk_6: 12500
+    atk_7: 13000
+    atk_8: 13500
+    atk_9: 14000
+    atk_10: 14500
+    isusing: 0

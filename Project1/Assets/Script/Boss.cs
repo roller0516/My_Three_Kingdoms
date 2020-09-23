@@ -22,6 +22,7 @@ public class Boss : MonoBehaviour
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
     public int Hp;
+    public int MaxHp;
 
 
     private void Awake()
@@ -35,9 +36,9 @@ public class Boss : MonoBehaviour
 
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
+        MaxHp = ((int)Mathf.Pow(((int)MonsterSpawn._instance.stg.curStage + 8) * 4 * 0.5f, 2)*5);
 
-
-
+        Hp = MaxHp;
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
 
         _AniState = AnimState.move;// 애니메이션 변경
@@ -150,7 +151,6 @@ public class Boss : MonoBehaviour
     {
         ani.SetFloat("Blend", count);
         _AniState = AnimState.hit;
-        
     }
 }
 

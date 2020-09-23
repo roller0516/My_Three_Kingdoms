@@ -2020,10 +2020,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -490}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &267214276
 GameObject:
@@ -2517,8 +2517,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000014424324, y: -422.84976}
-  m_SizeDelta: {x: 1009.9, y: 0}
+  m_AnchoredPosition: {x: 0.000014424324, y: -422.85056}
+  m_SizeDelta: {x: 1009.9, y: 1750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355973259
 MonoBehaviour:
@@ -2663,7 +2663,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -2736,7 +2736,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -4109,6 +4109,7 @@ GameObject:
   - component: {fileID: 576544353}
   - component: {fileID: 576544352}
   - component: {fileID: 576544351}
+  - component: {fileID: 576544350}
   m_Layer: 5
   m_Name: Weapon1_b
   m_TagString: Untagged
@@ -4136,6 +4137,23 @@ RectTransform:
   m_AnchoredPosition: {x: 186.70001, y: -4.6}
   m_SizeDelta: {x: 190, y: 158.26}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &576544350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576544348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 64
+  MaxLevel: 10
+  upGradeTex: {fileID: 1338829702}
 --- !u!114 &576544351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4187,7 +4205,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Onehand01
+          m_StringArgument: weapon_wooden-branch
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 576544350}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &576544352
@@ -5134,7 +5163,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 656925006}
-        m_MethodName: PurChaseUpgrade3
+        m_MethodName: PurChaseUpgrade1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5485,6 +5514,7 @@ GameObject:
   - component: {fileID: 690829080}
   - component: {fileID: 690829079}
   - component: {fileID: 690829078}
+  - component: {fileID: 690829077}
   m_Layer: 5
   m_Name: Weapon2_b
   m_TagString: Untagged
@@ -5512,6 +5542,23 @@ RectTransform:
   m_AnchoredPosition: {x: 186.70001, y: -4.6}
   m_SizeDelta: {x: 190, y: 158.26}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &690829077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690829075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 7056
+  MaxLevel: 10
+  upGradeTex: {fileID: 727956594}
 --- !u!114 &690829078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5563,7 +5610,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Sword01
+          m_StringArgument: weapon_wooden-stick
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 690829077}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &690829079
@@ -5819,6 +5877,7 @@ GameObject:
   - component: {fileID: 716743251}
   - component: {fileID: 716743250}
   - component: {fileID: 716743252}
+  - component: {fileID: 716743253}
   m_Layer: 5
   m_Name: Weapon5_b
   m_TagString: Untagged
@@ -5933,9 +5992,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC801"
+          m_StringArgument: weapon_dagger
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 716743253}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &716743253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716743248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 158404
+  MaxLevel: 10
+  upGradeTex: {fileID: 1035957676}
 --- !u!1 &726214507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6098,6 +6185,7 @@ GameObject:
   - component: {fileID: 731152680}
   - component: {fileID: 731152679}
   - component: {fileID: 731152681}
+  - component: {fileID: 731152682}
   m_Layer: 5
   m_Name: Weapon6_b
   m_TagString: Untagged
@@ -6212,9 +6300,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC802"
+          m_StringArgument: weapon_slicing-sword
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 731152682}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &731152682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731152677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 806404
+  MaxLevel: 10
+  upGradeTex: {fileID: 1305449000}
 --- !u!1 &742086611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,7 +7236,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7295,10 +7411,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -700}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &877297598
 GameObject:
@@ -7438,7 +7554,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -7547,7 +7663,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7770,10 +7886,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -910}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &934075768
 GameObject:
@@ -7808,7 +7924,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -7916,10 +8032,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -280}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &958522688
 GameObject:
@@ -8292,7 +8408,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999977}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -8344,6 +8460,7 @@ GameObject:
   - component: {fileID: 996640979}
   - component: {fileID: 996640978}
   - component: {fileID: 996640977}
+  - component: {fileID: 996640976}
   m_Layer: 5
   m_Name: Weapon3_b
   m_TagString: Untagged
@@ -8371,6 +8488,23 @@ RectTransform:
   m_AnchoredPosition: {x: 186.70001, y: -4.6}
   m_SizeDelta: {x: 190, y: 158.26}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &996640976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996640974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 19044
+  MaxLevel: 10
+  upGradeTex: {fileID: 345437748}
 --- !u!114 &996640977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8422,7 +8556,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Spear01
+          m_StringArgument: weapon_wooden-sword
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 996640976}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &996640978
@@ -8788,7 +8933,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999977}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -9917,6 +10062,7 @@ GameObject:
   - component: {fileID: 1135095226}
   - component: {fileID: 1135095225}
   - component: {fileID: 1135095223}
+  - component: {fileID: 1135095224}
   m_Layer: 5
   m_Name: Weapon4_b
   m_TagString: Untagged
@@ -9995,9 +10141,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC80"
+          m_StringArgument: weapom_rusty-sword
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1135095224}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1135095224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135095221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 56644
+  MaxLevel: 10
+  upGradeTex: {fileID: 1730200104}
 --- !u!114 &1135095225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10467,7 +10641,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10540,7 +10714,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -11269,10 +11443,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -1330}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1301843048
 GameObject:
@@ -11493,7 +11667,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11678,7 +11852,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12018,7 +12192,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12164,7 +12338,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999977}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -15010,7 +15184,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15082,10 +15256,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -1120}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1609693130
 GameObject:
@@ -15930,7 +16104,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1691451469}
-        m_MethodName: PurChaseUpgrade1
+        m_MethodName: PurChaseUpgrade3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15993,7 +16167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1696106358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16790,6 +16964,7 @@ GameObject:
   - component: {fileID: 1795371392}
   - component: {fileID: 1795371391}
   - component: {fileID: 1795371393}
+  - component: {fileID: 1795371394}
   m_Layer: 5
   m_Name: Weapon8_b
   m_TagString: Untagged
@@ -16904,9 +17079,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC804"
+          m_StringArgument: weapon_double-edged-ax
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1795371394}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1795371394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795371389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 3992004
+  MaxLevel: 10
+  upGradeTex: {fileID: 1674926458}
 --- !u!1 &1796696621
 GameObject:
   m_ObjectHideFlags: 0
@@ -17359,7 +17562,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17504,10 +17707,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -1540}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1865768196
 GameObject:
@@ -18504,6 +18707,7 @@ GameObject:
   - component: {fileID: 2045854857}
   - component: {fileID: 2045854856}
   - component: {fileID: 2045854858}
+  - component: {fileID: 2045854859}
   m_Layer: 5
   m_Name: Weapon7_b
   m_TagString: Untagged
@@ -18618,9 +18822,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC803"
+          m_StringArgument: weapon_war-ax
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2045854859}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2045854859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045854854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 1954404
+  MaxLevel: 10
+  upGradeTex: {fileID: 1119327998}
 --- !u!1 &2048177482
 GameObject:
   m_ObjectHideFlags: 0
@@ -19495,7 +19727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df2d9709926f4a4090bc47b630797f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllitemList: []
+  weaponData: {fileID: 11400000, guid: e203042bc747ab043988821fcb667c47, type: 2}
   bt:
   - {fileID: 576544351}
   - {fileID: 690829078}
@@ -19685,8 +19917,8 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -70}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
