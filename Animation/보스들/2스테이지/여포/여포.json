@@ -14,6 +14,8 @@
 	{ "name": "l hair", "bone": "root", "attachment": "l hair" },
 	{ "name": "r hair", "bone": "root", "attachment": "r hair" },
 	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "headcrying", "bone": "root", "attachment": "headcrying" },
+	{ "name": "bangcheon", "bone": "root", "attachment": "bangcheon" },
 	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
 	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" }
 ],
@@ -51,6 +53,12 @@
 		},
 		"head": {
 			"head": { "x": 129, "y": -116, "width": 70, "height": 92 }
+		},
+		"headcrying": {
+			"headcrying": { "x": 129, "y": -116, "width": 70, "height": 92 }
+		},
+		"bangcheon": {
+			"bangcheon": { "x": 37, "y": -128, "width": 68, "height": 236 }
 		},
 		"eye open": {
 			"eye open": { "x": 135.5, "y": -136, "width": 43, "height": 8 }

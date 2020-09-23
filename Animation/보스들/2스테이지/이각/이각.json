@@ -9,6 +9,7 @@
 	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
 	{ "name": "body", "bone": "root", "attachment": "body" },
 	{ "name": "r shold", "bone": "root", "attachment": "r shold" },
+	{ "name": "sword", "bone": "root", "attachment": "sword" },
 	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
 	{ "name": "l shold", "bone": "root", "attachment": "l shold" },
 	{ "name": "r head back", "bone": "root", "attachment": "r head back" },
@@ -35,6 +36,9 @@
 		},
 		"r shold": {
 			"r shold": { "x": 168.5, "y": -164, "width": 21, "height": 18 }
+		},
+		"sword": {
+			"sword": { "x": 78, "y": -142, "width": 24, "height": 126 }
 		},
 		"l arm": {
 			"l arm": { "x": 122, "y": -171.5, "width": 22, "height": 29 }
