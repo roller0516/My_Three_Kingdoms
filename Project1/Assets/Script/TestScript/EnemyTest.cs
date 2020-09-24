@@ -20,7 +20,8 @@ public class EnemyTest : MonoBehaviour
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
     public int Hp;
-    
+    public int MaxHp;
+
 
     private void Awake()
     {
@@ -30,18 +31,13 @@ public class EnemyTest : MonoBehaviour
 
     private void Start()
     {
-        
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
-
-        
-
+        MaxHp = (int)Mathf.Pow(((int)MonsterSpawn._instance.stg.curStage + 8) * 4 * 0.5f, 2);
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
-
         _AniState = AnimState.move;// 애니메이션 변경
-
         SetAttechment(MonsterSpawn._instance.RandomRange2 + 1);// 무기변경 랜덤으로 변경
-
+        Hp = MaxHp;
     }
 
     private void Update()
@@ -126,7 +122,6 @@ public class EnemyTest : MonoBehaviour
             MonsterSpawn._instance.IsDie = true;
             Destroy(this.gameObject,2f);
         }
-
     }
     public void KnockBack()// 넉백
     {

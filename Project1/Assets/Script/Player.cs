@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
         else 
         {
             Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
+           
         }
     }
 }

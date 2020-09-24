@@ -46,9 +46,10 @@ public class UpgradeButton : MonoBehaviour
             {
                 DataController.GetInstance().SubGold(CurrentCost);
                 Level++;
-                DataController.GetInstance().AddGoldPerClick("GoldPerClick0", goldByUpgrade);
-
                 UpdateUpgrade();
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick0", goldByUpgrade);
+
+                
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
 
@@ -63,9 +64,10 @@ public class UpgradeButton : MonoBehaviour
             {
                 DataController.GetInstance().SubGold(CurrentCost);
                 Level++;
-                DataController.GetInstance().AddGoldPerClick("GoldPerClick1", goldByUpgrade);
-
                 UpdateUpgrade();
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick1", goldByUpgrade);
+
+                
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
 
@@ -81,9 +83,10 @@ public class UpgradeButton : MonoBehaviour
             {
                 DataController.GetInstance().SubGold(CurrentCost);
                 Level++;
-                DataController.GetInstance().AddGoldPerClick("GoldPerClick2", goldByUpgrade);
-
                 UpdateUpgrade();
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick2", goldByUpgrade);
+
+               
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
 
@@ -99,9 +102,10 @@ public class UpgradeButton : MonoBehaviour
             {
                 DataController.GetInstance().SubGold(CurrentCost);
                 Level++;
-                DataController.GetInstance().AddGoldPerClick("GoldPerClick3", goldByUpgrade);
-
                 UpdateUpgrade();
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick3", goldByUpgrade);
+
+               
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
             }
@@ -109,8 +113,9 @@ public class UpgradeButton : MonoBehaviour
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
-        goldByUpgrade = StartGoldByUpgrade *(int) Mathf.Pow(UpgradePow, Level);//Mathf.Pow는 제곱이다.
-        CurrentCost = StartCurrentCost * (int)Mathf.Pow(costPow, Level); // 식량 공식
+        CurrentCost = (int)Mathf.Round(Mathf.Pow(UpgradePow + (costPow*Level), 2));//Mathf.Pow는 제곱이다.
+        goldByUpgrade = (int)Mathf.Floor(CurrentCost / 6);
+        print(goldByUpgrade);
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
@@ -147,10 +152,10 @@ public class UpgradeButton : MonoBehaviour
         {
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
             upGradeTex.text = "최대레벨";
-            LevelTex.text = "최대레벨";
+            LevelTex.text = "Lv"+"."+MaxLevel.ToString();
             button_.image.color = Color.gray;
             button_.interactable = false;
-            GameObject go = GameObject.Find("FoodIm").gameObject;
+            GameObject go = GameObject.Find("LevelUp_img").gameObject;
             Destroy(go);
         }
     }

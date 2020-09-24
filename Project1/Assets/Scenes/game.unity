@@ -380,21 +380,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70746429}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1794635401}
   - {fileID: 214613125}
   - {fileID: 788970194}
-  m_Father: {fileID: 1554909194}
+  m_Father: {fileID: 814460316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: 886}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1201.1, y: 162.5}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &70746431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ RectTransform:
   - {fileID: 2116908639}
   - {fileID: 1016988044}
   - {fileID: 1011357069}
-  m_Father: {fileID: 1554909194}
+  m_Father: {fileID: 814460316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 15
+  MaxTime: 60
   CurTime: 0
   isDone: 0
 --- !u!114 &185123928
@@ -2020,10 +2020,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -490}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &267214276
 GameObject:
@@ -2302,10 +2302,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 1555393061}
   button_: {fileID: 337427825}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 1
-  StartCurrentCost: 1
-  UpgradePow: 1.2
-  costPow: 2
+  StartGoldByUpgrade: 7
+  StartCurrentCost: 44
+  UpgradePow: 7
+  costPow: 0.4
 --- !u!114 &337427825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2517,8 +2517,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000014424324, y: -422.84976}
-  m_SizeDelta: {x: 1009.9, y: 0}
+  m_AnchoredPosition: {x: 0.000014424324, y: -422.85056}
+  m_SizeDelta: {x: 1009.9, y: 1750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355973259
 MonoBehaviour:
@@ -2663,7 +2663,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -2736,7 +2736,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -3111,10 +3111,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 1667105555}
   button_: {fileID: 402943827}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 1
-  StartCurrentCost: 1
-  UpgradePow: 1.07
-  costPow: 3.14
+  StartGoldByUpgrade: 632
+  StartCurrentCost: 3795
+  UpgradePow: 60
+  costPow: 1.6
 --- !u!114 &402943827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4109,6 +4109,7 @@ GameObject:
   - component: {fileID: 576544353}
   - component: {fileID: 576544352}
   - component: {fileID: 576544351}
+  - component: {fileID: 576544350}
   m_Layer: 5
   m_Name: Weapon1_b
   m_TagString: Untagged
@@ -4136,6 +4137,23 @@ RectTransform:
   m_AnchoredPosition: {x: 186.70001, y: -4.6}
   m_SizeDelta: {x: 190, y: 158.26}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &576544350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576544348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 64
+  MaxLevel: 10
+  upGradeTex: {fileID: 1338829702}
 --- !u!114 &576544351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4187,7 +4205,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Onehand01
+          m_StringArgument: weapon_wooden-branch
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 576544350}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &576544352
@@ -4395,7 +4424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1
+  MaxTime: 10
   CurTime: 0
   isDone: 0
 --- !u!114 &584132224
@@ -5077,7 +5106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeName: Gold3
+  UpgradeName: Gold1
   CurrentCost: 1
   goldByUpgrade: 0
   Level: 1
@@ -5086,10 +5115,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 1055135276}
   button_: {fileID: 656925007}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 50
-  StartCurrentCost: 100
-  UpgradePow: 1.07
-  costPow: 3.14
+  StartGoldByUpgrade: 41
+  StartCurrentCost: 250
+  UpgradePow: 15
+  costPow: 0.8
 --- !u!114 &656925007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5134,7 +5163,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 656925006}
-        m_MethodName: PurChaseUpgrade3
+        m_MethodName: PurChaseUpgrade1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5485,6 +5514,7 @@ GameObject:
   - component: {fileID: 690829080}
   - component: {fileID: 690829079}
   - component: {fileID: 690829078}
+  - component: {fileID: 690829077}
   m_Layer: 5
   m_Name: Weapon2_b
   m_TagString: Untagged
@@ -5512,6 +5542,23 @@ RectTransform:
   m_AnchoredPosition: {x: 186.70001, y: -4.6}
   m_SizeDelta: {x: 190, y: 158.26}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &690829077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690829075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 7056
+  MaxLevel: 10
+  upGradeTex: {fileID: 727956594}
 --- !u!114 &690829078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5563,7 +5610,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Sword01
+          m_StringArgument: weapon_wooden-stick
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 690829077}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &690829079
@@ -5819,6 +5877,7 @@ GameObject:
   - component: {fileID: 716743251}
   - component: {fileID: 716743250}
   - component: {fileID: 716743252}
+  - component: {fileID: 716743253}
   m_Layer: 5
   m_Name: Weapon5_b
   m_TagString: Untagged
@@ -5933,9 +5992,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC801"
+          m_StringArgument: weapon_dagger
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 716743253}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &716743253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716743248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 158404
+  MaxLevel: 10
+  upGradeTex: {fileID: 1035957676}
 --- !u!1 &726214507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,11 +6048,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726214507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1554909194}
+  m_Father: {fileID: 814460316}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -6098,6 +6185,7 @@ GameObject:
   - component: {fileID: 731152680}
   - component: {fileID: 731152679}
   - component: {fileID: 731152681}
+  - component: {fileID: 731152682}
   m_Layer: 5
   m_Name: Weapon6_b
   m_TagString: Untagged
@@ -6212,9 +6300,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC802"
+          m_StringArgument: weapon_slicing-sword
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 731152682}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &731152682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731152677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 806404
+  MaxLevel: 10
+  upGradeTex: {fileID: 1305449000}
 --- !u!1 &742086611
 GameObject:
   m_ObjectHideFlags: 0
@@ -6937,6 +7053,83 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &814460315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814460316}
+  - component: {fileID: 814460318}
+  - component: {fileID: 814460317}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &814460316
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814460315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 136395562}
+  - {fileID: 70746430}
+  - {fileID: 726214508}
+  - {fileID: 1326120533}
+  m_Father: {fileID: 1554909194}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1080, y: 1920}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &814460317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814460315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &814460318
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814460315}
+  m_CullTransparentMesh: 0
 --- !u!1 &836296857
 GameObject:
   m_ObjectHideFlags: 0
@@ -7043,7 +7236,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7218,10 +7411,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -700}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &877297598
 GameObject:
@@ -7275,7 +7468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 10
+  MaxTime: 30
   CurTime: 0
   isDone: 0
 --- !u!114 &877297601
@@ -7361,7 +7554,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -7470,7 +7663,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7693,10 +7886,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -910}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &934075768
 GameObject:
@@ -7731,7 +7924,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -7839,10 +8032,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -280}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &958522688
 GameObject:
@@ -8215,7 +8408,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999977}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -8267,6 +8460,7 @@ GameObject:
   - component: {fileID: 996640979}
   - component: {fileID: 996640978}
   - component: {fileID: 996640977}
+  - component: {fileID: 996640976}
   m_Layer: 5
   m_Name: Weapon3_b
   m_TagString: Untagged
@@ -8294,6 +8488,23 @@ RectTransform:
   m_AnchoredPosition: {x: 186.70001, y: -4.6}
   m_SizeDelta: {x: 190, y: 158.26}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &996640976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996640974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 19044
+  MaxLevel: 10
+  upGradeTex: {fileID: 345437748}
 --- !u!114 &996640977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8345,7 +8556,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Spear01
+          m_StringArgument: weapon_wooden-sword
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 996640976}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &996640978
@@ -8711,7 +8933,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999977}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -8977,11 +9199,11 @@ RectTransform:
   m_Father: {fileID: 136395562}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.8770752, y: 370}
-  m_SizeDelta: {x: 550, y: 83.3}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 161}
+  m_SizeDelta: {x: 550, y: 83.29999}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016988045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9840,6 +10062,7 @@ GameObject:
   - component: {fileID: 1135095226}
   - component: {fileID: 1135095225}
   - component: {fileID: 1135095223}
+  - component: {fileID: 1135095224}
   m_Layer: 5
   m_Name: Weapon4_b
   m_TagString: Untagged
@@ -9918,9 +10141,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC80"
+          m_StringArgument: weapom_rusty-sword
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1135095224}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1135095224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135095221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 56644
+  MaxLevel: 10
+  upGradeTex: {fileID: 1730200104}
 --- !u!114 &1135095225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10390,7 +10641,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10463,7 +10714,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999786}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -11192,10 +11443,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -1330}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1301843048
 GameObject:
@@ -11416,7 +11667,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11483,7 +11734,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326120532}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11493,13 +11744,13 @@ RectTransform:
   - {fileID: 961522064}
   - {fileID: 196092198}
   - {fileID: 855512876}
-  m_Father: {fileID: 1554909194}
+  m_Father: {fileID: 814460316}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.79, y: 0}
-  m_SizeDelta: {x: 1089, y: 1085.6}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1089, y: 1085.6001}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1326120534
 MonoBehaviour:
@@ -11601,7 +11852,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11941,7 +12192,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12087,7 +12338,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.200012, y: 0.23999977}
   m_SizeDelta: {x: -4.2, y: -8.53}
   m_Pivot: {x: 0, y: 0.5}
@@ -14297,7 +14548,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -14334,10 +14585,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 136395562}
-  - {fileID: 70746430}
-  - {fileID: 726214508}
-  - {fileID: 1326120533}
+  - {fileID: 814460316}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14936,7 +15184,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15008,10 +15256,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -1120}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1609693130
 GameObject:
@@ -15799,7 +16047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac913f892272ef946a2997bb60d976c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeName: Gold1
+  UpgradeName: Gold3
   CurrentCost: 1
   goldByUpgrade: 0
   Level: 1
@@ -15808,10 +16056,10 @@ MonoBehaviour:
   upGradeTex: {fileID: 293745334}
   button_: {fileID: 1691451470}
   Level_img: {fileID: 0}
-  StartGoldByUpgrade: 1
-  StartCurrentCost: 1
-  UpgradePow: 1.07
-  costPow: 3.14
+  StartGoldByUpgrade: 9600
+  StartCurrentCost: 57600
+  UpgradePow: 240
+  costPow: 2.2
 --- !u!114 &1691451470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15856,7 +16104,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1691451469}
-        m_MethodName: PurChaseUpgrade1
+        m_MethodName: PurChaseUpgrade3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15919,7 +16167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1696106358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16716,6 +16964,7 @@ GameObject:
   - component: {fileID: 1795371392}
   - component: {fileID: 1795371391}
   - component: {fileID: 1795371393}
+  - component: {fileID: 1795371394}
   m_Layer: 5
   m_Name: Weapon8_b
   m_TagString: Untagged
@@ -16830,9 +17079,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC804"
+          m_StringArgument: weapon_double-edged-ax
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1795371394}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1795371394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795371389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 3992004
+  MaxLevel: 10
+  upGradeTex: {fileID: 1674926458}
 --- !u!1 &1796696621
 GameObject:
   m_ObjectHideFlags: 0
@@ -17285,7 +17562,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17430,10 +17707,10 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -1540}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1865768196
 GameObject:
@@ -18430,6 +18707,7 @@ GameObject:
   - component: {fileID: 2045854857}
   - component: {fileID: 2045854856}
   - component: {fileID: 2045854858}
+  - component: {fileID: 2045854859}
   m_Layer: 5
   m_Name: Weapon7_b
   m_TagString: Untagged
@@ -18544,9 +18822,37 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uB179\uC2A8\uAC803"
+          m_StringArgument: weapon_war-ax
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2045854859}
+        m_MethodName: PurChaseUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2045854859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045854854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e70bb270291616439b8843a95bb939a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCost: 1
+  goldByUpgrade: 0
+  StartCost: 1954404
+  MaxLevel: 10
+  upGradeTex: {fileID: 1119327998}
 --- !u!1 &2048177482
 GameObject:
   m_ObjectHideFlags: 0
@@ -18599,7 +18905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 20
+  MaxTime: 90
   CurTime: 0
   isDone: 0
 --- !u!114 &2048177485
@@ -19421,7 +19727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df2d9709926f4a4090bc47b630797f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllitemList: []
+  weaponData: {fileID: 11400000, guid: e203042bc747ab043988821fcb667c47, type: 2}
   bt:
   - {fileID: 576544351}
   - {fileID: 690829078}
@@ -19611,8 +19917,8 @@ RectTransform:
   m_Father: {fileID: 355973258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 504.95, y: -70}
+  m_SizeDelta: {x: 0, y: 210}
   m_Pivot: {x: 0.5, y: 1}

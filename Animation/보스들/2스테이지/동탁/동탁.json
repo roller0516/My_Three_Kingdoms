@@ -1,0 +1,92 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/2스테이지/동탁/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "middle", "bone": "root", "attachment": "middle" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "sword", "bone": "root", "attachment": "sword" },
+	{ "name": "sword case", "bone": "root", "attachment": "sword case" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "r leg armor", "bone": "root", "attachment": "r leg armor" },
+	{ "name": "l leg armor", "bone": "root", "attachment": "l leg armor" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "rope 2", "bone": "root", "attachment": "rope 2" },
+	{ "name": "rope 1", "bone": "root", "attachment": "rope 1" },
+	{ "name": "r shold", "bone": "root", "attachment": "r shold" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "l shold", "bone": "root", "attachment": "l shold" },
+	{ "name": "r ear", "bone": "root", "attachment": "r ear" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "headcrying", "bone": "root", "attachment": "headcrying" },
+	{ "name": "l ear", "bone": "root", "attachment": "l ear" },
+	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
+	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" }
+],
+"skins": {
+	"default": {
+		"middle": {
+			"middle": { "x": 138, "y": -179, "width": 24, "height": 14 }
+		},
+		"r leg": {
+			"r leg": { "x": 153, "y": -184.5, "width": 26, "height": 21 }
+		},
+		"sword": {
+			"sword": { "x": 54, "y": -135, "width": 34, "height": 140 }
+		},
+		"sword case": {
+			"sword case": { "x": 51, "y": -115, "width": 24, "height": 104 }
+		},
+		"l leg": {
+			"l leg": { "x": 121, "y": -184, "width": 22, "height": 22 }
+		},
+		"r leg armor": {
+			"r leg armor": { "x": 163, "y": -184.5, "width": 18, "height": 17 }
+		},
+		"l leg armor": {
+			"l leg armor": { "x": 114.5, "y": -184.5, "width": 25, "height": 17 }
+		},
+		"r arm": {
+			"r arm": { "x": 172, "y": -161.5, "width": 28, "height": 39 }
+		},
+		"body": {
+			"body": { "x": 138.5, "y": -163, "width": 65, "height": 38 }
+		},
+		"rope 2": {
+			"rope 2": { "x": 146, "y": -184, "width": 4, "height": 14 }
+		},
+		"rope 1": {
+			"rope 1": { "x": 142, "y": -183, "width": 4, "height": 12 }
+		},
+		"r shold": {
+			"r shold": { "x": 173.5, "y": -146, "width": 33, "height": 22 }
+		},
+		"l arm": {
+			"l arm": { "x": 106, "y": -161.5, "width": 36, "height": 43 }
+		},
+		"l shold": {
+			"l shold": { "x": 104.5, "y": -147, "width": 45, "height": 28 }
+		},
+		"r ear": {
+			"r ear": { "x": 169, "y": -123, "width": 22, "height": 38 }
+		},
+		"head": {
+			"head": { "x": 134, "y": -110, "width": 88, "height": 106 }
+		},
+		"headcrying": {
+			"headcrying": { "x": 134, "y": -110, "width": 88, "height": 106 }
+		},
+		"l ear": {
+			"l ear": { "x": 107, "y": -123.5, "width": 30, "height": 37 }
+		},
+		"eye open": {
+			"eye open": { "x": 144, "y": -114, "width": 44, "height": 10 }
+		},
+		"eye clos": {
+			"eye clos": { "x": 144.5, "y": -115, "width": 41, "height": 6 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
