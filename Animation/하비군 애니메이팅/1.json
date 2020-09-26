@@ -1,0 +1,36 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/하비군 애니메이팅/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "head", "bone": "root", "attachment": "head" }
+],
+"skins": {
+	"default": {
+		"r arm": {
+			"r arm": { "x": 116.5, "y": -123.5, "width": 21, "height": 25 }
+		},
+		"r leg": {
+			"r leg": { "x": 108.5, "y": -144, "width": 13, "height": 22 }
+		},
+		"l leg": {
+			"l leg": { "x": 90.5, "y": -144, "width": 13, "height": 22 }
+		},
+		"body": {
+			"body": { "x": 99.5, "y": -127, "width": 35, "height": 32 }
+		},
+		"l arm": {
+			"l arm": { "x": 83, "y": -123, "width": 20, "height": 24 }
+		},
+		"head": {
+			"head": { "x": 100, "y": -73, "width": 70, "height": 84 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
