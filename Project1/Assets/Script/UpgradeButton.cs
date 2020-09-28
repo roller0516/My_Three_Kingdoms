@@ -19,7 +19,7 @@ public class UpgradeButton : MonoBehaviour
 
     
     public TextMeshProUGUI LevelTex;
-    public Text upGradeTex;
+    public TextMeshProUGUI upGradeTex;
     public Button button_;
     public GameObject Level_img;
     public int StartGoldByUpgrade =1;
@@ -35,6 +35,7 @@ public class UpgradeButton : MonoBehaviour
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
+        
     }
 
     public void PurChaseUpgrade() //구매 함수
@@ -126,7 +127,7 @@ public class UpgradeButton : MonoBehaviour
             {
                 Level_img.SetActive(false);
                 upGradeTex.color = Color.red;
-                button_.image.color = new Color(180f/255f, 180f/255f, 180f/255f,255f/255f);
+                button_.image.color = new Color(180f / 255f, 180f / 255f, 180f / 255f, 255f / 255f);
             }
             else
             {
@@ -134,6 +135,11 @@ public class UpgradeButton : MonoBehaviour
                 upGradeTex.color = Color.yellow;
                 button_.image.color = Color.white;
             }
+
+        }
+        if (Level == MaxLevel)
+        {
+            upGradeTex.color = Color.yellow;
         }
     }
     public void Update()
@@ -153,7 +159,7 @@ public class UpgradeButton : MonoBehaviour
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
             upGradeTex.text = "최대레벨";
             LevelTex.text = "Lv"+"."+MaxLevel.ToString();
-            button_.image.color = Color.gray;
+            //button_.image.color = Color.gray;
             button_.interactable = false;
             GameObject go = GameObject.Find("LevelUp_img").gameObject;
             Destroy(go);

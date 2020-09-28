@@ -5,8 +5,7 @@ using UnityEngine.Animations;
 
 public class TapMenuController : MonoBehaviour
 {
-    Animator ani;
-
+    public Animator ani;
 
     private void Start()
     {
