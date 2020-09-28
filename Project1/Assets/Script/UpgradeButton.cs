@@ -26,7 +26,8 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public GameObject Level_img;
     public int StartGoldByUpgrade =1;
     public int StartCurrentCost;
-   
+
+    float CurTime;
 
     public float UpgradePow = 1.07f; //골드 획득량을 증가시켜주는 변수
 
@@ -149,9 +150,15 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         ScarceCost_textColor();
         if (PressDown == true)
-            ButtonOn();
+        {
+            CurTime += Time.deltaTime ;
+            if (CurTime > 1)
+            {
+                ButtonOn();
+            }
+        }
         
-
+            
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
@@ -193,11 +200,14 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerUp(PointerEventData eventData)
     {
         PressDown = false;
+        CurTime = 0;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         PressDown = true;
+        
+        
     }
     
 }
