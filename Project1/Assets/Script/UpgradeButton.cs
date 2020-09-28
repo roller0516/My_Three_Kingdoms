@@ -1,10 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class UpgradeButton : MonoBehaviour
+
+public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+
 {
     public string UpgradeName;
 
@@ -14,8 +16,8 @@ public class UpgradeButton : MonoBehaviour
     public int goldByUpgrade;
     [HideInInspector]
     public int Level = 0;
-    [HideInInspector]
-    public int MaxLevel = 100;
+
+    public int MaxLevel = 1000;
 
     
     public TextMeshProUGUI LevelTex;
@@ -30,12 +32,13 @@ public class UpgradeButton : MonoBehaviour
 
     public float costPow = 3.14f;
 
+    bool PressDown = false;
+
     private void Start()
     {
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
-        
     }
 
     public void PurChaseUpgrade() //구매 함수
@@ -135,16 +138,20 @@ public class UpgradeButton : MonoBehaviour
                 upGradeTex.color = Color.yellow;
                 button_.image.color = Color.white;
             }
-
         }
         if (Level == MaxLevel)
         {
+            Level_img.SetActive(false);
             upGradeTex.color = Color.yellow;
         }
     }
     public void Update()
     {
         ScarceCost_textColor();
+        if (PressDown == true)
+            ButtonOn();
+        
+
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
@@ -161,10 +168,36 @@ public class UpgradeButton : MonoBehaviour
             LevelTex.text = "Lv"+"."+MaxLevel.ToString();
             //button_.image.color = Color.gray;
             button_.interactable = false;
-            GameObject go = GameObject.Find("LevelUp_img").gameObject;
-            Destroy(go);
+            
         }
     }
+    public void ButtonOn()
+    {
+        switch (UpgradeName)
+        {
+            case "Gold":
+                PurChaseUpgrade();
+                break;
+            case "Gold1":
+                PurChaseUpgrade1();
+                break;
+            case "Gold2":
+                PurChaseUpgrade2();
+                break;
+            case "Gold3":
+                PurChaseUpgrade3();
+                break;
 
+        }
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        PressDown = false;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        PressDown = true;
+    }
     
 }

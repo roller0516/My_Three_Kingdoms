@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -101,21 +100,7 @@ public class ItemList : MonoBehaviour
         }
         
     }
-    //public void UpgradeCount()// 아이템갯수만큼 돌면서 level이 levelmax가 되는지 체크한다.
-    //{
-    //    for (int i = 0; i < weaponData.dataArray.Length; i++)
-    //    {
-    //        if (weaponData.dataArray[i].Level < maxLevel && weaponData.dataArray[i].Level > 0) // 모든 아이템의 레벨이 0보다크고 맥스치보단 작다면
-    //        {
-               
-
-    //        }
-    //        else if (weaponData.dataArray[i].Level == maxLevel)
-    //        {
-                
-    //        }
-    //    }
-    //}
+   
     public void AttechmentPlayeritem(string itemname)
     {
         Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "Spear01");
