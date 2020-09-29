@@ -152,11 +152,15 @@ public class DataController : MonoBehaviour
     }
     public void Loaditem(ItemList itemlist) 
     {
+        string key = itemlist.itemname;
         itemlist.item_Attack = PlayerPrefs.GetInt("itemAttack", itemlist.item_Attack);
+        itemlist.weaponData.dataArray[0].Level = PlayerPrefs.GetInt("itemLevel", itemlist.weaponData.dataArray[0].Level+1);
     }
     public void Saveitem(ItemList itemlist)
     {
-       PlayerPrefs.SetInt("itemAttack", itemlist.item_Attack);
+        string key = itemlist.itemname;
+        PlayerPrefs.SetInt("itemAttack", itemlist.item_Attack);
+        PlayerPrefs.SetInt("itemLevel", itemlist.weaponData.dataArray[0].Level);
     }
     public void LoadWeaponCost(Weaponcost weaponcost) 
     {

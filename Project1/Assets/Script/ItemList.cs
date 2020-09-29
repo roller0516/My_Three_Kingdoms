@@ -23,7 +23,6 @@ public class ItemList : MonoBehaviour
     public Slider[] WeaponGradeSlider;
     public string itemname;
     public int item_Attack;
-    public int AttackUpgrade;
 
     private int StartAttackByUpgrade = 1;
     public int maxLevel = 10;
