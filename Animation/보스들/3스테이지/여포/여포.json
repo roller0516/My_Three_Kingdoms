@@ -1,0 +1,68 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/3스테이지/여포/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "l hair", "bone": "root", "attachment": "l hair" },
+	{ "name": "r hair", "bone": "root", "attachment": "r hair" },
+	{ "name": "cape", "bone": "root", "attachment": "cape" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "leg armor", "bone": "root", "attachment": "leg armor" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "r shold", "bone": "root", "attachment": "r shold" },
+	{ "name": "l shold", "bone": "root", "attachment": "l shold" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
+	{ "name": "eye clos", "bone": "root", "attachment": "eye clos" }
+],
+"skins": {
+	"default": {
+		"l hair": {
+			"l hair": { "x": 105.5, "y": -81, "width": 51, "height": 76 }
+		},
+		"r hair": {
+			"r hair": { "x": 149, "y": -77, "width": 42, "height": 72 }
+		},
+		"cape": {
+			"cape": { "x": 133, "y": -179.5, "width": 70, "height": 41 }
+		},
+		"r arm": {
+			"r arm": { "x": 151, "y": -172, "width": 26, "height": 30 }
+		},
+		"r leg": {
+			"r leg": { "x": 140.5, "y": -196.5, "width": 19, "height": 25 }
+		},
+		"l leg": {
+			"l leg": { "x": 124.5, "y": -196.5, "width": 19, "height": 25 }
+		},
+		"leg armor": {
+			"leg armor": { "x": 133.5, "y": -190, "width": 37, "height": 14 }
+		},
+		"body": {
+			"body": { "x": 131, "y": -174.5, "width": 36, "height": 29 }
+		},
+		"l arm": {
+			"l arm": { "x": 115.5, "y": -173, "width": 27, "height": 32 }
+		},
+		"r shold": {
+			"r shold": { "x": 153.5, "y": -165.5, "width": 29, "height": 17 }
+		},
+		"l shold": {
+			"l shold": { "x": 115, "y": -167.5, "width": 34, "height": 23 }
+		},
+		"head": {
+			"head": { "x": 131, "y": -120, "width": 74, "height": 100 }
+		},
+		"eye open": {
+			"eye open": { "x": 139.5, "y": -139, "width": 43, "height": 8 }
+		},
+		"eye clos": {
+			"eye clos": { "x": 138, "y": -139, "width": 40, "height": 6 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
