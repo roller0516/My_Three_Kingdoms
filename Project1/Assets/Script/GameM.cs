@@ -33,7 +33,7 @@ public class GameM : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        
+        Application.targetFrameRate = 30;
     }
     public void Init()
     {

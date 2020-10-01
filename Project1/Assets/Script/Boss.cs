@@ -97,7 +97,7 @@ public class Boss : MonoBehaviour
                 moveSpeed = 2f;
             }
         }
-        else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
+        else if (d <=2  && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
             Player.Instance._AniState = Player.AnimState.Attack;
             Player.Instance.moveSpeed = 0f;
@@ -118,16 +118,17 @@ public class Boss : MonoBehaviour
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
+        hitCount++;
         print(hitCount);
         
         Hitcount(hitCount);// 애니메이션 변경
-        if (hitCount >= 2)
+        if (hitCount > 2)
             hitCount = 0;
 
-        KnockBack();
+        //KnockBack();
 
         Hp -= damage;// hp 뺌
-        hitCount++;
+        
         if (Hp <= 0)
         {
             _AniState = AnimState.die;

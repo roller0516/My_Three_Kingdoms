@@ -1,10 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class UpgradeButton : MonoBehaviour
+
+public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+
 {
     public string UpgradeName;
 
@@ -14,21 +16,24 @@ public class UpgradeButton : MonoBehaviour
     public int goldByUpgrade;
     [HideInInspector]
     public int Level = 0;
-    [HideInInspector]
-    public int MaxLevel = 100;
+
+    public int MaxLevel = 1000;
 
     
     public TextMeshProUGUI LevelTex;
-    public Text upGradeTex;
+    public TextMeshProUGUI upGradeTex;
     public Button button_;
     public GameObject Level_img;
     public int StartGoldByUpgrade =1;
     public int StartCurrentCost;
-   
+
+    float CurTime;
 
     public float UpgradePow = 1.07f; //골드 획득량을 증가시켜주는 변수
 
     public float costPow = 3.14f;
+
+    bool PressDown = false;
 
     private void Start()
     {
@@ -126,7 +131,7 @@ public class UpgradeButton : MonoBehaviour
             {
                 Level_img.SetActive(false);
                 upGradeTex.color = Color.red;
-                button_.image.color = new Color(180f/255f, 180f/255f, 180f/255f,255f/255f);
+                button_.image.color = new Color(180f / 255f, 180f / 255f, 180f / 255f, 255f / 255f);
             }
             else
             {
@@ -135,10 +140,25 @@ public class UpgradeButton : MonoBehaviour
                 button_.image.color = Color.white;
             }
         }
+        if (Level == MaxLevel)
+        {
+            Level_img.SetActive(false);
+            upGradeTex.color = Color.yellow;
+        }
     }
     public void Update()
     {
         ScarceCost_textColor();
+        if (PressDown == true)
+        {
+            CurTime += Time.deltaTime ;
+            if (CurTime > 1)
+            {
+                ButtonOn();
+            }
+        }
+        
+            
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
@@ -153,12 +173,41 @@ public class UpgradeButton : MonoBehaviour
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
             upGradeTex.text = "최대레벨";
             LevelTex.text = "Lv"+"."+MaxLevel.ToString();
-            button_.image.color = Color.gray;
+            //button_.image.color = Color.gray;
             button_.interactable = false;
-            GameObject go = GameObject.Find("LevelUp_img").gameObject;
-            Destroy(go);
+            
         }
     }
+    public void ButtonOn()
+    {
+        switch (UpgradeName)
+        {
+            case "Gold":
+                PurChaseUpgrade();
+                break;
+            case "Gold1":
+                PurChaseUpgrade1();
+                break;
+            case "Gold2":
+                PurChaseUpgrade2();
+                break;
+            case "Gold3":
+                PurChaseUpgrade3();
+                break;
 
+        }
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        PressDown = false;
+        CurTime = 0;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        PressDown = true;
+        
+        
+    }
     
 }

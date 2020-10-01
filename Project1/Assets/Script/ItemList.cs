@@ -1,25 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemList : MonoBehaviour
 {
+    private static ItemList s_instance = null;
+
+    public static ItemList Instance
+    {
+        get
+        {
+            if (s_instance == null)
+            {
+                s_instance = FindObjectOfType(typeof(ItemList)) as ItemList;
+            }
+            return s_instance;
+        }
+    }
     public weaponData weaponData;
     public Button[] bt;
+    public Image[] im;
     public Slider[] WeaponGradeSlider;
     public string itemname;
     public int item_Attack;
-    public int AttackUpgrade;
 
     private int StartAttackByUpgrade = 1;
-    private int maxLevel = 10;
+    public int maxLevel = 10;
     
     
     private void Start()
     {
-        item_Attack = weaponData.dataArray[0].Atk;
-        //DataController.GetInstance().LoadUpgradeButton(this);
+        UpgradeWeapon(weaponData.dataArray[0].Level, 0);
+        DataController.GetInstance().Loaditem(this);
     }
 
     public void ButtonOn(string name)
@@ -36,21 +48,16 @@ public class ItemList : MonoBehaviour
 
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
-
                     if (weaponData.dataArray[i].Isusing == true)
                         AttechmentPlayeritem(weaponData.dataArray[i].UID);
                     weaponData.dataArray[i-1].Isusing = false;
                 }
-                
-                
             }
         }
-
-        //DataController.GetInstance().SaveUpgradeButton(this);
+        DataController.GetInstance().Saveitem(this);
     }
     public void Update()
     {
-        UpgradeCount();
         AttachmentCheck();
         WeaponUpGradeSlider();
     }
@@ -92,25 +99,7 @@ public class ItemList : MonoBehaviour
         }
         
     }
-    public void UpgradeCount()// 아이템갯수만큼 돌면서 level이 levelmax가 되는지 체크한다.
-    {
-        for (int i = 0; i < weaponData.dataArray.Length; i++)
-        {
-            if (weaponData.dataArray[i].Level < maxLevel && weaponData.dataArray[i].Level > 0) // 모든 아이템의 레벨이 0보다크고 맥스치보단 작다면
-            {
-                bt[i].interactable = true;//버튼 활성화
-            }
-            else if (weaponData.dataArray[i].Level >= maxLevel)
-            {
-                bt[i].interactable = false;
-
-                if (i == weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
-                    return;
-                else if (weaponData.dataArray[i + 1].Level == 0)
-                    bt[i + 1].interactable = true;
-            }
-        }
-    }
+   
     public void AttechmentPlayeritem(string itemname)
     {
         Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "Spear01");
@@ -128,5 +117,4 @@ public class ItemList : MonoBehaviour
             WeaponGradeSlider[i].value = (float)weaponData.dataArray[i].Level / (float)maxLevel;
         }
     }
-
 }

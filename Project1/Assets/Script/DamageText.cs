@@ -18,10 +18,6 @@ public class DamageText : MonoBehaviour
     public Transform Projectile;
     public float VelocityPower;
     
-
-   
-    
-
     void Awake()
     {
         myTransform = transform;

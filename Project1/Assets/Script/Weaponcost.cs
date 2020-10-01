@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Weaponcost : MonoBehaviour
 {
+    public string UpgradeName;
     [HideInInspector]
     public int CurrentCost = 1;
     [HideInInspector]
@@ -12,65 +14,64 @@ public class Weaponcost : MonoBehaviour
     public int StartCost;
     [HideInInspector]
     public int MaxLevel = 10;
-    public Text upGradeTex;
-    ItemList itemlist;
+    public TextMeshProUGUI upGradeTex;
+
     private void Start()
     {
-        itemlist = GameObject.Find("DataManager").GetComponent<ItemList>();
-        CurrentCost = StartCost;
+        
+        DataController.GetInstance().LoadWeaponCost(this);
         UpdateUI();
     }
 
     public void PurChaseUpgrade(int num) //구매 함수
     {
-        print(CurrentCost);
-        if (itemlist.weaponData.dataArray[num].Level < MaxLevel)
+
+        if (ItemList.Instance.weaponData.dataArray[num].Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost)
             {
                 DataController.GetInstance().SubGold(CurrentCost);
-                itemlist.weaponData.dataArray[num].Level++;
+                ItemList.Instance.weaponData.dataArray[num].Level++;
                 UpdateUpgrade(num);
-                
-               
-                UpdateUI();
-                //DataController.GetInstance().SaveUpgradeButton(this);
 
+                
+                UpdateUI();
             }
         }
-
+        DataController.GetInstance().SaveWeaponCost(this);
     }
+
     public void UpdateUpgrade(int num) // 업그레이드 공식
     {
        
-            switch (itemlist.weaponData.dataArray[num].Level)
+            switch (ItemList.Instance.weaponData.dataArray[num].Level)
             {
                 case 0:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk - 25), 2);
                     break;
                 case 1:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_2 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_2 - 25), 2);
                     break;
                 case 2:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_3 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_3 - 25), 2);
                     break;
                 case 3:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_4 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_4 - 25), 2);
                     break;
                 case 4:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_5 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_5 - 25), 2);
                     break;
                 case 5:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_6 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_6 - 25), 2);
                     break;
                 case 6:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_7 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_7 - 25), 2);
                     break;
                 case 7:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_8 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_8 - 25), 2);
                     break;
                 case 8:
-                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[num].Atk_9 - 25), 2);
+                    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_9 - 25), 2);
                     break;
                 //case 9:
                 //    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[i].Atk_10 - 25), 2);
@@ -87,17 +88,7 @@ public class Weaponcost : MonoBehaviour
         //LevelTex.text = "Lv" + "." + Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
-
-        //if (Level == MaxLevel)
-        //{
-        //    upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-        //    upGradeTex.text = "최대레벨";
-        //    LevelTex.text = "최대레벨";
-        //    button_.image.color = Color.gray;
-        //    button_.interactable = false;
-        //    GameObject go = GameObject.Find("FoodIm").gameObject;
-        //    Destroy(go);
-        //}
+        
     }
     private void Update()
     {
@@ -105,9 +96,9 @@ public class Weaponcost : MonoBehaviour
     }
     public void ScarceCost_textColor()//재화 부족시 컬러변경
     {
-        for (int i = 0; i < itemlist.weaponData.dataArray.Length; i ++)
+        for (int i = 0; i < ItemList.Instance.weaponData.dataArray.Length; i ++)
         {
-            if (itemlist.weaponData.dataArray[i].Level != MaxLevel)
+            if (ItemList.Instance.weaponData.dataArray[i].Level != MaxLevel)
             {
                 if (DataController.GetInstance().GetGold() < CurrentCost)
                 {
@@ -122,6 +113,7 @@ public class Weaponcost : MonoBehaviour
                     //button_.image.color = Color.white;
                 }
             }
+            
         }
         
     }

@@ -27,31 +27,26 @@ public class Player : MonoBehaviour
     private ItemList itemlist;
     public Vector3 startPosition;
     public SkeletonRenderer skeletonRenderer;
-   
-   
     public PlayerData Playerdata = new PlayerData();
     public GameObject Monster;
     public AnimState _AniState;
     public float moveSpeed = 2;
-
     public int my_PlayerDamage;
 
 
     private void Start()
     {
-        
-        
         //컴포넌트
         ani = GetComponent<Animator>();
         skeletonRenderer = GetComponent<SkeletonRenderer>();
         itemlist = FindObjectOfType<ItemList>();
         _AniState = AnimState.move;
-
         startPosition = this.transform.position;
     }
 
     private void Update()
     {
+
         transform.Translate(new Vector2(1f * moveSpeed * Time.deltaTime, 0));//플레이어 이동
         my_PlayerDamage = Playerdata.Damage + itemlist.item_Attack;
         SetCurrentAnimation(_AniState);
@@ -86,7 +81,6 @@ public class Player : MonoBehaviour
         else 
         {
             Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
-           
         }
     }
 }
