@@ -1,0 +1,48 @@
+
+hit_effect.png
+size: 1940,511
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1600, 2
+  size: 198, 269
+  orig: 204, 275
+  offset: 3, 3
+  index: -1
+2
+  rotate: true
+  xy: 1600, 273
+  size: 236, 338
+  orig: 240, 342
+  offset: 2, 2
+  index: -1
+3
+  rotate: false
+  xy: 806, 20
+  size: 394, 489
+  orig: 400, 495
+  offset: 3, 3
+  index: -1
+4
+  rotate: false
+  xy: 408, 5
+  size: 396, 504
+  orig: 404, 512
+  offset: 4, 4
+  index: -1
+5
+  rotate: false
+  xy: 2, 5
+  size: 404, 504
+  orig: 412, 512
+  offset: 4, 4
+  index: -1
+6
+  rotate: false
+  xy: 1202, 41
+  size: 396, 468
+  orig: 404, 476
+  offset: 4, 4
+  index: -1
