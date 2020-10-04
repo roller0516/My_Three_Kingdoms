@@ -1,0 +1,48 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/3스테이지/진궁/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "under_body", "bone": "root", "attachment": "under_body" },
+	{ "name": "leg armor", "bone": "root", "attachment": "leg armor" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "hammer", "bone": "root", "attachment": "hammer" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "head", "bone": "root", "attachment": "head" }
+],
+"skins": {
+	"default": {
+		"r arm": {
+			"r arm": { "x": 119.5, "y": -132, "width": 25, "height": 32 }
+		},
+		"r leg": {
+			"r leg": { "x": 108.5, "y": -153.5, "width": 17, "height": 25 }
+		},
+		"l leg": {
+			"l leg": { "x": 92, "y": -153.5, "width": 16, "height": 25 }
+		},
+		"under_body": {
+			"under_body": { "x": 101, "y": -149, "width": 34, "height": 18 }
+		},
+		"leg armor": {
+			"leg armor": { "x": 101, "y": -149, "width": 38, "height": 14 }
+		},
+		"body": {
+			"body": { "x": 102, "y": -136.5, "width": 36, "height": 33 }
+		},
+		"hammer": {
+			"hammer": { "x": 34, "y": -100, "width": 48, "height": 122 }
+		},
+		"l arm": {
+			"l arm": { "x": 82, "y": -130, "width": 24, "height": 34 }
+		},
+		"head": {
+			"head": { "x": 100, "y": -81.5, "width": 72, "height": 95 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
