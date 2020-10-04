@@ -74,9 +74,9 @@ public class Weaponcost : MonoBehaviour
                     CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_9 - 25), 2);
                     break;
                 //case 9:
-                //    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (itemlist.weaponData.dataArray[i].Atk_10 - 25), 2);
+                //    CurrentCost = (int)Mathf.Pow(3 + 0.2f * (ItemList.Instance.weaponData.dataArray[num].Atk_10 - 25), 2);
                 //    break;
-            }
+        }
 
         
         //Mathf.Pow는 제곱이다.

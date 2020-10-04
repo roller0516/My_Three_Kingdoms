@@ -1,6 +1,8 @@
 ﻿
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Numerics;
 
 
 public class UIManager : MonoBehaviour
@@ -8,7 +10,9 @@ public class UIManager : MonoBehaviour
     public GameObject weaponTap;
 
     public TextMeshProUGUI Gold;
+    public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] GoldPerClickDisPlayer;
+    public TextMeshProUGUI[] GoldCostClickDisPlayer;
     private UpgradeButton[] UpgradeButton = new UpgradeButton[4];
     private Weaponcost[] weaponcost = new Weaponcost[8];
 
@@ -30,9 +34,11 @@ public class UIManager : MonoBehaviour
         }
 
         WeaponUpdate();
+        Gold.text = GetGoldText();
+        Knowledge.text = KnowledgeText();
         GoldPerClickText(GoldPerClickDisPlayer);
-        GoldText((float)DataController.GetInstance().GetGold());
-       
+        GoldCostClickText(GoldCostClickDisPlayer);
+        //GoldText((float)DataController.GetInstance().GetGold());
     }
 
     public void WeaponUpdate() 
@@ -64,105 +70,143 @@ public class UIManager : MonoBehaviour
                         ItemList.Instance.im[i + 1].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
                         ItemList.Instance.bt[i + 1].interactable = true;
                     }
-                    
                 }
-
             }
         }
     }
 
-    public void GoldText(float gold)
+    private string GetGoldText()
     {
-        if (gold >= 100000) // c 십만
-        {
-            gold = gold / 100000;
+        int placeN = 3;
+        BigInteger value = DataController.GetInstance().GetGold();
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
 
-            Gold.text = gold.ToString("0.00") + "c";
-        }
-        else if (gold >= 10000)// b 만
+        do
         {
-            gold = gold / 10000;
-            Gold.text = gold.ToString("0.00") + "b";
+            numlist.Add((int)(value % p));
+            value /= p;
         }
-        else if (gold >= 1000)// a 천
-        {
-            gold = gold / 1000;
-            Gold.text = gold.ToString("0.00") + "a";
-        }
-        else if (gold < 1000)
-        {
-            Gold.text = gold.ToString("0");
-        }
+        while (value>=1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
     }
+    private string KnowledgeText()
+    {
+        int placeN = 3;
+        BigInteger value = DataController.GetInstance().GetKnowledge();
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+
+
+    private string GoldPerClickText(string name)
+    {
+        int placeN = 3;
+        BigInteger value = DataController.GetInstance().GetGoldPerClick(name);
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+        
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+    private string GoldCostClickText(BigInteger Cost)
+    {
+        int placeN = 3;
+        BigInteger value = Cost;
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+
+    private string GetUnitText(int index)
+    {
+        int idx = index - 1;
+
+        if (idx < 0)
+            return "";
+
+        int repeatCount = (index / 26) + 1;
+
+        string retstr = "";
+
+        for (int i = 0; i < repeatCount; i++)
+        {
+            retstr += (char)(64 + index % 26);
+        }
+        return retstr;
+    }
+    //a가 안나오는버그 수정
 
     public void GoldPerClickText(TextMeshProUGUI[] txt)
     {
-        
         txt = GoldPerClickDisPlayer;
-       
-        for (int i = 0;i< GoldPerClickDisPlayer.Length;i++)
+
+        for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
-            float gold = (float)DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
-            
-            if (gold >= 100000)// c 십만
-            {
-                gold = gold/100000;
-
-                txt[i].text = "+" + gold.ToString("0.00") + "c";
-            }
-            else if (gold >= 10000)// b 만
-            {
-                gold = gold/10000;
-
-                txt[i].text = "+" + gold.ToString("0.00") + "b";
-            }
-            else if (gold >= 1000)// a 천
-            {
-                gold = gold/1000;
-
-                txt[i].text = "+" + gold.ToString("0.00") + "a";
-
-            }
-            else if (gold < 1000)
-            {
-                txt[i].text = "+" + gold.ToString("0");
-
-            }
+            txt[i].text = GoldPerClickText("GoldperClick"+i);
         }
     }
-    //public void WeaponCostText(TextMeshProUGUI[] txt)
-    //{
+    public void GoldCostClickText(TextMeshProUGUI[] txt)
+    {
+        txt = GoldCostClickDisPlayer;
 
-    //    txt = GoldPerClickDisPlayer;
-
-    //    for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
-    //    {
-    //        float gold = (float)DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
-
-    //        if (gold >= 100000)// c 십만
-    //        {
-    //            gold = gold / 100000;
-
-    //            txt[i].text = "+" + gold.ToString("0.00") + "c";
-    //        }
-    //        else if (gold >= 10000)// b 만
-    //        {
-    //            gold = gold / 10000;
-
-    //            txt[i].text = "+" + gold.ToString("0.00") + "b";
-    //        }
-    //        else if (gold >= 1000)// a 천
-    //        {
-    //            gold = gold / 1000;
-
-    //            txt[i].text = "+" + gold.ToString("0.00") + "a";
-
-    //        }
-    //        else if (gold < 1000)
-    //        {
-    //            txt[i].text = "+" + gold.ToString("0");
-
-    //        }
-    //    }
-    //}
+        for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
+        {
+            txt[i].text = GoldCostClickText(UpgradeButton[i].CurrentCost);
+        }
+    }
 }

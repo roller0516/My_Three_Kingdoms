@@ -4,46 +4,23 @@ using UnityEngine;
 
 public class OneTwoCheck : MonoBehaviour
 {
-    //도 개 걸 윷 모
-
-    //도: 1 칸 개: 2칸 걸: 3칸 윷 :4칸 모 :5칸
-
-    //도 1개가 뒤집어 졌을때, 개 2개가 뒤집어 졌을때,
-    //걸 3개가 뒤집어 졌을때, 윷 4개가 뒤집어 졌을때,
-    //모 0개가 뒤접어 졌을때
-
-    // 뒤집어 졌다 안뒤집어 졌다.
-
-    //총 4개의 윷이 있다.
-
-    public int x = 4; //윷의갯수
-    public float percentage;
-    
-
-    private void Update()
+    string[] subject = { "국어", "영어", "수학", "사회", "과학","음악","체육"};
+    int[] Score = { 88, 72, 59, 99, 74, 66, 80 };
+    //컴퓨터는 0부터 시작 0번째 배열 특징 -> 순차적으로
+    //평균을 구하려면 합계부터 구해야한다.
+    //상자가 7개 7개 88 72 59 99 74 66 80개의 사과가 각각 상자에 들어가있다고 생각하면된다.
+    private void Start()
     {
-        x = Random.Range(0, 5);
-        percentage = 16 / x;
+        float sum = 0;//합계
 
-        if ( ) //모일때
+        for (int i = 0; i< Score.Length; i++)
         {
-            Debug.Log("모 입니다");
+            sum = sum + Score[i];
         }
-        else if (x == 1)
-        {
-            Debug.Log("도 입니다");
-        }
-        else if (x == 2)
-        {
-            Debug.Log("개 입니다");
-        }
-        else if (x == 3)
-        {
-            Debug.Log("걸 입니다");
-        }
-        else if (x == 4)
-        {
-            Debug.Log("윷 입니다");
-        }
+        sum = sum / subject.Length;
+      
+        // 평균
+        Debug.Log("평균값은"+sum+"점입니다.");
+
     }
 }

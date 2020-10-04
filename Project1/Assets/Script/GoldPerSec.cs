@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Numerics;
 
 public class GoldPerSec : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class GoldPerSec : MonoBehaviour
             {
                 time_scroll[i].isDone = false;
 
-                int goldPerClick = DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
+                BigInteger goldPerClick = DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
                 
                 DataController.GetInstance().AddGold(goldPerClick);
             }

@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector3;
 
 public class DamageText : MonoBehaviour
 {
+   
     private TextMeshPro text;
     private Color Color_;
     private Transform myTransform;
@@ -13,7 +17,7 @@ public class DamageText : MonoBehaviour
     private float gravity = 9.8f;
 
     public float alphaSpeed;//알파값 
-    public int Damage;
+    public BigInteger Damage;
     public Transform Target;
     public Transform Projectile;
     public float VelocityPower;
@@ -37,7 +41,7 @@ public class DamageText : MonoBehaviour
     }
     private void Update()
     {
-        text.text = Damage.ToString();
+        text.text = Text_Damage().ToString();
         //transform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
         Color_.a = Mathf.Lerp(text.color.a, 0, Time.deltaTime * alphaSpeed);
         text.color = Color_;
@@ -47,10 +51,11 @@ public class DamageText : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
     IEnumerator SimulateProjectile() // 포물선 공식
     {
         yield return new WaitForSeconds(0.1f);
-        
+
         // Move projectile to the position of throwing object + add some offset if needed.
         Projectile.position = myTransform.position + new Vector3(0, 0.0f, 0);
 
@@ -81,4 +86,45 @@ public class DamageText : MonoBehaviour
             yield return null;
         }
     }
+    private string Text_Damage()
+    {
+        int placeN = 4;
+        BigInteger value = Damage;
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+
+
+        if (num < 10000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+
+    private string GetUnitText(int index)
+    {
+        int idx = index - 1;
+        if (idx < 0) return "";
+        int repeatCount = (index / 26) + 1;
+        string retstr = "";
+        for (int i = 0; i < repeatCount; i++)
+        {
+            retstr += (char)(65 + index % 26);
+        }
+        return ((char)65).ToString();
+    }
+
+
+    
 }

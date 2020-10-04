@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using Spine.Unity;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -23,8 +23,9 @@ public class Boss : MonoBehaviour
     public float moveSpeed = 0.5f;
     public int Hp;
     public int MaxHp;
-
-
+    public Slider Hpbar;
+    public Slider HpbarBasic;
+    Camera cam = null;
     private void Awake()
     {
         rig = GetComponent<Rigidbody>();
@@ -36,14 +37,17 @@ public class Boss : MonoBehaviour
 
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
-        MaxHp = ((int)Mathf.Pow(((int)MonsterSpawn._instance.stg.curStage + 8) * 4 * 0.5f, 2)*5);
-
-        Hp = MaxHp;
+        MaxHp = ((int)Mathf.Pow(((int)MonsterSpawn.instance.stg.curStage + 8) * 4 * 0.5f, 2)*5);
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
 
         _AniState = AnimState.move;// 애니메이션 변경
-
+        cam = Camera.main;
         // 무기변경 랜덤으로 변경
+        Hp = MaxHp;
+        Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
+        Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
+        Hpbar.transform.SetAsFirstSibling();
+        Hpbar.maxValue = MaxHp;
 
     }
 
@@ -51,7 +55,7 @@ public class Boss : MonoBehaviour
     {
         transform.Translate(new Vector2(-1f * moveSpeed * Time.deltaTime, 0));//왼쪽으로 전진 
         SetCurrentAnimation(_AniState); // 실시간으로 애니메이션을 받아온다.
-        
+        SetHpbar();
         Distance();//실시간으로 타겟과의 거리를 받아온다
     }
 
@@ -132,26 +136,27 @@ public class Boss : MonoBehaviour
         if (Hp <= 0)
         {
             _AniState = AnimState.die;
-            MonsterSpawn._instance.MonsterCount--;
-            MonsterSpawn._instance.boss_IsDie = true;
+            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.boss_IsDie = true;
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             Destroy(this.gameObject, 2f);
+            Hpbar.gameObject.SetActive(false);
         }
     }
     public void KnockBack()// 넉백
     {
         rig.AddForce(new Vector3(2.5f, 2, 0) * knockbackPower, ForceMode.Impulse);
     }
-
-    public void SetAttechment(int num) // 무기변경
-    {
-        skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon " + num);
-    }
     public void Hitcount(int count)
     {
         ani.SetFloat("Blend", count);
         _AniState = AnimState.hit;
+    }
+    public void SetHpbar()
+    {
+        Hpbar.value = Hp;
+        Hpbar.transform.position = cam.WorldToScreenPoint(this.transform.position + new Vector3(0, 2.5f, 0));
     }
 }
 

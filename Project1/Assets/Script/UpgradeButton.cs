@@ -3,17 +3,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using System.Numerics;
+using Common;
+using Vector3 = UnityEngine.Vector3;
 
 
 public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
 {
+    
     public string UpgradeName;
 
     [HideInInspector]
-    public int CurrentCost = 1;
+    public BigInteger CurrentCost = 1;
     [HideInInspector]
-    public int goldByUpgrade;
+    public BigInteger goldByUpgrade;
+
     [HideInInspector]
     public int Level = 0;
 
@@ -118,9 +123,8 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
-        CurrentCost = (int)Mathf.Round(Mathf.Pow(UpgradePow + (costPow*Level), 2));//Mathf.Pow는 제곱이다.
-        goldByUpgrade = (int)Mathf.Floor(CurrentCost / 6);
-        print(goldByUpgrade);
+        CurrentCost = (BigInteger)Mathf.Round(Mathf.Pow(UpgradePow + (costPow * Level), 2));///Mathf.Pow는 제곱이다.
+        goldByUpgrade = BigInteger.Divide(CurrentCost, 6);
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
@@ -152,7 +156,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         if (PressDown == true)
         {
             CurTime += Time.deltaTime ;
-            if (CurTime > 1)
+            if (CurTime >= 0.5f)
             {
                 ButtonOn();
             }

@@ -8,46 +8,37 @@ public class GameM : MonoBehaviour
 
     public int SceneNumber_cur = 0;
 
-    private static GameM s_instance = null;
+    private static GameM instance = null;
     
-    public static GameM Instance 
+    public static GameM GetInstance 
     {
         get 
         {
-            if (s_instance == null) 
+            if (instance == null) 
             {
-                s_instance = FindObjectOfType(typeof(GameM)) as GameM;
+                instance = FindObjectOfType(typeof(GameM)) as GameM;
             }
-            return s_instance;
+            return instance;
         }
     }
     private void Awake()
     {
-        if (s_instance != null) 
+        if (instance != null) 
         {
             return;
         }
-        s_instance = this;
+        instance = this;
 
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        Application.targetFrameRate = 30;
-    }
-    public void Init()
-    {
-        PlayerPrefs.DeleteAll();
     }
 
     public void SceneChagne(int number) 
     {
         SceneManager.LoadScene(number);
         SceneNumber_cur = number;
-        if (SceneNumber_cur != 0) //로딩시 화면처리
-        {
-
-        }
     }
   
 }

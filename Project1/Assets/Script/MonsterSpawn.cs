@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class MonsterSpawn : MonoBehaviour
 {
+    public static MonsterSpawn instance;
+
+    public static MonsterSpawn GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = FindObjectOfType<MonsterSpawn>();
+            if (instance == null)
+            {
+                GameObject container = new GameObject("MosterSpwan");
+                instance = container.AddComponent<MonsterSpawn>();
+            }
+        }
+        return instance;
+    }
+
     public float SpawnTime;
     public float CurTime;
     public int MaxCount;
@@ -13,22 +29,29 @@ public class MonsterSpawn : MonoBehaviour
     public bool IsDie = false;
     public bool boss_IsDie = false;
 
-    private Vector3 startPosition;
-
     public Transform SpawnPoints;
     public GameObject[] Monster;
     public GameObject[] BossMonster;
+
+    private Vector3 startPosition;
     private Fadeinout fade;
-    public static MonsterSpawn _instance;
+    
     
     public StageManager stg;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
     private void Start()
     {
         fade = FindObjectOfType<Fadeinout>();
         stg = FindObjectOfType<StageManager>();
         startPosition = this.transform.position;
-        _instance = this;
-       
+        DataController.GetInstance().LoadStage(this);
     }
     private void Update()
     {
@@ -48,6 +71,7 @@ public class MonsterSpawn : MonoBehaviour
             IsDie = false;
             stg.MonsterCount++;
             StartCoroutine("Death");
+            DataController.GetInstance().SaveStage(this);
         }
         if (boss_IsDie == true)
         {
@@ -55,7 +79,7 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
-           
+            DataController.GetInstance().SaveStage(this);
         }
     }
     public void SpawnMonster(int num)

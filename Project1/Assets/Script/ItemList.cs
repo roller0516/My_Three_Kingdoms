@@ -17,17 +17,16 @@ public class ItemList : MonoBehaviour
             return s_instance;
         }
     }
+    public string itemname;
     public weaponData weaponData;
     public Button[] bt;
     public Image[] im;
     public Slider[] WeaponGradeSlider;
-    public string itemname;
     public int item_Attack;
+    public int maxLevel = 10;
 
     private int StartAttackByUpgrade = 1;
-    public int maxLevel = 10;
-    
-    
+
     private void Start()
     {
         UpgradeWeapon(weaponData.dataArray[0].Level, 0);
@@ -113,8 +112,6 @@ public class ItemList : MonoBehaviour
     public void WeaponUpGradeSlider()
     {
         for (int i = 0; i < weaponData.dataArray.Length; i++)
-        {
             WeaponGradeSlider[i].value = (float)weaponData.dataArray[i].Level / (float)maxLevel;
-        }
     }
 }
