@@ -15,7 +15,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public string UpgradeName;
 
     [HideInInspector]
-    public BigInteger CurrentCost = 1;
+    public BigInteger CurrentCost;
     [HideInInspector]
     public BigInteger goldByUpgrade;
 
@@ -29,19 +29,19 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public TextMeshProUGUI upGradeTex;
     public Button button_;
     public GameObject Level_img;
-    public int StartGoldByUpgrade =1;
-    public int StartCurrentCost;
 
+
+    public string StartGoldByUpgrade;
+    public string GoldByUpgrade;
+    public string StartCurrentCost;
+    
     float CurTime;
-
-    public float UpgradePow = 1.07f; //골드 획득량을 증가시켜주는 변수
-
-    public float costPow = 3.14f;
-
     bool PressDown = false;
 
     private void Start()
     {
+        CurrentCost=BigInteger.Parse(StartCurrentCost);
+        goldByUpgrade = BigInteger.Parse(StartGoldByUpgrade);
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
@@ -123,8 +123,8 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
-        CurrentCost = (BigInteger)Mathf.Round(Mathf.Pow(UpgradePow + (costPow * Level), 2));///Mathf.Pow는 제곱이다.
-        goldByUpgrade = BigInteger.Divide(CurrentCost, 6);
+        CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)),100);
+        goldByUpgrade += BigInteger.Parse(GoldByUpgrade);
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
@@ -161,13 +161,9 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 ButtonOn();
             }
         }
-        
-            
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
-        
-
         LevelTex.text = "Lv" +"."+ Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
@@ -179,7 +175,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             LevelTex.text = "Lv"+"."+MaxLevel.ToString();
             //button_.image.color = Color.gray;
             button_.interactable = false;
-            
         }
     }
     public void ButtonOn()

@@ -197,7 +197,7 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
-            txt[i].text = GoldPerClickText("GoldperClick"+i);
+            txt[i].text = GoldPerClickText("GoldPerClick"+i);
         }
     }
     public void GoldCostClickText(TextMeshProUGUI[] txt)

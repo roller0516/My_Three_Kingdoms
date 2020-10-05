@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Numerics;
+using Common;
 
 public class DataController : MonoBehaviour
 {
@@ -22,11 +23,11 @@ public class DataController : MonoBehaviour
     }
     #endregion
     BigInteger m_gold = 1000000000;
-    BigInteger  m_goldperClick = 0;
-    BigInteger  m_goldperClick1 = 0;
-    BigInteger  m_goldperClick2 = 0;
-    BigInteger  m_goldperClick3 = 0;
-    BigInteger  m_Knowledge = 0;
+    BigInteger m_goldperClick = 10;
+    BigInteger m_goldperClick1 = 130;
+    BigInteger m_goldperClick2 = 1820;
+    BigInteger m_goldperClick3 = 27300;
+    BigInteger m_Knowledge;
 
     private void Awake()
     {
@@ -51,20 +52,18 @@ public class DataController : MonoBehaviour
 
         for (int i = 0; i < key.Count; i++)
         {
-            key[i] = PlayerPrefs.GetString("GoldperClick" + i, key[i]);
-
-            if(i == 0)
-                m_goldperClick = BigInteger.Parse(key[0]);
+            key[i] = PlayerPrefs.GetString("GoldPerClick" + i, key[i]);
+            if(i ==0)
+                m_goldperClick = BigInteger.Parse(key[i]);
             if (i == 1)
-                m_goldperClick1 = BigInteger.Parse(key[1]);
+                m_goldperClick1 = BigInteger.Parse(key[i]);
             if (i == 2)
-                m_goldperClick2 = BigInteger.Parse(key[2]);
+                m_goldperClick2 = BigInteger.Parse(key[i]);
             if (i == 3)
-                m_goldperClick3 = BigInteger.Parse(key[3]);
+                m_goldperClick3 = BigInteger.Parse(key[i]);
         }
     }
 
-        
     #region Gold
     public void SetGold(BigInteger newGold)
     {
@@ -115,13 +114,13 @@ public class DataController : MonoBehaviour
     {
         string num = name;
 
-        if (num == "GoldperClick0")
+        if (num == "GoldPerClick0")
             return m_goldperClick;
-        else if (num == "GoldperClick1")
+        else if (num == "GoldPerClick1")
             return m_goldperClick1;
-        else if (num == "GoldperClick2")
+        else if (num == "GoldPerClick2")
             return m_goldperClick2;
-        else if (num == "GoldperClick3")
+        else if (num == "GoldPerClick3")
             return m_goldperClick3;
         return 0;
     }
@@ -177,12 +176,12 @@ public class DataController : MonoBehaviour
     }
     #endregion
 
-    
-
     public void LoadUpgradeButton(UpgradeButton upGradeButton)
     {
         string key = upGradeButton.UpgradeName;
-        
+        string GoldByUpgrade = upGradeButton.StartGoldByUpgrade.ToString();
+        string CurrentCost = upGradeButton.StartCurrentCost.ToString();
+
         if (key == "Gold")
         {
             upGradeButton.Level = PlayerPrefs.GetInt(key+"_Level", 0);
@@ -199,16 +198,19 @@ public class DataController : MonoBehaviour
         {
             upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level", 0);
         }
-        //upGradeButton.goldByUpgrade = PlayerPrefs.GetInt(key + "_goldByUpgrade", upGradeButton.StartGoldByUpgrade);
-        //upGradeButton.CurrentCost = PlayerPrefs.GetInt(key + "+CurrentCost", upGradeButton.StartCurrentCost);
+
+        GoldByUpgrade = PlayerPrefs.GetString(key + "_goldByUpgrade", GoldByUpgrade);
+        upGradeButton.goldByUpgrade = BigInteger.Parse(GoldByUpgrade);
+        CurrentCost = PlayerPrefs.GetString(key + "+CurrentCost", CurrentCost);
+        upGradeButton.CurrentCost = BigInteger.Parse(CurrentCost);
     }
     public void SaveUpgradeButton(UpgradeButton upGradeButton)
     {
         string key = upGradeButton.UpgradeName;
 
         PlayerPrefs.SetInt(key + "_Level", upGradeButton.Level);
-        //PlayerPrefs.SetInt(key + "_goldByUpgrade", upGradeButton.goldByUpgrade);
-        //PlayerPrefs.SetInt(key + "+CurrentCost", upGradeButton.CurrentCost);
+        PlayerPrefs.SetString(key + "_goldByUpgrade", upGradeButton.goldByUpgrade.ToString());
+        PlayerPrefs.SetString(key + "+CurrentCost", upGradeButton.CurrentCost.ToString());
     }
     public void Loaditem(ItemList itemlist) 
     {

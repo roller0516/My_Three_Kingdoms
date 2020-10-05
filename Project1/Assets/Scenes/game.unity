@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 123114837}
   - component: {fileID: 123114836}
   - component: {fileID: 123114835}
-  - component: {fileID: 123114834}
   - component: {fileID: 123114833}
   m_Layer: 0
   m_Name: 3
@@ -497,18 +496,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.0000001, z: 1}
   m_Center: {x: 0, y: -0.92, z: 0}
---- !u!114 &123114834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123114832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9fa5b2eb7986e429a10ad2fe5afb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &123114835
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1145,7 +1132,6 @@ GameObject:
   - component: {fileID: 151498085}
   - component: {fileID: 151498084}
   - component: {fileID: 151498083}
-  - component: {fileID: 151498082}
   - component: {fileID: 151498081}
   m_Layer: 0
   m_Name: 2
@@ -1167,18 +1153,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.0000001, z: 1}
   m_Center: {x: 0, y: -0.92, z: 0}
---- !u!114 &151498082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151498080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9fa5b2eb7986e429a10ad2fe5afb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &151498083
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1378,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 60
+  MaxTime: 5
   CurTime: 0
   isDone: 0
 --- !u!114 &185123928
@@ -2603,15 +2577,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeName: Gold
   Level: 0
-  MaxLevel: 10000
+  MaxLevel: 1000
   LevelTex: {fileID: 470623731}
   upGradeTex: {fileID: 281599617}
   button_: {fileID: 337427825}
   Level_img: {fileID: 1749799144}
-  StartGoldByUpgrade: 7
-  StartCurrentCost: 44
-  UpgradePow: 7
-  costPow: 1
+  StartGoldByUpgrade: 10
+  GoldByUpgrade: 6
+  StartCurrentCost: 10
 --- !u!114 &337427825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3430,15 +3403,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeName: Gold2
   Level: 1
-  MaxLevel: 10000
+  MaxLevel: 1000
   LevelTex: {fileID: 560349140}
   upGradeTex: {fileID: 1822253956}
   button_: {fileID: 402943827}
   Level_img: {fileID: 1510463831}
-  StartGoldByUpgrade: 632
-  StartCurrentCost: 3795
-  UpgradePow: 60
-  costPow: 1.6
+  StartGoldByUpgrade: 1820
+  GoldByUpgrade: 2520
+  StartCurrentCost: 1820
 --- !u!114 &402943827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4962,7 +4934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 10
+  MaxTime: 1
   CurTime: 0
   isDone: 0
 --- !u!114 &584132224
@@ -5634,15 +5606,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeName: Gold1
   Level: 1
-  MaxLevel: 10000
+  MaxLevel: 1000
   LevelTex: {fileID: 1482060157}
   upGradeTex: {fileID: 1458292971}
   button_: {fileID: 656925007}
   Level_img: {fileID: 241268151}
-  StartGoldByUpgrade: 41
-  StartCurrentCost: 250
-  UpgradePow: 15
-  costPow: 0.8
+  StartGoldByUpgrade: 130
+  GoldByUpgrade: 144
+  StartCurrentCost: 130
 --- !u!114 &656925007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8342,7 +8313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 30
+  MaxTime: 2
   CurTime: 0
   isDone: 0
 --- !u!114 &877297601
@@ -10487,7 +10458,6 @@ GameObject:
   - component: {fileID: 1058175215}
   - component: {fileID: 1058175214}
   - component: {fileID: 1058175213}
-  - component: {fileID: 1058175212}
   - component: {fileID: 1058175217}
   m_Layer: 0
   m_Name: Stage1
@@ -10496,18 +10466,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1058175212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058175211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9fa5b2eb7986e429a10ad2fe5afb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1058175213
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15380,7 +15338,6 @@ GameObject:
   - component: {fileID: 1491213247}
   - component: {fileID: 1491213246}
   - component: {fileID: 1491213245}
-  - component: {fileID: 1491213244}
   - component: {fileID: 1491213243}
   m_Layer: 0
   m_Name: 4
@@ -15402,18 +15359,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.0000001, z: 1}
   m_Center: {x: 0, y: -0.92, z: 0}
---- !u!114 &1491213244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491213242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9fa5b2eb7986e429a10ad2fe5afb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1491213245
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17475,15 +17420,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeName: Gold3
   Level: 1
-  MaxLevel: 10000
+  MaxLevel: 1000
   LevelTex: {fileID: 1796696623}
   upGradeTex: {fileID: 666448074}
   button_: {fileID: 1691451470}
   Level_img: {fileID: 1290418364}
-  StartGoldByUpgrade: 9600
-  StartCurrentCost: 57600
-  UpgradePow: 240
-  costPow: 2.2
+  StartGoldByUpgrade: 27300
+  GoldByUpgrade: 40800
+  StartCurrentCost: 27300
 --- !u!114 &1691451470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21676,7 +21620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 90
+  MaxTime: 10
   CurTime: 0
   isDone: 0
 --- !u!114 &2048177485

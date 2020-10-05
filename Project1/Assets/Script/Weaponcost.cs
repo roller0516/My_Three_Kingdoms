@@ -79,16 +79,11 @@ public class Weaponcost : MonoBehaviour
         }
 
         
-        //Mathf.Pow는 제곱이다.
+        
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
-
-
-        //LevelTex.text = "Lv" + "." + Level.ToString();
-
         upGradeTex.text = "" + CurrentCost;
-        
     }
     private void Update()
     {
