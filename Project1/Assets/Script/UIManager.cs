@@ -9,28 +9,50 @@ public class UIManager : MonoBehaviour
 {
     public GameObject weaponTap;
 
+    //버튼 텍스트
     public TextMeshProUGUI Gold;
     public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] GoldPerClickDisPlayer;
     public TextMeshProUGUI[] GoldCostClickDisPlayer;
-    private UpgradeButton[] UpgradeButton = new UpgradeButton[4];
-    private Weaponcost[] weaponcost = new Weaponcost[8];
+    public TextMeshProUGUI[] Atktext;
 
+    // 버튼 갯수
+    private UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
+    private Weaponcost[] weaponcost = new Weaponcost[8]; // 무기 버튼 코스트
+    ItemList item_l;
     [HideInInspector]
     public int[] Level;
-   
+    private void Awake()
+    {
+        int count = 13;
+        for (int i = 1; i < upgradeButton.Length + 1; i++)
+        {
+            
+            upgradeButton[i - 1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
+            upgradeButton[i - 1].UpgradeName = "Gold" + i;
+            
+            if (i == 1)
+            {
+                upgradeButton[i - 1].StartCurrentCost = "10";
+            }
+            else
+            {
+                upgradeButton[i - 1].StartCurrentCost = BigInteger.Multiply(BigInteger.Parse(upgradeButton[i - 2].StartCurrentCost.ToString()), count).ToString();
+                upgradeButton[i - 1].StartGoldByUpgrade = BigInteger.Multiply(BigInteger.Parse(upgradeButton[i - 2].StartCurrentCost.ToString()), count).ToString();
+                count++;
+            }
+        }
+    }
     private void Start()
     {
-        for (int i = 1; i < UpgradeButton.Length+1; i++) 
-        {
-            UpgradeButton[i-1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
-        }
+        Level = new int[upgradeButton.Length];
+        item_l = FindObjectOfType<ItemList>().GetComponent<ItemList>();
     }
     private void Update()
     {
-        for (int i=0; i < UpgradeButton.Length;i++) 
+        for (int i=0; i < upgradeButton.Length;i++) 
         {
-            Level[i] = UpgradeButton[i].Level;
+            Level[i] = upgradeButton[i].Level;
         }
 
         WeaponUpdate();
@@ -38,7 +60,7 @@ public class UIManager : MonoBehaviour
         Knowledge.text = KnowledgeText();
         GoldPerClickText(GoldPerClickDisPlayer);
         GoldCostClickText(GoldCostClickDisPlayer);
-        //GoldText((float)DataController.GetInstance().GetGold());
+        AtkText(Atktext);
     }
 
     public void WeaponUpdate() 
@@ -51,24 +73,24 @@ public class UIManager : MonoBehaviour
             }
             for (int i = 0; i < weaponcost.Length; i++)
             {
-                if (ItemList.Instance.weaponData.dataArray[i].Level < ItemList.Instance.maxLevel && ItemList.Instance.weaponData.dataArray[i].Level > 0) 
+                if (item_l.weaponData.dataArray[i].Level < item_l.maxLevel && item_l.weaponData.dataArray[i].Level > 0) 
                 {
-                    ItemList.Instance.bt[i].interactable = true;
+                    item_l.bt[i].interactable = true;
                     weaponcost[i].upGradeTex.gameObject.SetActive(true);
-                    ItemList.Instance.im[i].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
+                    item_l.im[i].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
                 }
-                else if (ItemList.Instance.weaponData.dataArray[i].Level == 10)
+                else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
-                    ItemList.Instance.bt[i].interactable = false;
-                    ItemList.Instance.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/Complete");
+                    item_l.bt[i].interactable = false;
+                    item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/Complete");
                     weaponcost[i].upGradeTex.gameObject.SetActive(false);
-                    if (i == ItemList.Instance.weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
+                    if (i == item_l.weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
                         return;
-                    else if (ItemList.Instance.weaponData.dataArray[i + 1].Level == 0) 
+                    else if (item_l.weaponData.dataArray[i + 1].Level == 0) 
                     {
                         weaponcost[i + 1].upGradeTex.gameObject.SetActive(true);
-                        ItemList.Instance.im[i + 1].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
-                        ItemList.Instance.bt[i + 1].interactable = true;
+                        item_l.im[i + 1].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
+                        item_l.bt[i + 1].interactable = true;
                     }
                 }
             }
@@ -148,10 +170,34 @@ public class UIManager : MonoBehaviour
 
         return f.ToString("N2") + GetUnitText(numlist.Count - 1);
     }
+
     private string GoldCostClickText(BigInteger Cost)
     {
         int placeN = 3;
         BigInteger value = Cost;
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+    private string AtkText(BigInteger Atk)
+    {
+        int placeN = 3;
+        BigInteger value = Atk;
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
 
@@ -189,11 +235,10 @@ public class UIManager : MonoBehaviour
         }
         return retstr;
     }
-    //a가 안나오는버그 수정
 
     public void GoldPerClickText(TextMeshProUGUI[] txt)
     {
-        txt = GoldPerClickDisPlayer;
+        //txt = GoldPerClickDisPlayer;
 
         for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
@@ -202,11 +247,52 @@ public class UIManager : MonoBehaviour
     }
     public void GoldCostClickText(TextMeshProUGUI[] txt)
     {
-        txt = GoldCostClickDisPlayer;
+        //txt = GoldCostClickDisPlayer;
 
         for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
-            txt[i].text = GoldCostClickText(UpgradeButton[i].CurrentCost);
+            txt[i].text = GoldCostClickText(upgradeButton[i].CurrentCost);
         }
+    }
+    public void AtkText(TextMeshProUGUI[] txt)
+    {
+        //txt = Atktext;
+
+        for (int i = 0; i < item_l.weaponData.dataArray.Length; i++)
+        {
+            switch (item_l.weaponData.dataArray[i].Level)
+            {
+                case 0:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk);
+                    break;
+                case 1:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_2);
+                    break;
+                case 2:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_3);
+                    break;
+                case 3:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_4);
+                    break;
+                case 4:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_5);
+                    break;
+                case 5:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_6);
+                    break;
+                case 6:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_7);
+                    break;
+                case 7:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_8);
+                    break;
+                case 8:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_9);
+                    break;
+                case 9:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
+                    break;
+            }
+        } 
     }
 }

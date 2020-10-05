@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
+using Quaternion = UnityEngine.Quaternion;
 
 public class MonsterSpawn : MonoBehaviour
 {
@@ -36,7 +40,9 @@ public class MonsterSpawn : MonoBehaviour
     private Vector3 startPosition;
     private Fadeinout fade;
     
-    
+    public BigInteger BossHpCount = 2850;
+    public BigInteger MonsterHpCount = 570;
+
     public StageManager stg;
     private void Awake()
     {
@@ -72,6 +78,7 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("Death");
             DataController.GetInstance().SaveStage(this);
+            
         }
         if (boss_IsDie == true)
         {
@@ -79,6 +86,8 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
+            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 115)), 100);
+            BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
             DataController.GetInstance().SaveStage(this);
         }
     }

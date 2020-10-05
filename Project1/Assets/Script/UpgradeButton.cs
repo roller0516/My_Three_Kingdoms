@@ -11,8 +11,8 @@ using Vector3 = UnityEngine.Vector3;
 public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
 {
-    
-    public string UpgradeName;
+
+    public string UpgradeName = "";
 
     [HideInInspector]
     public BigInteger CurrentCost;
@@ -37,7 +37,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     
     float CurTime;
     bool PressDown = false;
-
+    
     private void Start()
     {
         CurrentCost=BigInteger.Parse(StartCurrentCost);
@@ -47,9 +47,9 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         UpdateUI();
     }
 
-    public void PurChaseUpgrade() //구매 함수
+    public void PurChaseUpgrade(int num) //구매 함수
     {
-        
+        print(num);
         if (Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost)
@@ -57,44 +57,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 DataController.GetInstance().SubGold(CurrentCost);
                 Level++;
                 UpdateUpgrade();
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick0", goldByUpgrade);
-
-                
-                UpdateUI();
-                DataController.GetInstance().SaveUpgradeButton(this);
-
-            }
-        }
-    }
-    public void PurChaseUpgrade1()//구매 함수 1
-    {
-        if (Level < MaxLevel)
-        {
-            if (DataController.GetInstance().GetGold() >= CurrentCost)
-            {
-                DataController.GetInstance().SubGold(CurrentCost);
-                Level++;
-                UpdateUpgrade();
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick1", goldByUpgrade);
-
-                
-                UpdateUI();
-                DataController.GetInstance().SaveUpgradeButton(this);
-
-            }
-        }
-    }
-    public void PurChaseUpgrade2()//구매 함수 2
-    {
-        if (Level < MaxLevel)
-        {
-            print(Level);
-            if (DataController.GetInstance().GetGold() >= CurrentCost)
-            {
-                DataController.GetInstance().SubGold(CurrentCost);
-                Level++;
-                UpdateUpgrade();
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick2", goldByUpgrade);
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, goldByUpgrade);
 
                
                 UpdateUI();
@@ -103,24 +66,60 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             }
         }
     }
-    public void PurChaseUpgrade3()//구매 함수 3
-    {
-        if (Level < MaxLevel)
-        {
-            print(Level);
-            if (DataController.GetInstance().GetGold() >= CurrentCost)
-            {
-                DataController.GetInstance().SubGold(CurrentCost);
-                Level++;
-                UpdateUpgrade();
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick3", goldByUpgrade);
+    //public void PurChaseUpgrade1()//구매 함수 1
+    //{
+    //    if (Level < MaxLevel)
+    //    {
+    //        if (DataController.GetInstance().GetGold() >= CurrentCost)
+    //        {
+    //            DataController.GetInstance().SubGold(CurrentCost);
+    //            Level++;
+    //            UpdateUpgrade();
+    //            DataController.GetInstance().SetGoldPerClick("GoldPerClick1", goldByUpgrade);
 
-               
-                UpdateUI();
-                DataController.GetInstance().SaveUpgradeButton(this);
-            }
-        }
-    }
+
+    //            UpdateUI();
+    //            DataController.GetInstance().SaveUpgradeButton(this);
+
+    //        }
+    //    }
+    //}
+    //public void PurChaseUpgrade2()//구매 함수 2
+    //{
+    //    if (Level < MaxLevel)
+    //    {
+    //        print(Level);
+    //        if (DataController.GetInstance().GetGold() >= CurrentCost)
+    //        {
+    //            DataController.GetInstance().SubGold(CurrentCost);
+    //            Level++;
+    //            UpdateUpgrade();
+    //            DataController.GetInstance().SetGoldPerClick("GoldPerClick2", goldByUpgrade);
+
+    //            UpdateUI();
+    //            DataController.GetInstance().SaveUpgradeButton(this);
+
+    //        }
+    //    }
+    //}
+    //public void PurChaseUpgrade3()//구매 함수 3
+    //{
+    //    if (Level < MaxLevel)
+    //    {
+    //        print(Level);
+    //        if (DataController.GetInstance().GetGold() >= CurrentCost)
+    //        {
+    //            DataController.GetInstance().SubGold(CurrentCost);
+    //            Level++;
+    //            UpdateUpgrade();
+    //            DataController.GetInstance().SetGoldPerClick("GoldPerClick3", goldByUpgrade);
+
+
+    //            UpdateUI();
+    //            DataController.GetInstance().SaveUpgradeButton(this);
+    //        }
+    //    }
+    //}
     public void UpdateUpgrade() // 업그레이드 공식
     {
         CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)),100);
@@ -179,22 +178,77 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void ButtonOn()
     {
-        switch (UpgradeName)
+        for (int i = 1; i < 21; i++)
         {
-            case "Gold":
-                PurChaseUpgrade();
-                break;
-            case "Gold1":
-                PurChaseUpgrade1();
-                break;
-            case "Gold2":
-                PurChaseUpgrade2();
-                break;
-            case "Gold3":
-                PurChaseUpgrade3();
-                break;
-
+            if (UpgradeName == "Gold" + i)
+                    PurChaseUpgrade(i);
         }
+        //switch (UpgradeName)
+        //{
+            
+        //    case "Gold1":
+        //        PurChaseUpgrade(0);
+        //        break;
+        //    case "Gold2":
+        //        PurChaseUpgrade(1);
+        //        break;
+        //    case "Gold3":
+        //        PurChaseUpgrade(2);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold4":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold18":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold19":
+        //        PurChaseUpgrade(3);
+        //        break;
+        //    case "Gold20":
+        //        PurChaseUpgrade(3);
+        //        break;
+
+
+        //}
     }
     public void OnPointerUp(PointerEventData eventData)
     {

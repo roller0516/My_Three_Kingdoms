@@ -29,13 +29,10 @@ public class ScrollTimebarManager : MonoBehaviour
     }
     void ButtonLevel() 
     {
-        if (uimanager.Level[0] > 0)
-            time[0].CurTimeFuc();
-        if (uimanager.Level[1] > 0)
-            time[1].CurTimeFuc();
-        if (uimanager.Level[2] > 0)
-            time[2].CurTimeFuc();
-        if (uimanager.Level[3] > 0)
-            time[3].CurTimeFuc();
+        for (int i = 0; i < Timebar.Length; i++)
+        {
+            if (uimanager.Level[i] > 0)
+                time[i].CurTimeFuc();
+        }
     }
 }

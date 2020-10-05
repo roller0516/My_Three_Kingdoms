@@ -2,6 +2,10 @@
 using UnityEngine;
 using Spine.Unity;
 using UnityEngine.UI;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
+using Quaternion = UnityEngine.Quaternion;
 
 public class EnemyTest : MonoBehaviour
 {
@@ -21,8 +25,8 @@ public class EnemyTest : MonoBehaviour
     public GameObject damageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
-    public int Hp;
-    public int MaxHp;
+    public BigInteger Hp;
+    public BigInteger MaxHp;
     Camera cam = null;
 
     private void Awake()
@@ -42,14 +46,12 @@ public class EnemyTest : MonoBehaviour
 
         SetAttechment(MonsterSpawn.instance.RandomRange2 + 1);
 
-        MaxHp = (int)Mathf.Pow(((int)MonsterSpawn.instance.stg.curStage + 8) * 4 * 0.5f, 2);// 무기변경 랜덤으로 변경
+        MaxHp = MonsterSpawn.instance.MonsterHpCount; // 무기변경 랜덤으로 변경
         Hp = MaxHp;
         cam = Camera.main;
         Hpbar = Instantiate(HpbarBasic , this.gameObject.transform.position,Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
-        Hpbar.maxValue = MaxHp;
-        
     }
 
     private void Update()
@@ -133,8 +135,6 @@ public class EnemyTest : MonoBehaviour
             Hpbar.gameObject.SetActive(false);
             DataController.GetInstance().AddGold(GoldReward());
             DataController.GetInstance().AddKnowledge(KnowledgeReward());
-
-           
             _AniState = AnimState.die;
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.IsDie = true;
@@ -151,19 +151,21 @@ public class EnemyTest : MonoBehaviour
     {
         skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon " + num);
     }
-    public int GoldReward()
+    public BigInteger GoldReward()
     {
-        int goldreward = (int)Mathf.Round(MaxHp / 30);
+        BigInteger goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         return goldreward;
     }
-    public int KnowledgeReward()
+    public BigInteger KnowledgeReward()
     {
-        int knowledge = (int)Mathf.Round(GoldReward() / 5);
-        return knowledge;
+        BigInteger knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp,5), 100);
+        return knowledgereward;
     }
     public void SetHpbar()
     {
-        Hpbar.value = Hp;
+        BigInteger num;
+        num = BigInteger.Divide((BigInteger.Multiply(Hp, 100)), MaxHp);
+        Hpbar.value = (float.Parse(num.ToString())/ 100);
         Hpbar.transform.position = cam.WorldToScreenPoint(this.transform.position + new Vector3(0,1.3f,0));
     }
 }

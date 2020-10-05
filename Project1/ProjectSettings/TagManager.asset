@@ -9,6 +9,7 @@ TagManager:
   - DataController
   - Monster
   - Boss
+  - Weapon
   layers:
   - Default
   - TransparentFX

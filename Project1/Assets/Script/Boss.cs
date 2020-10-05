@@ -2,6 +2,10 @@
 using UnityEngine;
 using Spine.Unity;
 using UnityEngine.UI;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
+using Quaternion = UnityEngine.Quaternion;
 
 public class Boss : MonoBehaviour
 {
@@ -21,8 +25,8 @@ public class Boss : MonoBehaviour
     public GameObject damageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
-    public int Hp;
-    public int MaxHp;
+    public BigInteger Hp;
+    public BigInteger MaxHp;
     public Slider Hpbar;
     public Slider HpbarBasic;
     Camera cam = null;
@@ -37,7 +41,7 @@ public class Boss : MonoBehaviour
 
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
-        MaxHp = ((int)Mathf.Pow(((int)MonsterSpawn.instance.stg.curStage + 8) * 4 * 0.5f, 2)*5);
+        MaxHp = MonsterSpawn.instance.BossHpCount;
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
 
         _AniState = AnimState.move;// 애니메이션 변경
@@ -47,8 +51,6 @@ public class Boss : MonoBehaviour
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
-        Hpbar.maxValue = MaxHp;
-
     }
 
     private void Update()
@@ -153,9 +155,21 @@ public class Boss : MonoBehaviour
         ani.SetFloat("Blend", count);
         _AniState = AnimState.hit;
     }
+    public BigInteger GoldReward()
+    {
+        BigInteger goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
+        return goldreward;
+    }
+    public BigInteger KnowledgeReward()
+    {
+        BigInteger knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
+        return knowledgereward;
+    }
     public void SetHpbar()
     {
-        Hpbar.value = Hp;
+        BigInteger num;
+        num = BigInteger.Divide((BigInteger.Multiply(Hp, 100)), MaxHp);
+        Hpbar.value = (float.Parse(num.ToString()) / 100);
         Hpbar.transform.position = cam.WorldToScreenPoint(this.transform.position + new Vector3(0, 2.5f, 0));
     }
 }

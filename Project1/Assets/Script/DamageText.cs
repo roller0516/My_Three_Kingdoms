@@ -88,7 +88,7 @@ public class DamageText : MonoBehaviour
     }
     private string Text_Damage()
     {
-        int placeN = 4;
+        int placeN = 3;
         BigInteger value = Damage;
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
@@ -104,7 +104,7 @@ public class DamageText : MonoBehaviour
 
 
 
-        if (num < 10000)
+        if (num < 1000)
             return num.ToString();
 
         float f = (num / (float)p);
@@ -120,9 +120,9 @@ public class DamageText : MonoBehaviour
         string retstr = "";
         for (int i = 0; i < repeatCount; i++)
         {
-            retstr += (char)(65 + index % 26);
+            retstr += (char)(64 + index % 26);
         }
-        return ((char)65).ToString();
+        return retstr;
     }
 
 
