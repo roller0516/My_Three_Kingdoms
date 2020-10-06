@@ -197,7 +197,9 @@ public class DataController : MonoBehaviour
     }
     public void SubKnowledge(BigInteger newKnowledge)
     {
+        print(newKnowledge);
         m_Knowledge = BigInteger.Subtract(m_Knowledge, newKnowledge);
+        print(m_Knowledge);
         SetKnowledge(m_Knowledge);
     }
     public BigInteger GetKnowledge()
@@ -250,7 +252,6 @@ public class DataController : MonoBehaviour
             return m_goldperClick18;
         else if (num == "GoldPerClick19")
             return m_goldperClick19;
-        print(m_goldperClick3);
         return 0;
     }
     public void SetGoldPerClick(string name_, BigInteger newGoldPerClick)

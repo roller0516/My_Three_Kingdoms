@@ -292,6 +292,9 @@ public class UIManager : MonoBehaviour
                 case 9:
                     txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
                     break;
+                case 10:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
+                    break;
             }
         } 
     }
