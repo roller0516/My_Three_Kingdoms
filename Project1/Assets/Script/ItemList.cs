@@ -4,30 +4,29 @@ using UnityEngine.UI;
 
 public class ItemList : MonoBehaviour
 {
-    private static ItemList s_instance = null;
+    //private static ItemList s_instance = null;
 
-    public static ItemList Instance
-    {
-        get
-        {
-            if (s_instance == null)
-            {
-                s_instance = FindObjectOfType(typeof(ItemList)) as ItemList;
-            }
-            return s_instance;
-        }
-    }
+    //public static ItemList Instance
+    //{
+    //    get
+    //    {
+    //        if (s_instance == null)
+    //        {
+    //            s_instance = FindObjectOfType(typeof(ItemList)) as ItemList;
+    //        }
+    //        return s_instance;
+    //    }
+    //}
+    public string itemname;
     public weaponData weaponData;
     public Button[] bt;
     public Image[] im;
     public Slider[] WeaponGradeSlider;
-    public string itemname;
     public int item_Attack;
+    public int maxLevel = 10;
 
     private int StartAttackByUpgrade = 1;
-    public int maxLevel = 10;
-    
-    
+
     private void Start()
     {
         UpgradeWeapon(weaponData.dataArray[0].Level, 0);
@@ -37,15 +36,14 @@ public class ItemList : MonoBehaviour
     public void ButtonOn(string name)
     {
         itemname = name;
+        
         for (int i = 0; i < weaponData.dataArray.Length; i++)
         {
             if (weaponData.dataArray[i].UID == name)//이름으로 찾는다
             {
                 weaponData.dataArray[i].Isusing = true; //착용한상태로변경
-                //레벨을 올려주고 
-
-                UpgradeWeapon(weaponData.dataArray[i].Level + 1, i);
-
+                weaponData.dataArray[i].Level++;
+                UpgradeWeapon(weaponData.dataArray[i].Level, i);
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
                     if (weaponData.dataArray[i].Isusing == true)
@@ -113,8 +111,6 @@ public class ItemList : MonoBehaviour
     public void WeaponUpGradeSlider()
     {
         for (int i = 0; i < weaponData.dataArray.Length; i++)
-        {
             WeaponGradeSlider[i].value = (float)weaponData.dataArray[i].Level / (float)maxLevel;
-        }
     }
 }

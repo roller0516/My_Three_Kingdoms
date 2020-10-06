@@ -1,6 +1,11 @@
 ﻿
 using UnityEngine;
 using Spine.Unity;
+using UnityEngine.UI;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
+using Quaternion = UnityEngine.Quaternion;
 
 public class EnemyTest : MonoBehaviour
 {
@@ -15,12 +20,14 @@ public class EnemyTest : MonoBehaviour
     private Animator ani;
     private Transform target;
 
+    public Slider Hpbar;
+    public Slider HpbarBasic;
     public GameObject damageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
-    public int Hp;
-    public int MaxHp;
-
+    public BigInteger Hp;
+    public BigInteger MaxHp;
+    Camera cam = null;
 
     private void Awake()
     {
@@ -32,11 +39,19 @@ public class EnemyTest : MonoBehaviour
     {
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
-        MaxHp = (int)Mathf.Pow(((int)MonsterSpawn._instance.stg.curStage + 8) * 4 * 0.5f, 2);
+
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
+
         _AniState = AnimState.move;// 애니메이션 변경
-        SetAttechment(MonsterSpawn._instance.RandomRange2 + 1);// 무기변경 랜덤으로 변경
+
+        SetAttechment(MonsterSpawn.instance.RandomRange2 + 1);
+
+        MaxHp = MonsterSpawn.instance.MonsterHpCount; // 무기변경 랜덤으로 변경
         Hp = MaxHp;
+        cam = Camera.main;
+        Hpbar = Instantiate(HpbarBasic , this.gameObject.transform.position,Quaternion.identity) as Slider;
+        Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
+        Hpbar.transform.SetAsFirstSibling();
     }
 
     private void Update()
@@ -44,6 +59,7 @@ public class EnemyTest : MonoBehaviour
         transform.Translate(new Vector2(-1f * moveSpeed * Time.deltaTime, 0));//왼쪽으로 전진 
         SetCurrentAnimation(_AniState); // 실시간으로 애니메이션을 받아온다.
         Distance();//실시간으로 타겟과의 거리를 받아온다
+        SetHpbar();
     }
 
     private void SetCurrentAnimation(AnimState _state) //애니메이션 
@@ -60,21 +76,21 @@ public class EnemyTest : MonoBehaviour
                 ani.SetTrigger("hit");
                 break;
             case AnimState.die:
-                ani.SetBool("Die",true);
+                ani.SetBool("Die", true);
                 break;
         }
     }
 
-    public void Distance()// 플레이어와의 거리를 계산한다.
+    private void Distance()// 플레이어와의 거리를 계산한다.
     {
         float d = Vector2.Distance(target.position, transform.position);
 
-        if (d >3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
+        if (d > 3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
         {
-           Player.Instance.Monster = this.gameObject;
-           Player.Instance.moveSpeed = 3f;
-           Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
-           Player.Instance._AniState = Player.AnimState.moveSpeedup;
+            Player.Instance.Monster = this.gameObject;
+            Player.Instance.moveSpeed = 3f;
+            Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
+            Player.Instance._AniState = Player.AnimState.moveSpeedup;
         }
         else if (d > 2f && d <= 3f) // 2.1 ~ 3f
         {
@@ -88,7 +104,7 @@ public class EnemyTest : MonoBehaviour
                 moveSpeed = 2f;
             }
         }
-        else if (d <= 2f&& Hp>0) // 2보다 크거나 같고 hp가 0보다 클때
+        else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
             Player.Instance._AniState = Player.AnimState.Attack;
             Player.Instance.moveSpeed = 0f;
@@ -111,26 +127,45 @@ public class EnemyTest : MonoBehaviour
 
         ani.SetTrigger("hit");// 애니메이션 변경
 
-        KnockBack(); 
+        KnockBack();
 
         Hp -= damage;// hp 뺌
         if (Hp <= 0)
         {
+            Hpbar.gameObject.SetActive(false);
+            DataController.GetInstance().AddGold(GoldReward());
+            DataController.GetInstance().AddKnowledge(KnowledgeReward());
             _AniState = AnimState.die;
-            MonsterSpawn._instance.MonsterCount--;
-            MonsterSpawn._instance.IsDie = true;
-            Destroy(this.gameObject,2f);
+            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.IsDie = true;
+            Destroy(this.gameObject, 2f);
+            Hpbar.gameObject.SetActive(false);
         }
     }
-    public void KnockBack()// 넉백
+    private void KnockBack()// 넉백
     {
         rig.AddForce(new Vector3(2.5f, 2, 0) * knockbackPower, ForceMode.Impulse);
     }
 
-    public void SetAttechment(int num) // 무기변경
+    private void SetAttechment(int num) // 무기변경
     {
-        skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon "+num);
+        skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon " + num);
     }
-
-    
+    public BigInteger GoldReward()
+    {
+        BigInteger goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
+        return goldreward;
+    }
+    public BigInteger KnowledgeReward()
+    {
+        BigInteger knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp,5), 100);
+        return knowledgereward;
+    }
+    public void SetHpbar()
+    {
+        BigInteger num;
+        num = BigInteger.Divide((BigInteger.Multiply(Hp, 100)), MaxHp);
+        Hpbar.value = (float.Parse(num.ToString())/ 100);
+        Hpbar.transform.position = cam.WorldToScreenPoint(this.transform.position + new Vector3(0,1.3f,0));
+    }
 }

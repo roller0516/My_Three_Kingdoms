@@ -68,8 +68,9 @@
     <Compile Include="Assets\QuickSheet\Example\Difficulty.cs" />
     <Compile Include="Assets\QuickSheet\Runtime\ExposePropertyAttribute.cs" />
     <Compile Include="Assets\QuickSheet\Runtime\Util\ConvertExt.cs" />
-    <Compile Include="Assets\Script\BackGroundScroll.cs" />
+    <Compile Include="Assets\Script\BigDecimal.cs" />
     <Compile Include="Assets\Script\Boss.cs" />
+    <Compile Include="Assets\Script\BossDictionary.cs" />
     <Compile Include="Assets\Script\CameraResolution.cs" />
     <Compile Include="Assets\Script\DamageText.cs" />
     <Compile Include="Assets\Script\Data\PlayerData.cs" />
@@ -113,12 +114,14 @@
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\ScrollTime.cs" />
     <Compile Include="Assets\Script\ScrollTimebarManager.cs" />
+    <Compile Include="Assets\Script\SKillCooltime.cs" />
     <Compile Include="Assets\Script\StageManager.cs" />
     <Compile Include="Assets\Script\TapMenuController.cs" />
-    <Compile Include="Assets\Script\test.cs" />
+    <Compile Include="Assets\Script\TeasureCostButton.cs" />
     <Compile Include="Assets\Script\TestScript\EnemyTest.cs" />
     <Compile Include="Assets\Script\TestScript\Excel.cs" />
     <Compile Include="Assets\Script\TestScript\GNBbutton.cs" />
+    <Compile Include="Assets\Script\TestScript\numTest.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
     <Compile Include="Assets\Script\UpgradeButton.cs" />
     <Compile Include="Assets\Script\Weaponcost.cs" />

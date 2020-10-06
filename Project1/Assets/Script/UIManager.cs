@@ -1,38 +1,66 @@
 ﻿
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Numerics;
 
 
 public class UIManager : MonoBehaviour
 {
     public GameObject weaponTap;
 
+    //버튼 텍스트
     public TextMeshProUGUI Gold;
+    public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] GoldPerClickDisPlayer;
-    private UpgradeButton[] UpgradeButton = new UpgradeButton[4];
-    private Weaponcost[] weaponcost = new Weaponcost[8];
+    public TextMeshProUGUI[] GoldCostClickDisPlayer;
+    public TextMeshProUGUI[] Atktext;
 
+    // 버튼 갯수
+    private UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
+    private Weaponcost[] weaponcost = new Weaponcost[8]; // 무기 버튼 코스트
+    ItemList item_l;
     [HideInInspector]
     public int[] Level;
-   
+    private void Awake()
+    {
+        int count = 13;
+        for (int i = 1; i < upgradeButton.Length + 1; i++)
+        {
+            
+            upgradeButton[i - 1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
+            upgradeButton[i - 1].UpgradeName = "Gold" + i;
+            
+            if (i == 1)
+            {
+                upgradeButton[i - 1].StartCurrentCost = "10";
+            }
+            else
+            {
+                upgradeButton[i - 1].StartCurrentCost = BigInteger.Multiply(BigInteger.Parse(upgradeButton[i - 2].StartCurrentCost.ToString()), count).ToString();
+                upgradeButton[i - 1].StartGoldByUpgrade = BigInteger.Multiply(BigInteger.Parse(upgradeButton[i - 2].StartCurrentCost.ToString()), count).ToString();
+                count++;
+            }
+        }
+    }
     private void Start()
     {
-        for (int i = 1; i < UpgradeButton.Length+1; i++) 
-        {
-            UpgradeButton[i-1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
-        }
+        Level = new int[upgradeButton.Length];
+        item_l = FindObjectOfType<ItemList>().GetComponent<ItemList>();
     }
     private void Update()
     {
-        for (int i=0; i < UpgradeButton.Length;i++) 
+        for (int i=0; i < upgradeButton.Length;i++) 
         {
-            Level[i] = UpgradeButton[i].Level;
+            Level[i] = upgradeButton[i].Level;
         }
 
         WeaponUpdate();
+        Gold.text = GetGoldText();
+        Knowledge.text = KnowledgeText();
         GoldPerClickText(GoldPerClickDisPlayer);
-        GoldText((float)DataController.GetInstance().GetGold());
-       
+        GoldCostClickText(GoldCostClickDisPlayer);
+        AtkText(Atktext);
     }
 
     public void WeaponUpdate() 
@@ -45,124 +73,229 @@ public class UIManager : MonoBehaviour
             }
             for (int i = 0; i < weaponcost.Length; i++)
             {
-                if (ItemList.Instance.weaponData.dataArray[i].Level < ItemList.Instance.maxLevel && ItemList.Instance.weaponData.dataArray[i].Level > 0) 
+                if (item_l.weaponData.dataArray[i].Level < item_l.maxLevel && item_l.weaponData.dataArray[i].Level > 0) 
                 {
-                    ItemList.Instance.bt[i].interactable = true;
+                    item_l.bt[i].interactable = true;
                     weaponcost[i].upGradeTex.gameObject.SetActive(true);
-                    ItemList.Instance.im[i].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
+                    item_l.im[i].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
                 }
-                else if (ItemList.Instance.weaponData.dataArray[i].Level == 10)
+                else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
-                    ItemList.Instance.bt[i].interactable = false;
-                    ItemList.Instance.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/Complete");
+                    item_l.bt[i].interactable = false;
+                    item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/Complete");
                     weaponcost[i].upGradeTex.gameObject.SetActive(false);
-                    if (i == ItemList.Instance.weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
+                    if (i == item_l.weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
                         return;
-                    else if (ItemList.Instance.weaponData.dataArray[i + 1].Level == 0) 
+                    else if (item_l.weaponData.dataArray[i + 1].Level == 0) 
                     {
                         weaponcost[i + 1].upGradeTex.gameObject.SetActive(true);
-                        ItemList.Instance.im[i + 1].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
-                        ItemList.Instance.bt[i + 1].interactable = true;
+                        item_l.im[i + 1].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
+                        item_l.bt[i + 1].interactable = true;
                     }
-                    
                 }
-
             }
         }
     }
 
-    public void GoldText(float gold)
+    private string GetGoldText()
     {
-        if (gold >= 100000) // c 십만
-        {
-            gold = gold / 100000;
+        int placeN = 3;
+        BigInteger value = DataController.GetInstance().GetGold();
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
 
-            Gold.text = gold.ToString("0.00") + "c";
-        }
-        else if (gold >= 10000)// b 만
+        do
         {
-            gold = gold / 10000;
-            Gold.text = gold.ToString("0.00") + "b";
+            numlist.Add((int)(value % p));
+            value /= p;
         }
-        else if (gold >= 1000)// a 천
+        while (value>=1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+    private string KnowledgeText()
+    {
+        int placeN = 3;
+        BigInteger value = DataController.GetInstance().GetKnowledge();
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
         {
-            gold = gold / 1000;
-            Gold.text = gold.ToString("0.00") + "a";
+            numlist.Add((int)(value % p));
+            value /= p;
         }
-        else if (gold < 1000)
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+
+
+    private string GoldPerClickText(string name)
+    {
+        int placeN = 3;
+        BigInteger value = DataController.GetInstance().GetGoldPerClick(name);
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
         {
-            Gold.text = gold.ToString("0");
+            numlist.Add((int)(value % p));
+            value /= p;
         }
+        while (value >= 1);
+        
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+
+    private string GoldCostClickText(BigInteger Cost)
+    {
+        int placeN = 3;
+        BigInteger value = Cost;
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+    private string AtkText(BigInteger Atk)
+    {
+        int placeN = 3;
+        BigInteger value = Atk;
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
+
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
+
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+    }
+
+    private string GetUnitText(int index)
+    {
+        int idx = index - 1;
+
+        if (idx < 0)
+            return "";
+
+        int repeatCount = (index / 26) + 1;
+
+        string retstr = "";
+
+        for (int i = 0; i < repeatCount; i++)
+        {
+            retstr += (char)(64 + index % 26);
+        }
+        return retstr;
     }
 
     public void GoldPerClickText(TextMeshProUGUI[] txt)
     {
-        
-        txt = GoldPerClickDisPlayer;
-       
-        for (int i = 0;i< GoldPerClickDisPlayer.Length;i++)
+        //txt = GoldPerClickDisPlayer;
+
+        for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
-            float gold = (float)DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
-            
-            if (gold >= 100000)// c 십만
-            {
-                gold = gold/100000;
-
-                txt[i].text = "+" + gold.ToString("0.00") + "c";
-            }
-            else if (gold >= 10000)// b 만
-            {
-                gold = gold/10000;
-
-                txt[i].text = "+" + gold.ToString("0.00") + "b";
-            }
-            else if (gold >= 1000)// a 천
-            {
-                gold = gold/1000;
-
-                txt[i].text = "+" + gold.ToString("0.00") + "a";
-
-            }
-            else if (gold < 1000)
-            {
-                txt[i].text = "+" + gold.ToString("0");
-
-            }
+            txt[i].text = GoldPerClickText("GoldPerClick"+i);
         }
     }
-    //public void WeaponCostText(TextMeshProUGUI[] txt)
-    //{
+    public void GoldCostClickText(TextMeshProUGUI[] txt)
+    {
+        //txt = GoldCostClickDisPlayer;
 
-    //    txt = GoldPerClickDisPlayer;
+        for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
+        {
+            txt[i].text = GoldCostClickText(upgradeButton[i].CurrentCost);
+        }
+    }
+    public void AtkText(TextMeshProUGUI[] txt)
+    {
+        //txt = Atktext;
 
-    //    for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
-    //    {
-    //        float gold = (float)DataController.GetInstance().GetGoldPerClick("GoldperClick" + i);
-
-    //        if (gold >= 100000)// c 십만
-    //        {
-    //            gold = gold / 100000;
-
-    //            txt[i].text = "+" + gold.ToString("0.00") + "c";
-    //        }
-    //        else if (gold >= 10000)// b 만
-    //        {
-    //            gold = gold / 10000;
-
-    //            txt[i].text = "+" + gold.ToString("0.00") + "b";
-    //        }
-    //        else if (gold >= 1000)// a 천
-    //        {
-    //            gold = gold / 1000;
-
-    //            txt[i].text = "+" + gold.ToString("0.00") + "a";
-
-    //        }
-    //        else if (gold < 1000)
-    //        {
-    //            txt[i].text = "+" + gold.ToString("0");
-
-    //        }
-    //    }
-    //}
+        for (int i = 0; i < item_l.weaponData.dataArray.Length; i++)
+        {
+            switch (item_l.weaponData.dataArray[i].Level)
+            {
+                case 0:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk);
+                    break;
+                case 1:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_2);
+                    break;
+                case 2:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_3);
+                    break;
+                case 3:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_4);
+                    break;
+                case 4:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_5);
+                    break;
+                case 5:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_6);
+                    break;
+                case 6:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_7);
+                    break;
+                case 7:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_8);
+                    break;
+                case 8:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_9);
+                    break;
+                case 9:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
+                    break;
+                case 10:
+                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
+                    break;
+            }
+        } 
+    }
 }

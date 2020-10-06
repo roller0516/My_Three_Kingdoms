@@ -154,11 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc448399c4be3f24c8d3456ffaa277dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hpbar: {fileID: 0}
+  HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
+    type: 3}
   damageText: {fileID: 443137311996352052, guid: 34b8ad3cc2e0b404ab4abc8b71b9109f,
     type: 3}
   knockbackPower: 1
   moveSpeed: 5
   Hp: 10
+  MaxHp: 0
 --- !u!65 &5583576894391580285
 BoxCollider:
   m_ObjectHideFlags: 0

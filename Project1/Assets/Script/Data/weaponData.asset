@@ -18,11 +18,11 @@ MonoBehaviour:
   - uid: weapon_wooden-branch
     leveled_atk: 1
     level: 1
-    atk: 50
-    atk_2: 70
+    atk: 11
+    atk_2: 56
     atk_3: 90
-    atk_4: 110
-    atk_5: 130
+    atk_4: 152
+    atk_5: 178
     atk_6: 150
     atk_7: 170
     atk_8: 190

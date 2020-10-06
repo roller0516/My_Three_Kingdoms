@@ -188,3 +188,7 @@ MonoBehaviour:
   knockbackPower: 1
   moveSpeed: 0.5
   Hp: 500
+  MaxHp: 0
+  Hpbar: {fileID: 0}
+  HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
+    type: 3}

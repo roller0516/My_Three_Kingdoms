@@ -1,9 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
+using Quaternion = UnityEngine.Quaternion;
 
 public class MonsterSpawn : MonoBehaviour
 {
+    public static MonsterSpawn instance;
+
+    public static MonsterSpawn GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = FindObjectOfType<MonsterSpawn>();
+            if (instance == null)
+            {
+                GameObject container = new GameObject("MosterSpwan");
+                instance = container.AddComponent<MonsterSpawn>();
+            }
+        }
+        return instance;
+    }
+
     public float SpawnTime;
     public float CurTime;
     public int MaxCount;
@@ -13,22 +33,31 @@ public class MonsterSpawn : MonoBehaviour
     public bool IsDie = false;
     public bool boss_IsDie = false;
 
-    private Vector3 startPosition;
-
     public Transform SpawnPoints;
     public GameObject[] Monster;
     public GameObject[] BossMonster;
+
+    private Vector3 startPosition;
     private Fadeinout fade;
-    public static MonsterSpawn _instance;
     
+    public BigInteger BossHpCount = 2850;
+    public BigInteger MonsterHpCount = 570;
+
     public StageManager stg;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
     private void Start()
     {
         fade = FindObjectOfType<Fadeinout>();
         stg = FindObjectOfType<StageManager>();
         startPosition = this.transform.position;
-        _instance = this;
-       
+        DataController.GetInstance().LoadStage(this);
     }
     private void Update()
     {
@@ -48,6 +77,8 @@ public class MonsterSpawn : MonoBehaviour
             IsDie = false;
             stg.MonsterCount++;
             StartCoroutine("Death");
+            DataController.GetInstance().SaveStage(this);
+            
         }
         if (boss_IsDie == true)
         {
@@ -55,7 +86,9 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
-           
+            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 115)), 100);
+            BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
+            DataController.GetInstance().SaveStage(this);
         }
     }
     public void SpawnMonster(int num)
