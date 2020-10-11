@@ -32,7 +32,7 @@ public class GameM : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
+        PlayerPrefs.DeleteAll();
     }
 
     public void SceneChagne(int number) 
@@ -40,5 +40,4 @@ public class GameM : MonoBehaviour
         SceneManager.LoadScene(number);
         SceneNumber_cur = number;
     }
-  
 }

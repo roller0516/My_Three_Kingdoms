@@ -93,7 +93,7 @@ public class MonsterSpawn : MonoBehaviour
     }
     public void SpawnMonster(int num)
     {
-        if (stg.MonsterCount % stg.MaxStage == 0)
+        if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
         {
             CurTime = 0;
             MonsterCount++;
@@ -101,11 +101,18 @@ public class MonsterSpawn : MonoBehaviour
             for (int i =0; i<BossMonster.Length;i++)
             {
                 if (i == stg.curStage - 1)
+                {
                     Instantiate(BossMonster[i], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
-                
+                    BossMonster[i].GetComponent<Boss>().BossName = BossMonster[i].name;
+                    print(BossMonster[num].name);
+                }
             }
-            if(stg.curStage>3)
+            if (stg.curStage > BossMonster.Length)
+            {
                 Instantiate(BossMonster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+                BossMonster[num].GetComponent<Boss>().BossName = BossMonster[num].name;
+            }
+                
 
         }
         else 

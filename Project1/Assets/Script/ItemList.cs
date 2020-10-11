@@ -42,7 +42,7 @@ public class ItemList : MonoBehaviour
             if (weaponData.dataArray[i].UID == name)//이름으로 찾는다
             {
                 weaponData.dataArray[i].Isusing = true; //착용한상태로변경
-                weaponData.dataArray[i].Level++;
+
                 UpgradeWeapon(weaponData.dataArray[i].Level, i);
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
@@ -50,6 +50,7 @@ public class ItemList : MonoBehaviour
                         AttechmentPlayeritem(weaponData.dataArray[i].UID);
                     weaponData.dataArray[i-1].Isusing = false;
                 }
+                
             }
         }
         DataController.GetInstance().Saveitem(this);

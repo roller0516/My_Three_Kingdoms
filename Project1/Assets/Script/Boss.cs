@@ -22,6 +22,7 @@ public class Boss : MonoBehaviour
     private int hitCount = 0;
     private int MaxhitCount = 1;
 
+    public string BossName;
     public GameObject damageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
@@ -38,12 +39,10 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
-
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
         MaxHp = MonsterSpawn.instance.BossHpCount;
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
-
         _AniState = AnimState.move;// 애니메이션 변경
         cam = Camera.main;
         // 무기변경 랜덤으로 변경
@@ -125,7 +124,6 @@ public class Boss : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
         hitCount++;
-        print(hitCount);
         
         Hitcount(hitCount);// 애니메이션 변경
         if (hitCount > 2)
@@ -138,10 +136,14 @@ public class Boss : MonoBehaviour
         if (Hp <= 0)
         {
             _AniState = AnimState.die;
+            DataController.GetInstance().AddGold(GoldReward());
+            DataController.GetInstance().AddKnowledge(KnowledgeReward());
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.boss_IsDie = true;
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
+            print(BossName);
+            BossDictionary.GetInstance().ChangeSprite(BossName);
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
         }

@@ -23,28 +23,31 @@ public class DataController : MonoBehaviour
     }
     #endregion
 
-    BigInteger m_gold = 1000000000;
-    BigInteger m_goldperClick = 10;
-    BigInteger m_goldperClick1 = 130;
-    BigInteger m_goldperClick2 = 1820;
-    BigInteger m_goldperClick3 = 27300;
-    BigInteger m_goldperClick4 = 436800;
-    BigInteger m_goldperClick5 = 7425600;
-    BigInteger m_goldperClick6 = 133660800;
-    BigInteger m_goldperClick7 = 2539555200;
-    BigInteger m_goldperClick8 = 50791104000;
-    BigInteger m_goldperClick9 = 1066613184000;
-    BigInteger m_goldperClick10 = 23465490048000;
-    BigInteger m_goldperClick11 = 539706271104000;
-    BigInteger m_goldperClick12 = 12952950506496000;
-    BigInteger m_goldperClick13 = 323823762662400000;
-    BigInteger m_goldperClick14 = 8419417829222400000;
+    BigInteger m_gold = 0;
+    BigInteger m_goldperClick = 6;
+    BigInteger m_goldperClick1 = 144;
+    BigInteger m_goldperClick2 = 2520 ;
+    BigInteger m_goldperClick3 = 40800 ;
+    BigInteger m_goldperClick4 = 1200000 ;
+    BigInteger m_goldperClick5 = 24000000 ;
+    BigInteger m_goldperClick6 = 480000000 ;
+    BigInteger m_goldperClick7 = 1440000000 ;
+    BigInteger m_goldperClick8 = 37800000000 ;
+    BigInteger m_goldperClick9 = 156000000000 ;
+    BigInteger m_goldperClick10 = 4800000000000 ;
+    BigInteger m_goldperClick11 = 22000000000000 ;
+    BigInteger m_goldperClick12 = 660000000000000 ;
+    BigInteger m_goldperClick13 = 46000000000000000;
+    BigInteger m_goldperClick14 = 27000000000000000;
     BigInteger m_goldperClick15;
     BigInteger m_goldperClick16;
     BigInteger m_goldperClick17;
     BigInteger m_goldperClick18;
     BigInteger m_goldperClick19;
     BigInteger m_Knowledge;
+ 
+
+
 
     private void Awake()
     {
@@ -411,7 +414,6 @@ public class DataController : MonoBehaviour
         itemlist.item_Attack = PlayerPrefs.GetInt("itemAttack", itemlist.item_Attack);
         for (int i=0; i< itemlist.weaponData.dataArray.Length; i++)
         {
-            print(itemlist.weaponData.dataArray[i].Level);
             string key = itemlist.weaponData.dataArray[i].UID;
             if(i == 0)
                 itemlist.weaponData.dataArray[0].Level = PlayerPrefs.GetInt(key, 1);
