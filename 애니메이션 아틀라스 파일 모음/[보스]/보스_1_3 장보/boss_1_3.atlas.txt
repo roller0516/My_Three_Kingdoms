@@ -1,5 +1,5 @@
 
-Jangbo.png
+boss_1_3.png
 size: 1598,263
 format: RGBA8888
 filter: Linear,Linear

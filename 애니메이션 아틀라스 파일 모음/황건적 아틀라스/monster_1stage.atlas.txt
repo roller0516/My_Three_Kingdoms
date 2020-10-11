@@ -1,320 +1,250 @@
 
-Hwang 3.png
-size: 1332,269
+monster_1stage.png
+size: 269,248
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-1
-  rotate: false
-  xy: 907, 49
-  size: 50, 22
-  orig: 52, 24
-  offset: 1, 1
-  index: -1
-2
-  rotate: true
-  xy: 1237, 76
-  size: 75, 37
-  orig: 77, 39
-  offset: 1, 1
-  index: -1
-3
-  rotate: false
-  xy: 546, 47
-  size: 197, 220
-  orig: 199, 222
-  offset: 1, 1
-  index: -1
-4
-  rotate: false
-  xy: 1276, 63
-  size: 51, 88
-  orig: 53, 90
-  offset: 1, 1
-  index: -1
-5
-  rotate: false
-  xy: 1197, 165
-  size: 37, 84
-  orig: 39, 86
-  offset: 1, 1
-  index: -1
-6
-  rotate: false
-  xy: 1236, 224
-  size: 20, 15
-  orig: 22, 17
-  offset: 1, 1
-  index: -1
-aaa1
-  rotate: false
-  xy: 2, 12
-  size: 191, 255
-  orig: 193, 257
-  offset: 1, 1
-  index: -1
-aaa2
-  rotate: false
-  xy: 907, 73
-  size: 288, 194
-  orig: 290, 196
-  offset: 1, 1
-  index: -1
-aaa3
-  rotate: true
-  xy: 195, 34
-  size: 233, 178
-  orig: 235, 180
-  offset: 1, 1
-  index: -1
-aaa4
-  rotate: true
-  xy: 375, 34
-  size: 233, 169
-  orig: 235, 171
-  offset: 1, 1
-  index: -1
-aaa5
-  rotate: true
-  xy: 745, 49
-  size: 218, 160
-  orig: 220, 162
-  offset: 1, 1
-  index: -1
 body
-  rotate: false
-  xy: 457, 9
+  rotate: true
+  xy: 46, 119
   size: 31, 23
   orig: 33, 25
   offset: 1, 1
   index: -1
 h 3/body
   rotate: true
-  xy: 263, 3
+  xy: 243, 217
   size: 29, 23
   orig: 31, 25
   offset: 1, 1
   index: -1
 h 3/hair ribbon
-  rotate: false
-  xy: 642, 2
+  rotate: true
+  xy: 198, 212
   size: 34, 43
   orig: 34, 43
   offset: 0, 0
   index: -1
 h 3/head
   rotate: true
-  xy: 1127, 4
+  xy: 142, 136
   size: 67, 66
   orig: 69, 68
   offset: 1, 1
   index: -1
 h 3/headcrying
-  rotate: true
-  xy: 1195, 4
+  rotate: false
+  xy: 142, 68
   size: 67, 66
   orig: 69, 68
   offset: 1, 1
   index: -1
 h 3/l arm
   rotate: false
-  xy: 419, 8
+  xy: 222, 42
   size: 19, 24
   orig: 19, 25
   offset: 0, 0
   index: -1
 h 3/l leg
-  rotate: false
-  xy: 959, 49
+  rotate: true
+  xy: 46, 105
   size: 12, 22
   orig: 16, 22
   offset: 3, 0
   index: -1
 황건적 2/l leg
-  rotate: false
-  xy: 959, 49
+  rotate: true
+  xy: 46, 105
   size: 12, 22
   orig: 16, 22
   offset: 3, 0
   index: -1
 h 3/middle
-  rotate: false
-  xy: 1197, 251
+  rotate: true
+  xy: 222, 2
   size: 38, 16
   orig: 38, 18
   offset: 0, 0
   index: -1
 h 3/r arm
   rotate: false
-  xy: 346, 7
+  xy: 46, 178
   size: 24, 25
   orig: 24, 25
   offset: 0, 0
   index: -1
 h 3/r leg
   rotate: false
-  xy: 973, 49
+  xy: 241, 92
   size: 12, 22
   orig: 12, 22
   offset: 0, 0
   index: -1
 황건적 2/r leg
   rotate: false
-  xy: 973, 49
+  xy: 241, 92
   size: 12, 22
   orig: 12, 22
   offset: 0, 0
   index: -1
 hair
-  rotate: true
-  xy: 1197, 73
+  rotate: false
+  xy: 142, 28
   size: 78, 38
   orig: 78, 39
   offset: 0, 1
   index: -1
 hair 1
-  rotate: false
-  xy: 313, 6
+  rotate: true
+  xy: 211, 110
   size: 31, 26
   orig: 31, 26
   offset: 0, 0
   index: -1
 hair 2
-  rotate: false
-  xy: 440, 8
+  rotate: true
+  xy: 211, 68
   size: 15, 24
   orig: 15, 24
   offset: 0, 0
   index: -1
 hair ribbon
   rotate: true
-  xy: 195, 3
+  xy: 71, 104
   size: 29, 32
   orig: 29, 32
   offset: 0, 0
   index: -1
 head
-  rotate: false
-  xy: 1263, 211
+  rotate: true
+  xy: 210, 143
   size: 67, 56
   orig: 69, 58
   offset: 1, 1
   index: -1
 headcrying
-  rotate: false
-  xy: 1263, 153
+  rotate: true
+  xy: 72, 35
   size: 67, 56
   orig: 69, 58
   offset: 1, 1
   index: -1
 l arm
   rotate: false
-  xy: 372, 7
+  xy: 239, 116
   size: 19, 25
   orig: 19, 25
   offset: 0, 0
   index: -1
 황건적 2/l arm
   rotate: false
-  xy: 372, 7
+  xy: 239, 116
   size: 19, 25
   orig: 19, 25
   offset: 0, 0
   index: -1
 l leg
-  rotate: true
-  xy: 1237, 255
+  rotate: false
+  xy: 255, 92
   size: 12, 22
   orig: 12, 22
   offset: 0, 0
   index: -1
 middle
-  rotate: false
-  xy: 565, 35
+  rotate: true
+  xy: 243, 52
   size: 15, 10
   orig: 15, 14
   offset: 0, 4
   index: -1
 r arm
   rotate: false
-  xy: 393, 8
+  xy: 46, 152
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 황건적 2/r arm
   rotate: false
-  xy: 393, 8
+  xy: 46, 152
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 r leg
-  rotate: true
-  xy: 1237, 241
+  rotate: false
+  xy: 240, 18
   size: 12, 22
   orig: 12, 22
   offset: 0, 0
   index: -1
+sha
+  rotate: true
+  xy: 130, 54
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
 weapon 1
   rotate: true
-  xy: 490, 10
+  xy: 2, 2
   size: 22, 150
   orig: 22, 150
   offset: 0, 0
   index: -1
 weapon 2
-  rotate: true
-  xy: 678, 3
+  rotate: false
+  xy: 2, 96
   size: 42, 150
   orig: 50, 150
   offset: 2, 0
   index: -1
 weapon 3
   rotate: true
-  xy: 830, 6
+  xy: 46, 205
   size: 41, 150
   orig: 50, 150
   offset: 5, 0
   index: -1
 황건적 2/body
-  rotate: true
-  xy: 288, 4
+  rotate: false
+  xy: 211, 85
   size: 28, 23
   orig: 30, 25
   offset: 1, 1
   index: -1
 황건적 2/hair ribbon
   rotate: true
-  xy: 229, 3
+  xy: 105, 104
   size: 29, 32
   orig: 29, 32
   offset: 0, 0
   index: -1
 황건적 2/head
   rotate: false
-  xy: 987, 3
+  xy: 2, 26
   size: 68, 68
   orig: 70, 70
   offset: 1, 1
   index: -1
 황건적 2/headcrying
   rotate: false
-  xy: 1057, 3
+  xy: 72, 135
   size: 68, 68
   orig: 70, 70
   offset: 1, 1
   index: -1
 황건적 2/leg armor
   rotate: false
-  xy: 1236, 208
+  xy: 237, 69
   size: 20, 14
   orig: 20, 14
   offset: 0, 0
   index: -1
 황건적 2/middle
-  rotate: false
-  xy: 546, 35
+  rotate: true
+  xy: 130, 35
   size: 17, 10
   orig: 29, 14
   offset: 12, 4

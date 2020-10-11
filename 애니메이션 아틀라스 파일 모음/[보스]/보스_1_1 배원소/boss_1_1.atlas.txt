@@ -1,5 +1,5 @@
 
-Baewonso.png
+boss_1_1.png
 size: 792,268
 format: RGBA8888
 filter: Linear,Linear
