@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     {
         transform.Translate(new Vector2(1f * moveSpeed * Time.deltaTime, 0));//플레이어 이동
         my_PlayerDamage = Playerdata.Damage + itemlist.item_Attack;
+
         SetCurrentAnimation(_AniState);
     }
     

@@ -36,6 +36,7 @@ public class Weaponcost : MonoBehaviour
 
                 
                 UpdateUI();
+                item_l.weaponData.dataArray[num].Level++;
             }
         }
         DataController.GetInstance().SaveWeaponCost(this);
