@@ -1,5 +1,5 @@
 
-Jungwonjee.png
+boss_1_2.png
 size: 1220,237
 format: RGBA8888
 filter: Linear,Linear

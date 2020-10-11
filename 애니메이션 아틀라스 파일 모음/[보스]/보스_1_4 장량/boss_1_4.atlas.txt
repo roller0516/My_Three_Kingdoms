@@ -1,0 +1,139 @@
+
+boss_1_4.png
+size: 1752,410
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 2, 8
+  size: 400, 395
+  orig: 402, 397
+  offset: 1, 1
+  index: -1
+2
+  rotate: true
+  xy: 399, 42
+  size: 366, 344
+  orig: 368, 346
+  offset: 1, 1
+  index: -1
+3
+  rotate: true
+  xy: 745, 61
+  size: 347, 342
+  orig: 349, 344
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 745, 13
+  size: 64, 46
+  orig: 64, 48
+  offset: 0, 2
+  index: -1
+eye clos
+  rotate: false
+  xy: 2, 2
+  size: 41, 4
+  orig: 43, 6
+  offset: 1, 1
+  index: -1
+eye open
+  rotate: false
+  xy: 45, 2
+  size: 41, 4
+  orig: 43, 6
+  offset: 1, 1
+  index: -1
+front hair
+  rotate: true
+  xy: 504, 21
+  size: 19, 55
+  orig: 19, 55
+  offset: 0, 0
+  index: -1
+gi 1
+  rotate: true
+  xy: 1412, 111
+  size: 297, 338
+  orig: 402, 397
+  offset: 47, 26
+  index: -1
+gi 2
+  rotate: true
+  xy: 1089, 63
+  size: 345, 321
+  orig: 402, 397
+  offset: 0, 14
+  index: -1
+head
+  rotate: false
+  xy: 1528, 23
+  size: 76, 86
+  orig: 78, 88
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: false
+  xy: 1606, 23
+  size: 76, 86
+  orig: 78, 88
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: true
+  xy: 561, 24
+  size: 16, 26
+  orig: 16, 26
+  offset: 0, 0
+  index: -1
+l foot
+  rotate: false
+  xy: 88, 2
+  size: 11, 4
+  orig: 13, 6
+  offset: 1, 1
+  index: -1
+l hair
+  rotate: true
+  xy: 455, 12
+  size: 28, 47
+  orig: 28, 47
+  offset: 0, 0
+  index: -1
+r arm
+  rotate: true
+  xy: 554, 4
+  size: 15, 28
+  orig: 15, 28
+  offset: 0, 0
+  index: -1
+r foot
+  rotate: false
+  xy: 101, 2
+  size: 8, 4
+  orig: 10, 6
+  offset: 1, 1
+  index: -1
+r hair
+  rotate: true
+  xy: 399, 12
+  size: 28, 54
+  orig: 28, 54
+  offset: 0, 0
+  index: -1
+sha
+  rotate: false
+  xy: 504, 9
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
+wind maker
+  rotate: true
+  xy: 1412, 35
+  size: 74, 114
+  orig: 74, 114
+  offset: 0, 0
+  index: -1
