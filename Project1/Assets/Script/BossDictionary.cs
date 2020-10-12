@@ -111,6 +111,7 @@ public class BossDictionary : MonoBehaviour
         }
         else if (Count>0)
         {
+            go.transform.parent = iconbutton[num].transform;
             go.transform.position = iconbutton[num].transform.position;
         }
     }

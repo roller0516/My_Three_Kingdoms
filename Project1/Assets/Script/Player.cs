@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
 
 public class Player : MonoBehaviour
 {
@@ -31,7 +34,7 @@ public class Player : MonoBehaviour
     public GameObject Monster;
     public AnimState _AniState;
     public float moveSpeed = 2;
-    public int my_PlayerDamage;
+    public BigInteger my_PlayerDamage;
 
 
     private void Start()

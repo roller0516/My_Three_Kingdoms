@@ -57,7 +57,7 @@ public class DamageText : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         // Move projectile to the position of throwing object + add some offset if needed.
-        Projectile.position = myTransform.position + new Vector3(0, 0.0f, 0);
+        Projectile.position = myTransform.position + new Vector3(0,0,0);
 
         // Calculate distance to target
         float target_Distance = Vector2.Distance(Projectile.position, Target.transform.position);

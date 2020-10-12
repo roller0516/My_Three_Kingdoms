@@ -15,115 +15,283 @@ MonoBehaviour:
   SheetName: Assets/Script/Data/weaponDB.xlsx
   WorksheetName: weaponData
   dataArray:
-  - uid: weapon_wooden-branch
+  - uid: weapon_1
     leveled_atk: 1
     level: 1
-    atk: 11
-    atk_2: 56
-    atk_3: 90
-    atk_4: 152
-    atk_5: 178
-    atk_6: 150
-    atk_7: 170
-    atk_8: 190
-    atk_9: 210
-    atk_10: 230
+    atk: 50
+    atk_2: 60
+    atk_3: 70
+    atk_4: 80
+    atk_5: 90
+    atk_6: 100
+    atk_7: 110
+    atk_8: 120
+    atk_9: 130
+    atk_10: 140
     isusing: 1
-  - uid: weapon_wooden-stick
+  - uid: weapon_2
     leveled_atk: 2
     level: 0
-    atk: 430
-    atk_2: 460
-    atk_3: 490
-    atk_4: 520
-    atk_5: 550
-    atk_6: 580
-    atk_7: 610
-    atk_8: 640
-    atk_9: 670
-    atk_10: 700
+    atk: 200
+    atk_2: 240
+    atk_3: 280
+    atk_4: 320
+    atk_5: 360
+    atk_6: 400
+    atk_7: 440
+    atk_8: 480
+    atk_9: 520
+    atk_10: 560
     isusing: 0
-  - uid: weapon_wooden-sword
+  - uid: weapon_3
     leveled_atk: 3
     level: 0
-    atk: 700
-    atk_2: 740
-    atk_3: 780
-    atk_4: 820
-    atk_5: 860
-    atk_6: 900
-    atk_7: 940
-    atk_8: 980
-    atk_9: 1020
-    atk_10: 1060
+    atk: 800
+    atk_2: 960
+    atk_3: 1120
+    atk_4: 1280
+    atk_5: 1440
+    atk_6: 1600
+    atk_7: 1760
+    atk_8: 1920
+    atk_9: 2080
+    atk_10: 2240
     isusing: 0
-  - uid: weapom_rusty-sword
+  - uid: weapon_4
     leveled_atk: 4
     level: 0
-    atk: 1200
-    atk_2: 1250
-    atk_3: 1300
-    atk_4: 1350
-    atk_5: 1400
-    atk_6: 1450
-    atk_7: 1500
-    atk_8: 1550
-    atk_9: 1600
-    atk_10: 1650
+    atk: 3200
+    atk_2: 3840
+    atk_3: 4480
+    atk_4: 5120
+    atk_5: 5760
+    atk_6: 6400
+    atk_7: 7040
+    atk_8: 7680
+    atk_9: 8320
+    atk_10: 8960
     isusing: 0
-  - uid: weapon_dagger
+  - uid: weapon_5
     leveled_atk: 5
     level: 0
-    atk: 2000
-    atk_2: 2100
-    atk_3: 2200
-    atk_4: 2300
-    atk_5: 2400
-    atk_6: 2500
-    atk_7: 2600
-    atk_8: 2700
-    atk_9: 2800
-    atk_10: 2900
+    atk: 12800
+    atk_2: 15360
+    atk_3: 17920
+    atk_4: 20480
+    atk_5: 23040
+    atk_6: 25600
+    atk_7: 28160
+    atk_8: 30720
+    atk_9: 33280
+    atk_10: 35840
     isusing: 0
-  - uid: weapon_slicing-sword
+  - uid: weapon_6
     leveled_atk: 6
     level: 0
-    atk: 4500
-    atk_2: 4650
-    atk_3: 4800
-    atk_4: 4950
-    atk_5: 5100
-    atk_6: 5250
-    atk_7: 5400
-    atk_8: 5550
-    atk_9: 5700
-    atk_10: 5850
+    atk: 51200
+    atk_2: 61440
+    atk_3: 71680
+    atk_4: 81920
+    atk_5: 92160
+    atk_6: 102400
+    atk_7: 112640
+    atk_8: 122880
+    atk_9: 133120
+    atk_10: 143360
     isusing: 0
-  - uid: weapon_war-ax
+  - uid: weapon_7
     leveled_atk: 7
     level: 0
-    atk: 7000
-    atk_2: 7200
-    atk_3: 7400
-    atk_4: 7600
-    atk_5: 7800
-    atk_6: 8000
-    atk_7: 8200
-    atk_8: 8400
-    atk_9: 8600
-    atk_10: 8800
+    atk: 204800
+    atk_2: 245760
+    atk_3: 286720
+    atk_4: 327680
+    atk_5: 368640
+    atk_6: 409600
+    atk_7: 450560
+    atk_8: 491520
+    atk_9: 532480
+    atk_10: 573440
     isusing: 0
-  - uid: weapon_double-edged-ax
+  - uid: weapon_8
     leveled_atk: 8
     level: 0
-    atk: 10000
-    atk_2: 10500
-    atk_3: 11000
-    atk_4: 11500
-    atk_5: 12000
-    atk_6: 12500
-    atk_7: 13000
-    atk_8: 13500
-    atk_9: 14000
-    atk_10: 14500
+    atk: 819200
+    atk_2: 983040
+    atk_3: 1146880
+    atk_4: 1310720
+    atk_5: 1474560
+    atk_6: 1638400
+    atk_7: 1802240
+    atk_8: 1966080
+    atk_9: 2129920
+    atk_10: 2293760
+    isusing: 0
+  - uid: weapon_9
+    leveled_atk: 9
+    level: 0
+    atk: 3276800
+    atk_2: 3932160
+    atk_3: 4587520
+    atk_4: 5242880
+    atk_5: 5898240
+    atk_6: 6553600
+    atk_7: 7208960
+    atk_8: 7864320
+    atk_9: 8519680
+    atk_10: 9175040
+    isusing: 0
+  - uid: weapon_10
+    leveled_atk: 10
+    level: 0
+    atk: 13107200
+    atk_2: 15728640
+    atk_3: 18350080
+    atk_4: 20971520
+    atk_5: 23592960
+    atk_6: 26214400
+    atk_7: 28835840
+    atk_8: 31457280
+    atk_9: 34078720
+    atk_10: 36700160
+    isusing: 0
+  - uid: weapon_11
+    leveled_atk: 11
+    level: 0
+    atk: 52428800
+    atk_2: 62914560
+    atk_3: 73400320
+    atk_4: 83886080
+    atk_5: 94371840
+    atk_6: 104857600
+    atk_7: 115343360
+    atk_8: 125829120
+    atk_9: 136314880
+    atk_10: 146800640
+    isusing: 0
+  - uid: weapon_12
+    leveled_atk: 12
+    level: 0
+    atk: 209715200
+    atk_2: 251658240
+    atk_3: 293601280
+    atk_4: 335544320
+    atk_5: 377487360
+    atk_6: 419430400
+    atk_7: 461373440
+    atk_8: 503316480
+    atk_9: 545259520
+    atk_10: 587202560
+    isusing: 0
+  - uid: weapon_13
+    leveled_atk: 13
+    level: 0
+    atk: 838860800
+    atk_2: 1006632960
+    atk_3: 1174405120
+    atk_4: 1342177280
+    atk_5: 1509949440
+    atk_6: 1677721600
+    atk_7: 1845493760
+    atk_8: 2013265920
+    atk_9: 2181038080
+    atk_10: 2348810240
+    isusing: 0
+  - uid: weapon_14
+    leveled_atk: 14
+    level: 0
+    atk: 3355443200
+    atk_2: 4026531840
+    atk_3: 4697620480
+    atk_4: 5368709120
+    atk_5: 6039797760
+    atk_6: 6710886400
+    atk_7: 7381975040
+    atk_8: 8053063680
+    atk_9: 8724152320
+    atk_10: 9395240960
+    isusing: 0
+  - uid: weapon_15
+    leveled_atk: 15
+    level: 0
+    atk: 13421772800
+    atk_2: 16106127360
+    atk_3: 18790481920
+    atk_4: 21474836480
+    atk_5: 24159191040
+    atk_6: 26843545600
+    atk_7: 29527900160
+    atk_8: 32212254720
+    atk_9: 34896609280
+    atk_10: 37580963840
+    isusing: 0
+  - uid: weapon_16
+    leveled_atk: 16
+    level: 0
+    atk: 53687091200
+    atk_2: 64424509440
+    atk_3: 75161927680
+    atk_4: 85899345920
+    atk_5: 96636764160
+    atk_6: 107374182400
+    atk_7: 118111600640
+    atk_8: 128849018880
+    atk_9: 139586437120
+    atk_10: 150323855360
+    isusing: 0
+  - uid: weapon_17
+    leveled_atk: 17
+    level: 0
+    atk: 214748364800
+    atk_2: 257698037760
+    atk_3: 300647710720
+    atk_4: 343597383680
+    atk_5: 386547056640
+    atk_6: 429496729600
+    atk_7: 472446402560
+    atk_8: 515396075520
+    atk_9: 558345748480
+    atk_10: 601295421440
+    isusing: 0
+  - uid: weapon_18
+    leveled_atk: 18
+    level: 0
+    atk: 858993459200
+    atk_2: 1030792151040
+    atk_3: 1202590842880
+    atk_4: 1374389534720
+    atk_5: 1546188226560
+    atk_6: 1717986918400
+    atk_7: 1889785610240
+    atk_8: 2061584302080
+    atk_9: 2233382993920
+    atk_10: 2405181685760
+    isusing: 0
+  - uid: weapon_19
+    leveled_atk: 19
+    level: 0
+    atk: 3435973836800
+    atk_2: 4123168604160
+    atk_3: 4810363371520
+    atk_4: 5497558138880
+    atk_5: 6184752906240
+    atk_6: 1717986918400
+    atk_7: 7559142440960
+    atk_8: 8246337208320
+    atk_9: 8933531975680
+    atk_10: 9620726743040
+    isusing: 0
+  - uid: weapon_20
+    leveled_atk: 20
+    level: 0
+    atk: 13743895347200
+    atk_2: 16492674416640
+    atk_3: 19241453486080
+    atk_4: 21990232555520
+    atk_5: 24739011624960
+    atk_6: 27487790694400
+    atk_7: 30236569763840
+    atk_8: 32985348833280
+    atk_9: 35734127902720
+    atk_10: 38482906972160
     isusing: 0

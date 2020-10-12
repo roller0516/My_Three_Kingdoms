@@ -119,9 +119,9 @@ public class EnemyTest : MonoBehaviour
             _AniState = AnimState.move;
         }
     }
-    public void TakeDamage(int damage) // 데미지 함수
+    public void TakeDamage(BigInteger damage) // 데미지 함수
     {
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0), Quaternion.identity);// 데미지 텍스트 생성
+        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.7f, 0), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
 

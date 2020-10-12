@@ -30,6 +30,7 @@ public class Boss : MonoBehaviour
     public BigInteger MaxHp;
     public Slider Hpbar;
     public Slider HpbarBasic;
+
     Camera cam = null;
     private void Awake()
     {
@@ -116,9 +117,8 @@ public class Boss : MonoBehaviour
             moveSpeed = 2f;
             _AniState = AnimState.move;
         }
-
     }
-    public void TakeDamage(int damage) // 데미지 함수
+    public void TakeDamage(BigInteger damage) // 데미지 함수
     {
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();

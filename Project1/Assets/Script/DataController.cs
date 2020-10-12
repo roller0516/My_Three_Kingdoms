@@ -178,7 +178,6 @@ public class DataController : MonoBehaviour
     public void SubGold(BigInteger newGold)
     {
         m_gold = BigInteger.Subtract(m_gold, newGold);
-        print(m_gold);
         SetGold(m_gold);
     }
     public BigInteger GetGold()
@@ -411,7 +410,9 @@ public class DataController : MonoBehaviour
     }
     public void Loaditem(ItemList itemlist) 
     {
-        itemlist.item_Attack = PlayerPrefs.GetInt("itemAttack", itemlist.item_Attack);
+        string Attack = itemlist.item_Attack.ToString();
+        Attack = PlayerPrefs.GetString("itemAttack", Attack);
+        itemlist.item_Attack = BigInteger.Parse(Attack);
         for (int i=0; i< itemlist.weaponData.dataArray.Length; i++)
         {
             string key = itemlist.weaponData.dataArray[i].UID;
@@ -423,7 +424,8 @@ public class DataController : MonoBehaviour
     }
     public void Saveitem(ItemList itemlist)
     {
-        PlayerPrefs.SetInt("itemAttack", itemlist.item_Attack);
+        
+        PlayerPrefs.SetString("itemAttack", itemlist.item_Attack.ToString());
         for (int i = 0; i < itemlist.weaponData.dataArray.Length; i++)
         {
             string key = itemlist.weaponData.dataArray[i].UID;
@@ -434,12 +436,14 @@ public class DataController : MonoBehaviour
     public void LoadWeaponCost(Weaponcost weaponcost) 
     {
         string key = weaponcost.UpgradeName;
-        weaponcost.CurrentCost = PlayerPrefs.GetInt(key + "WeaponCurrentCost", weaponcost.StartCost);
+        string CurrentCost = weaponcost.CurrentCost.ToString();
+        CurrentCost = PlayerPrefs.GetString(key + "WeaponCurrentCost", CurrentCost);
+        weaponcost.CurrentCost = BigInteger.Parse(CurrentCost);
     }
     public void SaveWeaponCost(Weaponcost weaponcost)
     {
         string key = weaponcost.UpgradeName;
-        PlayerPrefs.SetInt(key+"WeaponCurrentCost", weaponcost.CurrentCost);
+        PlayerPrefs.SetString(key+"WeaponCurrentCost", weaponcost.CurrentCost.ToString());
     }
     public void LoadStage(MonsterSpawn mosterSpawn)
     {

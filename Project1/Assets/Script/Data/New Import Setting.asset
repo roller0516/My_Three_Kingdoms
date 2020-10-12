@@ -30,43 +30,43 @@ MonoBehaviour:
     name: level
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_2
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_3
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_4
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_5
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_6
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_7
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_8
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_9
     isEnable: 0
     isArray: 0
-  - type: 3
+  - type: 1
     name: atk_10
     isEnable: 0
     isArray: 0
