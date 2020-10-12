@@ -1,0 +1,68 @@
+{ "skeleton": { "images": "C:/Users/Administrator/Desktop/프로젝트/애니/보스들/3스테이지/초선/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "back hair", "bone": "root", "attachment": "back hair" },
+	{ "name": "r arm", "bone": "root", "attachment": "r arm" },
+	{ "name": "r leg", "bone": "root", "attachment": "r leg" },
+	{ "name": "l leg", "bone": "root", "attachment": "l leg" },
+	{ "name": "under_body", "bone": "root", "attachment": "under_body" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "l arm", "bone": "root", "attachment": "l arm" },
+	{ "name": "r_hair_2", "bone": "root", "attachment": "r_hair_2" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye open", "bone": "root", "attachment": "eye open" },
+	{ "name": "eye clos", "bone": "root" },
+	{ "name": "l_hair_2", "bone": "root", "attachment": "l_hair_2" },
+	{ "name": "l_hair_1", "bone": "root", "attachment": "l_hair_1" },
+	{ "name": "r_hair_1", "bone": "root", "attachment": "r_hair_1" }
+],
+"skins": {
+	"default": {
+		"back hair": {
+			"back hair": { "x": 94, "y": -113, "width": 70, "height": 58 }
+		},
+		"r arm": {
+			"r arm": { "x": 113.5, "y": -132, "width": 23, "height": 30 }
+		},
+		"r leg": {
+			"r leg": { "x": 105, "y": -157, "width": 12, "height": 20 }
+		},
+		"l leg": {
+			"l leg": { "x": 88.5, "y": -157, "width": 13, "height": 20 }
+		},
+		"under_body": {
+			"under_body": { "x": 97, "y": -152.5, "width": 36, "height": 21 }
+		},
+		"body": {
+			"body": { "x": 97.5, "y": -136.5, "width": 39, "height": 35 }
+		},
+		"l arm": {
+			"l arm": { "x": 78, "y": -133, "width": 22, "height": 28 }
+		},
+		"r_hair_2": {
+			"r_hair_2": { "x": 121, "y": -109, "width": 10, "height": 44 }
+		},
+		"head": {
+			"head": { "x": 93, "y": -80, "width": 80, "height": 90 }
+		},
+		"eye open": {
+			"eye open": { "x": 101.5, "y": -98.5, "width": 47, "height": 11 }
+		},
+		"eye clos": {
+			"eye clos": { "x": 101.5, "y": -100.5, "width": 47, "height": 11 }
+		},
+		"l_hair_2": {
+			"l_hair_2": { "x": 76, "y": -110, "width": 14, "height": 50 }
+		},
+		"l_hair_1": {
+			"l_hair_1": { "x": 85.5, "y": -82, "width": 41, "height": 42 }
+		},
+		"r_hair_1": {
+			"r_hair_1": { "x": 118, "y": -79.5, "width": 34, "height": 37 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
