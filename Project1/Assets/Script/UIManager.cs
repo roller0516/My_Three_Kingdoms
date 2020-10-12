@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
 
     // 버튼 갯수
     private UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
-    private Weaponcost[] weaponcost = new Weaponcost[8]; // 무기 버튼 코스트
+    private Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     ItemList item_l;
     [HideInInspector]
     public int[] Level;
@@ -263,37 +263,37 @@ public class UIManager : MonoBehaviour
             switch (item_l.weaponData.dataArray[i].Level)
             {
                 case 0:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk));
                     break;
                 case 1:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_2);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_2));
                     break;
                 case 2:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_3);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_3));
                     break;
                 case 3:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_4);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_4));
                     break;
                 case 4:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_5);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_5));
                     break;
                 case 5:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_6);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_6));
                     break;
                 case 6:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_7);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_7));
                     break;
                 case 7:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_8);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_8));
                     break;
                 case 8:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_9);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_9));
                     break;
                 case 9:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_10));
                     break;
                 case 10:
-                    txt[i].text = AtkText(item_l.weaponData.dataArray[i].Atk_10);
+                    txt[i].text = AtkText(BigInteger.Parse(item_l.weaponData.dataArray[i].Atk_10));
                     break;
             }
         } 

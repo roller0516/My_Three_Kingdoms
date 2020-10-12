@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Numerics;
 
 public class Weaponcost : MonoBehaviour
 {
     public string UpgradeName;
     [HideInInspector]
-    public int CurrentCost = 1;
+    public BigInteger CurrentCost;
     [HideInInspector]
     public int goldByUpgrade;
     public int StartCost;
@@ -16,8 +17,10 @@ public class Weaponcost : MonoBehaviour
     public int MaxLevel = 10;
     public TextMeshProUGUI upGradeTex;
     ItemList item_l;
+    
     private void Start()
     {
+        CurrentCost = StartCost;
         item_l = FindObjectOfType<ItemList>().GetComponent<ItemList>();
         DataController.GetInstance().LoadWeaponCost(this);
         UpdateUI();
@@ -47,7 +50,7 @@ public class Weaponcost : MonoBehaviour
        switch (num)
        {
            case 0:
-               CurrentCost +=50;
+               CurrentCost += 50;
                break;
            case 1:
                 CurrentCost += 110;
@@ -70,7 +73,43 @@ public class Weaponcost : MonoBehaviour
            case 7:
                 CurrentCost += 80190;
                break;
-       }
+           case 8:
+               CurrentCost += 240570;
+               break;
+           case 9:
+               CurrentCost += 721710;
+               break;
+           case 10:
+               CurrentCost += 2165130;
+               break;
+           case 11:
+               CurrentCost += 6495390;
+               break;
+           case 12:
+               CurrentCost += 19486170;
+               break;
+           case 13:
+               CurrentCost += 58458510;
+               break;
+           case 14:
+               CurrentCost += 175375530;
+               break;
+           case 15:
+               CurrentCost += 526126590;
+               break;
+           case 16:
+               CurrentCost += 1578379770;
+               break;
+           case 17:
+                CurrentCost += 4735139310;
+               break;
+           case 18:
+               CurrentCost += 14205417930;
+               break;
+           case 19:
+                CurrentCost += 42616253790;
+                break;
+        }
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {

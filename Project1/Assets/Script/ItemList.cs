@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using System.Numerics;
 
 public class ItemList : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class ItemList : MonoBehaviour
     public Button[] bt;
     public Image[] im;
     public Slider[] WeaponGradeSlider;
-    public int item_Attack;
+    public BigInteger item_Attack;
     public int maxLevel = 10;
 
     private int StartAttackByUpgrade = 1;
@@ -31,12 +32,13 @@ public class ItemList : MonoBehaviour
     {
         UpgradeWeapon(weaponData.dataArray[0].Level, 0);
         DataController.GetInstance().Loaditem(this);
+        for (int i = 0; i < weaponData.dataArray.Length; i++)
+            itemname = weaponData.dataArray[i].UID;
     }
 
     public void ButtonOn(string name)
     {
-        itemname = name;
-        
+
         for (int i = 0; i < weaponData.dataArray.Length; i++)
         {
             if (weaponData.dataArray[i].UID == name)//이름으로 찾는다
@@ -63,40 +65,41 @@ public class ItemList : MonoBehaviour
 
     public void UpgradeWeapon(int num,int num2)
     {
+        
         switch (num)
         {
             case 1:
-                item_Attack = weaponData.dataArray[num2].Atk;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk);
                 break;
             case 2:
-                item_Attack = weaponData.dataArray[num2].Atk_2;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_2);
                 break;
             case 3:
-                item_Attack = weaponData.dataArray[num2].Atk_3;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_3);
                 break;
             case 4:
-                item_Attack = weaponData.dataArray[num2].Atk_4;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_4);
                 break;
             case 5:
-                item_Attack = weaponData.dataArray[num2].Atk_5;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_5);
                 break;
             case 6:
-                item_Attack = weaponData.dataArray[num2].Atk_6;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_6);
                 break;
             case 7:
-                item_Attack = weaponData.dataArray[num2].Atk_7;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_7);
                 break;
             case 8:
-                item_Attack = weaponData.dataArray[num2].Atk_8;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_8);
                 break;
             case 9:
-                item_Attack = weaponData.dataArray[num2].Atk_9;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_9);
                 break;
             case 10:
-                item_Attack = weaponData.dataArray[num2].Atk_10;
+                item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_10);
                 break;
         }
-        
+        print(item_Attack);
     }
    
     public void AttechmentPlayeritem(string itemname)
