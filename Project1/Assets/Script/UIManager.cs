@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System.Numerics;
 
 
@@ -11,9 +12,10 @@ public class UIManager : MonoBehaviour
 
     //버튼 텍스트
     public TextMeshProUGUI Gold;
+    
+    public Text[] GoldPerClickDisPlayer;
+    public Text[] GoldCostClickDisPlayer;
     public TextMeshProUGUI Knowledge;
-    public TextMeshProUGUI[] GoldPerClickDisPlayer;
-    public TextMeshProUGUI[] GoldCostClickDisPlayer;
     public TextMeshProUGUI[] Atktext;
 
     // 버튼 갯수
@@ -77,7 +79,7 @@ public class UIManager : MonoBehaviour
                 {
                     item_l.bt[i].interactable = true;
                     weaponcost[i].upGradeTex.gameObject.SetActive(true);
-                    item_l.im[i].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
+                    item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/nomalbutton");
                 }
                 else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
@@ -89,7 +91,7 @@ public class UIManager : MonoBehaviour
                     else if (item_l.weaponData.dataArray[i + 1].Level == 0) 
                     {
                         weaponcost[i + 1].upGradeTex.gameObject.SetActive(true);
-                        item_l.im[i + 1].sprite = Resources.Load<Sprite>("UI/Training/nomalbutton");
+                        item_l.im[i + 1].sprite = Resources.Load<Sprite>("UI/Weapon/nomalbutton");
                         item_l.bt[i + 1].interactable = true;
                     }
                 }
@@ -236,7 +238,7 @@ public class UIManager : MonoBehaviour
         return retstr;
     }
 
-    public void GoldPerClickText(TextMeshProUGUI[] txt)
+    public void GoldPerClickText(Text[] txt)
     {
         //txt = GoldPerClickDisPlayer;
 
@@ -245,7 +247,7 @@ public class UIManager : MonoBehaviour
             txt[i].text = GoldPerClickText("GoldPerClick"+i);
         }
     }
-    public void GoldCostClickText(TextMeshProUGUI[] txt)
+    public void GoldCostClickText(Text[] txt)
     {
         //txt = GoldCostClickDisPlayer;
 

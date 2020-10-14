@@ -42,5 +42,26 @@ public class TapMenuController : MonoBehaviour
         ani.SetTrigger("Search");
         
     }
- 
+    public void DictionaryOnActive()//애니메이션 수색탭으로 전환
+    {
+        ani.SetTrigger("Dictionary");
+
+    }
+
+    public void TeasureNomalButton()
+    {
+        ani.SetTrigger("TeasureNomal");
+    }
+    public void TeasureSpecialButton()
+    {
+        ani.SetTrigger("TeasureSpecial");
+    }
+    public void ShopClothes()
+    {
+        ani.SetTrigger("ShopClothes");
+    }
+    public void ShopWeapon()
+    {
+        ani.SetTrigger("ShopWeapon");
+    }
 }

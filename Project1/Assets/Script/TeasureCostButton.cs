@@ -19,7 +19,7 @@ public class TeasureCostButton : MonoBehaviour
     public int MaxLevel;
 
 
-    public TextMeshProUGUI LevelTex;
+    public Text LevelTex;
     public TextMeshProUGUI upGradeTex;
     public TextMeshProUGUI EffectTex;
     public Button button_;
@@ -59,7 +59,7 @@ public class TeasureCostButton : MonoBehaviour
     
     public void UpdateUI()//ui의 변화를 받아온다
     {
-        LevelTex.text = "Lv" + "." + Level.ToString();
+        LevelTex.text =  Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
 

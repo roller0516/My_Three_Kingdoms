@@ -157,12 +157,10 @@ MonoBehaviour:
   Hpbar: {fileID: 0}
   HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
     type: 3}
-  damageText: {fileID: 443137311996352052, guid: 34b8ad3cc2e0b404ab4abc8b71b9109f,
+  damageText: {fileID: 3244603216399354654, guid: d7b4cccee89c92d49b7d65c4620f0e40,
     type: 3}
   knockbackPower: 1
   moveSpeed: 5
-  Hp: 10
-  MaxHp: 0
 --- !u!65 &6187567859709250873
 BoxCollider:
   m_ObjectHideFlags: 0

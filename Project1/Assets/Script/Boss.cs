@@ -120,7 +120,8 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0), Quaternion.identity);// 데미지 텍스트 생성
+        GameObject go;
+        go = Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+ 2f, 0), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
         hitCount++;
@@ -144,6 +145,31 @@ public class Boss : MonoBehaviour
             Player.Instance.moveSpeed = 2f;
             print(BossName);
             BossDictionary.GetInstance().ChangeSprite(BossName);
+            Destroy(this.gameObject, 2f);
+            Hpbar.gameObject.SetActive(false);
+        }
+    }
+    public void CriticalDamage(BigInteger damage) // 데미지 함수
+    {
+        
+        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, 0), Quaternion.identity);// 데미지 텍스트 생성
+        DamageText dam = FindObjectOfType<DamageText>();
+        dam.Color_ = Color.red;
+        dam.Damage = damage;
+        
+        ani.SetTrigger("hit");// 애니메이션 변경
+
+        KnockBack();
+
+        Hp -= damage;// hp 뺌
+        if (Hp <= 0)
+        {
+            Hpbar.gameObject.SetActive(false);
+            DataController.GetInstance().AddGold(GoldReward());
+            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            _AniState = AnimState.die;
+            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.IsDie = true;
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
         }

@@ -36,10 +36,10 @@ widthPaddingFactor=0.00
 # output file
 outWidth=256
 outHeight=256
-outBitDepth=8
+outBitDepth=32
 fontDescFormat=0
 fourChnlPacked=0
-textureFormat=tga
+textureFormat=png
 textureCompression=0
 alphaChnl=1
 redChnl=0
@@ -57,3 +57,13 @@ outlineThickness=0
 
 
 # imported icon images
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/0.png",48,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/1.png",49,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/2.png",50,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/3.png",51,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/4.png",52,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/5.png",53,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/6.png",54,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/7.png",55,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/8.png",56,0,0,0
+icon="../UI/10.13 이미지/1훈련페이지/훈련창폰트/훈련창레벨표시_노랑검테/9.png",57,0,0,0

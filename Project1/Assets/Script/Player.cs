@@ -35,6 +35,9 @@ public class Player : MonoBehaviour
     public AnimState _AniState;
     public float moveSpeed = 2;
     public BigInteger my_PlayerDamage;
+    public int CriticalPer; //크피
+    public int Critical;//크리확률
+
 
 
     private void Start()
@@ -75,15 +78,30 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-
+  
     public void Attack() //공격 
     {
+        int crt = Random.Range(0, 101);
 
-        if (Monster.tag == "Boss")
-            Monster.GetComponent<Boss>().TakeDamage(my_PlayerDamage);
-        else if(Monster.tag == "Monster")
+        
+            
+        if (crt < Critical)
         {
-            Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
+            if (Monster.tag == "Boss")
+                Monster.GetComponent<Boss>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+            else if (Monster.tag == "Monster")
+            {
+                Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+            }
+        }
+        else
+        {
+            if (Monster.tag == "Boss")
+                Monster.GetComponent<Boss>().TakeDamage(my_PlayerDamage);
+            else if (Monster.tag == "Monster")
+            {
+                Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
+            }
         }
     }
 }
