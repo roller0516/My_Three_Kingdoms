@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
                 ani.SetInteger("AniState", (int)AnimState.Attack);
                 ani.SetFloat("AttackSpeed", Playerdata.AttackSpeed);
                 break;
+         
             case AnimState.moveSpeedup:
                 ani.SetFloat("MoveSpeed",2.0f);
                 break;
@@ -83,8 +84,6 @@ public class Player : MonoBehaviour
     {
         int crt = Random.Range(0, 101);
 
-        
-            
         if (crt < Critical)
         {
             if (Monster.tag == "Boss")
@@ -92,6 +91,7 @@ public class Player : MonoBehaviour
             else if (Monster.tag == "Monster")
             {
                 Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+                print("1");
             }
         }
         else

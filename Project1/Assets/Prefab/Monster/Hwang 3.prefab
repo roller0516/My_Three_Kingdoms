@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9142806282393774537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
 --- !u!95 &7401385634210301943
 Animator:
   serializedVersion: 3
@@ -154,10 +154,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc448399c4be3f24c8d3456ffaa277dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit: {fileID: 1760992571876156, guid: bfbb1577c0cf6194893d32135866cd83, type: 3}
+  Crihit: {fileID: 1347330118340980, guid: a270d4b31a4d11a4b8302acf069f853a, type: 3}
   Hpbar: {fileID: 0}
   HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
     type: 3}
   damageText: {fileID: 3244603216399354654, guid: d7b4cccee89c92d49b7d65c4620f0e40,
+    type: 3}
+  CridamageText: {fileID: 1913563109280866281, guid: 92af598fc0264e9429a488df6bd637ad,
     type: 3}
   knockbackPower: 1
   moveSpeed: 5

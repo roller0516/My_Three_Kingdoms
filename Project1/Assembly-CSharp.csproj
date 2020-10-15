@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Hit &amp; Slashes Vol.3\Demo Scene\ButtonAnimation.cs" />
+    <Compile Include="Assets\Hit &amp; Slashes Vol.3\Demo Scene\GameManager.cs" />
+    <Compile Include="Assets\Hit &amp; Slashes Vol.3\SelfDestruct.cs" />
     <Compile Include="Assets\QuickSheet\Example\Data\Runtime\ExcelExample.cs" />
     <Compile Include="Assets\QuickSheet\Example\Data\Runtime\ExcelExampleData.cs" />
     <Compile Include="Assets\QuickSheet\Example\Difficulty.cs" />

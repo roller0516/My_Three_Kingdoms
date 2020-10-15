@@ -10,7 +10,6 @@ public class DamageText : MonoBehaviour
 {
    
     private TextMeshPro text;
-    public Color Color_;
     private Transform myTransform;
     private float DestroyTime = 2f;
     private float firingAngle = 45.0f;
@@ -32,9 +31,6 @@ public class DamageText : MonoBehaviour
         //StartCoroutine("SimulateProjectile");
         ani = GetComponent<Animator>();
         text = GetComponent<TextMeshPro>();
-
-        this.text.color = Color.red;
-
 
         Invoke("DestroyText", DestroyTime);
     }
