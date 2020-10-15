@@ -20,13 +20,19 @@ public class EnemyTest : MonoBehaviour
     private Animator ani;
     private Transform target;
 
+    public GameObject hit;
+    public GameObject Crihit;
+
     public Slider Hpbar;
     public Slider HpbarBasic;
     public GameObject damageText;
+    public GameObject CridamageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
     public BigInteger Hp;
     public BigInteger MaxHp;
+    int Count;
+    
     Camera cam = null;
 
     private void Awake()
@@ -92,9 +98,9 @@ public class EnemyTest : MonoBehaviour
             Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
             Player.Instance._AniState = Player.AnimState.moveSpeedup;
         }
-        else if (d > 2f && d <= 3f) // 2.1 ~ 3f
+        else if (d > 2.5f && d <= 3f) // 2.1 ~ 3f
         {
-            Player.Instance._AniState = Player.AnimState.Idle;
+            //Player.Instance._AniState = Player.AnimState.Idle;
 
             if (_AniState == AnimState.die) // 몬스터의 애니메이션이 Die면 속도가 0
                 moveSpeed = 0f;
@@ -121,8 +127,8 @@ public class EnemyTest : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
-        
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+1.5f , 0), Quaternion.identity);// 데미지 텍스트 생성
+        Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y+1.0f, -1), Quaternion.identity);
+        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+1.5f , -1), Quaternion.identity);// 데미지 텍스트 생성
         //go.transform.parent = this.transform;
         
         DamageText dam = FindObjectOfType<DamageText>();
@@ -147,11 +153,11 @@ public class EnemyTest : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, 0), Quaternion.identity);// 데미지 텍스트 생성                                                                                                                           //go.transform.parent = this.transform;
+        Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
+        Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성                                                                                                                           //go.transform.parent = this.transform;
 
         DamageText dam = FindObjectOfType<DamageText>();
 
-        dam.Color_ = Color.red;
         dam.Damage = damage;
         ani.SetTrigger("hit");// 애니메이션 변경
 

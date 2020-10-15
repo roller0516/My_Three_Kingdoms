@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3958560862117465631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -170,9 +170,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9224234fd0c7cca4e8550698da997c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossName: Stage2boss
+  hit: {fileID: 1760992571876156, guid: bfbb1577c0cf6194893d32135866cd83, type: 3}
+  Crihit: {fileID: 1347330118340980, guid: a270d4b31a4d11a4b8302acf069f853a, type: 3}
   damageText: {fileID: 3244603216399354654, guid: d7b4cccee89c92d49b7d65c4620f0e40,
     type: 3}
+  CridamageText: {fileID: 1913563109280866281, guid: 92af598fc0264e9429a488df6bd637ad,
+    type: 3}
+  BossName: Stage2boss
   knockbackPower: 1
   moveSpeed: 0.5
   Hpbar: {fileID: 0}

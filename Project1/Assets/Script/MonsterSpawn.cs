@@ -61,7 +61,6 @@ public class MonsterSpawn : MonoBehaviour
     }
     private void Update()
     {
-
         if (CurTime >= SpawnTime && MonsterCount<MaxCount)
         {
             RandomRange1 = Random.Range(0, Monster.Length);
@@ -78,10 +77,10 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("Death");
             DataController.GetInstance().SaveStage(this);
-            
         }
         if (boss_IsDie == true)
         {
+            print(boss_IsDie);
             boss_IsDie = false;
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
@@ -93,6 +92,7 @@ public class MonsterSpawn : MonoBehaviour
     }
     public void SpawnMonster(int num)
     {
+        print(stg.curStage);
         if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
         {
             CurTime = 0;
@@ -112,8 +112,6 @@ public class MonsterSpawn : MonoBehaviour
                 Instantiate(BossMonster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
                 BossMonster[num].GetComponent<Boss>().BossName = BossMonster[num].name;
             }
-                
-
         }
         else 
         {

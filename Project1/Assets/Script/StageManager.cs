@@ -19,17 +19,7 @@ public class StageManager : MonoBehaviour
  
     private void stageCount() 
     {
-        //if (MonsterCount % MaxStage > 0)
-        //{
-        //    text[0].text = (MonsterCount % MaxStage).ToString() + "/" + MaxStage.ToString();
-        //    MonsterCountSlider.value = (MonsterCount % MaxStage) / MaxStage;
-        //}
-
-        //else if (MonsterCount % MaxStage == 0) 
-        //{
-        //    text[0].text = (MonsterCount / curStage).ToString() + "/" + MaxStage.ToString();
-        //    MonsterCountSlider.value = 1f;
-        //}
+      
 
         text.text = curStage.ToString() + "stage";
     }
