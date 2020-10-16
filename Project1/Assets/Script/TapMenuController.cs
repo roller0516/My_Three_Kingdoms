@@ -15,53 +15,62 @@ public class TapMenuController : MonoBehaviour
 
     public void TrainingOnActive() // 애니메이션 훈련탭으로 전환
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("Training");
        
     }
 
     public void WeaponOnActive()//애니메이션 무기탭으로 전환
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("Weapon");
         
     }
    
     public void TeasureOnActive()//애니메이션 보물탭으로 전환
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("Teasure");
         
     }
 
     public void ShopOnActive()//애니메이션 상점탭으로 전환
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("Shop");
        
     }
 
     public void SearchOnActive()//애니메이션 수색탭으로 전환
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("Search");
-        
     }
     public void DictionaryOnActive()//애니메이션 수색탭으로 전환
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("Dictionary");
 
     }
 
     public void TeasureNomalButton()
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("TeasureNomal");
     }
     public void TeasureSpecialButton()
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("TeasureSpecial");
     }
     public void ShopClothes()
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("ShopClothes");
     }
     public void ShopWeapon()
     {
+        SoundManager.instance.TapSound();
         ani.SetTrigger("ShopWeapon");
     }
 }

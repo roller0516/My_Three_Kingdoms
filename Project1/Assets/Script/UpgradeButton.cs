@@ -49,7 +49,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void PurChaseUpgrade(int num) //구매 함수
     {
-        print(num);
+        SoundManager.instance.ButtonSound();
         if (Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost)

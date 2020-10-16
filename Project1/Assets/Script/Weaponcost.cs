@@ -28,7 +28,7 @@ public class Weaponcost : MonoBehaviour
 
     public void PurChaseUpgrade(int num) //구매 함수
     {
-
+        SoundManager.instance.ButtonSound();
         if (item_l.weaponData.dataArray[num].Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost)
