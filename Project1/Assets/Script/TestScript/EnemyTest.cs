@@ -31,7 +31,7 @@ public class EnemyTest : MonoBehaviour
     public float moveSpeed = 0.5f;
     public BigInteger Hp;
     public BigInteger MaxHp;
-    int Count;
+    public int HitCount = 0;
     
     Camera cam = null;
 
@@ -58,6 +58,7 @@ public class EnemyTest : MonoBehaviour
         Hpbar = Instantiate(HpbarBasic , this.gameObject.transform.position,Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
+        HitCount = 0;
     }
 
     private void Update()
@@ -98,7 +99,7 @@ public class EnemyTest : MonoBehaviour
             Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
             Player.Instance._AniState = Player.AnimState.moveSpeedup;
         }
-        else if (d > 2.5f && d <= 3f) // 2.1 ~ 3f
+        else if (d > 2f && d <= 3f) // 2.1 ~ 3f
         {
             //Player.Instance._AniState = Player.AnimState.Idle;
 
@@ -112,7 +113,20 @@ public class EnemyTest : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
-            Player.Instance._AniState = Player.AnimState.Attack;
+            if (HitCount == 0)
+            {
+                Player.Instance._AniState = Player.AnimState.Attack;
+            }
+            else if (HitCount == 1) 
+            {
+                Player.Instance._AniState = Player.AnimState.Attack2;
+            }
+            else if(HitCount == 2) 
+            {
+                Player.Instance._AniState = Player.AnimState.Attack3;
+            }
+            if(HitCount == 3)
+                HitCount = 0;
             Player.Instance.moveSpeed = 0f;
             _AniState = AnimState.Idle;
             moveSpeed = 0;
@@ -127,6 +141,8 @@ public class EnemyTest : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
+        HitCount++;
+        SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y+1.0f, -1), Quaternion.identity);
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+1.5f , -1), Quaternion.identity);// 데미지 텍스트 생성
         //go.transform.parent = this.transform;
@@ -136,9 +152,10 @@ public class EnemyTest : MonoBehaviour
 
         ani.SetTrigger("hit");// 애니메이션 변경
 
-        KnockBack();
-
+        //KnockBack();
+       
         Hp -= damage;// hp 뺌
+        
         if (Hp <= 0)
         {
             Hpbar.gameObject.SetActive(false);
@@ -153,6 +170,7 @@ public class EnemyTest : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        HitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성                                                                                                                           //go.transform.parent = this.transform;
 
@@ -161,7 +179,7 @@ public class EnemyTest : MonoBehaviour
         dam.Damage = damage;
         ani.SetTrigger("hit");// 애니메이션 변경
 
-        KnockBack();
+        //KnockBack();
 
         Hp -= damage;// hp 뺌
         if (Hp <= 0)

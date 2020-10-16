@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AudioBypassTest\Assets\Scripts\AndroidAudioBypass\BypassAudioManager.cs" />
+    <Compile Include="Assets\AudioBypassTest\Assets\Scripts\AndroidAudioBypass\BypassAudioSource.cs" />
+    <Compile Include="Assets\AudioBypassTest\Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Hit &amp; Slashes Vol.3\Demo Scene\ButtonAnimation.cs" />
     <Compile Include="Assets\Hit &amp; Slashes Vol.3\Demo Scene\GameManager.cs" />
     <Compile Include="Assets\Hit &amp; Slashes Vol.3\SelfDestruct.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="Assets\Script\ScrollTimebarManager.cs" />
     <Compile Include="Assets\Script\Select_Ani.cs" />
     <Compile Include="Assets\Script\SKillCooltime.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
     <Compile Include="Assets\Script\StageManager.cs" />
     <Compile Include="Assets\Script\TapMenuController.cs" />
     <Compile Include="Assets\Script\TeasureCostButton.cs" />
@@ -131,7 +135,10 @@
     <Compile Include="Assets\Script\Weaponcost.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Plugin\AndroidManifest.xml" />
+    <None Include="Assets\AudioBypassTest\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\TestFont\FoodText.fnt" />
+    <None Include="Assets\Plugin\build.xml" />
     <None Include="Assets\QuickSheet\GDataPlugin\Templates\DataClass.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TestFont\BlackOutLine.fnt" />
@@ -142,15 +149,18 @@
     <None Include="Assets\Animation\stage1boss\Baewonso.atlas.txt" />
     <None Include="Assets\TestFont\Training_1.fnt" />
     <None Include="Assets\Spine\version.txt" />
+    <None Include="Assets\Plugin\res\values\strings.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Plugin\res\layout\main.xml" />
     <None Include="Assets\QuickSheet\ExcelPlugin\Templates\PostProcessor.txt" />
     <None Include="Assets\QuickSheet\ExcelPlugin\Templates\ScriptableObjectClass.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\QuickSheet\ExcelPlugin\Templates\ScriptableObjectEditorClass.txt" />
     <None Include="Assets\Animation\stage3boss\Jungwonjee.atlas.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Plugin\proguard-project.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Animation\Hwang\Hwang 3.atlas.txt" />

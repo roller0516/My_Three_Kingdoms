@@ -1,0 +1,11 @@
+# Output directories
+bin/
+gen/
+
+# local properties, don't check in
+local.properties
+
+# VIM leftover
+*~
+*.swp
+

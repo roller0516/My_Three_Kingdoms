@@ -19,9 +19,9 @@ public class Boss : MonoBehaviour
     private Rigidbody rig;
     private Animator ani;
     private Transform target;
-    private int hitCount = 0;
-    private int MaxhitCount = 1;
 
+    private int MaxhitCount = 1;
+    public int hitCount = 0;
     public GameObject hit;
     public GameObject Crihit;
     public GameObject damageText;
@@ -33,7 +33,6 @@ public class Boss : MonoBehaviour
     public BigInteger MaxHp;
     public Slider Hpbar;
     public Slider HpbarBasic;
-
     Camera cam = null;
     private void Awake()
     {
@@ -54,6 +53,7 @@ public class Boss : MonoBehaviour
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
+        hitCount = 0;
     }
 
     private void Update()
@@ -108,7 +108,20 @@ public class Boss : MonoBehaviour
         }
         else if (d <=2  && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
-            Player.Instance._AniState = Player.AnimState.Attack;
+            if (hitCount == 0)
+            {
+                Player.Instance._AniState = Player.AnimState.Attack;
+            }
+            else if (hitCount == 1)
+            {
+                Player.Instance._AniState = Player.AnimState.Attack2;
+            }
+            else if (hitCount == 2)
+            {
+                Player.Instance._AniState = Player.AnimState.Attack3;
+            }
+            if (hitCount == 3)
+                hitCount = 0;
             Player.Instance.moveSpeed = 0f;
             _AniState = AnimState.Idle;
             moveSpeed = 0;
@@ -123,12 +136,14 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
+        hitCount++;
+        SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);// 데미지 텍스트 생성
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+ 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
 
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
-        hitCount++;
+
         
         Hitcount(hitCount);// 애니메이션 변경
         if (hitCount > 2)
@@ -155,12 +170,12 @@ public class Boss : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        hitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
 
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
-        hitCount++;
 
         Hitcount(hitCount);// 애니메이션 변경
         if (hitCount > 2)
