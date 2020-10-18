@@ -24,29 +24,31 @@ public class DataController : MonoBehaviour
     #endregion
 
     BigInteger m_gold = 0;
-    BigInteger m_goldperClick = 6;
-    BigInteger m_goldperClick1 = 144;
-    BigInteger m_goldperClick2 = 2520 ;
-    BigInteger m_goldperClick3 = 40800 ;
-    BigInteger m_goldperClick4 = 1200000 ;
-    BigInteger m_goldperClick5 = 24000000 ;
-    BigInteger m_goldperClick6 = 480000000 ;
-    BigInteger m_goldperClick7 = 1440000000 ;
-    BigInteger m_goldperClick8 = 37800000000 ;
-    BigInteger m_goldperClick9 = 156000000000 ;
-    BigInteger m_goldperClick10 = 4800000000000 ;
-    BigInteger m_goldperClick11 = 22000000000000 ;
-    BigInteger m_goldperClick12 = 660000000000000 ;
-    BigInteger m_goldperClick13 = 46000000000000000;
-    BigInteger m_goldperClick14 = 27000000000000000;
-    BigInteger m_goldperClick15;
-    BigInteger m_goldperClick16;
-    BigInteger m_goldperClick17;
-    BigInteger m_goldperClick18;
-    BigInteger m_goldperClick19;
+    BigInteger m_goldperClick= 0;
+    BigInteger m_goldperClick1= 0;
+    BigInteger m_goldperClick2= 0;
+    BigInteger m_goldperClick3= 0;
+    BigInteger m_goldperClick4= 0;
+    BigInteger m_goldperClick5= 0;
+    BigInteger m_goldperClick6= 0;
+    BigInteger m_goldperClick7= 0;
+    BigInteger m_goldperClick8= 0;
+    BigInteger m_goldperClick9= 0;
+    BigInteger m_goldperClick10=0;
+    BigInteger m_goldperClick11=0;
+    BigInteger m_goldperClick12=0;
+    BigInteger m_goldperClick13=0;
+    BigInteger m_goldperClick14=0;
+    BigInteger m_goldperClick15=0;
+    BigInteger m_goldperClick16=0;
+    BigInteger m_goldperClick17=0;
+    BigInteger m_goldperClick18=0;
+    BigInteger m_goldperClick19=0;
     BigInteger m_Knowledge;
- 
 
+    public int Teasure1Ability = 0;
+
+    public List<string> key = new List<string>();
 
 
     private void Awake()
@@ -70,7 +72,7 @@ public class DataController : MonoBehaviour
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
 
-        List<string> key = new List<string>();
+        
 
         key.Add(m_goldperClick.ToString());
         key.Add(m_goldperClick1.ToString());
@@ -199,9 +201,7 @@ public class DataController : MonoBehaviour
     }
     public void SubKnowledge(BigInteger newKnowledge)
     {
-        print(newKnowledge);
         m_Knowledge = BigInteger.Subtract(m_Knowledge, newKnowledge);
-        print(m_Knowledge);
         SetKnowledge(m_Knowledge);
     }
     public BigInteger GetKnowledge()
@@ -267,7 +267,6 @@ public class DataController : MonoBehaviour
         }
         else if (name == "GoldPerClick1") 
         {
-            print(name);
             m_goldperClick1 = newGoldPerClick;
             PlayerPrefs.SetString("GoldPerClick1", m_goldperClick1.ToString());
         }

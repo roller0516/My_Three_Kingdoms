@@ -23,13 +23,13 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public int Level = 0;
 
     public int MaxLevel = 1000;
+    BigInteger Teasure;
+    BigInteger num;
 
-    
     public Text LevelTex;
     public Text upGradeTex;
     public Button button_;
     public GameObject Level_img;
-
 
     public string StartGoldByUpgrade;
     public string GoldByUpgrade;
@@ -57,7 +57,8 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 DataController.GetInstance().SubGold(CurrentCost);
                 Level++;
                 UpdateUpgrade();
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, goldByUpgrade);
+                
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, goldByUpgrade + BigInteger.Divide(Teasure,10000));
 
                
                 UpdateUI();
@@ -68,7 +69,8 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void UpdateUpgrade() // 업그레이드 공식
     {
         CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)),100);
-        goldByUpgrade += BigInteger.Parse(GoldByUpgrade);
+        goldByUpgrade = BigInteger.Multiply(Level,BigInteger.Parse(GoldByUpgrade));
+        Teasure = BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade));
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
