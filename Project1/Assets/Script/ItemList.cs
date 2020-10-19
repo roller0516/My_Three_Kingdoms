@@ -38,7 +38,6 @@ public class ItemList : MonoBehaviour
 
     public void ButtonOn(string name)
     {
-
         for (int i = 0; i < weaponData.dataArray.Length; i++)
         {
             if (weaponData.dataArray[i].UID == name)//이름으로 찾는다
@@ -65,7 +64,6 @@ public class ItemList : MonoBehaviour
 
     public void UpgradeWeapon(int num,int num2)
     {
-        
         switch (num)
         {
             case 1:
@@ -99,12 +97,11 @@ public class ItemList : MonoBehaviour
                 item_Attack = BigInteger.Parse(weaponData.dataArray[num2].Atk_10);
                 break;
         }
-        print(item_Attack);
     }
    
     public void AttechmentPlayeritem(string itemname)
     {
-        Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "Spear01");
+        Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", itemname);
     }
     public void AttachmentCheck()
     {

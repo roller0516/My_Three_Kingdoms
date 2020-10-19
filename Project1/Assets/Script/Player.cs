@@ -89,8 +89,6 @@ public class Player : MonoBehaviour
   
     public void Attack() //공격 
     {
-
-
         crt = Random.Range(0, 101);
         if (crt < Critical)
         {

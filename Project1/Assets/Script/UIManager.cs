@@ -8,6 +8,22 @@ using System.Numerics;
 
 public class UIManager : MonoBehaviour
 {
+    private static UIManager instance;
+
+    public static UIManager GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = FindObjectOfType<UIManager>();
+            if (instance == null)
+            {
+                GameObject container = new GameObject("Canvas");
+                instance = container.AddComponent<UIManager>();
+            }
+        }
+        return instance;
+    }
+
     public GameObject weaponTap;
 
     //버튼 텍스트
@@ -19,8 +35,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] Atktext;
 
     // 버튼 갯수
-    private UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
-    private Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
+    public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
+    public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     ItemList item_l;
     [HideInInspector]
     public int[] Level;
@@ -40,7 +56,6 @@ public class UIManager : MonoBehaviour
             else
             {
                 upgradeButton[i - 1].StartCurrentCost = BigInteger.Multiply(BigInteger.Parse(upgradeButton[i - 2].StartCurrentCost.ToString()), count).ToString();
-                upgradeButton[i - 1].StartGoldByUpgrade = BigInteger.Multiply(BigInteger.Parse(upgradeButton[i - 2].StartCurrentCost.ToString()), count).ToString();
                 count++;
             }
         }
