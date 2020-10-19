@@ -11,6 +11,7 @@ public class StageManager : MonoBehaviour
     public float MonsterCount = 1;
     public float curStage = 1;
     public float MaxStage =10;
+    public MeshRenderer[] BackGroud = new MeshRenderer[3];
 
     private void Update()
     {
@@ -19,8 +20,20 @@ public class StageManager : MonoBehaviour
  
     private void stageCount() 
     {
-      
-
         text.text = curStage.ToString() + "stage";
+        if (curStage >= 50)
+        {
+            for (int i = 0; i < BackGroud.Length; i++) 
+            {
+                BackGroud[i].GetComponent<MeshRenderer>().material = BackGroud[i].materials[1];
+            }
+        }
+        else if (curStage <50) 
+        {
+            for (int i = 0; i < BackGroud.Length; i++)
+            {
+                BackGroud[i].GetComponent<MeshRenderer>().material = BackGroud[i].materials[0];
+            }
+        }
     }
 }

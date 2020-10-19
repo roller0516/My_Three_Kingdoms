@@ -9,6 +9,7 @@ using Quaternion = UnityEngine.Quaternion;
 
 public class Boss : MonoBehaviour
 {
+    public string BossName;
     public enum AnimState //몬스터 상태
     {
         Idle, move, hit,die
@@ -19,20 +20,26 @@ public class Boss : MonoBehaviour
     private Rigidbody rig;
     private Animator ani;
     private Transform target;
-
     private int MaxhitCount = 1;
+
     public int hitCount = 0;
     public GameObject hit;
     public GameObject Crihit;
     public GameObject damageText;
     public GameObject CridamageText;
-    public string BossName;
+    
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
+
     public BigInteger Hp;
     public BigInteger MaxHp;
+
     public Slider Hpbar;
     public Slider HpbarBasic;
+
+    BigInteger goldreward;
+    BigInteger knowledgereward;
+
     Camera cam = null;
     private void Awake()
     {
@@ -53,6 +60,8 @@ public class Boss : MonoBehaviour
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
+        knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
+        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         hitCount = 0;
     }
 
@@ -155,12 +164,15 @@ public class Boss : MonoBehaviour
         
         if (Hp <= 0)
         {
+            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
             Player.Instance._AniState = Player.AnimState.Idle;
             MonsterSpawn.instance.boss_IsDie = true;
             MonsterSpawn.instance.MonsterCount--;
             _AniState = AnimState.die;
-            DataController.GetInstance().AddGold(GoldReward());
-            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            //SetKnowledgeReward(GetKnowledgeReward());
+            SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             BossDictionary.GetInstance().ChangeSprite(BossName);
@@ -187,11 +199,14 @@ public class Boss : MonoBehaviour
 
         if (Hp <= 0)
         {
+            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
             MonsterSpawn.instance.boss_IsDie = true;
             MonsterSpawn.instance.MonsterCount--;
             _AniState = AnimState.die;
-            DataController.GetInstance().AddGold(GoldReward());
-            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            //SetKnowledgeReward(GetKnowledgeReward());
+            SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             BossDictionary.GetInstance().ChangeSprite(BossName);
@@ -208,15 +223,21 @@ public class Boss : MonoBehaviour
         ani.SetFloat("Blend", count);
         _AniState = AnimState.hit;
     }
-    public BigInteger GoldReward()
+    public BigInteger GetGoldReward()
     {
-        BigInteger goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         return goldreward;
     }
-    public BigInteger KnowledgeReward()
+    public BigInteger GetKnowledgeReward()
     {
-        BigInteger knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
         return knowledgereward;
+    }
+    public void SetGoldReward(BigInteger newGold)
+    {
+        goldreward = newGold;
+    }
+    public void SetKnowledgeReward(BigInteger newKnowledge)
+    {
+        knowledgereward = newKnowledge;
     }
     public void SetHpbar()
     {

@@ -20,19 +20,26 @@ public class EnemyTest : MonoBehaviour
     private Animator ani;
     private Transform target;
 
+    public int HitCount = 0;
     public GameObject hit;
     public GameObject Crihit;
+    public GameObject damageText;
+    public GameObject CridamageText;
+
+    public float knockbackPower = 1;
+    public float moveSpeed = 0.5f;
+
+    public BigInteger Hp;
+    public BigInteger MaxHp;
 
     public Slider Hpbar;
     public Slider HpbarBasic;
-    public GameObject damageText;
-    public GameObject CridamageText;
-    public float knockbackPower = 1;
-    public float moveSpeed = 0.5f;
-    public BigInteger Hp;
-    public BigInteger MaxHp;
-    public int HitCount = 0;
+
     
+
+    BigInteger goldreward;
+    BigInteger knowledgereward;
+
     Camera cam = null;
 
     private void Awake()
@@ -59,6 +66,8 @@ public class EnemyTest : MonoBehaviour
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         HitCount = 0;
+        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
+        knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
     }
 
     private void Update()
@@ -158,9 +167,13 @@ public class EnemyTest : MonoBehaviour
         
         if (Hp <= 0)
         {
+            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
+            print(num);
             Hpbar.gameObject.SetActive(false);
-            DataController.GetInstance().AddGold(GoldReward());
-            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            SetGoldReward(GetGoldReward()+ ((GetGoldReward() * num * 100) / 10000));
+            //SetKnowledgeReward(GetKnowledgeReward());
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             _AniState = AnimState.die;
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.IsDie = true;
@@ -184,9 +197,12 @@ public class EnemyTest : MonoBehaviour
         Hp -= damage;// hp 뺌
         if (Hp <= 0)
         {
+            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
             Hpbar.gameObject.SetActive(false);
-            DataController.GetInstance().AddGold(GoldReward());
-            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            SetGoldReward(GetGoldReward()+((GetGoldReward()* num * 100) / 10000));
+            //SetKnowledgeReward(GetKnowledgeReward());
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             _AniState = AnimState.die;
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.IsDie = true;
@@ -203,15 +219,21 @@ public class EnemyTest : MonoBehaviour
     {
         skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon " + num);
     }
-    public BigInteger GoldReward()
+    public BigInteger GetGoldReward()
     {
-        BigInteger goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         return goldreward;
     }
-    public BigInteger KnowledgeReward()
+    public BigInteger GetKnowledgeReward()
     {
-        BigInteger knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp,5), 100);
         return knowledgereward;
+    }
+    public void SetGoldReward(BigInteger newGold) 
+    {
+        goldreward = newGold;
+    }
+    public void SetKnowledgeReward(BigInteger newKnowledge) 
+    {
+        knowledgereward = newKnowledge;
     }
     public void SetHpbar()
     {

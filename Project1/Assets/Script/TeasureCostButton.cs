@@ -33,7 +33,7 @@ public class TeasureCostButton : MonoBehaviour
 
     private void Start()
     {
-        goldByUpgrade = 0;
+        
         CurrentCost = StartCurrentCost;
         //DataController.GetInstance().LoadWeaponCost(this);
         UpdateUI();
@@ -63,8 +63,10 @@ public class TeasureCostButton : MonoBehaviour
         LevelTex.text =  Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
-
-        EffectTex.text = UpgradeNameText+ goldByUpgrade + "%";
+        if(UpgradeName == "treasure_8")
+            EffectTex.text = UpgradeNameText+ (goldByUpgrade+100) + "%";
+        else
+            EffectTex.text = UpgradeNameText + goldByUpgrade + "%";
 
         if (Level == MaxLevel)
         {
@@ -120,16 +122,17 @@ public class TeasureCostButton : MonoBehaviour
                     num = DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i);
                     num2 = BigInteger.Parse(UIManager.GetInstance().upgradeButton[i].GoldByUpgrade);
                     if(UIManager.GetInstance().upgradeButton[i].Level>0)
-                        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + i, num + (((num2 * goldByUpgrade) * 100) / 10000));
-                    print((((num2 * goldByUpgrade) * 100) / 10000));
+                        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + i, num + (num2 * goldByUpgrade * UIManager.GetInstance().upgradeButton[i].Level * 100) / 10000);
                 }
                 DataController.GetInstance().Teasure1Ability = goldByUpgrade;
                 break;
             case "treasure_2":
                 break;
             case "treasure_3":
+                Player.Instance.Critical = goldByUpgrade;
                 break;
             case "treasure_4":
+                
                 break;
             case "treasure_5":
                 break;
@@ -138,6 +141,7 @@ public class TeasureCostButton : MonoBehaviour
             case "treasure_7":
                 break;
             case "treasure_8":
+                Player.Instance.CriticalPer = 100+ goldByUpgrade;
                 break;
         }
     }

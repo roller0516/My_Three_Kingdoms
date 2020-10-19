@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     }
 
     public GameObject weaponTap;
+    public GameObject TeasureTap;
 
     //버튼 텍스트
     public TextMeshProUGUI Gold;
@@ -37,6 +38,8 @@ public class UIManager : MonoBehaviour
     // 버튼 갯수
     public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
+    public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
+    //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
     ItemList item_l;
     [HideInInspector]
     public int[] Level;
@@ -45,7 +48,6 @@ public class UIManager : MonoBehaviour
         int count = 13;
         for (int i = 1; i < upgradeButton.Length + 1; i++)
         {
-            
             upgradeButton[i - 1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
             upgradeButton[i - 1].UpgradeName = "Gold" + i;
             
@@ -71,7 +73,7 @@ public class UIManager : MonoBehaviour
         {
             Level[i] = upgradeButton[i].Level;
         }
-
+        TeasureButton();
         WeaponUpdate();
         Gold.text = GetGoldText();
         Knowledge.text = KnowledgeText();
@@ -79,7 +81,16 @@ public class UIManager : MonoBehaviour
         GoldCostClickText(GoldCostClickDisPlayer);
         AtkText(Atktext);
     }
-
+    public void TeasureButton() 
+    {
+        if (TeasureTap.activeSelf == true) 
+        {
+            for (int i=0; i <Teasurecost_Nomal.Length;i++) 
+            {
+                Teasurecost_Nomal[i] = GameObject.Find("Treasure_b"+i).GetComponent<TeasureCostButton>();
+            }
+        }
+    }
     public void WeaponUpdate() 
     {
         if (weaponTap.activeSelf == true)

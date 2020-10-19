@@ -58,7 +58,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 Level++;
                 UpdateUpgrade();
                 
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, goldByUpgrade + BigInteger.Divide(Teasure,10000));
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure,10000))+goldByUpgrade);
 
                
                 UpdateUI();
@@ -70,7 +70,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)),100);
         goldByUpgrade = BigInteger.Multiply(Level,BigInteger.Parse(GoldByUpgrade));
-        Teasure = BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade));
+        Teasure = BigInteger.Multiply(Level,BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
