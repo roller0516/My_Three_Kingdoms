@@ -279,7 +279,7 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
-            txt[i].text = GoldCostClickText(upgradeButton[i].CurrentCost);
+            txt[i].text = GoldCostClickText(upgradeButton[i].CurrentCost1);
         }
     }
     public void AtkText(TextMeshProUGUI[] txt)

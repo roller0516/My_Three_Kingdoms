@@ -17926,7 +17926,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -17979,6 +17979,7 @@ MonoBehaviour:
   upGradeTex: {fileID: 1774241551007587692}
   EffectTex: {fileID: 3510234167741726704}
   button_: {fileID: 3062219100252218710}
+  img: {fileID: 242900614919534714}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 1
   StartCurrentCost: 15
@@ -27601,7 +27602,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -27648,11 +27649,12 @@ MonoBehaviour:
   CurrentCost: 0
   goldByUpgrade: 0
   Level: 0
-  MaxLevel: 100
+  MaxLevel: 20
   LevelTex: {fileID: 1217012251766417186}
   upGradeTex: {fileID: 3139094043258254776}
   EffectTex: {fileID: 7738081288756717673}
   button_: {fileID: 7738081288584671116}
+  img: {fileID: 7738081289320356842}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 1
   StartCurrentCost: 15
@@ -35943,7 +35945,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -35990,11 +35992,12 @@ MonoBehaviour:
   CurrentCost: 0
   goldByUpgrade: 0
   Level: 0
-  MaxLevel: 100
+  MaxLevel: 200
   LevelTex: {fileID: 4944150407763447112}
   upGradeTex: {fileID: 3216632810326616833}
   EffectTex: {fileID: 7738081289562584531}
   button_: {fileID: 7738081289133810698}
+  img: {fileID: 7738081288437601440}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 1
   StartCurrentCost: 15
@@ -40330,6 +40333,7 @@ MonoBehaviour:
   skillcooltime: 0
   MaxSkillcooltime: 30
   skilldurationtime: 0
+  CrurrentTime: 0
 --- !u!1 &7738081289510236445
 GameObject:
   m_ObjectHideFlags: 0
@@ -47887,7 +47891,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -47934,11 +47938,12 @@ MonoBehaviour:
   CurrentCost: 0
   goldByUpgrade: 0
   Level: 0
-  MaxLevel: 100
+  MaxLevel: 10
   LevelTex: {fileID: 7950372849350043428}
   upGradeTex: {fileID: 7965690429050813035}
   EffectTex: {fileID: 7738081289712822202}
   button_: {fileID: 7738081289949447986}
+  img: {fileID: 7738081289955916871}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 1
   StartCurrentCost: 15
@@ -52444,7 +52449,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -52496,6 +52501,7 @@ MonoBehaviour:
   upGradeTex: {fileID: 7302802360582566029}
   EffectTex: {fileID: 7738081288465579379}
   button_: {fileID: 7738081290269793637}
+  img: {fileID: 7738081289906307825}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 1
   StartCurrentCost: 15
@@ -56912,7 +56918,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -56964,6 +56970,7 @@ MonoBehaviour:
   upGradeTex: {fileID: 7675124928695648212}
   EffectTex: {fileID: 8579054393658541681}
   button_: {fileID: 617867986852284672}
+  img: {fileID: 1314419390964922550}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 2
   StartCurrentCost: 15
@@ -58863,7 +58870,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -58910,11 +58917,12 @@ MonoBehaviour:
   CurrentCost: 0
   goldByUpgrade: 0
   Level: 0
-  MaxLevel: 100
+  MaxLevel: 30
   LevelTex: {fileID: 1449064119434561399}
   upGradeTex: {fileID: 8252930152728673315}
   EffectTex: {fileID: 8992572985658510646}
   button_: {fileID: 597035842787875428}
+  img: {fileID: 1626775367834603551}
   StartKnowledgeByUpgrade: 15
   KnowledgeByUpgrade: 1
   StartCurrentCost: 15

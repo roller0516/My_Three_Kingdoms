@@ -25,6 +25,7 @@ public class TeasureCostButton : MonoBehaviour
     public TextMeshProUGUI upGradeTex;
     public TextMeshProUGUI EffectTex;
     public Button button_;
+    public GameObject img;
     //public GameObject Level_img;
 
     public int StartKnowledgeByUpgrade;//처음 지식 업그레이드양
@@ -71,7 +72,7 @@ public class TeasureCostButton : MonoBehaviour
         if (Level == MaxLevel)
         {
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-            upGradeTex.text = "Max";
+            button_.image.sprite = Resources.Load<Sprite>("UI/Treasure/maxButton");
             LevelTex.text = "Lv" + "." + MaxLevel.ToString();
             button_.interactable = false;
         }
@@ -98,7 +99,8 @@ public class TeasureCostButton : MonoBehaviour
         }
         else if (Level == MaxLevel)
         {
-            upGradeTex.color = Color.yellow;
+            img.SetActive(false);
+            upGradeTex.gameObject.SetActive(false);
         }
         if (Level>0)
         {
@@ -132,13 +134,24 @@ public class TeasureCostButton : MonoBehaviour
                 Player.Instance.Critical = goldByUpgrade;
                 break;
             case "treasure_4":
+                for (int i = 0; i < UIManager.GetInstance().upgradeButton.Length; i++) 
+                {
+                    BigInteger num;
+                    BigInteger num2;
+                    num = UIManager.GetInstance().upgradeButton[i].CurrentCost;
+                    num2 = num * goldByUpgrade;
+                    UIManager.GetInstance().upgradeButton[i].CurrentCost1 = ((num * 100) - num2) / 100;
+                }
+                DataController.GetInstance().Teasure2Ability = goldByUpgrade;
+                    break;
+            case "treasure_5":
+                float time1 = GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime;
+                float time = GameObject.Find("SkillButton").GetComponent<SKillCooltime>().MaxSkillcooltime;
+                time1 = time * (1-((float)goldByUpgrade / 100));
+                GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime = time1;
                 
                 break;
-            case "treasure_5":
-                break;
             case "treasure_6":
-                break;
-            case "treasure_7":
                 break;
             case "treasure_8":
                 Player.Instance.CriticalPer = 100+ goldByUpgrade;

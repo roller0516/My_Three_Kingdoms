@@ -47,7 +47,7 @@ public class DataController : MonoBehaviour
     BigInteger m_Knowledge;
 
     public int Teasure1Ability = 0;
-
+    public int Teasure2Ability = 0;
     public List<string> key = new List<string>();
 
 
@@ -397,7 +397,7 @@ public class DataController : MonoBehaviour
         GoldByUpgrade = PlayerPrefs.GetString(key + "_goldByUpgrade", GoldByUpgrade);
         upGradeButton.goldByUpgrade = BigInteger.Parse(GoldByUpgrade);
         CurrentCost = PlayerPrefs.GetString(key + "+CurrentCost", CurrentCost);
-        upGradeButton.CurrentCost = BigInteger.Parse(CurrentCost);
+        upGradeButton.CurrentCost1 = BigInteger.Parse(CurrentCost);
     }
     public void SaveUpgradeButton(UpgradeButton upGradeButton)
     {
@@ -405,7 +405,7 @@ public class DataController : MonoBehaviour
         
         PlayerPrefs.SetInt(key + "_Level", upGradeButton.Level);
         PlayerPrefs.SetString(key + "_goldByUpgrade", upGradeButton.goldByUpgrade.ToString());
-        PlayerPrefs.SetString(key + "+CurrentCost", upGradeButton.CurrentCost.ToString());
+        PlayerPrefs.SetString(key + "+CurrentCost", upGradeButton.CurrentCost1.ToString());
     }
     public void Loaditem(ItemList itemlist) 
     {
@@ -423,7 +423,6 @@ public class DataController : MonoBehaviour
     }
     public void Saveitem(ItemList itemlist)
     {
-        
         PlayerPrefs.SetString("itemAttack", itemlist.item_Attack.ToString());
         for (int i = 0; i < itemlist.weaponData.dataArray.Length; i++)
         {
@@ -447,8 +446,6 @@ public class DataController : MonoBehaviour
     public void LoadStage(MonsterSpawn mosterSpawn)
     {
         mosterSpawn.stg.curStage = PlayerPrefs.GetInt("Stage", 1);
-        //mosterSpawn.stg.MonsterCount = PlayerPrefs.GetInt("MonsterCount", 1);
-
         string MonsterHP = mosterSpawn.MonsterHpCount.ToString();
         MonsterHP = PlayerPrefs.GetString("MonsterHpCount", MonsterHP);
         mosterSpawn.MonsterHpCount = BigInteger.Parse(MonsterHP);
@@ -460,7 +457,6 @@ public class DataController : MonoBehaviour
     public void SaveStage(MonsterSpawn mosterSpawn)
     {
         PlayerPrefs.SetInt("Stage", (int)mosterSpawn.stg.curStage);
-        //PlayerPrefs.SetInt("MonsterCount", (int)mosterSpawn.stg.MonsterCount);
         PlayerPrefs.SetString("MonsterHpCount", mosterSpawn.MonsterHpCount.ToString());
         PlayerPrefs.SetString("BossHpCount", mosterSpawn.BossHpCount.ToString());
     }
