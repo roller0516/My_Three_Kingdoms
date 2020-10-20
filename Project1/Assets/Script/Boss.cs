@@ -220,7 +220,7 @@ public class Boss : MonoBehaviour
     }
     public void Hitcount(int count)
     {
-        ani.SetFloat("Blend", count);
+        ani.SetFloat("Blend", 1);
         _AniState = AnimState.hit;
     }
     public BigInteger GetGoldReward()
