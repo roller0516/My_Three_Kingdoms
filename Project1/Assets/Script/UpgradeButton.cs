@@ -17,19 +17,22 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     [HideInInspector]
     public BigInteger CurrentCost;
     [HideInInspector]
+    public BigInteger CurrentCost1;
+    [HideInInspector]
     public BigInteger goldByUpgrade;
 
     [HideInInspector]
     public int Level = 0;
 
     public int MaxLevel = 1000;
+    BigInteger Teasure1;
+    BigInteger Teasure2;
+    BigInteger num;
 
-    
     public Text LevelTex;
     public Text upGradeTex;
     public Button button_;
     public GameObject Level_img;
-
 
     public string StartGoldByUpgrade;
     public string GoldByUpgrade;
@@ -41,6 +44,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private void Start()
     {
         CurrentCost=BigInteger.Parse(StartCurrentCost);
+        CurrentCost1 = CurrentCost;
         goldByUpgrade = BigInteger.Parse(StartGoldByUpgrade);
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
@@ -49,17 +53,18 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void PurChaseUpgrade(int num) //구매 함수
     {
-        print(num);
+        SoundManager.instance.ButtonSound();
         if (Level < MaxLevel)
         {
-            if (DataController.GetInstance().GetGold() >= CurrentCost)
+            if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
-                DataController.GetInstance().SubGold(CurrentCost);
+                DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
                 UpdateUpgrade();
-                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, goldByUpgrade);
+                
+                DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure1,10000))+goldByUpgrade);
 
-               
+
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
             }
@@ -67,15 +72,19 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
-        CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)),100);
-        goldByUpgrade += BigInteger.Parse(GoldByUpgrade);
+        CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)), 100);
+        Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
+        CurrentCost1 = ((CurrentCost*100)- Teasure2)/100;
+
+        goldByUpgrade = BigInteger.Multiply(Level,BigInteger.Parse(GoldByUpgrade));
+        Teasure1 = BigInteger.Multiply(Level,BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
     {
         if (Level != MaxLevel)
         {
-            if (DataController.GetInstance().GetGold() < CurrentCost)
+            if (DataController.GetInstance().GetGold() < CurrentCost1)
             {
                 Level_img.SetActive(false);
                 upGradeTex.color = Color.red;
@@ -91,7 +100,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         if (Level == MaxLevel)
         {
             Level_img.SetActive(false);
-            upGradeTex.color = Color.yellow;
+            upGradeTex.gameObject.SetActive(false);
         }
     }
     public void Update()
@@ -110,12 +119,12 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         LevelTex.text = Level.ToString();
 
-        upGradeTex.text = "" + CurrentCost;
+        upGradeTex.text = "" + CurrentCost1;
 
         if (Level == MaxLevel)
         {
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-            upGradeTex.text = "최대레벨";
+            button_.image.sprite = Resources.Load<Sprite>("UI/Treasure/maxButton");
             LevelTex.text = "Lv"+"."+MaxLevel.ToString();
             button_.interactable = false;
         }

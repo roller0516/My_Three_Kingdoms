@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 
 public class TeasureCostButton : MonoBehaviour
 {
-    public string UpgradeName = "";
 
+    public string UpgradeNameText = "";
+    public string UpgradeName;
     [HideInInspector]
     public int CurrentCost;
     [HideInInspector]
@@ -15,7 +18,6 @@ public class TeasureCostButton : MonoBehaviour
 
     [HideInInspector]
     public int Level = 0;
-
     public int MaxLevel;
 
 
@@ -23,8 +25,8 @@ public class TeasureCostButton : MonoBehaviour
     public TextMeshProUGUI upGradeTex;
     public TextMeshProUGUI EffectTex;
     public Button button_;
+    public GameObject img;
     //public GameObject Level_img;
-
 
     public int StartKnowledgeByUpgrade;//처음 지식 업그레이드양
     public int KnowledgeByUpgrade;// 지식 증가량
@@ -32,6 +34,7 @@ public class TeasureCostButton : MonoBehaviour
 
     private void Start()
     {
+        
         CurrentCost = StartCurrentCost;
         //DataController.GetInstance().LoadWeaponCost(this);
         UpdateUI();
@@ -45,11 +48,10 @@ public class TeasureCostButton : MonoBehaviour
             {
             
                 DataController.GetInstance().SubKnowledge(CurrentCost);
-                print(CurrentCost);
                 Level++;
                 UpdateUpgrade();
-                
 
+                TeasureAbility(UpgradeName);
                 UpdateUI();
                 //DataController.GetInstance().SaveWeaponCost(this);
             }
@@ -62,13 +64,15 @@ public class TeasureCostButton : MonoBehaviour
         LevelTex.text =  Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
-
-        EffectTex.text = UpgradeName+goldByUpgrade+"%";
+        if(UpgradeName == "treasure_8")
+            EffectTex.text = UpgradeNameText+ (goldByUpgrade+100) + "%";
+        else
+            EffectTex.text = UpgradeNameText + goldByUpgrade + "%";
 
         if (Level == MaxLevel)
         {
             upGradeTex.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-            upGradeTex.text = "Max";
+            button_.image.sprite = Resources.Load<Sprite>("UI/Treasure/maxButton");
             LevelTex.text = "Lv" + "." + MaxLevel.ToString();
             button_.interactable = false;
         }
@@ -95,7 +99,8 @@ public class TeasureCostButton : MonoBehaviour
         }
         else if (Level == MaxLevel)
         {
-            upGradeTex.color = Color.yellow;
+            img.SetActive(false);
+            upGradeTex.gameObject.SetActive(false);
         }
         if (Level>0)
         {
@@ -104,7 +109,53 @@ public class TeasureCostButton : MonoBehaviour
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
-        CurrentCost += ((StartCurrentCost * 106) / 100); // 지불하는 값을 업그레이드
+        CurrentCost += ((StartCurrentCost * 106) / 100);// 지불하는 값을 업그레이드
         goldByUpgrade += KnowledgeByUpgrade;
+    }
+    public void TeasureAbility(string name)
+    {
+        switch (name)
+        {
+            case "treasure_1":
+                for (int i = 0; i < DataController.GetInstance().key.Count;i++)
+                {
+                    BigInteger num;
+                    BigInteger num2;
+                    num = DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i);
+                    num2 = BigInteger.Parse(UIManager.GetInstance().upgradeButton[i].GoldByUpgrade);
+                    if(UIManager.GetInstance().upgradeButton[i].Level>0)
+                        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + i, num + (num2 * goldByUpgrade * UIManager.GetInstance().upgradeButton[i].Level * 100) / 10000);
+                }
+                DataController.GetInstance().Teasure1Ability = goldByUpgrade;
+                break;
+            case "treasure_2":
+                break;
+            case "treasure_3":
+                Player.Instance.Critical = goldByUpgrade;
+                break;
+            case "treasure_4":
+                for (int i = 0; i < UIManager.GetInstance().upgradeButton.Length; i++) 
+                {
+                    BigInteger num;
+                    BigInteger num2;
+                    num = UIManager.GetInstance().upgradeButton[i].CurrentCost;
+                    num2 = num * goldByUpgrade;
+                    UIManager.GetInstance().upgradeButton[i].CurrentCost1 = ((num * 100) - num2) / 100;
+                }
+                DataController.GetInstance().Teasure2Ability = goldByUpgrade;
+                    break;
+            case "treasure_5":
+                float time1 = GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime;
+                float time = GameObject.Find("SkillButton").GetComponent<SKillCooltime>().MaxSkillcooltime;
+                time1 = time * (1-((float)goldByUpgrade / 100));
+                GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime = time1;
+                
+                break;
+            case "treasure_6":
+                break;
+            case "treasure_8":
+                Player.Instance.CriticalPer = 100+ goldByUpgrade;
+                break;
+        }
     }
 }

@@ -73,6 +73,7 @@ public class BossDictionary : MonoBehaviour
 
     public void ButtonON(int num) //버튼을 눌렀어요
     {
+        SoundManager.instance.ButtonSound();
         PrFabsproduce(num);
 
     }

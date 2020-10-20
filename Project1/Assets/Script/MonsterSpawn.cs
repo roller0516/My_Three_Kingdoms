@@ -92,9 +92,9 @@ public class MonsterSpawn : MonoBehaviour
     }
     public void SpawnMonster(int num)
     {
-        print(stg.curStage);
         if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
         {
+            SoundManager.instance.BossSound();
             CurTime = 0;
             MonsterCount++;
 

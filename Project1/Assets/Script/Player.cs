@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     public enum AnimState
     {
-        Idle, move, Attack, moveSpeedup
+        Idle, move, Attack, moveSpeedup,Attack2,Attack3
     }
 
     private static Player s_instance = null;
@@ -37,8 +37,8 @@ public class Player : MonoBehaviour
     public BigInteger my_PlayerDamage;
     public int CriticalPer; //크피
     public int Critical;//크리확률
-
-
+    int Count = 0;
+    int crt;
 
     private void Start()
     {
@@ -73,7 +73,14 @@ public class Player : MonoBehaviour
                 ani.SetInteger("AniState", (int)AnimState.Attack);
                 ani.SetFloat("AttackSpeed", Playerdata.AttackSpeed);
                 break;
-         
+            case AnimState.Attack2:
+                ani.SetInteger("AniState", (int)AnimState.Attack2);
+                ani.SetFloat("AttackSpeed", Playerdata.AttackSpeed);
+                break;
+            case AnimState.Attack3:
+                ani.SetInteger("AniState", (int)AnimState.Attack3);
+                ani.SetFloat("AttackSpeed", Playerdata.AttackSpeed);
+                break;
             case AnimState.moveSpeedup:
                 ani.SetFloat("MoveSpeed",2.0f);
                 break;
@@ -82,26 +89,39 @@ public class Player : MonoBehaviour
   
     public void Attack() //공격 
     {
-        int crt = Random.Range(0, 101);
-
-        if (crt < Critical)
+        crt = Random.Range(0, 101);
+        if (crt <= Critical)
         {
-            if (Monster.tag == "Boss")
+            if (Monster.tag == "Boss") 
+            {
+                AttackSound(4);
                 Monster.GetComponent<Boss>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+            }
+                
+
             else if (Monster.tag == "Monster")
             {
+                AttackSound(4);
                 Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
-                print("1");
             }
         }
         else
         {
-            if (Monster.tag == "Boss")
+            if (Monster.tag == "Boss") 
+            {
+                AttackSound(Monster.GetComponent<Boss>().hitCount + 1);
                 Monster.GetComponent<Boss>().TakeDamage(my_PlayerDamage);
+            }
+                
             else if (Monster.tag == "Monster")
             {
+                AttackSound(Monster.GetComponent<EnemyTest>().HitCount + 1);
                 Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
             }
         }
+    }
+    public void AttackSound(int num) 
+    {
+        SoundManager.instance.WeaponSound(num);
     }
 }

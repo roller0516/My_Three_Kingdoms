@@ -20,19 +20,26 @@ public class EnemyTest : MonoBehaviour
     private Animator ani;
     private Transform target;
 
+    public int HitCount = 0;
     public GameObject hit;
     public GameObject Crihit;
+    public GameObject damageText;
+    public GameObject CridamageText;
+
+    public float knockbackPower = 1;
+    public float moveSpeed = 0.5f;
+
+    public BigInteger Hp;
+    public BigInteger MaxHp;
 
     public Slider Hpbar;
     public Slider HpbarBasic;
-    public GameObject damageText;
-    public GameObject CridamageText;
-    public float knockbackPower = 1;
-    public float moveSpeed = 0.5f;
-    public BigInteger Hp;
-    public BigInteger MaxHp;
-    int Count;
+
     
+
+    BigInteger goldreward;
+    BigInteger knowledgereward;
+
     Camera cam = null;
 
     private void Awake()
@@ -58,6 +65,9 @@ public class EnemyTest : MonoBehaviour
         Hpbar = Instantiate(HpbarBasic , this.gameObject.transform.position,Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
+        HitCount = 0;
+        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
+        knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
     }
 
     private void Update()
@@ -98,7 +108,7 @@ public class EnemyTest : MonoBehaviour
             Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
             Player.Instance._AniState = Player.AnimState.moveSpeedup;
         }
-        else if (d > 2.5f && d <= 3f) // 2.1 ~ 3f
+        else if (d > 2f && d <= 3f) // 2.1 ~ 3f
         {
             //Player.Instance._AniState = Player.AnimState.Idle;
 
@@ -112,7 +122,20 @@ public class EnemyTest : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
-            Player.Instance._AniState = Player.AnimState.Attack;
+            if (HitCount == 0)
+            {
+                Player.Instance._AniState = Player.AnimState.Attack;
+            }
+            else if (HitCount == 1) 
+            {
+                Player.Instance._AniState = Player.AnimState.Attack2;
+            }
+            else if(HitCount == 2) 
+            {
+                Player.Instance._AniState = Player.AnimState.Attack3;
+            }
+            if(HitCount == 3)
+                HitCount = 0;
             Player.Instance.moveSpeed = 0f;
             _AniState = AnimState.Idle;
             moveSpeed = 0;
@@ -127,6 +150,8 @@ public class EnemyTest : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
+        HitCount++;
+        SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y+1.0f, -1), Quaternion.identity);
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+1.5f , -1), Quaternion.identity);// 데미지 텍스트 생성
         //go.transform.parent = this.transform;
@@ -136,14 +161,19 @@ public class EnemyTest : MonoBehaviour
 
         ani.SetTrigger("hit");// 애니메이션 변경
 
-        KnockBack();
-
+        //KnockBack();
+       
         Hp -= damage;// hp 뺌
+        
         if (Hp <= 0)
         {
+            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
+            print(num);
             Hpbar.gameObject.SetActive(false);
-            DataController.GetInstance().AddGold(GoldReward());
-            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            SetGoldReward(GetGoldReward()+ ((GetGoldReward() * num * 100) / 10000));
+            //SetKnowledgeReward(GetKnowledgeReward());
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             _AniState = AnimState.die;
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.IsDie = true;
@@ -153,6 +183,7 @@ public class EnemyTest : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        HitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성                                                                                                                           //go.transform.parent = this.transform;
 
@@ -161,14 +192,17 @@ public class EnemyTest : MonoBehaviour
         dam.Damage = damage;
         ani.SetTrigger("hit");// 애니메이션 변경
 
-        KnockBack();
+        //KnockBack();
 
         Hp -= damage;// hp 뺌
         if (Hp <= 0)
         {
+            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
             Hpbar.gameObject.SetActive(false);
-            DataController.GetInstance().AddGold(GoldReward());
-            DataController.GetInstance().AddKnowledge(KnowledgeReward());
+            SetGoldReward(GetGoldReward()+((GetGoldReward()* num * 100) / 10000));
+            //SetKnowledgeReward(GetKnowledgeReward());
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             _AniState = AnimState.die;
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.IsDie = true;
@@ -185,15 +219,21 @@ public class EnemyTest : MonoBehaviour
     {
         skeletonRenderer.skeleton.SetAttachment("weapon 1", "weapon " + num);
     }
-    public BigInteger GoldReward()
+    public BigInteger GetGoldReward()
     {
-        BigInteger goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         return goldreward;
     }
-    public BigInteger KnowledgeReward()
+    public BigInteger GetKnowledgeReward()
     {
-        BigInteger knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp,5), 100);
         return knowledgereward;
+    }
+    public void SetGoldReward(BigInteger newGold) 
+    {
+        goldreward = newGold;
+    }
+    public void SetKnowledgeReward(BigInteger newKnowledge) 
+    {
+        knowledgereward = newKnowledge;
     }
     public void SetHpbar()
     {

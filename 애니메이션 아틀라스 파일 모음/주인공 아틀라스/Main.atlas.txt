@@ -1,307 +1,426 @@
 
 Main.png
-size: 745,237
+size: 952,269
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 1
   rotate: false
-  xy: 479, 7
+  xy: 871, 8
   size: 50, 21
   orig: 52, 23
   offset: 1, 1
   index: -1
 1-1
   rotate: false
-  xy: 407, 120
+  xy: 407, 70
   size: 123, 115
   orig: 125, 117
   offset: 1, 1
   index: -1
 1-2
   rotate: false
-  xy: 201, 28
+  xy: 201, 60
   size: 204, 207
   orig: 206, 209
   offset: 1, 1
   index: -1
 1-3
-  rotate: false
-  xy: 684, 151
+  rotate: true
+  xy: 807, 150
   size: 59, 84
   orig: 61, 86
   offset: 1, 1
   index: -1
 1-4
   rotate: false
-  xy: 676, 98
+  xy: 871, 31
   size: 50, 51
   orig: 52, 53
   offset: 1, 1
   index: -1
 1-5
-  rotate: true
-  xy: 633, 2
+  rotate: false
+  xy: 750, 77
   size: 45, 28
   orig: 47, 30
   offset: 1, 1
   index: -1
 2
   rotate: false
-  xy: 532, 2
+  xy: 646, 41
   size: 74, 37
   orig: 76, 39
   offset: 1, 1
   index: -1
 3
   rotate: false
-  xy: 2, 15
+  xy: 2, 47
   size: 197, 220
   orig: 199, 222
   offset: 1, 1
   index: -1
 4
   rotate: false
-  xy: 479, 30
+  xy: 754, 129
   size: 51, 88
   orig: 53, 90
   offset: 1, 1
   index: -1
 5
   rotate: true
-  xy: 532, 41
+  xy: 807, 111
   size: 37, 84
   orig: 39, 86
   offset: 1, 1
   index: -1
 6
-  rotate: true
-  xy: 728, 93
+  rotate: false
+  xy: 923, 2
   size: 20, 15
   orig: 22, 17
   offset: 1, 1
   index: -1
-Onehand01
-  rotate: true
-  xy: 407, 2
-  size: 26, 70
-  orig: 26, 70
-  offset: 0, 0
-  index: -1
-Spear01
-  rotate: true
-  xy: 532, 196
-  size: 39, 150
-  orig: 50, 150
-  offset: 6, 0
-  index: -1
-Sword01
-  rotate: true
-  xy: 532, 154
-  size: 40, 124
-  orig: 40, 124
-  offset: 0, 0
-  index: -1
 back hair l
   rotate: true
-  xy: 618, 49
+  xy: 465, 9
   size: 29, 51
   orig: 29, 51
   offset: 0, 0
   index: -1
 back hair r
   rotate: true
-  xy: 671, 57
+  xy: 909, 121
   size: 20, 41
   orig: 20, 41
   offset: 0, 0
   index: -1
 back top hair
   rotate: false
-  xy: 378, 8
+  xy: 549, 2
   size: 20, 18
   orig: 22, 20
   offset: 1, 1
   index: -1
 body 1
   rotate: false
-  xy: 714, 55
+  xy: 518, 2
   size: 29, 22
   orig: 31, 24
   offset: 1, 1
   index: -1
 body 2
-  rotate: false
-  xy: 284, 3
+  rotate: true
+  xy: 923, 52
   size: 31, 23
   orig: 31, 23
   offset: 0, 0
   index: -1
 eye1
   rotate: false
-  xy: 201, 17
+  xy: 100, 6
   size: 38, 9
   orig: 40, 11
   offset: 1, 1
   index: -1
 eye2
   rotate: false
-  xy: 52, 5
+  xy: 796, 2
   size: 38, 8
   orig: 40, 10
   offset: 1, 1
   index: -1
 front hair
   rotate: true
-  xy: 676, 79
+  xy: 646, 22
   size: 17, 48
   orig: 17, 48
   offset: 0, 0
   index: -1
 head
-  rotate: false
-  xy: 532, 80
+  rotate: true
+  xy: 722, 5
   size: 70, 72
   orig: 72, 74
   offset: 1, 1
   index: -1
 head damaged
-  rotate: false
-  xy: 604, 80
+  rotate: true
+  xy: 797, 12
   size: 70, 72
   orig: 72, 74
   offset: 1, 1
   index: -1
 l arm
-  rotate: true
-  xy: 249, 3
+  rotate: false
+  xy: 910, 86
   size: 23, 33
   orig: 23, 33
   offset: 0, 0
   index: -1
 l arm back
   rotate: true
-  xy: 227, 2
+  xy: 78, 2
   size: 13, 20
   orig: 13, 20
   offset: 0, 0
   index: -1
 l foot
-  rotate: false
-  xy: 378, 2
+  rotate: true
+  xy: 407, 60
   size: 8, 4
   orig: 10, 6
   offset: 1, 1
   index: -1
 r foot
-  rotate: false
-  xy: 378, 2
+  rotate: true
+  xy: 407, 60
   size: 8, 4
   orig: 10, 6
   offset: 1, 1
   index: -1
 l hand
-  rotate: true
-  xy: 658, 154
+  rotate: false
+  xy: 180, 5
   size: 9, 10
   orig: 11, 12
   offset: 1, 1
   index: -1
 main-2/l hand
-  rotate: true
-  xy: 658, 154
+  rotate: false
+  xy: 180, 5
   size: 9, 10
   orig: 11, 12
   offset: 1, 1
   index: -1
 main-2/belt
   rotate: false
-  xy: 663, 2
+  xy: 140, 5
   size: 25, 10
   orig: 27, 12
   offset: 1, 1
   index: -1
 main-2/body
   rotate: true
-  xy: 658, 165
+  xy: 620, 26
   size: 29, 24
   orig: 31, 26
   offset: 1, 1
   index: -1
 main-2/body 2
-  rotate: false
-  xy: 317, 3
+  rotate: true
+  xy: 923, 19
   size: 31, 23
   orig: 31, 23
   offset: 0, 0
   index: -1
 main-2/head
   rotate: false
-  xy: 407, 30
+  xy: 682, 129
   size: 70, 88
   orig: 72, 90
   offset: 1, 1
   index: -1
 main-2/l arm
   rotate: false
-  xy: 608, 2
+  xy: 696, 2
   size: 23, 37
   orig: 23, 37
   offset: 0, 0
   index: -1
 main-2/l arm back
   rotate: true
-  xy: 201, 2
+  xy: 2, 2
   size: 13, 24
   orig: 13, 24
   offset: 0, 0
   index: -1
 main-2/r arm
-  rotate: false
-  xy: 663, 14
+  rotate: true
+  xy: 518, 26
   size: 12, 33
   orig: 12, 33
   offset: 0, 0
   index: -1
 main-2/r arm back
-  rotate: false
-  xy: 350, 2
+  rotate: true
+  xy: 553, 28
   size: 12, 24
   orig: 12, 24
   offset: 0, 0
   index: -1
 main-2/r hand
-  rotate: true
-  xy: 92, 2
+  rotate: false
+  xy: 167, 5
   size: 11, 10
   orig: 13, 12
   offset: 1, 1
   index: -1
 r hand
-  rotate: true
-  xy: 92, 2
+  rotate: false
+  xy: 167, 5
   size: 11, 10
   orig: 13, 12
   offset: 1, 1
   index: -1
 r arm
   rotate: false
-  xy: 728, 115
+  xy: 935, 85
   size: 15, 34
   orig: 15, 34
   offset: 0, 0
   index: -1
 r arm back
   rotate: false
-  xy: 364, 2
+  xy: 571, 2
   size: 12, 24
   orig: 12, 24
   offset: 0, 0
   index: -1
 sha
   rotate: false
-  xy: 2, 3
+  xy: 28, 5
   size: 48, 10
   orig: 50, 12
   offset: 1, 1
+  index: -1
+weapon1
+  rotate: true
+  xy: 351, 32
+  size: 26, 70
+  orig: 26, 70
+  offset: 0, 0
+  index: -1
+weapon10
+  rotate: true
+  xy: 696, 219
+  size: 20, 115
+  orig: 40, 124
+  offset: 10, 2
+  index: -1
+weapon11
+  rotate: false
+  xy: 582, 44
+  size: 36, 141
+  orig: 50, 150
+  offset: 7, 4
+  index: -1
+weapon12
+  rotate: true
+  xy: 682, 107
+  size: 20, 115
+  orig: 40, 124
+  offset: 10, 2
+  index: -1
+weapon13
+  rotate: true
+  xy: 194, 2
+  size: 28, 147
+  orig: 50, 156
+  offset: 11, 6
+  index: -1
+weapon14
+  rotate: false
+  xy: 620, 57
+  size: 24, 128
+  orig: 42, 128
+  offset: 9, 0
+  index: -1
+weapon15
+  rotate: true
+  xy: 696, 241
+  size: 26, 212
+  orig: 72, 218
+  offset: 14, 3
+  index: -1
+weapon16
+  rotate: false
+  xy: 532, 42
+  size: 48, 143
+  orig: 50, 150
+  offset: 1, 5
+  index: -1
+weapon17
+  rotate: true
+  xy: 201, 32
+  size: 26, 148
+  orig: 50, 152
+  offset: 12, 3
+  index: -1
+weapon18
+  rotate: true
+  xy: 2, 17
+  size: 28, 190
+  orig: 66, 201
+  offset: 21, 6
+  index: -1
+weapon19
+  rotate: true
+  xy: 407, 187
+  size: 40, 230
+  orig: 80, 244
+  offset: 21, 7
+  index: -1
+weapon2
+  rotate: true
+  xy: 343, 2
+  size: 28, 120
+  orig: 40, 124
+  offset: 6, 2
+  index: -1
+weapon20
+  rotate: true
+  xy: 407, 229
+  size: 38, 287
+  orig: 94, 288
+  offset: 19, 1
+  index: -1
+weapon3
+  rotate: true
+  xy: 813, 211
+  size: 28, 91
+  orig: 40, 124
+  offset: 1, 4
+  index: -1
+weapon4
+  rotate: false
+  xy: 646, 117
+  size: 34, 110
+  orig: 40, 124
+  offset: 3, 0
+  index: -1
+weapon5
+  rotate: false
+  xy: 910, 143
+  size: 40, 124
+  orig: 40, 124
+  offset: 0, 0
+  index: -1
+weapon6
+  rotate: false
+  xy: 893, 111
+  size: 14, 98
+  orig: 40, 124
+  offset: 14, 4
+  index: -1
+weapon7
+  rotate: true
+  xy: 799, 84
+  size: 25, 109
+  orig: 40, 124
+  offset: 7, 7
+  index: -1
+weapon8
+  rotate: true
+  xy: 423, 40
+  size: 28, 104
+  orig: 40, 124
+  offset: 6, 2
+  index: -1
+weapon9
+  rotate: true
+  xy: 646, 80
+  size: 25, 102
+  orig: 40, 124
+  offset: 11, 0
   index: -1

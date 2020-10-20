@@ -15,7 +15,7 @@ MonoBehaviour:
   SheetName: Assets/Script/Data/weaponDB.xlsx
   WorksheetName: weaponData
   dataArray:
-  - uid: weapon_1
+  - uid: weapon1
     leveled_atk: 1
     level: 1
     atk: 50
@@ -29,7 +29,7 @@ MonoBehaviour:
     atk_9: 130
     atk_10: 140
     isusing: 1
-  - uid: weapon_2
+  - uid: weapon2
     leveled_atk: 2
     level: 0
     atk: 200
@@ -43,7 +43,7 @@ MonoBehaviour:
     atk_9: 520
     atk_10: 560
     isusing: 0
-  - uid: weapon_3
+  - uid: weapon3
     leveled_atk: 3
     level: 0
     atk: 800
@@ -57,7 +57,7 @@ MonoBehaviour:
     atk_9: 2080
     atk_10: 2240
     isusing: 0
-  - uid: weapon_4
+  - uid: weapon4
     leveled_atk: 4
     level: 0
     atk: 3200
@@ -71,7 +71,7 @@ MonoBehaviour:
     atk_9: 8320
     atk_10: 8960
     isusing: 0
-  - uid: weapon_5
+  - uid: weapon5
     leveled_atk: 5
     level: 0
     atk: 12800
@@ -85,7 +85,7 @@ MonoBehaviour:
     atk_9: 33280
     atk_10: 35840
     isusing: 0
-  - uid: weapon_6
+  - uid: weapon6
     leveled_atk: 6
     level: 0
     atk: 51200
@@ -99,7 +99,7 @@ MonoBehaviour:
     atk_9: 133120
     atk_10: 143360
     isusing: 0
-  - uid: weapon_7
+  - uid: weapon7
     leveled_atk: 7
     level: 0
     atk: 204800
@@ -113,7 +113,7 @@ MonoBehaviour:
     atk_9: 532480
     atk_10: 573440
     isusing: 0
-  - uid: weapon_8
+  - uid: weapon8
     leveled_atk: 8
     level: 0
     atk: 819200
@@ -127,7 +127,7 @@ MonoBehaviour:
     atk_9: 2129920
     atk_10: 2293760
     isusing: 0
-  - uid: weapon_9
+  - uid: weapon9
     leveled_atk: 9
     level: 0
     atk: 3276800
@@ -141,7 +141,7 @@ MonoBehaviour:
     atk_9: 8519680
     atk_10: 9175040
     isusing: 0
-  - uid: weapon_10
+  - uid: weapon10
     leveled_atk: 10
     level: 0
     atk: 13107200
@@ -155,7 +155,7 @@ MonoBehaviour:
     atk_9: 34078720
     atk_10: 36700160
     isusing: 0
-  - uid: weapon_11
+  - uid: weapon11
     leveled_atk: 11
     level: 0
     atk: 52428800
@@ -169,7 +169,7 @@ MonoBehaviour:
     atk_9: 136314880
     atk_10: 146800640
     isusing: 0
-  - uid: weapon_12
+  - uid: weapon12
     leveled_atk: 12
     level: 0
     atk: 209715200
@@ -183,7 +183,7 @@ MonoBehaviour:
     atk_9: 545259520
     atk_10: 587202560
     isusing: 0
-  - uid: weapon_13
+  - uid: weapon13
     leveled_atk: 13
     level: 0
     atk: 838860800
@@ -197,7 +197,7 @@ MonoBehaviour:
     atk_9: 2181038080
     atk_10: 2348810240
     isusing: 0
-  - uid: weapon_14
+  - uid: weapon14
     leveled_atk: 14
     level: 0
     atk: 3355443200
@@ -211,7 +211,7 @@ MonoBehaviour:
     atk_9: 8724152320
     atk_10: 9395240960
     isusing: 0
-  - uid: weapon_15
+  - uid: weapon15
     leveled_atk: 15
     level: 0
     atk: 13421772800
@@ -225,7 +225,7 @@ MonoBehaviour:
     atk_9: 34896609280
     atk_10: 37580963840
     isusing: 0
-  - uid: weapon_16
+  - uid: weapon16
     leveled_atk: 16
     level: 0
     atk: 53687091200
@@ -239,7 +239,7 @@ MonoBehaviour:
     atk_9: 139586437120
     atk_10: 150323855360
     isusing: 0
-  - uid: weapon_17
+  - uid: weapon17
     leveled_atk: 17
     level: 0
     atk: 214748364800
@@ -253,7 +253,7 @@ MonoBehaviour:
     atk_9: 558345748480
     atk_10: 601295421440
     isusing: 0
-  - uid: weapon_18
+  - uid: weapon18
     leveled_atk: 18
     level: 0
     atk: 858993459200
@@ -267,7 +267,7 @@ MonoBehaviour:
     atk_9: 2233382993920
     atk_10: 2405181685760
     isusing: 0
-  - uid: weapon_19
+  - uid: weapon19
     leveled_atk: 19
     level: 0
     atk: 3435973836800
@@ -281,7 +281,7 @@ MonoBehaviour:
     atk_9: 8933531975680
     atk_10: 9620726743040
     isusing: 0
-  - uid: weapon_20
+  - uid: weapon20
     leveled_atk: 20
     level: 0
     atk: 13743895347200

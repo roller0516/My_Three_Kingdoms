@@ -32,7 +32,7 @@ public class GameM : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     public void SceneChagne(int number) 
