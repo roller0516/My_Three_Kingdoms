@@ -553,7 +553,7 @@ MonoBehaviour:
   _AniState: 0
   moveSpeed: 2
   CriticalPer: 100
-  Critical: 0
+  Critical: 100
 --- !u!114 &774572050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4464,6 +4464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Teasure1Ability: 0
+  Teasure2Ability: 0
   key: []
 --- !u!4 &2131190497
 Transform:
