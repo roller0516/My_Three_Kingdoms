@@ -8,6 +8,7 @@ using System.Numerics;
 public class Weaponcost : MonoBehaviour
 {
     public string UpgradeName;
+    public string increase;
     [HideInInspector]
     public BigInteger CurrentCost;
     [HideInInspector]
@@ -45,69 +46,69 @@ public class Weaponcost : MonoBehaviour
         DataController.GetInstance().SaveWeaponCost(this);
     }
 
-    public void UpdateUpgrade(int num) // 업그레이드 공식
+    public void UpdateUpgrade(int num) // 업그레이드 공식 
     {
        switch (num)
        {
            case 0:
-               CurrentCost += 50;
+               CurrentCost += BigInteger.Parse(increase); 
                break;
            case 1:
-                CurrentCost += 110;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 2:
-                CurrentCost += 330;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 3:
-                CurrentCost += 990;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 4:
-                CurrentCost += 2970;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 5:
-                CurrentCost += 8910;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 6:
-                CurrentCost += 26730;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 7:
-                CurrentCost += 80190;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 8:
-               CurrentCost += 240570;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 9:
-               CurrentCost += 721710;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 10:
-               CurrentCost += 2165130;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 11:
-               CurrentCost += 6495390;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 12:
-               CurrentCost += 19486170;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 13:
-               CurrentCost += 58458510;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 14:
-               CurrentCost += 175375530;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 15:
-               CurrentCost += 526126590;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 16:
-               CurrentCost += 1578379770;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 17:
-                CurrentCost += 4735139310;
+                CurrentCost += BigInteger.Parse(increase);
                break;
            case 18:
-               CurrentCost += 14205417930;
+               CurrentCost += BigInteger.Parse(increase);
                break;
            case 19:
-                CurrentCost += 42616253790;
+                CurrentCost += BigInteger.Parse(increase);
                 break;
         }
     }
