@@ -131,7 +131,7 @@ public class TeasureCostButton : MonoBehaviour
             case "treasure_2":
                 break;
             case "treasure_3":
-                Player.Instance.Critical = goldByUpgrade;
+                Player.Instance.Critical += 1;
                 break;
             case "treasure_4":
                 for (int i = 0; i < UIManager.GetInstance().upgradeButton.Length; i++) 
@@ -154,7 +154,7 @@ public class TeasureCostButton : MonoBehaviour
             case "treasure_6":
                 break;
             case "treasure_8":
-                Player.Instance.CriticalPer = 100+ goldByUpgrade;
+                Player.Instance.CriticalPer += 2;
                 break;
         }
     }

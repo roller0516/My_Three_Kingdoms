@@ -285,10 +285,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 660, y: -726}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4278830637253768543
 CanvasRenderer:
@@ -1668,10 +1668,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 897, y: -726}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2746413363083743540
 CanvasRenderer:
@@ -2865,6 +2865,7 @@ GameObject:
   - component: {fileID: 4772008631193019241}
   - component: {fileID: 694597594506201310}
   - component: {fileID: 932677367543046915}
+  - component: {fileID: 8117661447830178403}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -2969,7 +2970,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 694597594506201310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8117661447830178403}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8117661447830178403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907637108464609327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uD30C\uCD09"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &942797134937453302
 GameObject:
   m_ObjectHideFlags: 0
@@ -8963,6 +8992,7 @@ GameObject:
   - component: {fileID: 3272383491993207885}
   - component: {fileID: 6624645485536387753}
   - component: {fileID: 250859719246741083}
+  - component: {fileID: 5102044324177420015}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -9067,7 +9097,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6624645485536387753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5102044324177420015}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5102044324177420015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873048188764532914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uD615\uBD81"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &2897349016141081728
 GameObject:
   m_ObjectHideFlags: 0
@@ -9334,10 +9392,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 423, y: -970}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2606204891409950583
 CanvasRenderer:
@@ -9671,6 +9729,7 @@ GameObject:
   - component: {fileID: 3446174031554120010}
   - component: {fileID: 4680455478334333251}
   - component: {fileID: 2947786894161991425}
+  - component: {fileID: 7250836450120363498}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -9775,7 +9834,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4680455478334333251}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7250836450120363498}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7250836450120363498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2999112339038523405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uAC15\uB3D9"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &3077557379566180296
 GameObject:
   m_ObjectHideFlags: 0
@@ -10362,10 +10449,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 423, y: -482}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6268843987484575831
 CanvasRenderer:
@@ -11594,10 +11681,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 897, y: -970}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6992523401617465060
 CanvasRenderer:
@@ -12940,10 +13027,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 186, y: -482}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3066350887371768863
 CanvasRenderer:
@@ -13228,10 +13315,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 897, y: -482}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6355923893877465861
 CanvasRenderer:
@@ -13563,10 +13650,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 186, y: -970}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4308174099366191570
 CanvasRenderer:
@@ -14740,6 +14827,7 @@ GameObject:
   - component: {fileID: 10781161858315246}
   - component: {fileID: 1482550620601458584}
   - component: {fileID: 865632527089914271}
+  - component: {fileID: 1642470897375938700}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -14844,7 +14932,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1482550620601458584}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1642470897375938700}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1642470897375938700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703379305455580756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uC911\uC6D0"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &4704037910656102414
 GameObject:
   m_ObjectHideFlags: 0
@@ -17825,8 +17941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: 183}
-  m_SizeDelta: {x: 1959, y: 1688}
+  m_AnchoredPosition: {x: 478, y: -278.69995}
+  m_SizeDelta: {x: 2041, y: 1638}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5455220280415303360
 CanvasRenderer:
@@ -17854,9 +17970,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b50650abd19c8ed429b3fb536875cf74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29e850a9a5c053842a38fc0ce3b7d1cc, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -18612,9 +18728,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: daf439980cfc5e54a9ae89f12f99c15e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -19368,10 +19484,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 660, y: -970}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4836952713993044484
 CanvasRenderer:
@@ -20547,6 +20663,7 @@ GameObject:
   - component: {fileID: 6115913388321730484}
   - component: {fileID: 1881476205978906444}
   - component: {fileID: 6501578073639743347}
+  - component: {fileID: 6046457870798946228}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -20651,7 +20768,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1881476205978906444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6046457870798946228}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6046457870798946228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512806514579006574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uD558\uBD81"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &6530223378900506882
 GameObject:
   m_ObjectHideFlags: 0
@@ -21166,7 +21311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.00087950705}
+  m_AnchoredPosition: {x: -0.000015258789, y: -0.00088500977}
   m_SizeDelta: {x: 1052.2, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6750056851110292594
@@ -21421,6 +21566,7 @@ GameObject:
   - component: {fileID: 7625174355710297123}
   - component: {fileID: 6800761491941615850}
   - component: {fileID: 8647808530879694325}
+  - component: {fileID: 991582963142778392}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -21525,7 +21671,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6800761491941615850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 991582963142778392}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &991582963142778392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801097854823238776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &6804085428234167757
 GameObject:
   m_ObjectHideFlags: 0
@@ -21632,10 +21806,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 423, y: -726}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8613942193428339267
 CanvasRenderer:
@@ -23448,10 +23622,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 660, y: -482}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2042647808903463102
 CanvasRenderer:
@@ -31916,7 +32090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0024872, y: -0.00064162945}
+  m_AnchoredPosition: {x: -0.0024872, y: -0.00064086914}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7738081288910918686
@@ -32281,7 +32455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7738081288928192109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33686,6 +33860,7 @@ GameObject:
   - component: {fileID: 7738081288992517381}
   - component: {fileID: 7738081288992517378}
   - component: {fileID: 2671539992983081623}
+  - component: {fileID: 4797733770623939719}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -33785,9 +33960,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b4d32f1abbeb84297b38c68d86ba6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TrainingTap: {fileID: 7738081289255955134}
   weaponTap: {fileID: 7738081288718175275}
   TeasureTap: {fileID: 7738081288365071785}
   Gold: {fileID: 7738081289749426740}
+  TR_Check: 0
   GoldPerClickDisPlayer:
   - {fileID: 905824678963501251}
   - {fileID: 6797760573415487872}
@@ -34073,6 +34250,19 @@ MonoBehaviour:
   - {fileID: 2131601380727794974}
   SelectImage: {fileID: 3593893172563884626, guid: da9ca058f81b7244386d36c3d4c0977b,
     type: 3}
+--- !u!114 &4797733770623939719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738081288992517379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ba4fb7679c97b4f908f3816da55bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sp_item: []
 --- !u!1 &7738081289000772434
 GameObject:
   m_ObjectHideFlags: 0
@@ -45999,7 +46189,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000015258789, y: 484.45007}
-  m_SizeDelta: {x: 1085, y: 0}
+  m_SizeDelta: {x: 1085, y: 1085}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7738081289822119696
 CanvasRenderer:
@@ -58080,10 +58270,10 @@ RectTransform:
   m_Father: {fileID: 7738081289822119919}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 186, y: -726}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3056771557622748530
 CanvasRenderer:
@@ -59750,6 +59940,7 @@ GameObject:
   - component: {fileID: 6563514491916489782}
   - component: {fileID: 8267808819410234328}
   - component: {fileID: 7997198833587160634}
+  - component: {fileID: 1288535551503852812}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -59854,7 +60045,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8267808819410234328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1288535551503852812}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1288535551503852812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086936939586516223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uAD00\uC911"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &9113252101950454560
 GameObject:
   m_ObjectHideFlags: 0
@@ -60217,6 +60436,7 @@ GameObject:
   - component: {fileID: 4106677296989792757}
   - component: {fileID: 1038432207159507506}
   - component: {fileID: 8751376742371893085}
+  - component: {fileID: 2818910360981416163}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -60321,7 +60541,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1038432207159507506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2818910360981416163}
+        m_MethodName: PlayerTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2818910360981416163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166998416254429404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5113d447d8092a4591dfd11adcb682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\uCCAD\uC11C"
+  go: {fileID: 0}
+  RandomRange1: 0
+  ItemRandomRange: 0
+  probability: 0
 --- !u!1 &9197254148110014320
 GameObject:
   m_ObjectHideFlags: 0
