@@ -23,13 +23,13 @@ public class UIManager : MonoBehaviour
         }
         return instance;
     }
-
+    public GameObject TrainingTap;
     public GameObject weaponTap;
     public GameObject TeasureTap;
 
     //버튼 텍스트
     public TextMeshProUGUI Gold;
-    
+    public bool TR_Check;
     public Text[] GoldPerClickDisPlayer;
     public Text[] GoldCostClickDisPlayer;
     public TextMeshProUGUI Knowledge;
@@ -66,6 +66,7 @@ public class UIManager : MonoBehaviour
     {
         Level = new int[upgradeButton.Length];
         item_l = FindObjectOfType<ItemList>().GetComponent<ItemList>();
+        TeasureButton();
     }
     private void Update()
     {
@@ -73,7 +74,6 @@ public class UIManager : MonoBehaviour
         {
             Level[i] = upgradeButton[i].Level;
         }
-        TeasureButton();
         WeaponUpdate();
         Gold.text = GetGoldText();
         Knowledge.text = KnowledgeText();

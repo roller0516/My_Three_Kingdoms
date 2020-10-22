@@ -11,7 +11,6 @@ using Vector3 = UnityEngine.Vector3;
 public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
 {
-
     public string UpgradeName = "";
 
     [HideInInspector]
@@ -40,17 +39,29 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     
     float CurTime;
     bool PressDown = false;
-    
+    private void Awake()
+    {
+        
+    }
     private void Start()
     {
-        CurrentCost=BigInteger.Parse(StartCurrentCost);
+        CurrentCost = BigInteger.Parse(StartCurrentCost);
+        CurrentCost = BigInteger.Parse(StartCurrentCost);
         CurrentCost1 = CurrentCost;
         goldByUpgrade = BigInteger.Parse(StartGoldByUpgrade);
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
     }
+    public void UpgradeTik()
+    {
+        Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
+        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + 1, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
+        print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + 1));
 
+        Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
+        CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
+    }
     public void PurChaseUpgrade(int num) //구매 함수
     {
         SoundManager.instance.ButtonSound();
@@ -106,6 +117,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void Update()
     {
         ScarceCost_textColor();
+        
         if (PressDown == true)
         {
             CurTime += Time.deltaTime ;

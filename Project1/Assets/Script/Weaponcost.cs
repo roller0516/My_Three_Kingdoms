@@ -13,7 +13,7 @@ public class Weaponcost : MonoBehaviour
     public BigInteger CurrentCost;
     [HideInInspector]
     public int goldByUpgrade;
-    public int StartCost;
+    public string StartCost;
     [HideInInspector]
     public int MaxLevel = 10;
     public TextMeshProUGUI upGradeTex;
@@ -21,7 +21,7 @@ public class Weaponcost : MonoBehaviour
     
     private void Start()
     {
-        CurrentCost = StartCost;
+        CurrentCost = BigInteger.Parse( StartCost);
         item_l = FindObjectOfType<ItemList>().GetComponent<ItemList>();
         DataController.GetInstance().LoadWeaponCost(this);
         UpdateUI();

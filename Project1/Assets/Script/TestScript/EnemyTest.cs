@@ -41,7 +41,7 @@ public class EnemyTest : MonoBehaviour
     BigInteger knowledgereward;
 
     Camera cam = null;
-
+    SpecialitemList sl;
     private void Awake()
     {
         rig = GetComponent<Rigidbody>();
@@ -50,6 +50,7 @@ public class EnemyTest : MonoBehaviour
 
     private void Start()
     {
+        sl = GameObject.FindWithTag("Canvas").GetComponent<SpecialitemList>();
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
 
@@ -167,8 +168,47 @@ public class EnemyTest : MonoBehaviour
         
         if (Hp <= 0)
         {
-            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-            print(num);
+            int num;
+            if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10&& sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount+ sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount+ sl.Sp_item[3].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[3].itemCount == 10&& sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[3].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
+                print(num);
+            }
             Hpbar.gameObject.SetActive(false);
             SetGoldReward(GetGoldReward()+ ((GetGoldReward() * num * 100) / 10000));
             //SetKnowledgeReward(GetKnowledgeReward());
@@ -197,7 +237,47 @@ public class EnemyTest : MonoBehaviour
         Hp -= damage;// hp 뺌
         if (Hp <= 0)
         {
-            int num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
+            int num;
+            if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[3].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
+                print(num);
+            }
             Hpbar.gameObject.SetActive(false);
             SetGoldReward(GetGoldReward()+((GetGoldReward()* num * 100) / 10000));
             //SetKnowledgeReward(GetKnowledgeReward());
