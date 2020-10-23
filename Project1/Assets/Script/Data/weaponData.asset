@@ -59,7 +59,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon4
     leveled_atk: 4
-    level: 10
+    level: 0
     atk: 3200
     atk_2: 3840
     atk_3: 4480
@@ -73,7 +73,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon5
     leveled_atk: 5
-    level: 10
+    level: 0
     atk: 12800
     atk_2: 15360
     atk_3: 17920
@@ -87,7 +87,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon6
     leveled_atk: 6
-    level: 10
+    level: 0
     atk: 51200
     atk_2: 61440
     atk_3: 71680
@@ -101,7 +101,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon7
     leveled_atk: 7
-    level: 10
+    level: 0
     atk: 204800
     atk_2: 245760
     atk_3: 286720
@@ -115,7 +115,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon8
     leveled_atk: 8
-    level: 10
+    level: 0
     atk: 819200
     atk_2: 983040
     atk_3: 1146880
@@ -129,7 +129,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon9
     leveled_atk: 9
-    level: 9
+    level: 0
     atk: 3276800
     atk_2: 3932160
     atk_3: 4587520

@@ -19,6 +19,10 @@ public class SearchButton : MonoBehaviour
     {
         //go.transform.position = new Vector3(Player.Instance.transform.position.x, Player.Instance.transform.position.y-20f, Player.Instance.transform.position.z);
         Win();
+        if (PopUpSystem.GetInstance().PopUp.activeSelf == true)
+            PopUpSystem.GetInstance().ClosePopUp();
+        PopUpSystem.GetInstance().OpenPopUp("알림", this.Name + "으로 수색 하겠습니까?", () => { Debug.Log("Open"); }, () => { Debug.Log("Close"); });
+           
         if (RandomRange1 <= 5)
         {
             print("아이템 얻음");
