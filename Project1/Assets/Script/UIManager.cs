@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     public GameObject TrainingTap;
     public GameObject weaponTap;
     public GameObject TeasureTap;
-
+    public GameObject SearchTap;
     //버튼 텍스트
     public TextMeshProUGUI Gold;
     public bool TR_Check;
