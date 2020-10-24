@@ -32,10 +32,12 @@ public class MonsterSpawn : MonoBehaviour
     public int RandomRange2;
     public bool IsDie = false;
     public bool boss_IsDie = false;
-
+    public bool MimicIsDie = false;
+    GameObject PrevMonster;
     public Transform SpawnPoints;
     public GameObject[] Monster;
     public GameObject[] BossMonster;
+    public GameObject MimicMonster;
 
     private Vector3 startPosition;
     private Fadeinout fade;
@@ -89,46 +91,78 @@ public class MonsterSpawn : MonoBehaviour
             BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
             DataController.GetInstance().SaveStage(this);
         }
+        if (MimicIsDie == true)
+        {
+            MimicIsDie = false;
+            PopUpSystem.GetInstance().EnterDeongun = false;
+            StartCoroutine("MimicDeath");
+        }
+
     }
     public void SpawnMonster(int num)
     {
-        if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
+        if (PopUpSystem.GetInstance().gameObject.activeSelf && PopUpSystem.GetInstance().EnterDeongun)
+        {
+            if (PrevMonster != null)
+                Destroy(PrevMonster.gameObject);
+            MonsterCount++;
+            Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+            stg.MonsterCount--;
+        }
+        else if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
         {
             SoundManager.instance.BossSound();
             CurTime = 0;
             MonsterCount++;
 
-            for (int i =0; i<BossMonster.Length;i++)
+            for (int i = 0; i < BossMonster.Length; i++)
             {
                 if (i == stg.curStage - 1)
                 {
-                    Instantiate(BossMonster[i], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+                    GameObject go =Instantiate(BossMonster[i], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
                     BossMonster[i].GetComponent<Boss>().BossName = BossMonster[i].name;
+                    PrevMonster = go;
                     print(BossMonster[num].name);
                 }
             }
             if (stg.curStage > BossMonster.Length)
             {
-                Instantiate(BossMonster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+                GameObject go = Instantiate(BossMonster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
+                
                 BossMonster[num].GetComponent<Boss>().BossName = BossMonster[num].name;
+                PrevMonster = go;
             }
         }
-        else 
+        
+        else
         {
+            GameObject go = null;
             CurTime = 0;
             MonsterCount++;
-            Instantiate(Monster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+            go = Instantiate(Monster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+            PrevMonster = go;
         }
     }
     IEnumerator Death()
     {
         yield return new WaitForSeconds(0.1f);
-        transform.position = new Vector2(transform.position.x + 2f, transform.position.y);
+        transform.position = new Vector2(transform.position.x + 3f, transform.position.y);
     }
     IEnumerator BossDeath()
     {
         transform.position = startPosition;
         MonsterCount = 1;
+        yield return new WaitForSeconds(0.3f);
+        fade.Fade();
+        yield return new WaitForSeconds(0.5f);
+        MonsterCount = 0;
+        Player.Instance.transform.position = Player.Instance.startPosition;
+    }
+    IEnumerator MimicDeath()
+    {
+        transform.position = startPosition;
+        MonsterCount = 1;
+        fade.SearchReward();
         yield return new WaitForSeconds(0.3f);
         fade.Fade();
         yield return new WaitForSeconds(0.5f);

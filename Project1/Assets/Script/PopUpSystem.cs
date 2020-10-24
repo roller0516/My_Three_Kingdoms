@@ -9,10 +9,13 @@ public class PopUpSystem : MonoBehaviour
     public Text titleText;
     public Text contentsText;
     public GameObject PopUp;
+    public GameObject go;
+    public bool EnterDeongun;
+
     Action onClickOkay;
     Action onClickCancel;
     private static PopUpSystem instance;
-    Animator ani;
+    public Animator ani;
 
     public static PopUpSystem GetInstance()
     {
@@ -29,6 +32,7 @@ public class PopUpSystem : MonoBehaviour
     }
     private void Awake()
     {
+        instance = this;
         ani = PopUp.GetComponent<Animator>();
     }
     public void OpenPopUp(string Title , string Contents, Action onClickOkay, Action onClickCancel)
@@ -39,27 +43,27 @@ public class PopUpSystem : MonoBehaviour
         this.onClickCancel = onClickCancel;
         PopUp.SetActive(true);
     }
+
     public void ClosePopUp()
     {
         ani.SetTrigger("Close");
         PopUp.SetActive(false);
     }
+
     public void OnClickOkay() 
     {
-        if (onClickOkay != null)
+        EnterDeongun = true;
+        if (EnterDeongun)
         {
-            OnClickOkay();
+            DataController.GetInstance().SubTicket(1);
+            go.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+            ClosePopUp();
+            MonsterSpawn.GetInstance().MonsterCount = 0;
+            MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
         }
-        ClosePopUp();
-        
     }
     public void OnClickCancel() 
     {
-        if (onClickOkay != null)
-        {
-            OnClickCancel();
-        }
         ClosePopUp();
-
     }
 }

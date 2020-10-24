@@ -17,7 +17,7 @@ MonoBehaviour:
   dataArray:
   - uid: weapon1
     leveled_atk: 1
-    level: 10
+    level: 1
     atk: 50
     atk_2: 60
     atk_3: 70
@@ -31,7 +31,7 @@ MonoBehaviour:
     isusing: 1
   - uid: weapon2
     leveled_atk: 2
-    level: 10
+    level: 0
     atk: 200
     atk_2: 240
     atk_3: 280
@@ -45,7 +45,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon3
     leveled_atk: 3
-    level: 10
+    level: 0
     atk: 800
     atk_2: 960
     atk_3: 1120

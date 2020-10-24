@@ -118,6 +118,11 @@ public class Player : MonoBehaviour
                 AttackSound(Monster.GetComponent<EnemyTest>().HitCount + 1);
                 Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
             }
+            else if (Monster.tag == "Monster1")
+            {
+                AttackSound(Monster.GetComponent<MimicEnemy>().HitCount + 1);
+                Monster.GetComponent<MimicEnemy>().TakeDamage(my_PlayerDamage);
+            }
         }
     }
     public void AttackSound(int num) 

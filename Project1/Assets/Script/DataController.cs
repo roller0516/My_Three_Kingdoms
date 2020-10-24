@@ -45,7 +45,7 @@ public class DataController : MonoBehaviour
     BigInteger m_goldperClick18=0;
     BigInteger m_goldperClick19=0;
     BigInteger m_Knowledge;
-
+    int Ticket = 10;
     public int Teasure1Ability = 0;
     public int Teasure2Ability = 0;
     public List<string> key = new List<string>();
@@ -72,7 +72,7 @@ public class DataController : MonoBehaviour
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
 
-        
+       
 
         key.Add(m_goldperClick.ToString());
         key.Add(m_goldperClick1.ToString());
@@ -381,9 +381,30 @@ public class DataController : MonoBehaviour
     //        m_goldperClick2 = BigInteger.Add(m_goldperClick2, newGoldPerClick);
     //        SetGoldPerClick(name, m_goldperClick2);
     //    }
-        
-    #endregion
 
+    #endregion
+    #region Ticket
+    public void SetTicket(int newTicket)
+    {
+        Ticket = newTicket;
+        PlayerPrefs.SetInt("Ticket", Ticket);
+    }
+
+    public void AddTicket(int newTicket)
+    {
+        Ticket += newTicket;
+        SetTicket(Ticket);
+    }
+    public void SubTicket(int newTicket)
+    {
+        Ticket += newTicket;
+        SetTicket(Ticket);
+    }
+    public int GetTicket()
+    {
+        return Ticket;
+    }
+    #endregion
     public void LoadUpgradeButton(UpgradeButton upGradeButton)
     {
         string key = upGradeButton.UpgradeName;

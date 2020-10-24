@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Fadeinout : MonoBehaviour
 {
+    public GameObject SearchRewardPanel;
     public Image Panel;
     float time = 0f;
     float f_time = 1f;
-
+    int TouchCount;
     public void Fade()
     {
         StartCoroutine(FadeFlow());
@@ -36,5 +37,34 @@ public class Fadeinout : MonoBehaviour
         }
         Panel.gameObject.SetActive(false);
         yield return null;
+    }
+    public void SearchReward()
+    {
+        SearchRewardPanel.SetActive(true);
+        
+    }
+    private void Update()
+    {
+        if (SearchRewardPanel.activeSelf == true)
+        {
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                TouchCount++;
+                if (TouchCount == 1)
+                {
+                    //애니메이션 실행 
+                }
+                else if (TouchCount >= 2)
+                {
+                    SearchRewardPanel.SetActive(false);
+                    TouchCount = 0;
+                }
+
+            }
+                
+        }
+            
+
     }
 }

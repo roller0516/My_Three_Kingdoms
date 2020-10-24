@@ -36,7 +36,7 @@ public class SpecialitemList : MonoBehaviour
         Additem("조황비전", 0, 100, false);
         Additem("단극", 0, 20, false);
         Additem("청공검", 0, 100, false);
-        Additem("백염부", 100, 100, false);
+        Additem("백염부", 0, 100, false);
         Additem("방천화극", 0, 5, false);
         Additem("적토마", 0, 15, false);
         Additem("옥새", 0, 50, false);

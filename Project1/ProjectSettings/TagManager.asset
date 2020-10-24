@@ -10,6 +10,7 @@ TagManager:
   - Monster
   - Boss
   - Weapon
+  - Monster1
   layers:
   - Default
   - TransparentFX

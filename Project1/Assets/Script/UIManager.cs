@@ -23,6 +23,11 @@ public class UIManager : MonoBehaviour
         }
         return instance;
     }
+    public Text timeText;
+    public float time;
+    public float Starttime;
+    public float Currenttime;
+
     public GameObject TrainingTap;
     public GameObject weaponTap;
     public GameObject TeasureTap;
@@ -36,10 +41,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] Atktext;
 
     // 버튼 갯수
+    public SearchButton[] searchButtons;
     public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
+    public string SearchName;
     ItemList item_l;
     [HideInInspector]
     public int[] Level;
@@ -64,6 +71,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        Currenttime = Starttime;
         Level = new int[upgradeButton.Length];
         item_l = FindObjectOfType<ItemList>().GetComponent<ItemList>();
         TeasureButton();
@@ -74,6 +82,7 @@ public class UIManager : MonoBehaviour
         {
             Level[i] = upgradeButton[i].Level;
         }
+        SearchButton();
         WeaponUpdate();
         Gold.text = GetGoldText();
         Knowledge.text = KnowledgeText();
@@ -325,5 +334,106 @@ public class UIManager : MonoBehaviour
                     break;
             }
         } 
+    }
+    public void SearchButton()
+    {
+        if (MonsterSpawn.GetInstance().MimicIsDie == true)
+        {
+            
+                switch (SearchName)
+                {
+                    case "하북":
+                        print(searchButtons[0].GetName());
+                        searchButtons[0].isWin = true;
+                        if (searchButtons[0].isWin == true)
+                        {
+                            searchButtons[0].isWin = false;
+                            print(searchButtons[0].isWin);
+                            searchButtons[0].Win(true);
+                        }
+                        break;
+                    case "청서":
+                        searchButtons[1].isWin = true;
+                        if (searchButtons[1].isWin == true)
+                        {
+                            searchButtons[1].isWin = false;
+                            print(searchButtons[1].isWin);
+                            searchButtons[1].Win(true);
+                        }
+                        break;
+                    case "중원":
+                        searchButtons[2].isWin = true;
+                        if (searchButtons[2].isWin == true)
+                        {
+                            searchButtons[2].isWin = false;
+                            print(searchButtons[2].isWin);
+                            searchButtons[2].Win(true);
+                        }
+                        break;
+                    case "강동":
+                        searchButtons[3].isWin = true;
+                        if (searchButtons[3].isWin == true)
+                        {
+                            searchButtons[3].isWin = false;
+                            print(searchButtons[3].isWin);
+                            searchButtons[3].Win(true);
+                        }
+                        break;
+                    case "관중":
+                        searchButtons[4].isWin = true;
+                        if (searchButtons[4].isWin == true)
+                        {
+                            searchButtons[4].isWin = false;
+                            print(searchButtons[4].isWin);
+                            searchButtons[4].Win(true);
+                        }
+                        break;
+                    case "형북":
+                        searchButtons[5].isWin = true;
+                        if (searchButtons[5].isWin == true)
+                        {
+                            searchButtons[5].isWin = false;
+                            print(searchButtons[5].isWin);
+                            searchButtons[5].Win(true);
+                        }
+                        break;
+                    case "형남":
+                        searchButtons[6].isWin = true;
+                        if (searchButtons[6].isWin == true)
+                        {
+                            searchButtons[6].isWin = false;
+                            print(searchButtons[6].isWin);
+                            searchButtons[6].Win(true);
+                        }
+                        break;
+                    case "파촉":
+                        searchButtons[7].isWin = true;
+                        if (searchButtons[7].isWin == true)
+                        {
+                            searchButtons[7].isWin = false;
+                            print(searchButtons[7].isWin);
+                            searchButtons[7].Win(true);
+                        }
+                        break;
+             
+            }
+        }
+        if (PopUpSystem.GetInstance().EnterDeongun == true)
+        {
+            timeText.gameObject.SetActive(true);
+            time = Time.deltaTime;
+            Currenttime -= time;
+            if (Currenttime <= 0)
+            {
+                time = 0;
+                Currenttime = Starttime;
+            }
+        }
+        else if (PopUpSystem.GetInstance().EnterDeongun == false)
+        {
+            Currenttime = Starttime;
+            timeText.gameObject.SetActive(false);
+        }
+        timeText.text = Currenttime.ToString("0");
     }
 }
