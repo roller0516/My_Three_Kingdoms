@@ -18,9 +18,16 @@ c
   orig: 114, 108
   offset: 1, 1
   index: -1
-chest 1 2
+c - fail
   rotate: true
-  xy: 135, 67
+  xy: 135, 69
+  size: 112, 95
+  orig: 114, 108
+  offset: 1, 12
+  index: -1
+chest 1 2
+  rotate: false
+  xy: 232, 96
   size: 114, 85
   orig: 114, 85
   offset: 0, 0
