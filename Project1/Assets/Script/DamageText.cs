@@ -23,7 +23,6 @@ public class DamageText : MonoBehaviour
     void Awake()
     {
         myTransform = transform;
-        
     }
 
     private void Start()
@@ -104,7 +103,7 @@ public class DamageText : MonoBehaviour
 
         float f = (num / (float)p);
 
-        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
 
     private string GetUnitText(int index)

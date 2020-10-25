@@ -115,6 +115,7 @@
     <Compile Include="Assets\Script\MultiScaleCamera.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PopUpSystem.cs" />
+    <Compile Include="Assets\Script\RewardAni.cs" />
     <Compile Include="Assets\Script\ScrollTime.cs" />
     <Compile Include="Assets\Script\ScrollTimebarManager.cs" />
     <Compile Include="Assets\Script\SearchButton.cs" />
@@ -173,6 +174,7 @@
     <None Include="Assets\Plugin\proguard-project.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Animation\UI_ani\search_reward\search_reward.atlas.txt" />
     <None Include="Assets\Animation\Hwang\Hwang 3.atlas.txt" />
     <None Include="Assets\QuickSheet\GDataPlugin\Templates\ScriptableObjectClass.txt" />
     <None Include="Assets\QuickSheet\GDataPlugin\Templates\AssetFileClass.txt" />

@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
+    
     public string SearchName;
     ItemList item_l;
     [HideInInspector]
@@ -155,7 +156,7 @@ public class UIManager : MonoBehaviour
 
         float f = (num / (float)p);
 
-        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
     private string KnowledgeText()
     {
@@ -178,7 +179,7 @@ public class UIManager : MonoBehaviour
 
         float f = (num / (float)p);
 
-        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
 
 
@@ -205,7 +206,7 @@ public class UIManager : MonoBehaviour
 
         float f = (num / (float)p);
 
-        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
 
     private string GoldCostClickText(BigInteger Cost)
@@ -229,7 +230,7 @@ public class UIManager : MonoBehaviour
 
         float f = (num / (float)p);
 
-        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
     private string AtkText(BigInteger Atk)
     {
@@ -252,7 +253,7 @@ public class UIManager : MonoBehaviour
 
         float f = (num / (float)p);
 
-        return f.ToString("N2") + GetUnitText(numlist.Count - 1);
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
 
     private string GetUnitText(int index)

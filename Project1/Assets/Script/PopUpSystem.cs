@@ -6,7 +6,6 @@ using System;
 
 public class PopUpSystem : MonoBehaviour
 {
-    public Text titleText;
     public Text contentsText;
     public GameObject PopUp;
     public GameObject go;
@@ -37,7 +36,6 @@ public class PopUpSystem : MonoBehaviour
     }
     public void OpenPopUp(string Title , string Contents, Action onClickOkay, Action onClickCancel)
     {
-        titleText.text = Title;
         contentsText.text = Contents;
         this.onClickOkay = onClickOkay;
         this.onClickCancel = onClickCancel;
