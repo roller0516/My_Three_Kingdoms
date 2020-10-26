@@ -167,9 +167,8 @@ public class SearchButton : MonoBehaviour
     }
     public void lose()
     {
-
+        
         //애니메이션
-
         //골드 
     }
     private void Update()
