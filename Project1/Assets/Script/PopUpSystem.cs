@@ -54,7 +54,7 @@ public class PopUpSystem : MonoBehaviour
         if (EnterDeongun)
         {
             DataController.GetInstance().SubTicket(1);
-            go.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+            Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
             ClosePopUp();
             MonsterSpawn.GetInstance().MonsterCount = 0;
             MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);

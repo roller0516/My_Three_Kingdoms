@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 
 
 public class UIManager : MonoBehaviour
@@ -340,16 +341,13 @@ public class UIManager : MonoBehaviour
     {
         if (MonsterSpawn.GetInstance().MimicIsDie == true)
         {
-            
                 switch (SearchName)
                 {
                     case "하북":
-                        print(searchButtons[0].GetName());
                         searchButtons[0].isWin = true;
                         if (searchButtons[0].isWin == true)
                         {
                             searchButtons[0].isWin = false;
-                            print(searchButtons[0].isWin);
                             searchButtons[0].Win(true);
                         }
                         break;
@@ -358,7 +356,6 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[1].isWin == true)
                         {
                             searchButtons[1].isWin = false;
-                            print(searchButtons[1].isWin);
                             searchButtons[1].Win(true);
                         }
                         break;
@@ -367,7 +364,6 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[2].isWin == true)
                         {
                             searchButtons[2].isWin = false;
-                            print(searchButtons[2].isWin);
                             searchButtons[2].Win(true);
                         }
                         break;
@@ -376,7 +372,6 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[3].isWin == true)
                         {
                             searchButtons[3].isWin = false;
-                            print(searchButtons[3].isWin);
                             searchButtons[3].Win(true);
                         }
                         break;
@@ -385,7 +380,6 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[4].isWin == true)
                         {
                             searchButtons[4].isWin = false;
-                            print(searchButtons[4].isWin);
                             searchButtons[4].Win(true);
                         }
                         break;
@@ -394,7 +388,6 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[5].isWin == true)
                         {
                             searchButtons[5].isWin = false;
-                            print(searchButtons[5].isWin);
                             searchButtons[5].Win(true);
                         }
                         break;
@@ -403,7 +396,6 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[6].isWin == true)
                         {
                             searchButtons[6].isWin = false;
-                            print(searchButtons[6].isWin);
                             searchButtons[6].Win(true);
                         }
                         break;
@@ -412,22 +404,26 @@ public class UIManager : MonoBehaviour
                         if (searchButtons[7].isWin == true)
                         {
                             searchButtons[7].isWin = false;
-                            print(searchButtons[7].isWin);
                             searchButtons[7].Win(true);
                         }
                         break;
              
             }
+           
         }
         if (PopUpSystem.GetInstance().EnterDeongun == true)
         {
             timeText.gameObject.SetActive(true);
             time = Time.deltaTime;
             Currenttime -= time;
-            if (Currenttime <= 0)
+            if (Currenttime <= 0 && MonsterSpawn.GetInstance().MimicIsDie == false)
             {
+                PopUpSystem.GetInstance().EnterDeongun = false;
                 time = 0;
                 Currenttime = Starttime;
+                Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y +20f, Player.Instance.transform.position.z);
+                MonsterSpawn.GetInstance().MonsterCount = 0;
+                MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
             }
         }
         else if (PopUpSystem.GetInstance().EnterDeongun == false)
@@ -435,6 +431,7 @@ public class UIManager : MonoBehaviour
             Currenttime = Starttime;
             timeText.gameObject.SetActive(false);
         }
+
         timeText.text = Currenttime.ToString("0");
     }
 }
