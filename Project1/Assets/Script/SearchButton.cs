@@ -28,7 +28,6 @@ public class SearchButton : MonoBehaviour
             PopUpSystem.GetInstance().OpenPopUp("알림", this.S_Name + "으로 수색 하겠습니까?", () => { Debug.Log("Open"); }, () => { Debug.Log("Close"); });
         }
     }
-
     public void Win(bool WIN)
     {
         if (WIN == true)
@@ -36,7 +35,7 @@ public class SearchButton : MonoBehaviour
             switch (S_Name)
             {
                 case "하북":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[0].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -51,7 +50,7 @@ public class SearchButton : MonoBehaviour
                     }
                     break;
                 case "청서":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[2].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -68,7 +67,7 @@ public class SearchButton : MonoBehaviour
 
                 case "중원":
 
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[4].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -86,7 +85,7 @@ public class SearchButton : MonoBehaviour
                     break;
 
                 case "강동":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[6].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -102,7 +101,7 @@ public class SearchButton : MonoBehaviour
                     break;
 
                 case "관중":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[8].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -117,7 +116,7 @@ public class SearchButton : MonoBehaviour
                     }
                     break;
                 case "형북":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[10].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -132,7 +131,7 @@ public class SearchButton : MonoBehaviour
                     }
                     break;
                 case "형남":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[12].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -147,7 +146,7 @@ public class SearchButton : MonoBehaviour
                     }
                     break;
                 case "파촉":
-                    if (RandomRange1 <= 100)
+                    if (RandomRange1 <= 5)
                     {
                         if (sl.Sp_item[14].itemCount < 10 && ItemRandomRange <= 50)
                         {

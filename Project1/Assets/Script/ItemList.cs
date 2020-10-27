@@ -5,19 +5,6 @@ using System.Numerics;
 
 public class ItemList : MonoBehaviour
 {
-    //private static ItemList s_instance = null;
-
-    //public static ItemList Instance
-    //{
-    //    get
-    //    {
-    //        if (s_instance == null)
-    //        {
-    //            s_instance = FindObjectOfType(typeof(ItemList)) as ItemList;
-    //        }
-    //        return s_instance;
-    //    }
-    //}
     public string itemname;
     public weaponData weaponData;
     public Button[] bt;
@@ -114,4 +101,5 @@ public class ItemList : MonoBehaviour
         for (int i = 0; i < weaponData.dataArray.Length; i++)
             WeaponGradeSlider[i].value = (float)weaponData.dataArray[i].Level / (float)maxLevel;
     }
+
 }

@@ -29,7 +29,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     BigInteger num;
 
     public Text LevelTex;
-    public Text upGradeTex;
+    public TextMeshProUGUI upGradeTex;
     public Button button_;
     public GameObject Level_img;
 
