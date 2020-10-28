@@ -208,7 +208,7 @@ public class Boss : MonoBehaviour
             }
             Player.Instance._AniState = Player.AnimState.Idle;
             MonsterSpawn.instance.boss_IsDie = true;
-            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.MonsterCount = 0;
             _AniState = AnimState.die;
             //SetKnowledgeReward(GetKnowledgeReward());
             SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));

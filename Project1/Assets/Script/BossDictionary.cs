@@ -36,12 +36,10 @@ public class BossDictionary : MonoBehaviour
     public List<BossInfo> bossinfo = new List<BossInfo>();
     public List<Sprite> ChagneBossSprite = new List<Sprite>();
     public Button[] iconbutton;
-    public Button[] Equipbutton;
     public GameObject SelectImage;
     public GameObject CeatureButton;
     public Image Bossim;
     private RectTransform rect;
-    public int EquipCount;
     GameObject go;
     int Count;
     public int num;
@@ -71,7 +69,7 @@ public class BossDictionary : MonoBehaviour
             if (ChagneBossSprite[i].name == bossName)
             {
                 iconbutton[i].image.sprite = ChagneBossSprite[i];
-                BossName = bossName;
+                bossinfo[i].BossName = bossName;
             }
         }
     }
@@ -114,31 +112,32 @@ public class BossDictionary : MonoBehaviour
             go.transform.parent = iconbutton[num].transform;
             go.transform.localScale = Vector3.one;
             Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num+1).ToString() + "boss");
-            CeatureButton.GetComponent<SKillCooltime>().CreatureName = BossName;
-            Equipbutton[num].gameObject.SetActive(true);
+            BossName = bossinfo[num].BossName;
+            UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
             prevnum = num;
             Count++;
         }
         else if (Count > 0)
         {
-            if (prevnum != num) 
+            print(prevnum);
+            print(num);
+            if (prevnum != num)
             {
-                Equipbutton[num].gameObject.SetActive(true);
-                for (int i = 0; i < Equipbutton.Length; i++) 
+                UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
+                for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
                 {
-                    if (i == num) 
+                    if (i == num)
                     {
                         continue;
                     }
-                    Equipbutton[i].gameObject.SetActive(false); 
+                    UIManager.GetInstance().equipButton[i].gameObject.SetActive(false);
                 }
             }
+            BossName = bossinfo[num].BossName;
             Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num + 1).ToString() + "boss");
-            CeatureButton.GetComponent<SKillCooltime>().CreatureName = BossName;
             go.transform.parent = iconbutton[num].transform;
             go.transform.position = iconbutton[num].transform.position;
+            prevnum = num;
         }
     }
-
-    
 }

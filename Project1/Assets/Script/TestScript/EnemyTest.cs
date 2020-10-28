@@ -123,6 +123,7 @@ public class EnemyTest : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
+            
             if (HitCount == 0)
             {
                 Player.Instance._AniState = Player.AnimState.Attack;
@@ -216,7 +217,7 @@ public class EnemyTest : MonoBehaviour
             //SetKnowledgeReward(GetKnowledgeReward());
             DataController.GetInstance().AddGold(GetGoldReward());
             DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
-            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.MonsterCount=0;
             MonsterSpawn.instance.IsDie = true;
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);

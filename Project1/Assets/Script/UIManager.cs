@@ -40,12 +40,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] GoldCostClickDisPlayer;
     public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] Atktext;
-
     // 버튼 갯수
     public SearchButton[] searchButtons;
     public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
+    public EquipCheck[] equipButton;
     //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
     
     public string SearchName;

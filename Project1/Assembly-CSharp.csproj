@@ -75,6 +75,7 @@
     <Compile Include="Assets\Script\Boss.cs" />
     <Compile Include="Assets\Script\BossDictionary.cs" />
     <Compile Include="Assets\Script\CameraResolution.cs" />
+    <Compile Include="Assets\Script\Creature.cs" />
     <Compile Include="Assets\Script\CreatureSummon.cs" />
     <Compile Include="Assets\Script\DamageText.cs" />
     <Compile Include="Assets\Script\Data\PlayerData.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Script\Data\Runtime\weaponDataData.cs" />
     <Compile Include="Assets\Script\DataController.cs" />
     <Compile Include="Assets\Script\DictionaryManager.cs" />
+    <Compile Include="Assets\Script\EquipCheck.cs" />
     <Compile Include="Assets\Script\Fadeinout.cs" />
     <Compile Include="Assets\Script\GameBase\GameBase\Blink.cs" />
     <Compile Include="Assets\Script\GameBase\GameBase\Blink2.cs" />
