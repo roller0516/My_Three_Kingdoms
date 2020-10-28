@@ -80,7 +80,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!95 &8859950169673108236
 Animator:
   serializedVersion: 3
@@ -154,4 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Monster: {fileID: 0}
   moveSpeed: 0.5
-  Maxhitcount: 5
+  Maxhitcount: 4

@@ -8,6 +8,7 @@ public class Fadeinout : MonoBehaviour
 {
 
     public GameObject SearchRewardPanel;
+    public GameObject SkeletonGraphic;
     public Image Panel;
     SkeletonGraphic skeletonAni;
     float time = 0f;
@@ -48,12 +49,12 @@ public class Fadeinout : MonoBehaviour
     }
     public void SearchReward()
     {
-        SearchRewardPanel.SetActive(true);
+        SkeletonGraphic.SetActive(true);
         
     }
     private void Update()
     {
-        if (SearchRewardPanel.activeSelf == true)
+        if (SkeletonGraphic.activeSelf == true)
         {
             aniCheck = true;
             //애니메이션 실행 
@@ -77,9 +78,10 @@ public class Fadeinout : MonoBehaviour
                 {
                     skeletonAni.AnimationState.SetEmptyAnimations(0);
                     skeletonAni.AnimationState.SetAnimation(0, "1", false);
-                    
-                    SearchRewardPanel.SetActive(false);
+
+                    SkeletonGraphic.SetActive(false);
                     TouchCount = 0;
+
                 }
 
             }
