@@ -146,6 +146,7 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
+        _AniState = AnimState.hit;
         hitCount++;
         SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);// 데미지 텍스트 생성
@@ -155,9 +156,8 @@ public class Boss : MonoBehaviour
         dam.Damage = damage;
 
         
-        Hitcount(hitCount);// 애니메이션 변경
-        if (hitCount > 2)
-            hitCount = 0;
+        // 애니메이션 변경
+
 
         //KnockBack();
 
@@ -208,7 +208,7 @@ public class Boss : MonoBehaviour
             }
             Player.Instance._AniState = Player.AnimState.Idle;
             MonsterSpawn.instance.boss_IsDie = true;
-            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.MonsterCount = 0;
             _AniState = AnimState.die;
             //SetKnowledgeReward(GetKnowledgeReward());
             SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
@@ -223,6 +223,7 @@ public class Boss : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        _AniState = AnimState.hit;
         hitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
@@ -230,9 +231,6 @@ public class Boss : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
 
-        Hitcount(hitCount);// 애니메이션 변경
-        if (hitCount > 2)
-            hitCount = 0;
 
         //KnockBack();
 
@@ -240,6 +238,7 @@ public class Boss : MonoBehaviour
 
         if (Hp <= 0)
         {
+            _AniState = AnimState.die;
             int num;
             if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
             {
@@ -283,7 +282,6 @@ public class Boss : MonoBehaviour
             }
             MonsterSpawn.instance.boss_IsDie = true;
             MonsterSpawn.instance.MonsterCount--;
-            _AniState = AnimState.die;
             //SetKnowledgeReward(GetKnowledgeReward());
             SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
             DataController.GetInstance().AddGold(GetGoldReward());
@@ -294,15 +292,6 @@ public class Boss : MonoBehaviour
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
         }
-    }
-    public void KnockBack()// 넉백
-    {
-        rig.AddForce(new Vector3(2.5f, 2, 0) * knockbackPower, ForceMode.Impulse);
-    }
-    public void Hitcount(int count)
-    {
-        ani.SetFloat("Blend", 1);
-        _AniState = AnimState.hit;
     }
     public BigInteger GetGoldReward()
     {

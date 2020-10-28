@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
   
     public void Attack() //공격 
     {
-        crt = Random.Range(0, 101);
+        crt = Random.Range(1, 101);
         if (crt <= Critical)
         {
             if (Monster.tag == "Boss") 
@@ -103,6 +103,11 @@ public class Player : MonoBehaviour
             {
                 AttackSound(4);
                 Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+            }
+            else if (Monster.tag == "Monster1")
+            {
+                AttackSound(4);
+                Monster.GetComponent<MimicEnemy>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
             }
         }
         else

@@ -105,6 +105,7 @@ public class MonsterSpawn : MonoBehaviour
         {
             if (PrevMonster != null)
                 Destroy(PrevMonster.gameObject);
+            MimicHp(UIManager.GetInstance().SearchName);
             MonsterCount++;
             Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
             stg.MonsterCount--;
@@ -168,5 +169,36 @@ public class MonsterSpawn : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         MonsterCount = 0;
         Player.Instance.transform.position = Player.Instance.startPosition;
+    }
+    void MimicHp(string Name) 
+    {
+        switch (Name)
+        {
+            case "하북":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "1000000";
+                break;
+            case "청서":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "2000000";
+                break;
+            case "중원":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "3000000";
+                break;
+            case "강동":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "4000000";
+                break;
+            case "관중":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "5000000";
+                break;
+            case "형북":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "6000000";
+                break;
+            case "형남":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "7000000";
+                break;
+            case "파촉":
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "8000000";
+                break;
+        }
+
     }
 }

@@ -12,24 +12,26 @@ public class SKillCooltime : MonoBehaviour
     public float MaxSkillcooltime;
     public float skilldurationtime;
     public float CrurrentTime;
-    bool BossskillOn;
+    bool Attack_SpeedskillOn;
     bool SkillStart;
+    
     private void Start()
     {
         CrurrentTime = MaxSkillcooltime;
     }
     void Update()
     {
-        Cooltime();
+        AttackSpeedCooltime();
+
     }
-    public void SkillOn()
+    public void Attack_speedSkillOn()
     {
         skilldurationtime = 0;
         SkillStart = true;
-        BossskillOn = true;
+        Attack_SpeedskillOn = true;
         Skillbutton.interactable = false;
     }
-    public void Cooltime()
+    public void AttackSpeedCooltime()
     {
         if (SkillStart == true)
         {
@@ -42,28 +44,30 @@ public class SKillCooltime : MonoBehaviour
                 SkillStart = false;
             }
         }
-            
-        if (BossskillOn == true)
+
+        if (Attack_SpeedskillOn == true)
         {
             skillcooltime += Time.deltaTime;
-            
 
             Backgroudimage.fillAmount = 1.0f - (Mathf.SmoothStep(0, 100, skillcooltime / CrurrentTime) / 100);
             cooltime.gameObject.SetActive(true);
-            cooltime.text = ((int)(CrurrentTime - skillcooltime )).ToString();
-           
+            cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
+
             if (skillcooltime >= CrurrentTime)
             {
                 cooltime.gameObject.SetActive(false);
                 skillcooltime = 0;
-                BossskillOn = false;
+                Attack_SpeedskillOn = false;
             }
         }
-        
-        else if (BossskillOn == false)
+
+
+        else if (Attack_SpeedskillOn == false)
         {
             Skillbutton.interactable = true;
         }
+
+
     }
 }
 

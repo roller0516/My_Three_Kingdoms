@@ -35,7 +35,7 @@ public class DamageText : MonoBehaviour
     }
     private void Update()
     {
-        text.text = Text_Damage().ToString();
+        text.text = Damage.ToString(); /*Text_Damage().ToString();*/
         transform.Translate(new Vector3(0, 2 * Time.deltaTime, 0));
         //Color_.a = Mathf.Lerp(text.color.a, 0, Time.deltaTime * alphaSpeed);
        
@@ -80,44 +80,44 @@ public class DamageText : MonoBehaviour
     //        yield return null;
     //    }
     //}
-    private string Text_Damage()
-    {
-        int placeN = 3;
-        BigInteger value = Damage;
-        List<int> numlist = new List<int>();
-        int p = (int)Mathf.Pow(10, placeN);
+    //private string Text_Damage()
+    //{
+    //    int placeN = 3;
+    //    BigInteger value = Damage;
+    //    List<int> numlist = new List<int>();
+    //    int p = (int)Mathf.Pow(10, placeN);
 
-        do
-        {
-            numlist.Add((int)(value % p));
-            value /= p;
-        }
-        while (value >= 1);
+    //    do
+    //    {
+    //        numlist.Add((int)(value % p));
+    //        value /= p;
+    //    }
+    //    while (value >= 1);
 
-        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+    //    int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
 
 
 
-        if (num < 1000)
-            return num.ToString();
+    //    if (num < 1000)
+    //        return num.ToString();
 
-        float f = (num / (float)p);
+    //    float f = (num / (float)p);
 
-        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
-    }
+    //    return f.ToString("N1") + GetUnitText(numlist.Count - 1);
+    //}
 
-    private string GetUnitText(int index)
-    {
-        int idx = index - 1;
-        if (idx < 0) return "";
-        int repeatCount = (index / 26) + 1;
-        string retstr = "";
-        for (int i = 0; i < repeatCount; i++)
-        {
-            retstr += (char)(64 + index % 26);
-        }
-        return retstr;
-    }
+    //private string GetUnitText(int index)
+    //{
+    //    int idx = index - 1;
+    //    if (idx < 0) return "";
+    //    int repeatCount = (index / 26) + 1;
+    //    string retstr = "";
+    //    for (int i = 0; i < repeatCount; i++)
+    //    {
+    //        retstr += (char)(64 + index % 26);
+    //    }
+    //    return retstr;
+    //}
 
 
     

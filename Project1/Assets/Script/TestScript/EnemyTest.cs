@@ -123,6 +123,7 @@ public class EnemyTest : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
+            
             if (HitCount == 0)
             {
                 Player.Instance._AniState = Player.AnimState.Attack;
@@ -151,6 +152,7 @@ public class EnemyTest : MonoBehaviour
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
+        ani.SetTrigger("hit");
         HitCount++;
         SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y+1.0f, -1), Quaternion.identity);
@@ -160,7 +162,7 @@ public class EnemyTest : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
 
-        ani.SetTrigger("hit");// 애니메이션 변경
+        // 애니메이션 변경
 
         //KnockBack();
        
@@ -168,6 +170,7 @@ public class EnemyTest : MonoBehaviour
         
         if (Hp <= 0)
         {
+            _AniState = AnimState.die;
             int num;
             if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10&& sl.Sp_item[14].itemCount == 10)
             {
@@ -207,15 +210,14 @@ public class EnemyTest : MonoBehaviour
             else
             {
                 num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-                print(num);
+
             }
             Hpbar.gameObject.SetActive(false);
             SetGoldReward(GetGoldReward()+ ((GetGoldReward() * num * 100) / 10000));
             //SetKnowledgeReward(GetKnowledgeReward());
             DataController.GetInstance().AddGold(GetGoldReward());
             DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
-            _AniState = AnimState.die;
-            MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.MonsterCount=0;
             MonsterSpawn.instance.IsDie = true;
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
@@ -223,6 +225,7 @@ public class EnemyTest : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        ani.SetTrigger("hit");
         HitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성                                                                                                                           //go.transform.parent = this.transform;
@@ -230,13 +233,14 @@ public class EnemyTest : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
 
         dam.Damage = damage;
-        ani.SetTrigger("hit");// 애니메이션 변경
+        // 애니메이션 변경
 
         //KnockBack();
 
         Hp -= damage;// hp 뺌
         if (Hp <= 0)
         {
+            _AniState = AnimState.die;
             int num;
             if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
             {
@@ -283,7 +287,6 @@ public class EnemyTest : MonoBehaviour
             //SetKnowledgeReward(GetKnowledgeReward());
             DataController.GetInstance().AddGold(GetGoldReward());
             DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
-            _AniState = AnimState.die;
             MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.IsDie = true;
             Destroy(this.gameObject, 2f);

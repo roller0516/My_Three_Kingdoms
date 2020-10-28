@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         }
         return instance;
     }
-    public Text timeText;
+    public TextMeshProUGUI timeText;
     public float time;
     public float Starttime;
     public float Currenttime;
@@ -37,15 +37,15 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Gold;
     public bool TR_Check;
     public Text[] GoldPerClickDisPlayer;
-    public Text[] GoldCostClickDisPlayer;
+    public TextMeshProUGUI[] GoldCostClickDisPlayer;
     public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] Atktext;
-
     // 버튼 갯수
     public SearchButton[] searchButtons;
     public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
+    public EquipCheck[] equipButton;
     //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
     
     public string SearchName;
@@ -284,7 +284,7 @@ public class UIManager : MonoBehaviour
             txt[i].text = GoldPerClickText("GoldPerClick"+i);
         }
     }
-    public void GoldCostClickText(Text[] txt)
+    public void GoldCostClickText(TextMeshProUGUI[] txt)
     {
         //txt = GoldCostClickDisPlayer;
 
@@ -413,6 +413,7 @@ public class UIManager : MonoBehaviour
         }
         if (PopUpSystem.GetInstance().EnterDeongun == true)
         {
+
             timeText.gameObject.SetActive(true);
             time = Time.deltaTime;
             Currenttime -= time;
@@ -431,7 +432,6 @@ public class UIManager : MonoBehaviour
             Currenttime = Starttime;
             timeText.gameObject.SetActive(false);
         }
-
         timeText.text = Currenttime.ToString("0");
     }
 }

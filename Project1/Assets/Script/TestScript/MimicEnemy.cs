@@ -56,7 +56,7 @@ public class MimicEnemy : MonoBehaviour
 
         _AniState = AnimState.move;// 애니메이션 변경
 
-        MaxHp = "2000000"; // 무기변경 랜덤으로 변경
+        // 무기변경 랜덤으로 변경
         Hp = BigInteger.Parse( MaxHp);
         cam = Camera.main;
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
@@ -77,21 +77,21 @@ public class MimicEnemy : MonoBehaviour
 
     private void SetCurrentAnimation(AnimState _state) //애니메이션 
     {
-        switch (_state)
-        {
-            case AnimState.Idle:
-                ani.SetInteger("AniState", (int)AnimState.Idle);
-                break;
-            case AnimState.move:
-                ani.SetInteger("AniState", (int)AnimState.move);
-                break;
-            case AnimState.Hit:
-                ani.SetTrigger("hit");
-                break;
-            case AnimState.die:
-                ani.SetBool("Die", true);
-                break;
-        }
+        //switch (_state)
+        //{
+        //    case AnimState.Idle:
+        //        ani.SetInteger("AniState", (int)AnimState.Idle);
+        //        break;
+        //    case AnimState.move:
+        //        ani.SetInteger("AniState", (int)AnimState.move);
+        //        break;
+        //    case AnimState.Hit:
+        //        ani.SetTrigger("hit");
+        //        break;
+        //    case AnimState.die:
+        //        ani.SetBool("Die", true);
+        //        break;
+        //}
     }
 
     private void Distance()// 플레이어와의 거리를 계산한다.
@@ -157,7 +157,7 @@ public class MimicEnemy : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
 
-        ani.SetTrigger("hit");// 애니메이션 변경
+        /*ani.SetTrigger("hit");*/// 애니메이션 변경
 
         //KnockBack();
 
@@ -165,47 +165,6 @@ public class MimicEnemy : MonoBehaviour
 
         if (Hp <= 0)
         {
-            //int num;
-            //if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[2].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[3].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-            //    print(num);
-            //}
             Hpbar.gameObject.SetActive(false);
             //SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
             //SetKnowledgeReward(GetKnowledgeReward());
@@ -234,47 +193,6 @@ public class MimicEnemy : MonoBehaviour
         Hp -= damage;// hp 뺌
         if (Hp <= 0)
         {
-            //int num;
-            //if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[2].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[3].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
-            //    print(num);
-            //}
-            //else if (sl.Sp_item[14].itemCount == 10)
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
-            //    print(num);
-            //}
-            //else
-            //{
-            //    num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-            //    print(num);
-            //}
             Hpbar.gameObject.SetActive(false);
             //SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
             //SetKnowledgeReward(GetKnowledgeReward());

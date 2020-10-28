@@ -37,21 +37,23 @@ public class BossDictionary : MonoBehaviour
     public List<Sprite> ChagneBossSprite = new List<Sprite>();
     public Button[] iconbutton;
     public GameObject SelectImage;
+    public GameObject CeatureButton;
+    public Image Bossim;
     private RectTransform rect;
     GameObject go;
     int Count;
+    public int num;
+    public string BossName;
+    public int prevnum;
     private void Start()
     {
-
         ListAddInfo();
-
         rect = GetComponent<RectTransform>();
         for (int i = 0; i < iconbutton.Length; i++)
         {
             iconbutton[i].image.sprite = bossinfo[i].BossImage;
         }
     }
-
     void Add(string bossName, bool equipBoss)
     {
         bossinfo.Add(new BossInfo(bossName, equipBoss, Resources.Load<Sprite>("UI/BossDictionary/" + bossName)));
@@ -67,16 +69,16 @@ public class BossDictionary : MonoBehaviour
             if (ChagneBossSprite[i].name == bossName)
             {
                 iconbutton[i].image.sprite = ChagneBossSprite[i];
+                bossinfo[i].BossName = bossName;
             }
         }
     }
-
     public void ButtonON(int num) //버튼을 눌렀어요
     {
         SoundManager.instance.ButtonSound();
         PrFabsproduce(num);
-
     }
+    
     void ListAddInfo()
     {
         Add("NoneStage1boss", false);
@@ -101,6 +103,7 @@ public class BossDictionary : MonoBehaviour
 
     void PrFabsproduce(int num)// 선택이미지 생성
     {
+        this.num = num;
         
         if (Count == 0)
         {
@@ -108,12 +111,33 @@ public class BossDictionary : MonoBehaviour
             go = Instantiate(SelectImage, rect.position, Quaternion.identity);
             go.transform.parent = iconbutton[num].transform;
             go.transform.localScale = Vector3.one;
+            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num+1).ToString() + "boss");
+            BossName = bossinfo[num].BossName;
+            UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
+            prevnum = num;
             Count++;
         }
-        else if (Count>0)
+        else if (Count > 0)
         {
+            print(prevnum);
+            print(num);
+            if (prevnum != num)
+            {
+                UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
+                for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
+                {
+                    if (i == num)
+                    {
+                        continue;
+                    }
+                    UIManager.GetInstance().equipButton[i].gameObject.SetActive(false);
+                }
+            }
+            BossName = bossinfo[num].BossName;
+            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num + 1).ToString() + "boss");
             go.transform.parent = iconbutton[num].transform;
             go.transform.position = iconbutton[num].transform.position;
+            prevnum = num;
         }
     }
 }
