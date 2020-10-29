@@ -23,6 +23,7 @@ public class EquipCheck : MonoBehaviour
             {
                 for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++) 
                 {
+                    print(BossDictionary.GetInstance().num);
                     if (i == BossDictionary.GetInstance().num)
                         continue;
                     UIManager.GetInstance().equipButton[i].Equip = false;
@@ -30,6 +31,7 @@ public class EquipCheck : MonoBehaviour
                     UIManager.GetInstance().equipButton[i].EquipCount = 0;
                 }
             }
+            GameObject.FindObjectOfType<CreatureSummon>().gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/Boss" + (BossDictionary.GetInstance().num + 1) + "Icon");
             UIManager.GetInstance().equipButton[BossDictionary.GetInstance().num].GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/equipment");
             EquipCount++;
         }

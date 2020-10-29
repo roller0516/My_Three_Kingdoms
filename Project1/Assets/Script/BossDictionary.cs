@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 [System.Serializable]
 public class BossInfo
 {
     public string BossName;
-    public bool EquipBoss;
     public Sprite BossImage;
+    public string Contents;
+    public string BossNameText;
 
-    public BossInfo(string bossName, bool equipBoss, Sprite bossImage)
+    public BossInfo(string bossName, Sprite bossImage, string contents,string bossNameText)
     {
+        BossNameText = bossNameText;
+        Contents = contents;
         BossName = bossName;
-        EquipBoss = equipBoss;
         BossImage = bossImage;
     }
 }
@@ -36,15 +39,17 @@ public class BossDictionary : MonoBehaviour
     public List<BossInfo> bossinfo = new List<BossInfo>();
     public List<Sprite> ChagneBossSprite = new List<Sprite>();
     public Button[] iconbutton;
+    public TextMeshProUGUI BossNameTEXT;
+    public TextMeshProUGUI ContentsTEXT;
     public GameObject SelectImage;
-    public GameObject CeatureButton;
     public Image Bossim;
-    private RectTransform rect;
-    GameObject go;
-    int Count;
     public int num;
-    public string BossName;
     public int prevnum;
+    public string BossName;
+    private RectTransform rect;
+    private GameObject go;
+    private int Count;
+    
     private void Start()
     {
         ListAddInfo();
@@ -54,11 +59,11 @@ public class BossDictionary : MonoBehaviour
             iconbutton[i].image.sprite = bossinfo[i].BossImage;
         }
     }
-    void Add(string bossName, bool equipBoss)
+    void Add(string bossName,string contents,string bossNameText)
     {
-        bossinfo.Add(new BossInfo(bossName, equipBoss, Resources.Load<Sprite>("UI/BossDictionary/" + bossName)));
+        bossinfo.Add(new BossInfo(bossName, Resources.Load<Sprite>("UI/BossDictionary/" + bossName), contents, bossNameText));
     }
-    public void AddChangeSprite(string SpriteName)
+    void AddChangeSprite(string SpriteName)
     {
         ChagneBossSprite.Add(Resources.Load<Sprite>("UI/BossDictionary/" + SpriteName));
     }
@@ -81,16 +86,14 @@ public class BossDictionary : MonoBehaviour
     
     void ListAddInfo()
     {
-        Add("NoneStage1boss", false);
-        Add("NoneStage2boss", false);
-        Add("NoneStage3boss", false);
-        Add("NoneStage4boss", false);
-        Add("NoneStage5boss", false);
-        Add("NoneStage6boss", false);
-        Add("NoneStage7boss", false);
-        Add("NoneStage8boss", false);
-
-
+        Add("NoneStage1boss","칼을 휘드른다","배원소");
+        Add("NoneStage2boss", "칼을 휘드른다","정원지");
+        Add("NoneStage3boss", "칼을 휘드른다","장보");
+        Add("NoneStage4boss", "칼을 휘드른다","장량");
+        Add("NoneStage5boss", "칼을 휘드른다","장각");
+        Add("NoneStage6boss", "칼을 휘드른다","이각");
+        Add("NoneStage7boss", "칼을 휘드른다","화웅");
+        Add("NoneStage8boss", "칼을 휘드른다","왕윤");
         AddChangeSprite("Stage1boss");
         AddChangeSprite("Stage2boss");
         AddChangeSprite("Stage3boss");
@@ -111,11 +114,13 @@ public class BossDictionary : MonoBehaviour
             go = Instantiate(SelectImage, rect.position, Quaternion.identity);
             go.transform.parent = iconbutton[num].transform;
             go.transform.localScale = Vector3.one;
-            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num+1).ToString() + "boss");
+            Bossim.gameObject.SetActive(true);
+            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num+1).ToString() + "boss_im");
             BossName = bossinfo[num].BossName;
             UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
             prevnum = num;
             Count++;
+            Textcontents(num);
         }
         else if (Count > 0)
         {
@@ -133,11 +138,18 @@ public class BossDictionary : MonoBehaviour
                     UIManager.GetInstance().equipButton[i].gameObject.SetActive(false);
                 }
             }
+            Textcontents(num);
             BossName = bossinfo[num].BossName;
-            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num + 1).ToString() + "boss");
+            Bossim.gameObject.SetActive(true);
+            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num + 1).ToString() + "boss_im");
             go.transform.parent = iconbutton[num].transform;
             go.transform.position = iconbutton[num].transform.position;
             prevnum = num;
         }
+    }
+    void Textcontents(int num) 
+    {
+        BossNameTEXT.text = bossinfo[num].BossNameText;
+        ContentsTEXT.text = bossinfo[num].Contents;
     }
 }

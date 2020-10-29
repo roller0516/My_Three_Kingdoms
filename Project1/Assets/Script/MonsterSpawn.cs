@@ -9,7 +9,6 @@ using Quaternion = UnityEngine.Quaternion;
 public class MonsterSpawn : MonoBehaviour
 {
     public static MonsterSpawn instance;
-
     public static MonsterSpawn GetInstance()
     {
         if (instance == null)
@@ -65,9 +64,25 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (CurTime >= SpawnTime && MonsterCount<MaxCount)
         {
-            RandomRange1 = Random.Range(0, Monster.Length);
-            RandomRange2 = Random.Range(0, Monster.Length);
-            SpawnMonster(RandomRange1);
+            if (stg.curStage < 50)
+            {
+                RandomRange1 = Random.Range(0, 3);
+                RandomRange2 = Random.Range(0, 3);
+                SpawnMonster(RandomRange1);
+            }
+            else if (stg.curStage >= 50)
+            {
+                RandomRange1 = Random.Range(3, 6);
+                RandomRange2 = Random.Range(0, 2);
+                SpawnMonster(RandomRange1);
+            }
+            else if (stg.curStage >= 100)
+            {
+                RandomRange1 = Random.Range(6, 9);
+                RandomRange2 = Random.Range(0, 2);
+                SpawnMonster(RandomRange1);
+            }
+
         }
         if (MonsterCount == 0)
         {
@@ -75,14 +90,13 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (IsDie == true)
         {
+            MonsterCount = 0;
             IsDie = false;
             stg.MonsterCount++;
-            StartCoroutine("Death");
             DataController.GetInstance().SaveStage(this);
         }
         if (boss_IsDie == true)
         {
-            print(boss_IsDie);
             boss_IsDie = false;
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
@@ -142,12 +156,14 @@ public class MonsterSpawn : MonoBehaviour
             MonsterCount++;
             go = Instantiate(Monster[num], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
             PrevMonster = go;
+            StartCoroutine("Death");
         }
     }
     IEnumerator Death()
     {
         yield return new WaitForSeconds(0.1f);
         transform.position = new Vector2(transform.position.x + 3f, transform.position.y);
+
     }
     IEnumerator BossDeath()
     {
@@ -175,7 +191,7 @@ public class MonsterSpawn : MonoBehaviour
         switch (Name)
         {
             case "하북":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "1000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "100000";
                 break;
             case "청서":
                 MimicMonster.GetComponent<MimicEnemy>().MaxHp = "2000000";
@@ -190,13 +206,13 @@ public class MonsterSpawn : MonoBehaviour
                 MimicMonster.GetComponent<MimicEnemy>().MaxHp = "5000000";
                 break;
             case "형북":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "6000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "60000000";
                 break;
             case "형남":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "7000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "700000000";
                 break;
             case "파촉":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "8000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "8000000000";
                 break;
         }
 

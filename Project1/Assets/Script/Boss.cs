@@ -71,7 +71,8 @@ public class Boss : MonoBehaviour
         transform.Translate(new Vector2(-1f * moveSpeed * Time.deltaTime, 0));//왼쪽으로 전진 
         SetCurrentAnimation(_AniState); // 실시간으로 애니메이션을 받아온다.
         SetHpbar();
-        Distance();//실시간으로 타겟과의 거리를 받아온다
+        Distance();
+         //실시간으로 타겟과의 거리를 받아온다
     }
 
     private void SetCurrentAnimation(AnimState _state) //애니메이션 
@@ -151,147 +152,31 @@ public class Boss : MonoBehaviour
         SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);// 데미지 텍스트 생성
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y+ 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
-
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
-
-        
-        // 애니메이션 변경
-
-
-        //KnockBack();
-
         Hp -= damage;// hp 뺌
-        
-        if (Hp <= 0)
-        {
-            int num;
-            if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[2].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[3].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-                print(num);
-            }
-            Player.Instance._AniState = Player.AnimState.Idle;
-            MonsterSpawn.instance.boss_IsDie = true;
-            MonsterSpawn.instance.MonsterCount = 0;
-            _AniState = AnimState.die;
-            //SetKnowledgeReward(GetKnowledgeReward());
-            SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-            DataController.GetInstance().AddGold(GetGoldReward());
-            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
-            Player.Instance._AniState = Player.AnimState.move;
-            Player.Instance.moveSpeed = 2f;
-            BossDictionary.GetInstance().ChangeSprite(BossName);
-            Destroy(this.gameObject, 1.5f);
-            Hpbar.gameObject.SetActive(false);
-        }
+        HpCheck();
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
-        _AniState = AnimState.hit;
         hitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
-
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
-
-
-        //KnockBack();
-
         Hp -= damage;// hp 뺌
+        HpCheck();
 
-        if (Hp <= 0)
-        {
-            _AniState = AnimState.die;
-            int num;
-            if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[2].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[3].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
-                print(num);
-            }
-            else if (sl.Sp_item[14].itemCount == 10)
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
-                print(num);
-            }
-            else
-            {
-                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-                print(num);
-            }
-            MonsterSpawn.instance.boss_IsDie = true;
-            MonsterSpawn.instance.MonsterCount--;
-            //SetKnowledgeReward(GetKnowledgeReward());
-            SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-            DataController.GetInstance().AddGold(GetGoldReward());
-            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
-            Player.Instance._AniState = Player.AnimState.move;
-            Player.Instance.moveSpeed = 2f;
-            BossDictionary.GetInstance().ChangeSprite(BossName);
-            Destroy(this.gameObject, 2f);
-            Hpbar.gameObject.SetActive(false);
-        }
+    }
+    public void CreatureDamage(BigInteger damage) // 데미지 함수
+    {
+        _AniState = AnimState.hit;
+        SoundManager.instance.HitSound();
+        Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);// 데미지 텍스트 생성
+        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
+        DamageText dam = FindObjectOfType<DamageText>();
+        dam.Damage = damage;
+        Hp -= damage;// hp 뺌
     }
     public BigInteger GetGoldReward()
     {
@@ -315,6 +200,64 @@ public class Boss : MonoBehaviour
         num = BigInteger.Divide((BigInteger.Multiply(Hp, 100)), MaxHp);
         Hpbar.value = (float.Parse(num.ToString()) / 100);
         Hpbar.transform.position = cam.WorldToScreenPoint(this.transform.position + new Vector3(0, 2.5f, 0));
+    }
+    public void HpCheck() 
+    {
+        if (Hp <= 0)
+        {
+            _AniState = AnimState.die;
+            int num;
+            if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount + sl.Sp_item[3].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[2].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[2].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[3].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[3].AbilityCount;
+                print(num);
+            }
+            else if (sl.Sp_item[14].itemCount == 10)
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade + sl.Sp_item[14].AbilityCount;
+                print(num);
+            }
+            else
+            {
+                num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
+                print(num);
+            }
+            MonsterSpawn.instance.boss_IsDie = true;
+            //SetKnowledgeReward(GetKnowledgeReward());
+            SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
+            DataController.GetInstance().AddGold(GetGoldReward());
+            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
+            Player.Instance._AniState = Player.AnimState.move;
+            Player.Instance.moveSpeed = 2f;
+            BossDictionary.GetInstance().ChangeSprite(BossName);
+            Destroy(this.gameObject, 2f);
+            Hpbar.gameObject.SetActive(false);
+        }
     }
 }
 

@@ -54,7 +54,6 @@ public class Player : MonoBehaviour
     {
         transform.Translate(new Vector2(1f * moveSpeed * Time.deltaTime, 0));//플레이어 이동
         my_PlayerDamage = Playerdata.Damage + itemlist.item_Attack;
-
         SetCurrentAnimation(_AniState);
     }
     
@@ -97,8 +96,6 @@ public class Player : MonoBehaviour
                 AttackSound(4);
                 Monster.GetComponent<Boss>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
             }
-                
-
             else if (Monster.tag == "Monster")
             {
                 AttackSound(4);

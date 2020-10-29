@@ -85,7 +85,6 @@ public class ItemList : MonoBehaviour
                 break;
         }
     }
-   
     public void AttechmentPlayeritem(string itemname)
     {
         Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", itemname);

@@ -22,7 +22,6 @@ public class SKillCooltime : MonoBehaviour
     void Update()
     {
         AttackSpeedCooltime();
-
     }
     public void Attack_speedSkillOn()
     {
@@ -44,7 +43,6 @@ public class SKillCooltime : MonoBehaviour
                 SkillStart = false;
             }
         }
-
         if (Attack_SpeedskillOn == true)
         {
             skillcooltime += Time.deltaTime;
@@ -60,14 +58,10 @@ public class SKillCooltime : MonoBehaviour
                 Attack_SpeedskillOn = false;
             }
         }
-
-
         else if (Attack_SpeedskillOn == false)
         {
             Skillbutton.interactable = true;
         }
-
-
     }
 }
 

@@ -100,7 +100,6 @@ public class MimicEnemy : MonoBehaviour
 
         if (d > 3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
         {
-
             Player.Instance.Monster = this.gameObject;
             Player.Instance.moveSpeed = 3f;
             Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
@@ -143,7 +142,6 @@ public class MimicEnemy : MonoBehaviour
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             moveSpeed = 0;
-            _AniState = AnimState.move;
         }
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수
@@ -205,12 +203,42 @@ public class MimicEnemy : MonoBehaviour
             Hpbar.gameObject.SetActive(false);
         }
     }
+    public void CreatureDamage(BigInteger damage) // 데미지 함수
+    {
+        SoundManager.instance.HitSound();
+        Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
+        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성
+                                                                                                                                   //go.transform.parent = this.transform;
+
+        DamageText dam = FindObjectOfType<DamageText>();
+        dam.Damage = damage;
+
+        /*ani.SetTrigger("hit");*/// 애니메이션 변경
+
+        //KnockBack();
+
+        Hp -= damage;// hp 뺌
+
+        if (Hp <= 0)
+        {
+            Hpbar.gameObject.SetActive(false);
+            //SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
+            //SetKnowledgeReward(GetKnowledgeReward());
+            //DataController.GetInstance().AddGold(GetGoldReward());
+            //DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
+            _AniState = AnimState.die;
+            //MonsterSpawn.instance.MonsterCount--;
+            MonsterSpawn.instance.MimicIsDie = true;
+            Destroy(this.gameObject, 2f);
+            Hpbar.gameObject.SetActive(false);
+        }
+    }
     //private void KnockBack()// 넉백
     //{
     //    rig.AddForce(new Vector3(2.5f, 2, 0) * knockbackPower, ForceMode.Impulse);
     //}
 
-   
+
     //public BigInteger GetGoldReward()
     //{
     //    return goldreward;

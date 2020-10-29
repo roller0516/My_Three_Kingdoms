@@ -39,10 +39,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     
     float CurTime;
     bool PressDown = false;
-    private void Awake()
-    {
-        
-    }
     private void Start()
     {
         CurrentCost = BigInteger.Parse(StartCurrentCost);
@@ -57,8 +53,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
         DataController.GetInstance().SetGoldPerClick("GoldPerClick" + 1, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
-        print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + 1));
-
         Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
         CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
     }

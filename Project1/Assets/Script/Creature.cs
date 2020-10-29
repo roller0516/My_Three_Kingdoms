@@ -34,38 +34,16 @@ public class Creature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (MonsterSpawn.instance.stg.MonsterCount % MonsterSpawn.instance.stg.MaxStage == 0)
-            Monster = FindObjectOfType<Boss>().gameObject;
-        else
-            Monster = FindObjectOfType<EnemyTest>().gameObject;
-        
+        Monster = Player.Instance.Monster;
+
         ani = GetComponent<Animator>();
     }
-    private void Update()
-    {
-        //SetCurrentAnimation(_AniState);
-    }
-    // Update is called once per frame
-    //private void SetCurrentAnimation(AnimState _state) // 플레이어 애니메이션 
-    //{
-    //    switch (_state)
-    //    {
-    //        case AnimState.Move:
-    //            ani.SetInteger("AniState", (int)AnimState.Move);
-    //            ani.SetFloat("MoveSpeed", 1.0f);
-    //            break;
-    //        case AnimState.Attack:
-    //            ani.SetInteger("AniState", (int)AnimState.Attack);
-    //            break;
-    //    }
-    //}
     public void Attack() //공격 
     {
         if (Monster.tag == "Boss")
         {
             StartCoroutine("Bosshitcount");
         }
-
         else if (Monster.tag == "Monster")
         {
             StartCoroutine("Monsterhitcount");
@@ -80,36 +58,48 @@ public class Creature : MonoBehaviour
     {
         if (hit <= Maxhitcount)
         {
-            Monster.GetComponent<MimicEnemy>().TakeDamage(Player.Instance.my_PlayerDamage);
+            Monster.GetComponent<MimicEnemy>().CreatureDamage(Player.Instance.my_PlayerDamage);
             yield return new WaitForSeconds(0.1f);
             hit++;
             StartCoroutine("Mimichitcount");
         }
         else
+        {
+            Destroy(this.gameObject,1);
             hit = 0;
+        }
+
     }
     IEnumerator Monsterhitcount()
     {
         if (hit <= Maxhitcount)
         {
-            Monster.GetComponent<EnemyTest>().TakeDamage(Player.Instance.my_PlayerDamage);
+            Monster.GetComponent<EnemyTest>().CreatureDamage(Player.Instance.my_PlayerDamage);
             yield return new WaitForSeconds(0.1f);
             hit++;
             StartCoroutine("Monsterhitcount");
         }
-        else
+        else 
+        {
+            Destroy(this.gameObject,1);
             hit = 0;
+        }
+           
     }
     IEnumerator Bosshitcount()
     {
         if (hit <= Maxhitcount)
         {
-            Monster.GetComponent<Boss>().TakeDamage(Player.Instance.my_PlayerDamage);
+            Monster.GetComponent<Boss>().CreatureDamage(Player.Instance.my_PlayerDamage);
             yield return new WaitForSeconds(0.1f);
             hit++;
             StartCoroutine("Bosshitcount");
         }
         else
+        {
+            Destroy(this.gameObject,1);
             hit = 0;
+        }
+
     }
 }

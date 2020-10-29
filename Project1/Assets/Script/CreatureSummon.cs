@@ -23,20 +23,17 @@ public class CreatureSummon : MonoBehaviour
     }
     public void Boss_SkillOn()
     {
-        
         for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
         {
             if (UIManager.GetInstance().equipButton[i].Equip)
             {
                 CreatureName = BossDictionary.GetInstance().BossName;
-                BossSkillOn = true;
-                Skillbutton.interactable = false;
-                for (int j = 0; j < BossDictionary.GetInstance().bossinfo.Count; j++)
+                if (CreatureName == Creatures[i].name)
                 {
-                    if (CreatureName == Creatures[j].name)
-                        Instantiate(Creatures[j], new Vector3(Player.Instance.transform.position.x, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
+                    Instantiate(Creatures[i], new Vector3(Player.Instance.transform.position.x, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
+                    BossSkillOn = true;
+                    Skillbutton.interactable = false;
                 }
-               
             }
         }
     }
@@ -52,7 +49,6 @@ public class CreatureSummon : MonoBehaviour
             Backgroudimage.fillAmount = 1.0f - (Mathf.SmoothStep(0, 100, skillcooltime / CrurrentTime) / 100);
             cooltime.gameObject.SetActive(true);
             cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
-
             if (skillcooltime >= CrurrentTime)
             {
                 cooltime.gameObject.SetActive(false);
