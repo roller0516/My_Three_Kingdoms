@@ -38,6 +38,12 @@ public class Creature : MonoBehaviour
 
         ani = GetComponent<Animator>();
     }
+    private void Update()
+    {
+        if (Monster == null)
+            Destroy(this.gameObject, 1);
+
+    }
     public void Attack() //공격 
     {
         if (Monster.tag == "Boss")
