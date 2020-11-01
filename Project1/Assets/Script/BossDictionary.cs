@@ -10,9 +10,10 @@ public class BossInfo
     public Sprite BossImage;
     public string Contents;
     public string BossNameText;
-
-    public BossInfo(string bossName, Sprite bossImage, string contents,string bossNameText)
+    public bool IsChange;
+    public BossInfo(string bossName, Sprite bossImage, string contents,string bossNameText,bool isChange)
     {
+        IsChange = isChange;
         BossNameText = bossNameText;
         Contents = contents;
         BossName = bossName;
@@ -58,10 +59,15 @@ public class BossDictionary : MonoBehaviour
         {
             iconbutton[i].image.sprite = bossinfo[i].BossImage;
         }
+        DataController.GetInstance().LoadBossDic(this);
+    }
+    private void Update()
+    {
+        changeSpriteCheck();
     }
     void Add(string bossName,string contents,string bossNameText)
     {
-        bossinfo.Add(new BossInfo(bossName, Resources.Load<Sprite>("UI/BossDictionary/" + bossName), contents, bossNameText));
+        bossinfo.Add(new BossInfo(bossName, Resources.Load<Sprite>("UI/BossDictionary/" + bossName), contents, bossNameText,false));
     }
     void AddChangeSprite(string SpriteName)
     {
@@ -73,17 +79,24 @@ public class BossDictionary : MonoBehaviour
         {
             if (ChagneBossSprite[i].name == bossName)
             {
+                bossinfo[i].IsChange = true;
                 iconbutton[i].image.sprite = ChagneBossSprite[i];
                 bossinfo[i].BossName = bossName;
             }
         }
+        DataController.GetInstance().SaveBossDic(this);
     }
     public void ButtonON(int num) //버튼을 눌렀어요
     {
         SoundManager.instance.ButtonSound();
         PrFabsproduce(num);
+        
     }
-    
+    void changeSpriteCheck()
+    {
+        for (int i = 0; i < bossinfo.Count; i++)
+            ChangeSprite(bossinfo[i].BossName);
+    }
     void ListAddInfo()
     {
         Add("NoneStage1boss","칼을 휘드른다","배원소");

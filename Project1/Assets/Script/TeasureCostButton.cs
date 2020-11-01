@@ -36,7 +36,7 @@ public class TeasureCostButton : MonoBehaviour
     {
         
         CurrentCost = StartCurrentCost;
-        //DataController.GetInstance().LoadWeaponCost(this);
+        DataController.GetInstance().LoadTeasure(this);
         UpdateUI();
     }
 
@@ -53,7 +53,7 @@ public class TeasureCostButton : MonoBehaviour
 
                 TeasureAbility(UpgradeName);
                 UpdateUI();
-                //DataController.GetInstance().SaveWeaponCost(this);
+                DataController.GetInstance().SaveTeasure(this);
             }
         }
     }
@@ -127,11 +127,13 @@ public class TeasureCostButton : MonoBehaviour
                         DataController.GetInstance().SetGoldPerClick("GoldPerClick" + i, num + (num2 * goldByUpgrade * UIManager.GetInstance().upgradeButton[i].Level * 100) / 10000);
                 }
                 DataController.GetInstance().Teasure1Ability = goldByUpgrade;
+                PlayerPrefs.SetInt("Teasure1Ability", DataController.GetInstance().Teasure1Ability);
                 break;
             case "treasure_2":
                 break;
             case "treasure_3":
                 Player.Instance.Critical += 1;
+                PlayerPrefs.SetInt("Critical", Player.Instance.Critical);
                 break;
             case "treasure_4":
                 for (int i = 0; i < UIManager.GetInstance().upgradeButton.Length; i++) 
@@ -143,18 +145,22 @@ public class TeasureCostButton : MonoBehaviour
                     UIManager.GetInstance().upgradeButton[i].CurrentCost1 = ((num * 100) - num2) / 100;
                 }
                 DataController.GetInstance().Teasure2Ability = goldByUpgrade;
-                    break;
+                PlayerPrefs.SetInt("Teasure2Ability", DataController.GetInstance().Teasure2Ability);
+                break;
             case "treasure_5":
                 float time1 = GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime;
                 float time = GameObject.Find("SkillButton").GetComponent<SKillCooltime>().MaxSkillcooltime;
                 time1 = time * (1-((float)goldByUpgrade / 100));
                 GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime = time1;
-                
+                PlayerPrefs.SetFloat("skill", GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime);
+
                 break;
             case "treasure_6":
                 break;
             case "treasure_8":
                 Player.Instance.CriticalPer += 2;
+                
+                PlayerPrefs.SetInt("CriticalPer", Player.Instance.CriticalPer);
                 break;
         }
     }

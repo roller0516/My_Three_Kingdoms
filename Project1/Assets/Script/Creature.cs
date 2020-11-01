@@ -40,13 +40,18 @@ public class Creature : MonoBehaviour
     }
     private void Update()
     {
-        if (Monster == null)
+        if (Monster == null || Monster.activeSelf == false)
             Destroy(this.gameObject, 1);
-
+            
     }
     public void Attack() //공격 
     {
-        if (Monster.tag == "Boss")
+        if (Monster == null || Monster.activeSelf == false)
+        {
+            Destroy(this.gameObject, 1);
+            return;
+        }
+        else if (Monster.tag == "Boss")
         {
             StartCoroutine("Bosshitcount");
         }
@@ -62,49 +67,73 @@ public class Creature : MonoBehaviour
     }
     IEnumerator Mimichitcount() 
     {
-        if (hit <= Maxhitcount)
+        if (Monster == null || Monster.activeSelf == false)
         {
-            Monster.GetComponent<MimicEnemy>().CreatureDamage(Player.Instance.my_PlayerDamage);
-            yield return new WaitForSeconds(0.1f);
-            hit++;
-            StartCoroutine("Mimichitcount");
+            Destroy(this.gameObject, 1);
+            yield break;
         }
         else
         {
-            Destroy(this.gameObject,1);
-            hit = 0;
+            if (hit <= Maxhitcount)
+            {
+                Monster.GetComponent<MimicEnemy>().CreatureDamage(Player.Instance.my_PlayerDamage);
+                yield return new WaitForSeconds(0.1f);
+                hit++;
+                StartCoroutine("Mimichitcount");
+            }
+            else
+            {
+                Destroy(this.gameObject, 1);
+                hit = 0;
+            }
         }
-
     }
     IEnumerator Monsterhitcount()
     {
-        if (hit <= Maxhitcount)
+        if (Monster == null || Monster.activeSelf == false)
         {
-            Monster.GetComponent<EnemyTest>().CreatureDamage(Player.Instance.my_PlayerDamage);
-            yield return new WaitForSeconds(0.1f);
-            hit++;
-            StartCoroutine("Monsterhitcount");
+            Destroy(this.gameObject, 1);
+            yield break;
         }
-        else 
+        else
         {
-            Destroy(this.gameObject,1);
-            hit = 0;
+            if (hit <= Maxhitcount)
+            {
+                Monster.GetComponent<EnemyTest>().CreatureDamage(Player.Instance.my_PlayerDamage);
+                yield return new WaitForSeconds(0.1f);
+                hit++;
+                StartCoroutine("Monsterhitcount");
+            }
+            else
+            {
+                Destroy(this.gameObject, 1);
+                hit = 0;
+            }
         }
+        
            
     }
     IEnumerator Bosshitcount()
     {
-        if (hit <= Maxhitcount)
+        if (Monster == null || Monster.activeSelf == false)
         {
-            Monster.GetComponent<Boss>().CreatureDamage(Player.Instance.my_PlayerDamage);
-            yield return new WaitForSeconds(0.1f);
-            hit++;
-            StartCoroutine("Bosshitcount");
+            Destroy(this.gameObject, 1);
+            yield break;
         }
         else
         {
-            Destroy(this.gameObject,1);
-            hit = 0;
+            if (hit <= Maxhitcount)
+            {
+                Monster.GetComponent<Boss>().CreatureDamage(Player.Instance.my_PlayerDamage);
+                yield return new WaitForSeconds(0.1f);
+                hit++;
+                StartCoroutine("Bosshitcount");
+            }
+            else
+            {
+                Destroy(this.gameObject, 1);
+                hit = 0;
+            }
         }
 
     }

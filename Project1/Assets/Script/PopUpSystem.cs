@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using System;
 
 public class PopUpSystem : MonoBehaviour
 {
-    public Text contentsText;
+    public TextMeshProUGUI contentsText;
     public GameObject PopUp;
-    public GameObject go;
     public bool EnterDeongun;
 
     Action onClickOkay;

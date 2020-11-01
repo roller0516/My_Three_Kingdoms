@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SearchButton : MonoBehaviour
 {
-    public Text timeText;
+    public TextMeshProUGUI timeText;
     public string S_Name;
     public int RandomRange1;
     public int ItemRandomRange;
@@ -13,10 +14,12 @@ public class SearchButton : MonoBehaviour
     SpecialitemList sl;
     public bool isWin;
     bool timerTrue;
+    public Image[] itemImage;
+    
     private void Start()
     {
         sl = GameObject.Find("Canvas").GetComponent<SpecialitemList>();
-
+        
     }
     public void PlayerTeleport()
     {
@@ -25,13 +28,55 @@ public class SearchButton : MonoBehaviour
             PopUpSystem.GetInstance().ClosePopUp();
         else
         {
+           
             PopUpSystem.GetInstance().OpenPopUp("알림", this.S_Name + "으로 수색 하겠습니까?", () => { Debug.Log("Open"); }, () => { Debug.Log("Close"); });
+            SetitemImage(S_Name);
         }
+    }
+    void SetitemImage(string imgName)
+    {
+        switch (imgName)
+        {
+            case "하북":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special1");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special2");
+                break;
+            case "청서":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special3");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special4");
+                break;
+            case "중원":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special5");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                break;
+            case "강동":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special7");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special8");
+                break;
+            case "관중":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special9");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special10");
+                break;
+            case "형북":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special11");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special12");
+                break;
+            case "형남":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special13");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special14");
+                break;
+            case "파촉":
+                itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special15");
+                itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special16");
+                break;
+        }
+
     }
     public void Win(bool WIN)
     {
         if (WIN == true)
         {
+            FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = true;
             switch (S_Name)
             {
                 case "하북":
