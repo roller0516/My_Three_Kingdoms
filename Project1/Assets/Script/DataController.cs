@@ -45,7 +45,8 @@ public class DataController : MonoBehaviour
     BigInteger m_goldperClick18=0;
     BigInteger m_goldperClick19=0;
     BigInteger m_Knowledge;
-    int Ticket = 10;
+    int Ticket = 0;
+    int MaxTicket =7;
     public int Teasure1Ability = 0;
     public int Teasure2Ability = 0;
     public List<string> key = new List<string>();
@@ -393,12 +394,17 @@ public class DataController : MonoBehaviour
 
     public void AddTicket(int newTicket)
     {
+        if (Ticket >= MaxTicket) 
+        {
+            SetTicket(MaxTicket);
+            return;
+        }
         Ticket += newTicket;
         SetTicket(Ticket);
     }
     public void SubTicket(int newTicket)
     {
-        Ticket += newTicket;
+        Ticket -= newTicket;
         SetTicket(Ticket);
     }
     public int GetTicket()
@@ -437,8 +443,6 @@ public class DataController : MonoBehaviour
         for (int i=0; i< itemlist.weaponData.dataArray.Length; i++)
         {
             string key = itemlist.weaponData.dataArray[i].UID;
-            //itemlist.weaponData.dataArray[i].Isusing = bool.Parse(PlayerPrefs.GetString(key, itemlist.weaponData.dataArray[i].Isusing.ToString()));
-            
             if(i == 0)
                 itemlist.weaponData.dataArray[0].Level = PlayerPrefs.GetInt(key, 1);
             else
@@ -472,7 +476,7 @@ public class DataController : MonoBehaviour
     }
     public void LoadStage(MonsterSpawn mosterSpawn)
     {
-        mosterSpawn.stg.curStage = PlayerPrefs.GetInt("Stage", 1);
+        mosterSpawn.stg.curStage = PlayerPrefs.GetInt("Stage", 100);
         string MonsterHP = mosterSpawn.MonsterHpCount.ToString();
         MonsterHP = PlayerPrefs.GetString("MonsterHpCount", MonsterHP);
         mosterSpawn.MonsterHpCount = BigInteger.Parse(MonsterHP);

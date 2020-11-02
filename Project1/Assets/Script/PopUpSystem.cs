@@ -49,14 +49,22 @@ public class PopUpSystem : MonoBehaviour
 
     public void OnClickOkay() 
     {
-        EnterDeongun = true;
-        if (EnterDeongun)
+        if (DataController.GetInstance().GetTicket() >= 1)
         {
-            DataController.GetInstance().SubTicket(1);
-            Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
-            ClosePopUp();
-            MonsterSpawn.GetInstance().MonsterCount = 0;
-            MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
+            EnterDeongun = true;
+            if (EnterDeongun)
+            {
+
+                DataController.GetInstance().SubTicket(1);
+                Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+                ClosePopUp();
+                MonsterSpawn.GetInstance().MonsterCount = 0;
+                MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
+            }
+        }
+        else
+        {
+            print("티켓이부족합니다");
         }
     }
     public void OnClickCancel() 

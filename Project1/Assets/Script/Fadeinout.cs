@@ -17,6 +17,7 @@ public class Fadeinout : MonoBehaviour
     bool aniCheck;
     public bool Win;
     public bool Lose;
+    public Animator ani;
     public void Start()
     {
         skeletonAni = SearchRewardPanel.gameObject.GetComponent<SkeletonGraphic>();
@@ -64,8 +65,8 @@ public class Fadeinout : MonoBehaviour
                 Lose = false;
                 if (aniCheck == true && TouchCount == 0)
                 {
+                    ani.speed = 0;
                     aniCheck = false;
-
                     skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
                 }
                 if (Input.GetMouseButtonDown(0))
@@ -77,6 +78,7 @@ public class Fadeinout : MonoBehaviour
                         skeletonAni.AnimationState.AddAnimation(0, "4", false, 0);
                         skeletonAni.AnimationState.AddAnimation(0, "5-1", false, 0);
                         skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
+                        StartCoroutine("rewardCoroutine");
                     }
                     else if (TouchCount >= 2)
                     {
@@ -93,6 +95,8 @@ public class Fadeinout : MonoBehaviour
             }
             else if (Lose)
             {
+                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure2");
+                ani.speed = 0;
                 Win = false;
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -115,5 +119,10 @@ public class Fadeinout : MonoBehaviour
                 }
             }
         }
+    }
+    IEnumerator rewardCoroutine() 
+    {
+        yield return new WaitForSeconds(2.6f);
+        ani.speed = 1;
     }
 }
