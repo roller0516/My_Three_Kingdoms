@@ -17,6 +17,7 @@ public class SKillCooltime : MonoBehaviour
     
     private void Start()
     {
+        DataController.GetInstance().LoadSkilltime(this);
         CrurrentTime = MaxSkillcooltime;
     }
     void Update()

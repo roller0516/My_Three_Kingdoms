@@ -122,7 +122,6 @@ public class MonsterSpawn : MonoBehaviour
             MimicHp(UIManager.GetInstance().SearchName);
             MonsterCount++;
             Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
-            stg.MonsterCount--;
         }
         else if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
         {

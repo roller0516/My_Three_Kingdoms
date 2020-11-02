@@ -6,27 +6,46 @@ using UnityEngine.UI;
 
 public class ShopButton : MonoBehaviour
 {
-    Button Equip;
+    public Button[] AmorEquip;
+    public Button[] WeaponEquip;
     int count;
-    private void Start()
+
+    public void ChangeSkin_Amor(int num) 
     {
-        Equip = GetComponent<Button>();
-    }
-    public void ChangeSkin(int num) 
-    {
-        if (count == 1)
+
+        for (int i = 0; i < AmorEquip.Length; i++)
         {
-            PrevSkin();
-            return;
+            if (i == num)
+            {
+                AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equipment");
+                continue;
+            }
+            AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
         }
-        Player.Instance.skeletonRenderer.skeleton.SetSkin("animation/" + num);
-        Equip.image.sprite =  Resources.Load<Sprite>("UI/Shop/c_equipment");
+        Player.Instance.skeletonAni.skeleton.SetSkin("animation/"+(num+1));
+        Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
+
         count++;
     }
-    void PrevSkin() 
+    public void ChangeSkin_Weapon(int num)
+    {
+        
+        for (int i = 0; i < WeaponEquip.Length; i++)
+        {
+            if (i == num)
+            {
+                WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equipment");
+                continue;
+            }
+            WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+        }
+        Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10"+(num+1));
+        print("무기변경");
+    }
+    void PrevSkin(int num) 
     {
         count = 0;
         Player.Instance.skeletonRenderer.skeleton.SetSkin("animation/1");
-        Equip.image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+        WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
     }
 }

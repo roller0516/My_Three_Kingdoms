@@ -124,7 +124,6 @@ public class EnemyTest : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
-            print("공격중");
             if (HitCount == 0)
             {
                 Player.Instance._AniState = Player.AnimState.Attack;
@@ -218,7 +217,6 @@ public class EnemyTest : MonoBehaviour
     }
     void HpCheck() 
     {
-        
         if (Hp <= 0)
         {
             if (count == 0) 
