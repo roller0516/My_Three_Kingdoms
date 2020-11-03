@@ -1,0 +1,237 @@
+
+boss_3_5.png
+size: 396,761
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 300, 366
+  size: 79, 43
+  orig: 81, 45
+  offset: 1, 1
+  index: -1
+2
+  rotate: false
+  xy: 275, 2
+  size: 35, 33
+  orig: 37, 35
+  offset: 1, 1
+  index: -1
+3
+  rotate: true
+  xy: 304, 614
+  size: 145, 87
+  orig: 147, 89
+  offset: 1, 1
+  index: -1
+4
+  rotate: true
+  xy: 302, 489
+  size: 123, 84
+  orig: 125, 86
+  offset: 1, 1
+  index: -1
+5
+  rotate: false
+  xy: 300, 411
+  size: 82, 76
+  orig: 84, 78
+  offset: 1, 1
+  index: -1
+6
+  rotate: false
+  xy: 206, 129
+  size: 74, 37
+  orig: 76, 39
+  offset: 1, 1
+  index: -1
+7
+  rotate: false
+  xy: 204, 49
+  size: 70, 37
+  orig: 72, 39
+  offset: 1, 1
+  index: -1
+bangcheon
+  rotate: true
+  xy: 2, 250
+  size: 68, 236
+  orig: 68, 236
+  offset: 0, 0
+  index: -1
+bangcheon_gori
+  rotate: true
+  xy: 332, 36
+  size: 26, 50
+  orig: 68, 236
+  offset: 24, 88
+  index: -1
+body
+  rotate: false
+  xy: 331, 7
+  size: 34, 27
+  orig: 36, 29
+  offset: 1, 1
+  index: -1
+cape
+  rotate: false
+  xy: 204, 88
+  size: 70, 39
+  orig: 70, 41
+  offset: 0, 1
+  index: -1
+eye clos
+  rotate: true
+  xy: 388, 531
+  size: 38, 4
+  orig: 40, 6
+  offset: 1, 1
+  index: -1
+eye open
+  rotate: true
+  xy: 388, 571
+  size: 41, 6
+  orig: 43, 8
+  offset: 1, 1
+  index: -1
+head
+  rotate: true
+  xy: 282, 64
+  size: 72, 98
+  orig: 74, 100
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: false
+  xy: 130, 34
+  size: 72, 98
+  orig: 74, 100
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: true
+  xy: 206, 221
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+l hair
+  rotate: true
+  xy: 206, 168
+  size: 51, 76
+  orig: 51, 76
+  offset: 0, 0
+  index: -1
+l leg
+  rotate: true
+  xy: 367, 20
+  size: 14, 25
+  orig: 19, 25
+  offset: 3, 0
+  index: -1
+l shold
+  rotate: false
+  xy: 240, 223
+  size: 34, 21
+  orig: 34, 23
+  offset: 0, 1
+  index: -1
+leg armor
+  rotate: false
+  xy: 204, 33
+  size: 37, 14
+  orig: 37, 14
+  offset: 0, 0
+  index: -1
+r arm
+  rotate: true
+  xy: 243, 26
+  size: 21, 30
+  orig: 26, 30
+  offset: 2, 0
+  index: -1
+r hair
+  rotate: false
+  xy: 240, 246
+  size: 41, 72
+  orig: 42, 72
+  offset: 1, 0
+  index: -1
+r leg
+  rotate: false
+  xy: 381, 384
+  size: 13, 25
+  orig: 19, 25
+  offset: 3, 0
+  index: -1
+r shold
+  rotate: true
+  xy: 312, 6
+  size: 29, 17
+  orig: 29, 17
+  offset: 0, 0
+  index: -1
+s1
+  rotate: false
+  xy: 276, 37
+  size: 54, 25
+  orig: 74, 27
+  offset: 19, 1
+  index: -1
+s2
+  rotate: false
+  xy: 2, 320
+  size: 285, 63
+  orig: 287, 65
+  offset: 1, 1
+  index: -1
+s3
+  rotate: true
+  xy: 289, 138
+  size: 226, 103
+  orig: 228, 107
+  offset: 1, 3
+  index: -1
+s4
+  rotate: false
+  xy: 2, 385
+  size: 296, 125
+  orig: 298, 127
+  offset: 1, 1
+  index: -1
+s5
+  rotate: false
+  xy: 2, 632
+  size: 300, 127
+  orig: 302, 129
+  offset: 1, 1
+  index: -1
+s6
+  rotate: false
+  xy: 2, 7
+  size: 126, 125
+  orig: 253, 127
+  offset: 126, 1
+  index: -1
+s7
+  rotate: false
+  xy: 2, 512
+  size: 298, 118
+  orig: 301, 120
+  offset: 2, 1
+  index: -1
+s8
+  rotate: false
+  xy: 2, 134
+  size: 202, 114
+  orig: 241, 116
+  offset: 38, 1
+  index: -1
+sha
+  rotate: true
+  xy: 384, 439
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
