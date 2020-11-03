@@ -45,7 +45,8 @@ public class DataController : MonoBehaviour
     BigInteger m_goldperClick18=0;
     BigInteger m_goldperClick19=0;
     BigInteger m_Knowledge;
-    int Ticket = 10;
+    int Ticket = 0;
+    int MaxTicket =7;
     public int Teasure1Ability = 0;
     public int Teasure2Ability = 0;
     public List<string> key = new List<string>();
@@ -53,7 +54,7 @@ public class DataController : MonoBehaviour
 
     private void Awake()
     {
-
+        
         DontDestroyOnLoad(this.gameObject);
         
         m_goldperClick15 = BigInteger.Multiply(m_goldperClick14, 27);
@@ -66,13 +67,14 @@ public class DataController : MonoBehaviour
         gold = m_gold.ToString();
         gold = PlayerPrefs.GetString("Gold", gold);
         m_gold = BigInteger.Parse(gold);
-
+        Ticket = PlayerPrefs.GetInt("Ticket");
         string Knowledge;
         Knowledge = m_Knowledge.ToString();
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
 
-       
+        Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
+        Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");
 
         key.Add(m_goldperClick.ToString());
         key.Add(m_goldperClick1.ToString());
@@ -387,17 +389,22 @@ public class DataController : MonoBehaviour
     public void SetTicket(int newTicket)
     {
         Ticket = newTicket;
-        PlayerPrefs.SetInt("Ticket", Ticket);
+        PlayerPrefs.SetInt("Ticket", 7);
     }
 
     public void AddTicket(int newTicket)
     {
+        if (Ticket >= MaxTicket) 
+        {
+            SetTicket(MaxTicket);
+            return;
+        }
         Ticket += newTicket;
         SetTicket(Ticket);
     }
     public void SubTicket(int newTicket)
     {
-        Ticket += newTicket;
+        Ticket -= newTicket;
         SetTicket(Ticket);
     }
     public int GetTicket()
@@ -440,7 +447,9 @@ public class DataController : MonoBehaviour
                 itemlist.weaponData.dataArray[0].Level = PlayerPrefs.GetInt(key, 1);
             else
                 itemlist.weaponData.dataArray[i].Level = PlayerPrefs.GetInt(key, 0);
+            itemlist.weaponData.dataArray[i].Isusing = bool.Parse(PlayerPrefs.GetString(key + "isUsing", itemlist.weaponData.dataArray[i].Isusing.ToString()));
         }
+       
     }
     public void Saveitem(ItemList itemlist)
     {
@@ -450,6 +459,7 @@ public class DataController : MonoBehaviour
             string key = itemlist.weaponData.dataArray[i].UID;
             
             PlayerPrefs.SetInt(key, itemlist.weaponData.dataArray[i].Level);
+            PlayerPrefs.SetString(key + "isUsing", itemlist.weaponData.dataArray[i].Isusing.ToString());
         }
     }
     public void LoadWeaponCost(Weaponcost weaponcost) 
@@ -480,6 +490,45 @@ public class DataController : MonoBehaviour
         PlayerPrefs.SetInt("Stage", (int)mosterSpawn.stg.curStage);
         PlayerPrefs.SetString("MonsterHpCount", mosterSpawn.MonsterHpCount.ToString());
         PlayerPrefs.SetString("BossHpCount", mosterSpawn.BossHpCount.ToString());
+    }
+    public void LoadTeasure(TeasureCostButton TeasureButton)
+    {
+        string NAME = TeasureButton.UpgradeName;
+        TeasureButton.CurrentCost = PlayerPrefs.GetInt(NAME + "teasureCost", TeasureButton.CurrentCost);
+        TeasureButton.goldByUpgrade = PlayerPrefs.GetInt(NAME + "teasureUpgrade", TeasureButton.goldByUpgrade);
+        TeasureButton.Level = PlayerPrefs.GetInt(NAME + "teasureLevel", TeasureButton.Level);
+    }
+    public void SaveTeasure(TeasureCostButton TeasureButton)
+    {
+        string NAME = TeasureButton.UpgradeName;
+        PlayerPrefs.SetInt(NAME + "teasureCost", TeasureButton.CurrentCost);
+        PlayerPrefs.SetInt(NAME + "teasureUpgrade", TeasureButton.goldByUpgrade);
+        PlayerPrefs.SetInt(NAME + "teasureLevel", TeasureButton.Level);
+    }
+    public void LoadPlayer(Player player)
+    {
+        player.Critical = PlayerPrefs.GetInt("Critical", Player.Instance.Critical);
+        player.CriticalPer = PlayerPrefs.GetInt("CriticalPer", Player.Instance.CriticalPer);
+    }
+   
+    public void LoadSkilltime(SKillCooltime skill)
+    {
+        skill.MaxSkillcooltime = PlayerPrefs.GetFloat("skill", skill.MaxSkillcooltime);
+    }
+    public void LoadBossDic(BossDictionary bossdic)
+    {
+        for (int i= 0; i < bossdic.bossinfo.Count; i++)
+        {
+            bossdic.bossinfo[i].BossName = PlayerPrefs.GetString("bossDic"+i, bossdic.bossinfo[i].BossName);
+        }
+        
+    }
+    public void SaveBossDic(BossDictionary bossdic)
+    {
+        for (int i = 0; i < bossdic.bossinfo.Count; i++)
+        {
+           PlayerPrefs.SetString("bossDic" + i, bossdic.bossinfo[i].BossName);
+        }
     }
 }
 

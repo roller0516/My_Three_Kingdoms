@@ -1,0 +1,76 @@
+
+mimic.png
+size: 141,239
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bbing 2
+  rotate: true
+  xy: 116, 36
+  size: 16, 17
+  orig: 18, 19
+  offset: 1, 1
+  index: -1
+bbing1
+  rotate: true
+  xy: 106, 107
+  size: 40, 33
+  orig: 42, 35
+  offset: 1, 1
+  index: -1
+ll 1
+  rotate: true
+  xy: 119, 149
+  size: 22, 20
+  orig: 24, 22
+  offset: 1, 1
+  index: -1
+ll 2
+  rotate: false
+  xy: 106, 54
+  size: 17, 17
+  orig: 19, 19
+  offset: 1, 1
+  index: -1
+ll 3
+  rotate: false
+  xy: 106, 73
+  size: 32, 32
+  orig: 34, 34
+  offset: 1, 1
+  index: -1
+open
+  rotate: false
+  xy: 2, 2
+  size: 112, 50
+  orig: 112, 50
+  offset: 0, 0
+  index: -1
+open_hit
+  rotate: false
+  xy: 2, 172
+  size: 115, 65
+  orig: 117, 67
+  offset: 1, 1
+  index: -1
+toung
+  rotate: true
+  xy: 119, 173
+  size: 64, 20
+  orig: 64, 20
+  offset: 0, 0
+  index: -1
+under
+  rotate: true
+  xy: 60, 64
+  size: 106, 44
+  orig: 106, 44
+  offset: 0, 0
+  index: -1
+up
+  rotate: true
+  xy: 2, 54
+  size: 116, 56
+  orig: 116, 56
+  offset: 0, 0
+  index: -1

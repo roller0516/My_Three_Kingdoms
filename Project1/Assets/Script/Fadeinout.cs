@@ -15,6 +15,9 @@ public class Fadeinout : MonoBehaviour
     float f_time = 1f;
     int TouchCount;
     bool aniCheck;
+    public bool Win;
+    public bool Lose;
+    public Animator ani;
     public void Start()
     {
         skeletonAni = SearchRewardPanel.gameObject.GetComponent<SkeletonGraphic>();
@@ -57,35 +60,69 @@ public class Fadeinout : MonoBehaviour
         if (SkeletonGraphic.activeSelf == true)
         {
             aniCheck = true;
-            //애니메이션 실행 
-            if (aniCheck == true&& TouchCount== 0)
+            if (Win)
             {
-                aniCheck = false;
+                Lose = false;
+                if (aniCheck == true && TouchCount == 0)
+                {
+                    ani.speed = 0;
+                    aniCheck = false;
+                    skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
+                }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    TouchCount++;
+                    if (TouchCount == 1)
+                    {
+                        skeletonAni.AnimationState.SetAnimation(0, "3", false);
+                        skeletonAni.AnimationState.AddAnimation(0, "4", false, 0);
+                        skeletonAni.AnimationState.AddAnimation(0, "5-1", false, 0);
+                        skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
+                        StartCoroutine("rewardCoroutine");
+                    }
+                    else if (TouchCount >= 2)
+                    {
+                        skeletonAni.AnimationState.SetEmptyAnimations(0);
+                        skeletonAni.AnimationState.SetAnimation(0, "1", false);
+
+                        SkeletonGraphic.SetActive(false);
+                        TouchCount = 0;
+
+                    }
+
+                }
                 
-                skeletonAni.AnimationState.AddAnimation(0, "2", true,0);
             }
-            if (Input.GetMouseButtonDown(0))
+            else if (Lose)
             {
-                TouchCount++;
-                if (TouchCount == 1)
+                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure2");
+                ani.speed = 0;
+                Win = false;
+                if (Input.GetMouseButtonDown(0))
                 {
-                    skeletonAni.AnimationState.SetAnimation(0, "3", false);
-                    skeletonAni.AnimationState.AddAnimation(0, "4", false, 0);
-                    skeletonAni.AnimationState.AddAnimation(0, "5-1", false, 0);
-                    skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
+                    TouchCount++;
+                    if (TouchCount == 1)
+                    {
+                        skeletonAni.AnimationState.SetAnimation(0, "6-1", true);
+                        skeletonAni.AnimationState.AddAnimation(0, "6-2", false,0);
+                       
+                    }
+                    else if (TouchCount >= 2)
+                    {
+                        skeletonAni.AnimationState.SetEmptyAnimations(0);
+                        skeletonAni.AnimationState.SetAnimation(0, "1", false);
+
+                        SkeletonGraphic.SetActive(false);
+                        TouchCount = 0;
+                    }
+
                 }
-                else if (TouchCount >= 2)
-                {
-                    skeletonAni.AnimationState.SetEmptyAnimations(0);
-                    skeletonAni.AnimationState.SetAnimation(0, "1", false);
-
-                    SkeletonGraphic.SetActive(false);
-                    TouchCount = 0;
-
-                }
-
             }
-                
         }
+    }
+    IEnumerator rewardCoroutine() 
+    {
+        yield return new WaitForSeconds(2.6f);
+        ani.speed = 1;
     }
 }

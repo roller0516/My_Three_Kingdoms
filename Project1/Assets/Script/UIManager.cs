@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     public EquipCheck[] equipButton;
+    public TextMeshProUGUI Ticket;
     //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
     
     public string SearchName;
@@ -91,6 +92,7 @@ public class UIManager : MonoBehaviour
         GoldPerClickText(GoldPerClickDisPlayer);
         GoldCostClickText(GoldCostClickDisPlayer);
         AtkText(Atktext);
+        Ticket.text = DataController.GetInstance().GetTicket().ToString()+"/7";
     }
     public void TeasureButton() 
     {
@@ -413,18 +415,21 @@ public class UIManager : MonoBehaviour
         }
         if (PopUpSystem.GetInstance().EnterDeongun == true)
         {
-
             timeText.gameObject.SetActive(true);
             time = Time.deltaTime;
             Currenttime -= time;
-            if (Currenttime <= 0 && MonsterSpawn.GetInstance().MimicIsDie == false)
+            if (Currenttime <= 0)
             {
+                MonsterSpawn.GetInstance().MimicIsDie = false;
+                FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
                 PopUpSystem.GetInstance().EnterDeongun = false;
                 time = 0;
                 Currenttime = Starttime;
                 Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y +20f, Player.Instance.transform.position.z);
                 MonsterSpawn.GetInstance().MonsterCount = 0;
                 MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
+                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().SearchReward();
+                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Lose = true;
             }
         }
         else if (PopUpSystem.GetInstance().EnterDeongun == false)

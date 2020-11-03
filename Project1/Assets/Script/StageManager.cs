@@ -17,22 +17,31 @@ public class StageManager : MonoBehaviour
     {
         stageCount();
     }
- 
+
+
+
     private void stageCount() 
     {
         text.text = curStage.ToString() + "stage";
-        if (curStage >= 50)
-        {
-            for (int i = 0; i < BackGroud.Length; i++) 
-            {
-                BackGroud[i].GetComponent<MeshRenderer>().material = BackGroud[i].materials[1];
-            }
-        }
-        else if (curStage <50) 
+        if (curStage >= 100)
         {
             for (int i = 0; i < BackGroud.Length; i++)
             {
-                BackGroud[i].GetComponent<MeshRenderer>().material = BackGroud[i].materials[0];
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround03", typeof(Material)) as Material;
+            }
+        }
+        else if (curStage >= 50)
+        {
+            for (int i = 0; i < BackGroud.Length; i++)
+            {
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround02", typeof(Material)) as Material;
+            }
+        }
+        else if (curStage < 50)
+        {
+            for (int i = 0; i < BackGroud.Length; i++)
+            {
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround01", typeof(Material)) as Material;
             }
         }
     }

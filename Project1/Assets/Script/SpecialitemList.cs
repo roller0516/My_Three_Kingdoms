@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Numerics;
+using TMPro;
 [System.Serializable]
 public class Specialitem
 {
@@ -9,8 +10,10 @@ public class Specialitem
     public int itemCount;
     public int AbilityCount;
     public bool AbiliOn;
+    
     public Specialitem(string _itemName, int _itemCount,int _AbilityCount,bool _AbiliOn)
     {
+
         this.itemName = _itemName;
         this.itemCount = _itemCount;
         this.AbilityCount = _AbilityCount;
@@ -23,6 +26,7 @@ public class SpecialitemList : MonoBehaviour
     int[] ItemCount;
     bool isUsing = false;
     int[] Count;
+    public TextMeshProUGUI[] itemCountText;
     private void Start()
     {
         Additem("쌍철극", 0, 30, false);
@@ -142,12 +146,12 @@ public class SpecialitemList : MonoBehaviour
         for (int i = 0; i < Sp_item.Count; i++)
         {
             ItemCount[i] = Sp_item[i].itemCount;
+            itemCountText[i].text = Sp_item[i].itemCount.ToString()+"/10";
             if (ItemCount[i] == 10)
             {
                 isUsing = true;
                 AbilityOn(i);
             }
-               
         }
     }
 }

@@ -1,0 +1,153 @@
+
+boss_3_3.png
+size: 1010,267
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 557, 59
+  size: 79, 43
+  orig: 81, 45
+  offset: 1, 1
+  index: -1
+2
+  rotate: true
+  xy: 557, 22
+  size: 35, 33
+  orig: 37, 35
+  offset: 1, 1
+  index: -1
+body
+  rotate: true
+  xy: 866, 46
+  size: 34, 31
+  orig: 36, 33
+  offset: 1, 1
+  index: -1
+hammer
+  rotate: false
+  xy: 243, 14
+  size: 48, 122
+  orig: 48, 122
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 602, 10
+  size: 70, 93
+  orig: 72, 95
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: true
+  xy: 697, 10
+  size: 70, 93
+  orig: 72, 95
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: false
+  xy: 840, 19
+  size: 24, 34
+  orig: 24, 34
+  offset: 0, 0
+  index: -1
+l leg
+  rotate: true
+  xy: 792, 10
+  size: 16, 25
+  orig: 16, 25
+  offset: 0, 0
+  index: -1
+leg armor
+  rotate: true
+  xy: 824, 15
+  size: 38, 14
+  orig: 38, 14
+  offset: 0, 0
+  index: -1
+r arm
+  rotate: true
+  xy: 792, 28
+  size: 25, 30
+  orig: 25, 32
+  offset: 0, 2
+  index: -1
+r leg
+  rotate: false
+  xy: 866, 19
+  size: 16, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+s1
+  rotate: false
+  xy: 792, 55
+  size: 72, 25
+  orig: 74, 27
+  offset: 1, 1
+  index: -1
+s2
+  rotate: false
+  xy: 602, 82
+  size: 285, 63
+  orig: 287, 65
+  offset: 1, 1
+  index: -1
+s3
+  rotate: true
+  xy: 903, 39
+  size: 226, 105
+  orig: 228, 107
+  offset: 1, 1
+  index: -1
+s4
+  rotate: false
+  xy: 304, 140
+  size: 296, 125
+  orig: 298, 127
+  offset: 1, 1
+  index: -1
+s5
+  rotate: false
+  xy: 2, 138
+  size: 300, 127
+  orig: 302, 129
+  offset: 1, 1
+  index: -1
+s6
+  rotate: false
+  xy: 304, 13
+  size: 251, 125
+  orig: 253, 127
+  offset: 1, 1
+  index: -1
+s7
+  rotate: false
+  xy: 602, 147
+  size: 299, 118
+  orig: 301, 120
+  offset: 1, 1
+  index: -1
+s8
+  rotate: false
+  xy: 2, 22
+  size: 239, 114
+  orig: 241, 116
+  offset: 1, 1
+  index: -1
+sha
+  rotate: true
+  xy: 889, 97
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
+under_body
+  rotate: false
+  xy: 557, 2
+  size: 34, 18
+  orig: 34, 18
+  offset: 0, 0
+  index: -1

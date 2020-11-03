@@ -17,16 +17,16 @@ public class TapMenuController : MonoBehaviour
     {
         SoundManager.instance.TapSound();
         ani.SetTrigger("Training");
-        if (UIManager.GetInstance().SearchTap.activeSelf == true)
-            PopUpSystem.GetInstance().ClosePopUp();
+        //if (UIManager.GetInstance().SearchTap.activeSelf == true)
+        //    PopUpSystem.GetInstance().ClosePopUp();
     }
 
     public void WeaponOnActive()//애니메이션 무기탭으로 전환
     {
         SoundManager.instance.TapSound();
         ani.SetTrigger("Weapon");
-        if (UIManager.GetInstance().SearchTap.activeSelf == true)
-            PopUpSystem.GetInstance().ClosePopUp();
+        //if (UIManager.GetInstance().SearchTap.activeSelf == true)
+        //    PopUpSystem.GetInstance().ClosePopUp();
 
     }
    
@@ -34,16 +34,16 @@ public class TapMenuController : MonoBehaviour
     {
         SoundManager.instance.TapSound();
         ani.SetTrigger("Teasure");
-        if (UIManager.GetInstance().SearchTap.activeSelf == true)
-            PopUpSystem.GetInstance().ClosePopUp();
+        //if (UIManager.GetInstance().SearchTap.activeSelf == true)
+        //    PopUpSystem.GetInstance().ClosePopUp();
     }
 
     public void ShopOnActive()//애니메이션 상점탭으로 전환
     {
         SoundManager.instance.TapSound();
         ani.SetTrigger("Shop");
-        if(UIManager.GetInstance().SearchTap.activeSelf == true)
-            PopUpSystem.GetInstance().ClosePopUp();
+        //if(UIManager.GetInstance().SearchTap.activeSelf == true)
+        //    PopUpSystem.GetInstance().ClosePopUp();
 
     }
 
@@ -57,8 +57,8 @@ public class TapMenuController : MonoBehaviour
     {
         SoundManager.instance.TapSound();
         ani.SetTrigger("Dictionary");
-        if (UIManager.GetInstance().SearchTap.activeSelf == true)
-            PopUpSystem.GetInstance().ClosePopUp();
+        //if (UIManager.GetInstance().SearchTap.activeSelf == true)
+        //    PopUpSystem.GetInstance().ClosePopUp();
     }
 
     public void TeasureNomalButton()
