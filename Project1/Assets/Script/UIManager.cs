@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     //버튼 텍스트
     public TextMeshProUGUI Gold;
     public bool TR_Check;
-    public Text[] GoldPerClickDisPlayer;
+    public TextMeshProUGUI[] GoldPerClickDisPlayer;
     public TextMeshProUGUI[] GoldCostClickDisPlayer;
     public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] Atktext;
@@ -277,7 +277,7 @@ public class UIManager : MonoBehaviour
         return retstr;
     }
 
-    public void GoldPerClickText(Text[] txt)
+    public void GoldPerClickText(TextMeshProUGUI[] txt)
     {
         //txt = GoldPerClickDisPlayer;
 

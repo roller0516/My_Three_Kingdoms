@@ -28,7 +28,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     BigInteger Teasure2;
     BigInteger num;
 
-    public Text LevelTex;
+    public TextMeshProUGUI LevelTex;
     public TextMeshProUGUI upGradeTex;
     public Button button_;
     public GameObject Level_img;
@@ -123,7 +123,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void UpdateUI()//ui의 변화를 받아온다
     {
-        LevelTex.text = Level.ToString();
+        LevelTex.text = "Lv."+Level.ToString();
 
         upGradeTex.text = "" + CurrentCost1;
 
