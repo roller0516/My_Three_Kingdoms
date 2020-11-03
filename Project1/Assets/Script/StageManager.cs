@@ -17,7 +17,9 @@ public class StageManager : MonoBehaviour
     {
         stageCount();
     }
- 
+
+
+
     private void stageCount() 
     {
         text.text = curStage.ToString() + "stage";
@@ -25,21 +27,21 @@ public class StageManager : MonoBehaviour
         {
             for (int i = 0; i < BackGroud.Length; i++)
             {
-                BackGroud[i].GetComponent<MeshRenderer>().materials[i] = BackGroud[i].materials[2];
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround03", typeof(Material)) as Material;
             }
         }
         else if (curStage >= 50)
         {
             for (int i = 0; i < BackGroud.Length; i++)
             {
-                BackGroud[i].GetComponent<MeshRenderer>().materials[i] = BackGroud[i].materials[1];
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround02", typeof(Material)) as Material;
             }
         }
         else if (curStage < 50)
         {
             for (int i = 0; i < BackGroud.Length; i++)
             {
-                BackGroud[i].GetComponent<MeshRenderer>().materials[i] = BackGroud[i].materials[0];
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround01", typeof(Material)) as Material;
             }
         }
     }

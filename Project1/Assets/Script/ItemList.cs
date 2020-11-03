@@ -12,11 +12,12 @@ public class ItemList : MonoBehaviour
     public Slider[] WeaponGradeSlider;
     public BigInteger item_Attack;
     public int maxLevel = 10;
-
+    ShopButton shop;
     private int StartAttackByUpgrade = 1;
 
     private void Start()
     {
+        shop = FindObjectOfType<ShopButton>().GetComponent<ShopButton>();
         UpgradeWeapon(weaponData.dataArray[0].Level, 0);
         DataController.GetInstance().Loaditem(this);
         for (int i = 0; i < weaponData.dataArray.Length; i++)
@@ -35,7 +36,8 @@ public class ItemList : MonoBehaviour
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
                     if (weaponData.dataArray[i].Isusing == true)
-                        AttechmentPlayeritem(weaponData.dataArray[i].UID);
+                        if (shop.SkinOn == false)
+                            AttechmentPlayeritem(weaponData.dataArray[i].UID);
                     weaponData.dataArray[i-1].Isusing = false;
                 }
                 
@@ -45,7 +47,8 @@ public class ItemList : MonoBehaviour
     }
     public void Update()
     {
-        AttachmentCheck();
+        if(shop.SkinOn == false)
+            AttachmentCheck();
         WeaponUpGradeSlider();
     }
 

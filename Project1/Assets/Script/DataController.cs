@@ -476,7 +476,7 @@ public class DataController : MonoBehaviour
     }
     public void LoadStage(MonsterSpawn mosterSpawn)
     {
-        mosterSpawn.stg.curStage = PlayerPrefs.GetInt("Stage", 100);
+        mosterSpawn.stg.curStage = PlayerPrefs.GetInt("Stage", 1);
         string MonsterHP = mosterSpawn.MonsterHpCount.ToString();
         MonsterHP = PlayerPrefs.GetString("MonsterHpCount", MonsterHP);
         mosterSpawn.MonsterHpCount = BigInteger.Parse(MonsterHP);
