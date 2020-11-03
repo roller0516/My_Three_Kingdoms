@@ -420,6 +420,7 @@ public class UIManager : MonoBehaviour
             Currenttime -= time;
             if (Currenttime <= 0)
             {
+                PopUpSystem.GetInstance().ClosePopUp();
                 MonsterSpawn.GetInstance().MimicIsDie = false;
                 FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
                 PopUpSystem.GetInstance().EnterDeongun = false;

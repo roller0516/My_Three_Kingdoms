@@ -53,10 +53,10 @@ public class ShopButton : MonoBehaviour
                 {
                     if (i == num)
                     {
-                        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equipment");
+                        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
                         continue;
                     }
-                    AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+                    AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
                 }
                 Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (num + 1));
                 Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
@@ -77,10 +77,10 @@ public class ShopButton : MonoBehaviour
                 {
                     if (i == num)
                     {
-                        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equipment");
+                        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
                         continue;
                     }
-                    AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+                    AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
                 }
                 Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (num + 1));
                 Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
@@ -106,10 +106,10 @@ public class ShopButton : MonoBehaviour
             {
                 if (i == num)
                 {
-                    WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equipment");
+                    WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
                     continue;
                 }
-                WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+                WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
             }
             Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10" + (num + 1));
             Weaponcount++;
@@ -120,13 +120,13 @@ public class ShopButton : MonoBehaviour
         Amorcount = 0;
         Player.Instance.skeletonRenderer.skeleton.SetSkin("animation/1");
         Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
-        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
     }
     public void ReleaseWeaponSkin(int num)
     {
         SkinOn = false;
         Weaponcount = 0;
-        WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/c_equip");
+        WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
     }
     void setSkin() 
     {

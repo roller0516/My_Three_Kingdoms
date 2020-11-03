@@ -490,14 +490,14 @@ AnimationClip:
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: f8f013d02941ed34baaa7b2c613f9596, type: 3}
+      value: {fileID: 21300000, guid: a7fe453071b677546875aa49f80d84a7, type: 3}
     attribute: m_Sprite
     path: ShopPanel/ClothesButton
     classID: 114
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 9e98697f3afe1f544b48a2f2a42ea6f4, type: 3}
+      value: {fileID: 21300000, guid: 6ce2731291165a84ab6fae00efa9ae8a, type: 3}
     attribute: m_Sprite
     path: ShopPanel/WeaponButton
     classID: 114
@@ -708,8 +708,8 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 481e129e444879a42bbe33d38080d1f5, type: 3}
     - {fileID: 21300000, guid: bb0d5f9b4e570f54aaa08bd7a648836b, type: 3}
-    - {fileID: 21300000, guid: f8f013d02941ed34baaa7b2c613f9596, type: 3}
-    - {fileID: 21300000, guid: 9e98697f3afe1f544b48a2f2a42ea6f4, type: 3}
+    - {fileID: 21300000, guid: a7fe453071b677546875aa49f80d84a7, type: 3}
+    - {fileID: 21300000, guid: 6ce2731291165a84ab6fae00efa9ae8a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
