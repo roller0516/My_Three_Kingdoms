@@ -67,7 +67,7 @@ public class DataController : MonoBehaviour
         gold = m_gold.ToString();
         gold = PlayerPrefs.GetString("Gold", gold);
         m_gold = BigInteger.Parse(gold);
-
+        Ticket = PlayerPrefs.GetInt("Ticket");
         string Knowledge;
         Knowledge = m_Knowledge.ToString();
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
@@ -389,7 +389,7 @@ public class DataController : MonoBehaviour
     public void SetTicket(int newTicket)
     {
         Ticket = newTicket;
-        PlayerPrefs.SetInt("Ticket", Ticket);
+        PlayerPrefs.SetInt("Ticket", 7);
     }
 
     public void AddTicket(int newTicket)

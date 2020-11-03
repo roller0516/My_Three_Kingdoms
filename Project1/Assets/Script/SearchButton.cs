@@ -75,6 +75,7 @@ public class SearchButton : MonoBehaviour
     {
         if (WIN == true)
         {
+            PopUpSystem.GetInstance().ClosePopUp();
             FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = true;
             switch (S_Name)
             {
