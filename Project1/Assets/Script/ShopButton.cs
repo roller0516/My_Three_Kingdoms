@@ -48,12 +48,14 @@ public class ShopButton : MonoBehaviour
     
     private void Start()
     {
+
         shopitemWeapon.Add(new ShopitemWeapon("짱돌", 200, false, false));
         shopitemWeapon.Add(new ShopitemWeapon("도검", 400, false, false));
         shopitemWeapon.Add(new ShopitemWeapon("사브르", 600, false, false));
         shopitemWeapon.Add(new ShopitemWeapon("레이 피어", 800, false, false));
         shopitemWeapon.Add(new ShopitemWeapon("광선검", 1000, false, false));
-        shopitemAmor.Add(new ShopitemArmor("누더기 옷", 50, false, false));
+
+        shopitemAmor.Add(new ShopitemArmor("누더기 옷", 0, true, true));
         shopitemAmor.Add(new ShopitemArmor("평민 옷", 70, false, false));
         shopitemAmor.Add(new ShopitemArmor("상인 옷", 150, false, false));
         shopitemAmor.Add(new ShopitemArmor("사냥꾼 옷", 220, false, false));
@@ -63,6 +65,35 @@ public class ShopButton : MonoBehaviour
         shopitemAmor.Add(new ShopitemArmor("흑철 갑옷", 620, false, false));
         shopitemAmor.Add(new ShopitemArmor("황금 갑옷", 650, false, false));
         shopitemAmor.Add(new ShopitemArmor("용포", 700, false, false));
+        DataController.GetInstance().LoadShop(this);
+        for (int i = 0; i < shopitemWeapon.Count;i++)
+        {
+            if (shopitemWeapon[i].PuchaseComplete == true && shopitemWeapon[i].isUsing == true)
+            {
+                WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
+                Weaponcount = 2;
+                Weapontemp = i;
+            }
+                
+            else if (shopitemWeapon[i].PuchaseComplete == true)
+                WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+        }
+        for (int i = 0; i < shopitemAmor.Count; i++)
+        {
+            if (shopitemAmor[i].PuchaseComplete == true && shopitemAmor[i].isUsing == true)
+            {
+                Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (i+1));
+                Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
+
+                AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
+                Amorcount = 2;
+                Amortemp = i;
+            }
+                
+            else if (shopitemAmor[i].PuchaseComplete == true)
+                AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+        }
+       
     }
     private void Update()
     {
@@ -77,6 +108,7 @@ public class ShopButton : MonoBehaviour
             if (Amortemp != num)
             {
                 Amorcount = 1;
+                shopitemAmor[Amortemp].isUsing = false;
                 if (Amorcount == 1)
                 {
                     SkinOnArmor = true;
@@ -126,39 +158,49 @@ public class ShopButton : MonoBehaviour
                     Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
                     Amorcount++;
                 }
-                Amortemp = num;
             }
+            Amortemp = num;
         }
+        DataController.GetInstance().SaveShop(this);
     }
     public void ChangeSkin_Weapon(int num)
     {
-
-        SkinOnWeapon = true;
-        shopitemWeapon[num].isUsing = true;
-
-
-        if (Weaponcount == 1)
+        if (shopitemWeapon[num].PuchaseComplete == true)
         {
-            ReleaseWeaponSkin(num);
-        }
-        else if (Weaponcount == 0)
-        {
-            for (int i = 0; i < WeaponEquip.Length; i++)
+            if (Weapontemp != num)
             {
-                shopitemWeapon[num].isUsing = false;
-                if (i == num)
-                {
-                    WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
-                    continue;
-                }
-                WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+                Weaponcount = 1;
+                shopitemWeapon[Weapontemp].isUsing = false;
             }
-            Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10" + (num + 1));
-            Weaponcount++;
+                
+            if (Weaponcount == 2)
+            {
+                ReleaseWeaponSkin(num);
+            }
+            else if (Weaponcount == 1)
+            {
+                SkinOnWeapon = true;
+                shopitemWeapon[num].isUsing = true;
+                for (int i = 0; i < WeaponEquip.Length; i++)
+                {
+                    if (shopitemWeapon[i].PuchaseComplete == true)
+                    {
+                        if (i == num)
+                        {
+                            WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
+                            continue;
+                        }
+                        WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+                    }
+                }
+                Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10" + (num + 1));
+                Weaponcount++;
+            }
+            Weapontemp = num;
+            DataController.GetInstance().SaveShop(this);
         }
-       
     }
-    public void puchaseshop(int num)
+    public void puchaseArmor(int num)
     {
         if (DataController.GetInstance().GetPaidGold() >= shopitemAmor[num].Cost && shopitemAmor[num].PuchaseComplete == false)
         {
@@ -171,6 +213,22 @@ public class ShopButton : MonoBehaviour
         else 
         {
             ChangeSkin_Amor(num);
+        }
+    }
+    public void puchaseWeapon(int num)
+    {
+        if (DataController.GetInstance().GetPaidGold() >= shopitemWeapon[num].Cost && shopitemWeapon[num].PuchaseComplete == false)
+        {
+            DataController.GetInstance().SubPaidGold(shopitemWeapon[num].Cost);
+            ChangeSkin_Weapon(num);
+            WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+            Weaponcount = 1;
+            shopitemWeapon[num].PuchaseComplete = true;
+        }
+        else
+        {
+            ChangeSkin_Weapon(num);
+            Amorcount = 1;
         }
     }
     public void ReleaseAmorSkin(int num) 
@@ -186,7 +244,7 @@ public class ShopButton : MonoBehaviour
     {
         SkinOnWeapon = false;
         shopitemWeapon[num].isUsing = false;
-        Weaponcount = 0;
+        Weaponcount = 1;
         WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
     }
     void setSkin() 

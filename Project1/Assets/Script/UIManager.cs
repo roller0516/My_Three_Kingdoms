@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Gold;
     public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI Ticket;
+    public TextMeshProUGUI PaidGold;
     public float time;
     public float Starttime;
     public float Currenttime;
@@ -84,6 +85,7 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
+        PaidGold.text = DataController.GetInstance().GetPaidGold().ToString();
         for (int i=0; i < upgradeButton.Length;i++) 
         {
             Level[i] = upgradeButton[i].Level;
@@ -96,7 +98,7 @@ public class UIManager : MonoBehaviour
         GoldCostClickText(GoldCostClickDisPlayer);
         WeaponCostText(WeaponCostDisPlay);
         AtkText(Atktext);
-        Ticket.text = DataController.GetInstance().GetTicket().ToString()+"/7";
+        Ticket.text = DataController.GetInstance().GetTicket().ToString();
     }
     public void TeasureButton() 
     {
