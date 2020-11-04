@@ -99,21 +99,21 @@ public class BossDictionary : MonoBehaviour
     }
     void ListAddInfo()
     {
-        Add("NoneStage1boss","칼을 휘드른다","배원소");
-        Add("NoneStage2boss", "칼을 휘드른다","정원지");
-        Add("NoneStage3boss", "칼을 휘드른다","장보");
-        Add("NoneStage4boss", "칼을 휘드른다","장량");
-        Add("NoneStage5boss", "칼을 휘드른다","장각");
-        Add("NoneStage6boss", "칼을 휘드른다","이각");
-        Add("NoneStage7boss", "칼을 휘드른다","화웅");
-        Add("NoneStage8boss", "칼을 휘드른다","왕윤");
-        Add("NoneStage9boss", "칼을 휘드른다", "왕윤");
-        Add("NoneStage10boss", "칼을 휘드른다", "왕윤");
-        Add("NoneStage11boss", "칼을 휘드른다", "왕윤");
-        Add("NoneStage12boss", "칼을 휘드른다", "왕윤");
-        Add("NoneStage13boss", "칼을 휘드른다", "왕윤");
-        Add("NoneStage14boss", "칼을 휘드른다", "왕윤");
-        Add("NoneStage15boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage1boss","무거운 양날 도끼를 휘두른다","배원소");
+        Add("NoneStage2boss", "대검으로 크게 내려친다","정원지");
+        Add("NoneStage3boss", "기를 모아 참격을 날린다","장보");
+        Add("NoneStage4boss", "기를 모아 선풍을 날린다","장량");
+        Add("NoneStage5boss", "주문을 외워서 번개를 내려친다","장각");
+        Add("NoneStage6boss", "지면에 검을 꽂아 폭발을 일으킨다","이각");
+        Add("NoneStage7boss", "창을 빠르게 돌려 벤다","화웅");
+        Add("NoneStage8boss", "활에 힘을 모아 강하게 쏜다","왕윤");
+        Add("NoneStage9boss", "방천화극으로 강하게 내려친다", "여포");
+        Add("NoneStage10boss", "칠성검을 뽑아 휘두른다", "동탁");
+        Add("NoneStage11boss", "대검을 높이 들어 내려친다", "고순");
+        Add("NoneStage12boss", "창으로 강하게 찌른다", "장료");
+        Add("NoneStage13boss", "망치로 바닥을 내려친다", "진궁");
+        Add("NoneStage14boss", "비파를 연주하여 공격한다", "초선");
+        Add("NoneStage15boss", "방천화극으로 더욱 강하게 벤다", "여포");
         AddChangeSprite("Stage1boss");
         AddChangeSprite("Stage2boss");
         AddChangeSprite("Stage3boss");

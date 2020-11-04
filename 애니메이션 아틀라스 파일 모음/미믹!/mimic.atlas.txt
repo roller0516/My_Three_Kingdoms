@@ -1,75 +1,82 @@
 
 mimic.png
-size: 141,239
+size: 260,142
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 bbing 2
-  rotate: true
-  xy: 116, 36
+  rotate: false
+  xy: 111, 6
   size: 16, 17
   orig: 18, 19
   offset: 1, 1
   index: -1
 bbing1
   rotate: true
-  xy: 106, 107
+  xy: 225, 100
   size: 40, 33
   orig: 42, 35
   offset: 1, 1
   index: -1
 ll 1
-  rotate: true
-  xy: 119, 149
+  rotate: false
+  xy: 68, 3
   size: 22, 20
   orig: 24, 22
   offset: 1, 1
   index: -1
 ll 2
   rotate: false
-  xy: 106, 54
+  xy: 92, 6
   size: 17, 17
   orig: 19, 19
   offset: 1, 1
   index: -1
 ll 3
   rotate: false
-  xy: 106, 73
+  xy: 225, 66
   size: 32, 32
   orig: 34, 34
   offset: 1, 1
   index: -1
 open
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 127, 28
   size: 112, 50
   orig: 112, 50
   offset: 0, 0
   index: -1
 open_hit
-  rotate: false
-  xy: 2, 172
+  rotate: true
+  xy: 60, 25
   size: 115, 65
   orig: 117, 67
   offset: 1, 1
   index: -1
+sha
+  rotate: false
+  xy: 129, 16
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
 toung
-  rotate: true
-  xy: 119, 173
+  rotate: false
+  xy: 2, 2
   size: 64, 20
   orig: 64, 20
   offset: 0, 0
   index: -1
 under
   rotate: true
-  xy: 60, 64
+  xy: 179, 34
   size: 106, 44
   orig: 106, 44
   offset: 0, 0
   index: -1
 up
   rotate: true
-  xy: 2, 54
+  xy: 2, 24
   size: 116, 56
   orig: 116, 56
   offset: 0, 0
