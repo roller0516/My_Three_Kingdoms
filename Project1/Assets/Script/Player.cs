@@ -40,13 +40,15 @@ public class Player : MonoBehaviour
     public int Critical;//크리확률
     int Count = 0;
     int crt;
-
+    private void Awake()
+    {
+        skeletonAni = GetComponent<SkeletonMecanim>();
+    }
     private void Start()
     {
         //컴포넌트
         ani = GetComponent<Animator>();
         skeletonRenderer = GetComponent<SkeletonRenderer>();
-        skeletonAni = GetComponent<SkeletonMecanim>();
         itemlist = FindObjectOfType<ItemList>();
         _AniState = AnimState.move;
         startPosition = this.transform.position;

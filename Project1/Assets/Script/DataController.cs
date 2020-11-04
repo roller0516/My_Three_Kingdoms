@@ -557,6 +557,36 @@ public class DataController : MonoBehaviour
            PlayerPrefs.SetString("bossDic" + i, bossdic.bossinfo[i].BossName);
         }
     }
+    public void LoadShop(ShopButton shopbutton)
+    {
+        for (int i = 0; i< shopbutton.shopitemWeapon.Count;i++)
+        {
+            shopbutton.shopitemWeapon[i].isUsing = bool.Parse(PlayerPrefs.GetString("isUsing"+i, shopbutton.shopitemWeapon[i].isUsing.ToString()));
+            shopbutton.shopitemWeapon[i].PuchaseComplete = bool.Parse(PlayerPrefs.GetString("PuchaseComplete" + i, shopbutton.shopitemWeapon[i].PuchaseComplete.ToString()));
+            
+        }
+        for (int i = 0; i < shopbutton.shopitemWeapon.Count; i++)
+        {
+            shopbutton.shopitemAmor[i].isUsing = bool.Parse(PlayerPrefs.GetString("isUsing_A" + i, shopbutton.shopitemAmor[i].isUsing.ToString()));
+            shopbutton.shopitemAmor[i].PuchaseComplete = bool.Parse(PlayerPrefs.GetString("PuchaseComplete_A" + i, shopbutton.shopitemAmor[i].PuchaseComplete.ToString()));
+        }
+        shopbutton.SkinOnWeapon = bool.Parse(PlayerPrefs.GetString("SkinOnWeapon", shopbutton.SkinOnWeapon.ToString()));
+    }
+    public void SaveShop(ShopButton shopbutton)
+    {
+        
+        for (int i = 0; i < shopbutton.shopitemWeapon.Count; i++)
+        {
+            PlayerPrefs.SetString("isUsing" + i, shopbutton.shopitemWeapon[i].isUsing.ToString());
+            PlayerPrefs.SetString("PuchaseComplete" + i, shopbutton.shopitemWeapon[i].PuchaseComplete.ToString());
+        }
+        for (int i = 0; i < shopbutton.shopitemAmor.Count; i++)
+        {
+            PlayerPrefs.SetString("isUsing_A" + i, shopbutton.shopitemAmor[i].isUsing.ToString());
+            PlayerPrefs.SetString("PuchaseComplete_A" + i, shopbutton.shopitemAmor[i].PuchaseComplete.ToString());
+        }
+        PlayerPrefs.SetString("SkinOnWeapon", shopbutton.SkinOnWeapon.ToString());
+    }
 }
 
 
