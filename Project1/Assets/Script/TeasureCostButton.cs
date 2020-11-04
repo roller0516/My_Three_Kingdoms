@@ -123,8 +123,12 @@ public class TeasureCostButton : MonoBehaviour
                     BigInteger num2;
                     num = DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i);
                     num2 = BigInteger.Parse(UIManager.GetInstance().upgradeButton[i].GoldByUpgrade);
-                    if(UIManager.GetInstance().upgradeButton[i].Level>0)
+                    if (UIManager.GetInstance().upgradeButton[i].Level > 0) 
+                    {
                         DataController.GetInstance().SetGoldPerClick("GoldPerClick" + i, num + (num2 * goldByUpgrade * UIManager.GetInstance().upgradeButton[i].Level * 100) / 10000);
+                        UIManager.GetInstance().upgradeButton[i].goldByUpgrade = DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i);
+                    }
+                        
                 }
                 DataController.GetInstance().Teasure1Ability = goldByUpgrade;
                 PlayerPrefs.SetInt("Teasure1Ability", DataController.GetInstance().Teasure1Ability);
