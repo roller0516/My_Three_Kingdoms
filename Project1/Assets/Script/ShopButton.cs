@@ -8,94 +8,135 @@ public class ShopitemWeapon
 {
     public string itemName;
     public bool isUsing;
-
-    public ShopitemWeapon(string itemName, bool isUsing)
+    public int Cost;
+    public bool PuchaseComplete;
+    public ShopitemWeapon(string itemName, int Cost, bool isUsing, bool PuchaseComplete)
     {
+        this.PuchaseComplete = PuchaseComplete;
+        this.Cost = Cost;
+        this.itemName = itemName;
+        this.isUsing = isUsing;
+    }
+}
+[System.Serializable]
+public class ShopitemArmor
+{
+    public string itemName;
+    public bool isUsing;
+    public int Cost;
+    public bool PuchaseComplete;
+    public ShopitemArmor(string itemName,  int Cost,bool isUsing, bool PuchaseComplete)
+    {
+        this.PuchaseComplete = PuchaseComplete;
+        this.Cost = Cost;
         this.itemName = itemName;
         this.isUsing = isUsing;
     }
 }
 public class ShopButton : MonoBehaviour
 {
-    public List<ShopitemWeapon> shopitem = new List<ShopitemWeapon>();
+    public List<ShopitemWeapon> shopitemWeapon = new List<ShopitemWeapon>();
+    public List<ShopitemArmor> shopitemAmor = new List<ShopitemArmor>();
     public Button[] AmorEquip;
     public Button[] WeaponEquip;
     int Weaponcount;
     int Amorcount;
     int Amortemp;
     int Weapontemp;
-    public bool SkinOn;
+    public bool SkinOnWeapon;
+    public bool SkinOnArmor;
+    
     private void Start()
     {
-        shopitem.Add(new ShopitemWeapon("짱돌", false));
-        shopitem.Add(new ShopitemWeapon("도검", false));
-        shopitem.Add(new ShopitemWeapon("사브르", false));
-        shopitem.Add(new ShopitemWeapon("레이 피어", false));
-        shopitem.Add(new ShopitemWeapon("광선검", false));
+        shopitemWeapon.Add(new ShopitemWeapon("짱돌", 200, false, false));
+        shopitemWeapon.Add(new ShopitemWeapon("도검", 400, false, false));
+        shopitemWeapon.Add(new ShopitemWeapon("사브르", 600, false, false));
+        shopitemWeapon.Add(new ShopitemWeapon("레이 피어", 800, false, false));
+        shopitemWeapon.Add(new ShopitemWeapon("광선검", 1000, false, false));
+        shopitemAmor.Add(new ShopitemArmor("누더기 옷", 50, false, false));
+        shopitemAmor.Add(new ShopitemArmor("평민 옷", 70, false, false));
+        shopitemAmor.Add(new ShopitemArmor("상인 옷", 150, false, false));
+        shopitemAmor.Add(new ShopitemArmor("사냥꾼 옷", 220, false, false));
+        shopitemAmor.Add(new ShopitemArmor("철 갑옷", 320, false, false));
+        shopitemAmor.Add(new ShopitemArmor("수호 갑옷", 470, false, false));
+        shopitemAmor.Add(new ShopitemArmor("백호 갑옷", 560, false, false));
+        shopitemAmor.Add(new ShopitemArmor("흑철 갑옷", 620, false, false));
+        shopitemAmor.Add(new ShopitemArmor("황금 갑옷", 650, false, false));
+        shopitemAmor.Add(new ShopitemArmor("용포", 700, false, false));
     }
     private void Update()
     {
-        if (SkinOn == true)
+        if (SkinOnWeapon == true)
             setSkin();
     }
     public void ChangeSkin_Amor(int num) 
     {
-        if (Amortemp != num)
+        
+        if (shopitemAmor[num].PuchaseComplete == true)
         {
-            if (Amorcount == 1)
+            if (Amortemp != num)
             {
-                ReleaseAmorSkin(num);
-            }
-            if (Amorcount == 0)
-            {
-                print(Amortemp + "/" + num);
-                for (int i = 0; i < AmorEquip.Length; i++)
+                Amorcount = 1;
+                if (Amorcount == 1)
                 {
-                    if (i == num)
+                    SkinOnArmor = true;
+                    shopitemAmor[num].isUsing = true;
+                    for (int i = 0; i < AmorEquip.Length; i++)
                     {
-                        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
-                        continue;
-                    }
-                    AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
-                }
-                Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (num + 1));
-                Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
-                Amorcount++;
-            }
-        }
-        else 
-        {
-            if (Amorcount == 1)
-            {
-                ReleaseAmorSkin(num);
-            }
-            else if (Amorcount == 0)
-            {
-                print(Amortemp + "/" + num);
-                print(Amortemp);
-                for (int i = 0; i < AmorEquip.Length; i++)
-                {
-                    if (i == num)
-                    {
-                        AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
-                        continue;
-                    }
-                    AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
-                }
-                Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (num + 1));
-                Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
-                Amorcount++;
-            }
-        }
+                        if (shopitemAmor[i].PuchaseComplete == true)
+                        {
+                            if (i == num)
+                            {
+                                AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
+                                continue;
+                            }
+                            AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+                        }
 
-        Amortemp = num;
+                    }
+                    Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (num + 1));
+                    Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
+                    Amorcount++;
+                }
+            }
+            else if(Amortemp == num)
+            {
+                print(Amorcount);
+                if (Amorcount == 2)
+                {
+                    ReleaseAmorSkin(num);
+                }
+                else if (Amorcount == 1)
+                {
+                    SkinOnArmor = true;
+                    shopitemAmor[num].isUsing = true;
+                    for (int i = 0; i < AmorEquip.Length; i++)
+                    {
+                        if (shopitemAmor[i].PuchaseComplete == true)
+                        {
+                            if (i == num)
+                            {
+                                AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
+                                continue;
+                            }
+                            AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+                        }
+                    }
+                    Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (num + 1));
+                    Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
+                    Amorcount++;
+                }
+                Amortemp = num;
+            }
+        }
     }
     public void ChangeSkin_Weapon(int num)
     {
-        SkinOn = true;
-        shopitem[num].isUsing = true;
-        
-        
+
+        SkinOnWeapon = true;
+        shopitemWeapon[num].isUsing = true;
+
+
         if (Weaponcount == 1)
         {
             ReleaseWeaponSkin(num);
@@ -104,6 +145,7 @@ public class ShopButton : MonoBehaviour
         {
             for (int i = 0; i < WeaponEquip.Length; i++)
             {
+                shopitemWeapon[num].isUsing = false;
                 if (i == num)
                 {
                     WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
@@ -114,25 +156,44 @@ public class ShopButton : MonoBehaviour
             Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10" + (num + 1));
             Weaponcount++;
         }
+       
+    }
+    public void puchaseshop(int num)
+    {
+        if (DataController.GetInstance().GetPaidGold() >= shopitemAmor[num].Cost && shopitemAmor[num].PuchaseComplete == false)
+        {
+            DataController.GetInstance().SubPaidGold(shopitemAmor[num].Cost);
+            ChangeSkin_Amor(num);
+            AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+            Amorcount = 1;
+            shopitemAmor[num].PuchaseComplete = true;
+        }
+        else 
+        {
+            ChangeSkin_Amor(num);
+        }
     }
     public void ReleaseAmorSkin(int num) 
     {
-        Amorcount = 0;
+        SkinOnArmor = false;
+        shopitemAmor[num].isUsing = false;
+        Amorcount = 1;
         Player.Instance.skeletonRenderer.skeleton.SetSkin("animation/1");
         Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
         AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
     }
     public void ReleaseWeaponSkin(int num)
     {
-        SkinOn = false;
+        SkinOnWeapon = false;
+        shopitemWeapon[num].isUsing = false;
         Weaponcount = 0;
         WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
     }
     void setSkin() 
     {
-        for (int i = 0; i< shopitem.Count;i++)
+        for (int i = 0; i< shopitemWeapon.Count;i++)
         {
-            if(shopitem[i].isUsing== true)
+            if(shopitemWeapon[i].isUsing== true)
                 Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10" + (i + 1));
         }
     }

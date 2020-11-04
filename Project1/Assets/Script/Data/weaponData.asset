@@ -17,7 +17,7 @@ MonoBehaviour:
   dataArray:
   - uid: weapon1
     leveled_atk: 1
-    level: 10
+    level: 1
     atk: 50
     atk_2: 60
     atk_3: 70
@@ -31,7 +31,7 @@ MonoBehaviour:
     isusing: 1
   - uid: weapon2
     leveled_atk: 2
-    level: 10
+    level: 0
     atk: 200
     atk_2: 230
     atk_3: 260
@@ -45,7 +45,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon3
     leveled_atk: 3
-    level: 10
+    level: 0
     atk: 800
     atk_2: 980
     atk_3: 1160
@@ -59,7 +59,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon4
     leveled_atk: 4
-    level: 10
+    level: 0
     atk: 4040
     atk_2: 5660
     atk_3: 7280
@@ -73,7 +73,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon5
     leveled_atk: 5
-    level: 10
+    level: 0
     atk: 27500
     atk_2: 46940
     atk_3: 66380
@@ -87,7 +87,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon6
     leveled_atk: 6
-    level: 10
+    level: 0
     atk: 225100
     atk_2: 516700
     atk_3: 808300
@@ -101,7 +101,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon7
     leveled_atk: 7
-    level: 10
+    level: 0
     atk: 2321300
     atk_2: 7570100
     atk_3: 12818900
@@ -115,7 +115,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon8
     leveled_atk: 8
-    level: 10
+    level: 0
     atk: 28966900
     atk_2: 139191700
     atk_3: 249416500
@@ -129,7 +129,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon9
     leveled_atk: 9
-    level: 10
+    level: 0
     atk: 422798300
     atk_2: 3068193500
     atk_3: 5713588700
@@ -143,7 +143,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon10
     leveled_atk: 10
-    level: 10
+    level: 0
     atk: 7048293100
     atk_2: 78473963500
     atk_3: 149899633900
@@ -157,7 +157,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon11
     leveled_atk: 11
-    level: 10
+    level: 0
     atk: 131947819700
     atk_2: 2274717931700
     atk_3: 4417488043700
@@ -171,7 +171,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon12
     leveled_atk: 12
-    level: 10
+    level: 0
     atk: 2738771542900
     atk_2: 73450185238900
     atk_3: 144161598934900
@@ -185,7 +185,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon13
     leveled_atk: 13
-    level: 10
+    level: 0
     atk: 62399688866300
     atk_2: 2608010581922300
     atk_3: 5153621474978300
@@ -199,7 +199,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon14
     leveled_atk: 14
-    level: 10
+    level: 0
     atk: 1547853022245100
     atk_2: 100826677851429000
     atk_3: 200105502680613000
@@ -213,7 +213,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon15
     leveled_atk: 15
-    level: 10
+    level: 0
     atk: 41518154446327700
     atk_2: 4211228797272060000
     atk_3: 8380939440097780000
@@ -227,7 +227,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon16
     leveled_atk: 16
-    level: 10
+    level: 0
     atk: 1197287312545940000
     atk_2: 188834266239704000000
     atk_3: 376471245166861000000
@@ -241,7 +241,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon17
     leveled_atk: 17
-    level: 10
+    level: 0
     atk: 36936355738343800000
     atk_2: 9043511344241920000000
     atk_3: 18050100000000000000000
@@ -255,7 +255,7 @@ MonoBehaviour:
     isusing: 0
   - uid: weapon18
     leveled_atk: 18
-    level: 2
+    level: 0
     atk: 123175000000000000000
     atk_2: 46054900000000000000000
     atk_3: 91988400000000000000000
@@ -266,7 +266,7 @@ MonoBehaviour:
     atk_8: 321656000000000000000000
     atk_9: 367590000000000000000000
     atk_10: 413523000000000000000000
-    isusing: 1
+    isusing: 0
   - uid: weapon19
     leveled_atk: 19
     level: 0

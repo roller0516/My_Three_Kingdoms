@@ -41,10 +41,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     bool PressDown = false;
     private void Start()
     {
-        CurrentCost = BigInteger.Parse(StartCurrentCost);
-        CurrentCost = BigInteger.Parse(StartCurrentCost);
-        CurrentCost1 = CurrentCost;
-        goldByUpgrade = BigInteger.Parse(StartGoldByUpgrade);
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
@@ -65,11 +61,11 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             {
                 DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
+                
                 UpdateUpgrade();
                 
                 DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure1,10000))+goldByUpgrade);
-
-
+                goldByUpgrade = (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade;
                 UpdateUI();
                 DataController.GetInstance().SaveUpgradeButton(this);
             }
@@ -80,9 +76,9 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         CurrentCost = BigInteger.Divide((BigInteger.Multiply(CurrentCost, 112)), 100);
         Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
         CurrentCost1 = ((CurrentCost*100)- Teasure2)/100;
-
-        goldByUpgrade = BigInteger.Multiply(Level,BigInteger.Parse(GoldByUpgrade));
+        goldByUpgrade += BigInteger.Parse(GoldByUpgrade);
         Teasure1 = BigInteger.Multiply(Level,BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
+        
     }
 
     public void ScarceCost_textColor()//재화 부족시 컬러변경
