@@ -98,7 +98,7 @@ public class UIManager : MonoBehaviour
         GoldCostClickText(GoldCostClickDisPlayer);
         WeaponCostText(WeaponCostDisPlay);
         AtkText(Atktext);
-        Ticket.text = DataController.GetInstance().GetTicket().ToString()+"/7";
+        Ticket.text = DataController.GetInstance().GetTicket().ToString();
     }
     public void TeasureButton() 
     {

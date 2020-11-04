@@ -46,7 +46,6 @@ public class DataController : MonoBehaviour
     BigInteger m_goldperClick19=0;
     BigInteger m_Knowledge;
     int Ticket = 0;
-    int MaxTicket =7;
     int PaidGold = 0;
     public int Teasure1Ability = 0;
     public int Teasure2Ability = 0;
@@ -57,23 +56,18 @@ public class DataController : MonoBehaviour
     {
         
         DontDestroyOnLoad(this.gameObject);
-        
-        m_goldperClick15 = BigInteger.Multiply(m_goldperClick14, 27);
-        m_goldperClick16 = BigInteger.Multiply(m_goldperClick15, 28);
-        m_goldperClick17 = BigInteger.Multiply(m_goldperClick16, 29);
-        m_goldperClick18 = BigInteger.Multiply(m_goldperClick17, 30);
-        m_goldperClick19 = BigInteger.Multiply(m_goldperClick18, 31);
-
+       
         string gold;
         gold = m_gold.ToString();
-        gold = PlayerPrefs.GetString("Gold", "10000000");
+        gold = PlayerPrefs.GetString("Gold", gold);
+
         m_gold = BigInteger.Parse(gold);
         string Knowledge;
         Knowledge = m_Knowledge.ToString();
-        Knowledge = PlayerPrefs.GetString("Knowledge", "1000000");
+        Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
         Ticket = PlayerPrefs.GetInt("Ticket");
-        PaidGold = PlayerPrefs.GetInt("PaidGold", 10000);
+        PaidGold = PlayerPrefs.GetInt("PaidGold",0);
         Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
         Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");
 
@@ -390,16 +384,11 @@ public class DataController : MonoBehaviour
     public void SetTicket(int newTicket)
     {
         Ticket = newTicket;
-        PlayerPrefs.SetInt("Ticket", 7);
+        PlayerPrefs.SetInt("Ticket", Ticket);
     }
 
     public void AddTicket(int newTicket)
     {
-        if (Ticket >= MaxTicket) 
-        {
-            SetTicket(MaxTicket);
-            return;
-        }
         Ticket += newTicket;
         SetTicket(Ticket);
     }
@@ -417,7 +406,7 @@ public class DataController : MonoBehaviour
     public void SetPaidGold(int newPaidGold)
     {
         PaidGold = newPaidGold;
-        PlayerPrefs.SetInt("PaidGold", 0);
+        PlayerPrefs.SetInt("PaidGold", PaidGold);
     }
 
     public void AddPaidGold(int newPaidGold)
@@ -565,7 +554,7 @@ public class DataController : MonoBehaviour
             shopbutton.shopitemWeapon[i].PuchaseComplete = bool.Parse(PlayerPrefs.GetString("PuchaseComplete" + i, shopbutton.shopitemWeapon[i].PuchaseComplete.ToString()));
             
         }
-        for (int i = 0; i < shopbutton.shopitemWeapon.Count; i++)
+        for (int i = 0; i < shopbutton.shopitemAmor.Count; i++)
         {
             shopbutton.shopitemAmor[i].isUsing = bool.Parse(PlayerPrefs.GetString("isUsing_A" + i, shopbutton.shopitemAmor[i].isUsing.ToString()));
             shopbutton.shopitemAmor[i].PuchaseComplete = bool.Parse(PlayerPrefs.GetString("PuchaseComplete_A" + i, shopbutton.shopitemAmor[i].PuchaseComplete.ToString()));

@@ -910,7 +910,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5833333
+  - time: 0.6666667
     functionName: Attack
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -1284,7 +1284,7 @@ AnimatorStateMachine:
     m_Position: {x: -200, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4876759578517327630}
-    m_Position: {x: 220, y: 250, z: 0}
+    m_Position: {x: 220, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6394824318217004354}
     m_Position: {x: 220, y: 410, z: 0}

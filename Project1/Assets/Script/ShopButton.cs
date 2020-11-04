@@ -55,7 +55,7 @@ public class ShopButton : MonoBehaviour
         shopitemWeapon.Add(new ShopitemWeapon("레이 피어", 800, false, false));
         shopitemWeapon.Add(new ShopitemWeapon("광선검", 1000, false, false));
 
-        shopitemAmor.Add(new ShopitemArmor("누더기 옷", 50, false, false));
+        shopitemAmor.Add(new ShopitemArmor("누더기 옷", 0, true, true));
         shopitemAmor.Add(new ShopitemArmor("평민 옷", 70, false, false));
         shopitemAmor.Add(new ShopitemArmor("상인 옷", 150, false, false));
         shopitemAmor.Add(new ShopitemArmor("사냥꾼 옷", 220, false, false));
@@ -160,8 +160,8 @@ public class ShopButton : MonoBehaviour
                 }
             }
             Amortemp = num;
-            DataController.GetInstance().SaveShop(this);
         }
+        DataController.GetInstance().SaveShop(this);
     }
     public void ChangeSkin_Weapon(int num)
     {
