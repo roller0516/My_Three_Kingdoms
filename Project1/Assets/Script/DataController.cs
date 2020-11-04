@@ -47,6 +47,7 @@ public class DataController : MonoBehaviour
     BigInteger m_Knowledge;
     int Ticket = 0;
     int MaxTicket =7;
+    int PaidGold = 0;
     public int Teasure1Ability = 0;
     public int Teasure2Ability = 0;
     public List<string> key = new List<string>();
@@ -65,14 +66,14 @@ public class DataController : MonoBehaviour
 
         string gold;
         gold = m_gold.ToString();
-        gold = PlayerPrefs.GetString("Gold", gold);
+        gold = PlayerPrefs.GetString("Gold", "10000000");
         m_gold = BigInteger.Parse(gold);
-        Ticket = PlayerPrefs.GetInt("Ticket");
         string Knowledge;
         Knowledge = m_Knowledge.ToString();
-        Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
+        Knowledge = PlayerPrefs.GetString("Knowledge", "1000000");
         m_Knowledge = BigInteger.Parse(Knowledge);
-
+        Ticket = PlayerPrefs.GetInt("Ticket");
+        PaidGold = PlayerPrefs.GetInt("PaidGold", 10000);
         Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
         Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");
 
@@ -412,6 +413,29 @@ public class DataController : MonoBehaviour
         return Ticket;
     }
     #endregion
+    #region PaidGold
+    public void SetPaidGold(int newPaidGold)
+    {
+        PaidGold = newPaidGold;
+        PlayerPrefs.SetInt("PaidGold", 0);
+    }
+
+    public void AddPaidGold(int newPaidGold)
+    {
+
+        PaidGold += newPaidGold;
+        SetTicket(PaidGold);
+    }
+    public void SubPaidGold(int newPaidGold)
+    {
+        PaidGold -= newPaidGold;
+        SetTicket(PaidGold);
+    }
+    public int GetPaidGold()
+    {
+        return PaidGold;
+    }
+    #endregion
     public void LoadUpgradeButton(UpgradeButton upGradeButton)
     {
         string key = upGradeButton.UpgradeName;
@@ -421,11 +445,12 @@ public class DataController : MonoBehaviour
         {
             upGradeButton.Level = PlayerPrefs.GetInt(key + "_Level", 0);
         }
-        
-        GoldByUpgrade = PlayerPrefs.GetString(key + "_goldByUpgrade", GoldByUpgrade);
+        GoldByUpgrade = PlayerPrefs.GetString(key +"_goldByUpgrade", GoldByUpgrade);
         upGradeButton.goldByUpgrade = BigInteger.Parse(GoldByUpgrade);
-        CurrentCost = PlayerPrefs.GetString(key + "+CurrentCost", CurrentCost);
+        CurrentCost = PlayerPrefs.GetString(key +"CurrentCost1", CurrentCost);
         upGradeButton.CurrentCost1 = BigInteger.Parse(CurrentCost);
+        CurrentCost = PlayerPrefs.GetString(key + "CurrentCost", CurrentCost);
+        upGradeButton.CurrentCost = BigInteger.Parse(CurrentCost);
     }
     public void SaveUpgradeButton(UpgradeButton upGradeButton)
     {
@@ -433,12 +458,15 @@ public class DataController : MonoBehaviour
         
         PlayerPrefs.SetInt(key + "_Level", upGradeButton.Level);
         PlayerPrefs.SetString(key + "_goldByUpgrade", upGradeButton.goldByUpgrade.ToString());
-        PlayerPrefs.SetString(key + "+CurrentCost", upGradeButton.CurrentCost1.ToString());
+        PlayerPrefs.SetString(key + "CurrentCost1", upGradeButton.CurrentCost1.ToString());
+        PlayerPrefs.SetString(key + "CurrentCost", upGradeButton.CurrentCost.ToString());
+        
+
     }
     public void Loaditem(ItemList itemlist) 
     {
         string Attack = itemlist.item_Attack.ToString();
-        Attack = PlayerPrefs.GetString("itemAttack", Attack);
+        Attack = PlayerPrefs.GetString("itemAttack", itemlist.weaponData.dataArray[0].Atk.ToString());
         itemlist.item_Attack = BigInteger.Parse(Attack);
         for (int i=0; i< itemlist.weaponData.dataArray.Length; i++)
         {
@@ -449,11 +477,11 @@ public class DataController : MonoBehaviour
                 itemlist.weaponData.dataArray[i].Level = PlayerPrefs.GetInt(key, 0);
             itemlist.weaponData.dataArray[i].Isusing = bool.Parse(PlayerPrefs.GetString(key + "isUsing", itemlist.weaponData.dataArray[i].Isusing.ToString()));
         }
-       
     }
     public void Saveitem(ItemList itemlist)
     {
         PlayerPrefs.SetString("itemAttack", itemlist.item_Attack.ToString());
+       
         for (int i = 0; i < itemlist.weaponData.dataArray.Length; i++)
         {
             string key = itemlist.weaponData.dataArray[i].UID;
@@ -521,7 +549,6 @@ public class DataController : MonoBehaviour
         {
             bossdic.bossinfo[i].BossName = PlayerPrefs.GetString("bossDic"+i, bossdic.bossinfo[i].BossName);
         }
-        
     }
     public void SaveBossDic(BossDictionary bossdic)
     {

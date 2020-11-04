@@ -39,7 +39,7 @@ public class BossDictionary : MonoBehaviour
     }
     public List<BossInfo> bossinfo = new List<BossInfo>();
     public List<Sprite> ChagneBossSprite = new List<Sprite>();
-    public Button[] iconbutton;
+    public Image[] iconbutton;
     public TextMeshProUGUI BossNameTEXT;
     public TextMeshProUGUI ContentsTEXT;
     public GameObject SelectImage;
@@ -57,7 +57,7 @@ public class BossDictionary : MonoBehaviour
         rect = GetComponent<RectTransform>();
         for (int i = 0; i < iconbutton.Length; i++)
         {
-            iconbutton[i].image.sprite = bossinfo[i].BossImage;
+            iconbutton[i].sprite = bossinfo[i].BossImage;
         }
         DataController.GetInstance().LoadBossDic(this);
     }
@@ -80,7 +80,7 @@ public class BossDictionary : MonoBehaviour
             if (ChagneBossSprite[i].name == bossName)
             {
                 bossinfo[i].IsChange = true;
-                iconbutton[i].image.sprite = ChagneBossSprite[i];
+                iconbutton[i].sprite = ChagneBossSprite[i];
                 bossinfo[i].BossName = bossName;
             }
         }
@@ -107,6 +107,13 @@ public class BossDictionary : MonoBehaviour
         Add("NoneStage6boss", "칼을 휘드른다","이각");
         Add("NoneStage7boss", "칼을 휘드른다","화웅");
         Add("NoneStage8boss", "칼을 휘드른다","왕윤");
+        Add("NoneStage9boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage10boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage11boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage12boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage13boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage14boss", "칼을 휘드른다", "왕윤");
+        Add("NoneStage15boss", "칼을 휘드른다", "왕윤");
         AddChangeSprite("Stage1boss");
         AddChangeSprite("Stage2boss");
         AddChangeSprite("Stage3boss");
@@ -115,6 +122,15 @@ public class BossDictionary : MonoBehaviour
         AddChangeSprite("Stage6boss");
         AddChangeSprite("Stage7boss");
         AddChangeSprite("Stage8boss");
+        AddChangeSprite("Stage9boss");
+        AddChangeSprite("Stage10boss");
+        AddChangeSprite("Stage11boss");
+        AddChangeSprite("Stage12boss");
+        AddChangeSprite("Stage13boss");
+        AddChangeSprite("Stage14boss");
+        AddChangeSprite("Stage15boss");
+
+
     }
 
     void PrFabsproduce(int num)// 선택이미지 생성

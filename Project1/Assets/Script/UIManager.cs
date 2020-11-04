@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
         return instance;
     }
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI Gold;
+    public TextMeshProUGUI Knowledge;
+    public TextMeshProUGUI Ticket;
     public float time;
     public float Starttime;
     public float Currenttime;
@@ -34,19 +37,19 @@ public class UIManager : MonoBehaviour
     public GameObject TeasureTap;
     public GameObject SearchTap;
     //버튼 텍스트
-    public TextMeshProUGUI Gold;
+    
     public bool TR_Check;
-    public Text[] GoldPerClickDisPlayer;
+    public TextMeshProUGUI[] GoldPerClickDisPlayer;
     public TextMeshProUGUI[] GoldCostClickDisPlayer;
-    public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI[] Atktext;
+    public TextMeshProUGUI[] WeaponCostDisPlay;
     // 버튼 갯수
     public SearchButton[] searchButtons;
     public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     public EquipCheck[] equipButton;
-    public TextMeshProUGUI Ticket;
+    
     //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
     
     public string SearchName;
@@ -91,6 +94,7 @@ public class UIManager : MonoBehaviour
         Knowledge.text = KnowledgeText();
         GoldPerClickText(GoldPerClickDisPlayer);
         GoldCostClickText(GoldCostClickDisPlayer);
+        WeaponCostText(WeaponCostDisPlay);
         AtkText(Atktext);
         Ticket.text = DataController.GetInstance().GetTicket().ToString()+"/7";
     }
@@ -144,21 +148,16 @@ public class UIManager : MonoBehaviour
         BigInteger value = DataController.GetInstance().GetGold();
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
-
         do
         {
             numlist.Add((int)(value % p));
             value /= p;
         }
         while (value>=1);
-
         int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
-
         if (num < 1000)
             return num.ToString();
-
         float f = (num / (float)p);
-
         return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
     private string KnowledgeText()
@@ -167,21 +166,17 @@ public class UIManager : MonoBehaviour
         BigInteger value = DataController.GetInstance().GetKnowledge();
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
-
         do
         {
             numlist.Add((int)(value % p));
             value /= p;
         }
         while (value >= 1);
-
         int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
-
         if (num < 1000)
             return num.ToString();
 
         float f = (num / (float)p);
-
         return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
 
@@ -192,18 +187,13 @@ public class UIManager : MonoBehaviour
         BigInteger value = DataController.GetInstance().GetGoldPerClick(name);
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
-
         do
         {
             numlist.Add((int)(value % p));
             value /= p;
         }
         while (value >= 1);
-        
         int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
-
-
-
         if (num < 1000)
             return num.ToString();
 
@@ -212,13 +202,12 @@ public class UIManager : MonoBehaviour
         return f.ToString("N1") + GetUnitText(numlist.Count - 1);
     }
 
-    private string GoldCostClickText(BigInteger Cost)
+    private string goldCostClickText(BigInteger Cost)
     {
         int placeN = 3;
         BigInteger value = Cost;
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
-
         do
         {
             numlist.Add((int)(value % p));
@@ -241,7 +230,28 @@ public class UIManager : MonoBehaviour
         BigInteger value = Atk;
         List<int> numlist = new List<int>();
         int p = (int)Mathf.Pow(10, placeN);
+        do
+        {
+            numlist.Add((int)(value % p));
+            value /= p;
+        }
+        while (value >= 1);
 
+        int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
+
+        if (num < 1000)
+            return num.ToString();
+
+        float f = (num / (float)p);
+
+        return f.ToString("N1") + GetUnitText(numlist.Count - 1);
+    }
+    private string weaponcostText(BigInteger Cost)
+    {
+        int placeN = 3;
+        BigInteger value = Cost;
+        List<int> numlist = new List<int>();
+        int p = (int)Mathf.Pow(10, placeN);
         do
         {
             numlist.Add((int)(value % p));
@@ -277,10 +287,8 @@ public class UIManager : MonoBehaviour
         return retstr;
     }
 
-    public void GoldPerClickText(Text[] txt)
+    public void GoldPerClickText(TextMeshProUGUI[] txt)
     {
-        //txt = GoldPerClickDisPlayer;
-
         for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
             txt[i].text = GoldPerClickText("GoldPerClick"+i);
@@ -288,17 +296,20 @@ public class UIManager : MonoBehaviour
     }
     public void GoldCostClickText(TextMeshProUGUI[] txt)
     {
-        //txt = GoldCostClickDisPlayer;
-
         for (int i = 0; i < GoldPerClickDisPlayer.Length; i++)
         {
-            txt[i].text = GoldCostClickText(upgradeButton[i].CurrentCost1);
+            txt[i].text = goldCostClickText(upgradeButton[i].CurrentCost1);
+        }
+    }
+    public void WeaponCostText(TextMeshProUGUI[] txt)
+    {
+        for (int i = 0; i < weaponcost.Length; i++)
+        {
+            txt[i].text = weaponcostText(weaponcost[i].CurrentCost);
         }
     }
     public void AtkText(TextMeshProUGUI[] txt)
     {
-        //txt = Atktext;
-
         for (int i = 0; i < item_l.weaponData.dataArray.Length; i++)
         {
             switch (item_l.weaponData.dataArray[i].Level)
@@ -420,6 +431,7 @@ public class UIManager : MonoBehaviour
             Currenttime -= time;
             if (Currenttime <= 0)
             {
+                PopUpSystem.GetInstance().ClosePopUp();
                 MonsterSpawn.GetInstance().MimicIsDie = false;
                 FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
                 PopUpSystem.GetInstance().EnterDeongun = false;

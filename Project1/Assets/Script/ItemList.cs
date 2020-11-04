@@ -36,18 +36,17 @@ public class ItemList : MonoBehaviour
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
                     if (weaponData.dataArray[i].Isusing == true)
-                        if (shop.SkinOn == false)
+                        if (shop.SkinOnWeapon == false)
                             AttechmentPlayeritem(weaponData.dataArray[i].UID);
                     weaponData.dataArray[i-1].Isusing = false;
                 }
-                
             }
         }
         DataController.GetInstance().Saveitem(this);
     }
     public void Update()
     {
-        if(shop.SkinOn == false)
+        if(shop.SkinOnWeapon == false)
             AttachmentCheck();
         WeaponUpGradeSlider();
     }
