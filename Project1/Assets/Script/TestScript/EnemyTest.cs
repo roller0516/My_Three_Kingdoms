@@ -68,7 +68,7 @@ public class EnemyTest : MonoBehaviour
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         HitCount = 0;
-        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
+        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 10), 100);
         knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
     }
 
