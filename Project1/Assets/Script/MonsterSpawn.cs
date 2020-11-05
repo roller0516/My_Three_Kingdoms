@@ -136,7 +136,7 @@ public class MonsterSpawn : MonoBehaviour
                     GameObject go =Instantiate(BossMonster[i], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
                     BossMonster[i].GetComponent<Boss>().BossName = BossMonster[i].name;
                     PrevMonster = go;
-                    print(BossMonster[num].name);
+                    print(BossMonster[i].name);
                 }
             }
             if (stg.curStage > BossMonster.Length)

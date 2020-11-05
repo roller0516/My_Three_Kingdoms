@@ -48,6 +48,7 @@ public class SpecialitemList : MonoBehaviour
 
         ItemCount = new int[Sp_item.Count];
         Count = new int[Sp_item.Count];
+        DataController.GetInstance().LoadSpecialitem(this);
     }
 
     public void AbilityOn(int num)
@@ -78,10 +79,10 @@ public class SpecialitemList : MonoBehaviour
                     Sp_item[num].AbiliOn = false;
                     break;
                 case "칠성검":
-                    //UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade += Sp_item[i].AbilityCount;
+                    
                     break;
                 case "유성추":
-                    //UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade += Sp_item[i].AbilityCount;
+                    
                     break;
                 case "맹획머리띠":
                     print("성공");
@@ -147,6 +148,7 @@ public class SpecialitemList : MonoBehaviour
         {
             ItemCount[i] = Sp_item[i].itemCount;
             itemCountText[i].text = Sp_item[i].itemCount.ToString()+"/10";
+
             if (ItemCount[i] == 10)
             {
                 isUsing = true;

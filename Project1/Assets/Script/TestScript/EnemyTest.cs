@@ -264,9 +264,7 @@ public class EnemyTest : MonoBehaviour
 
                 }
                 SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-                //SetKnowledgeReward(GetKnowledgeReward());
                 DataController.GetInstance().AddGold(GetGoldReward());
-                DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
                 MonsterSpawn.instance.IsDie = true;
                 Destroy(this.gameObject, 2f);
                 Hpbar.gameObject.SetActive(false);

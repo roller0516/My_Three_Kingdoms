@@ -18,9 +18,11 @@ public class Fadeinout : MonoBehaviour
     public bool Win;
     public bool Lose;
     public Animator ani;
+    public bool ClickOn ;
     public void Start()
     {
         skeletonAni = SearchRewardPanel.gameObject.GetComponent<SkeletonGraphic>();
+        ClickOn = true;
     }
     public void Fade()
     {
@@ -53,7 +55,6 @@ public class Fadeinout : MonoBehaviour
     public void SearchReward()
     {
         SkeletonGraphic.SetActive(true);
-        
     }
     private void Update()
     {
@@ -69,29 +70,33 @@ public class Fadeinout : MonoBehaviour
                     aniCheck = false;
                     skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
                 }
-                if (Input.GetMouseButtonDown(0))
+                if (ClickOn == true) 
                 {
-                    TouchCount++;
-                    if (TouchCount == 1)
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        skeletonAni.AnimationState.SetAnimation(0, "3", false);
-                        skeletonAni.AnimationState.AddAnimation(0, "4", false, 0);
-                        skeletonAni.AnimationState.AddAnimation(0, "5-1", false, 0);
-                        skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
-                        StartCoroutine("rewardCoroutine");
+                        TouchCount++;
+                        if (TouchCount == 1)
+                        {
+                            getitem();
+                            StartCoroutine("rewardCoroutine");
+                            skeletonAni.AnimationState.SetAnimation(0, "3", false);
+                            skeletonAni.AnimationState.AddAnimation(0, "4", false, 0);
+                            skeletonAni.AnimationState.AddAnimation(0, "5-1", false, 0);
+                            skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
+                        }
+                        else if (TouchCount >= 2)
+                        {
+                            ani.SetBool("Treasure1", false);
+                            ani.SetBool("Treasure2", false);
+                            skeletonAni.AnimationState.SetEmptyAnimations(0);
+                            skeletonAni.AnimationState.SetAnimation(0, "1", false);
+
+                            SkeletonGraphic.SetActive(false);
+                            TouchCount = 0;
+                        }
+
                     }
-                    else if (TouchCount >= 2)
-                    {
-                        skeletonAni.AnimationState.SetEmptyAnimations(0);
-                        skeletonAni.AnimationState.SetAnimation(0, "1", false);
-
-                        SkeletonGraphic.SetActive(false);
-                        TouchCount = 0;
-
-                    }
-
                 }
-                
             }
             else if (Lose)
             {
@@ -120,9 +125,26 @@ public class Fadeinout : MonoBehaviour
             }
         }
     }
+    void getitem() 
+    {
+        for (int i = 0; i < UIManager.GetInstance().searchButtons.Length; i++)
+        {
+            if (SearchButton.Getitme == true)
+            {
+                ani.SetBool("Treasure1", true);
+            }
+            else 
+            {
+                ani.SetBool("Treasure2", true);
+            }
+        }
+    }
     IEnumerator rewardCoroutine() 
     {
+        ClickOn = false;
         yield return new WaitForSeconds(2.6f);
         ani.speed = 1;
+        ClickOn = true;
     }
+    
 }

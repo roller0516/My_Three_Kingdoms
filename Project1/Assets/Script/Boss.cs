@@ -248,10 +248,8 @@ public class Boss : MonoBehaviour
                 print(num);
             }
             MonsterSpawn.instance.boss_IsDie = true;
-            //SetKnowledgeReward(GetKnowledgeReward());
             SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
             DataController.GetInstance().AddGold(GetGoldReward());
-            DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             BossDictionary.GetInstance().ChangeSprite(BossName);

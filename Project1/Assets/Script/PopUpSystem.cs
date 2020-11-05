@@ -56,6 +56,7 @@ public class PopUpSystem : MonoBehaviour
             EnterDeongun = true;
             if (EnterDeongun)
             {
+                SoundManager.instance.BgmSound(4);
                 DataController.GetInstance().SubTicket(1);
                 Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
                 MonsterSpawn.GetInstance().MonsterCount = 0;

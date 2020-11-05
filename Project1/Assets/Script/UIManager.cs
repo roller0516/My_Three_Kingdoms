@@ -422,7 +422,6 @@ public class UIManager : MonoBehaviour
                             searchButtons[7].Win(true);
                         }
                         break;
-             
             }
            
         }
@@ -433,6 +432,7 @@ public class UIManager : MonoBehaviour
             Currenttime -= time;
             if (Currenttime <= 0)
             {
+                MonsterSpawn.GetInstance().stg.stageSound();
                 PopUpSystem.GetInstance().ClosePopUp();
                 MonsterSpawn.GetInstance().MimicIsDie = false;
                 FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
