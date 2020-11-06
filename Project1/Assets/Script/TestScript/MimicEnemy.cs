@@ -155,14 +155,9 @@ public class MimicEnemy : MonoBehaviour
          if (Hp <= 0)
          {
              Hpbar.gameObject.SetActive(false);
-             //SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-             //SetKnowledgeReward(GetKnowledgeReward());
-             //DataController.GetInstance().AddGold(GetGoldReward());
-             //DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
              _AniState = AnimState.die;
-             //MonsterSpawn.instance.MonsterCount--;
              MonsterSpawn.instance.MimicIsDie = true;
-             Destroy(this.gameObject, 2f);
+             Destroy(this.gameObject, 1f);
              Hpbar.gameObject.SetActive(false);
          }
     }
@@ -183,14 +178,9 @@ public class MimicEnemy : MonoBehaviour
         if (Hp <= 0)
         {
             Hpbar.gameObject.SetActive(false);
-            //SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-            //SetKnowledgeReward(GetKnowledgeReward());
-            //DataController.GetInstance().AddGold(GetGoldReward());
-            //DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
             _AniState = AnimState.die;
-            //MonsterSpawn.instance.MonsterCount--;
             MonsterSpawn.instance.MimicIsDie = true;
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
             Hpbar.gameObject.SetActive(false);
         }
     }
@@ -204,9 +194,6 @@ public class MimicEnemy : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
 
-        /*ani.SetTrigger("hit");*/// 애니메이션 변경
-
-        //KnockBack();
 
         Hp -= damage;// hp 뺌
 
@@ -215,14 +202,9 @@ public class MimicEnemy : MonoBehaviour
             if (count == 0)
             {
                 Hpbar.gameObject.SetActive(false);
-                //SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-                //SetKnowledgeReward(GetKnowledgeReward());
-                //DataController.GetInstance().AddGold(GetGoldReward());
-                //DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
                 _AniState = AnimState.die;
-                //MonsterSpawn.instance.MonsterCount--;
                 MonsterSpawn.instance.MimicIsDie = true;
-                Destroy(this.gameObject, 2f);
+                Destroy(this.gameObject, 1f);
                 Hpbar.gameObject.SetActive(false);
             }
             count++;
@@ -232,28 +214,7 @@ public class MimicEnemy : MonoBehaviour
             return;
         }
     }
-    //private void KnockBack()// 넉백
-    //{
-    //    rig.AddForce(new Vector3(2.5f, 2, 0) * knockbackPower, ForceMode.Impulse);
-    //}
 
-
-    //public BigInteger GetGoldReward()
-    //{
-    //    return goldreward;
-    //}
-    //public BigInteger GetKnowledgeReward()
-    //{
-    //    return knowledgereward;
-    //}
-    //public void SetGoldReward(BigInteger newGold)
-    //{
-    //    goldreward = newGold;
-    //}
-    //public void SetKnowledgeReward(BigInteger newKnowledge)
-    //{
-    //    knowledgereward = newKnowledge;
-    //}
     public void SetHpbar()
     {
         BigInteger num;

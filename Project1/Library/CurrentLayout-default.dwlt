@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 444}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 56
+  controlID: 159
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 62
+  controlID: 78
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 330
     height: 947
-  m_MinSize: {x: 204, y: 222}
-  m_MaxSize: {x: 4004, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -830,7 +830,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 80ccf9ff1acdf9ffdc08faff2e09faff3609faff4a09faff4c09faff7659faff7e59faff9259faff9459faff325afaff5ca7fafffea7faff14a8faff1edcfaff3810fbff4010fbff5410fbff5610fbff2a3dfbffc644fbffdc46fbffde46fbfffc48fbff0449fbfff258fbff5059fbff8698fbffb0c9fbffa01ffcffa81ffcffbc1ffcffbe1ffcff8856fcff2a57fcffa488fcffac88fcffc088fcffc288fcff18b6fcffa623fdffae23fdffc223fdffc423fdff5252fdff5ae8fdff40eafdff58effdff5aeffdfff418feffda1afefff21ffefff41ffeff9220feff3e55feff2457feff3c5cfeff3e5cfeffd68cfeffbc8efeffd493feffd693feff7494feff30befeff16c0feff2ec5feff30c5feff5ac5feff26f5feff1a23ffffb823ffff1e37ffff5a60ffff4262ffff5a67ffff5c67ffff4e9cffff1e9dffffbed8ffff74e300000c10010006130100fe1301005446010056c002004cc10200ccc40200fac4020068c5020094c50200cac50200d8c50200f2c50200fac502004e1e03007c1e0300fc1e0300281f03005e1f03006c1f0300861f03008e1f0300ae230300f02303006a2403008a240300b6240300fc240300102503002a250300402503004a250300d02903001e2b030034590300
+      m_ExpandedIDs: f2bfffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -893,20 +893,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Script
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Script
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\TeamProject1\Project1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 88830000
-    m_LastClickedID: 33672
-    m_ExpandedIDs: 000000005a7e0000f47e0000c07f000074810000c8810000288300003083000088830000fa830000fe830000da84000030850000468500009e860000b8860000d0860000b68700001a88000032890000de890000988a000058b800005ab800005cb800005eb8000060b8000062b8000064b8000000ca9a3b
+    m_SelectedIDs: 0a460000
+    m_LastClickedID: 17930
+    m_ExpandedIDs: 000000005234000074350000ae3600005a390000f4390000383c00004a3c0000d03c0000743d00007c3d0000da3e00005e3f0000883f00006241000084410000a241000020430000e0430000904500008c460000a8470000bc780000be780000c0780000c2780000c4780000c6780000c878000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -934,7 +934,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005a7e0000f47e0000c07f00002281000074810000c8810000ec810000288300003083000088830000fa830000fe830000da8400003085000046850000748500009e860000b8860000d0860000b68700001a88000032890000de89000058b800005ab800005cb800005eb8000060b8000062b8000064b80000
+    m_ExpandedIDs: 000000005234000074350000ae3600005a390000f4390000383c00004a3c0000d03c0000743d00007c3d0000da3e00005e3f0000883f00006241000084410000a241000020430000e0430000904500008c460000a8470000bc780000be780000c0780000c2780000c4780000c6780000c8780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -965,18 +965,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: dc2d00003888feffc0faffff243f0000043f00005a3e0000ce3c00003a33feff283500009635000088310000523c0000c066feffaa330000d835000030f0ffff6a4500003226feff2824feff2c1dfeffdc02feffbeb6fdff9c99fdff06460000f04f00003e370000e43a0000503c0000203e00005e470000e23500009a3f0000c2fcfdff024300001ad50500c846000020750000869bfeff52680000ae6f0000a64200002842000010380000863bfaff4a4200007adcfeffec380000264200004e420000a448000006a5fdfffe330000764300001433ffff5a4900004e48000096450000be48000084480000a6440000e89d0000d6740000d4740000d2740000d0740000ce740000cc740000b8740000ea8f000020370000000000005c3700005e430000cc4500000a4700004a440000e8410000a455fffff24a000010420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: "\uC120\uD0DDx\uBC84\uD2BC"
-      m_OriginalName: "\uC120\uD0DDx\uBC84\uD2BC"
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 181978
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
