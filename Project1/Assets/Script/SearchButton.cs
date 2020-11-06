@@ -123,6 +123,11 @@ public class SearchButton : MonoBehaviour
                 case "청서":
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[2].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -155,6 +160,11 @@ public class SearchButton : MonoBehaviour
 
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[4].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -186,6 +196,11 @@ public class SearchButton : MonoBehaviour
                 case "강동":
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[6].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -217,6 +232,11 @@ public class SearchButton : MonoBehaviour
                 case "관중":
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[8].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -248,6 +268,11 @@ public class SearchButton : MonoBehaviour
                 case "형북":
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[10].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -279,6 +304,11 @@ public class SearchButton : MonoBehaviour
                 case "형남":
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[12].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -310,6 +340,11 @@ public class SearchButton : MonoBehaviour
                 case "파촉":
                     if (RandomRange1 <= 10)
                     {
+                        RewardGold = Random.Range(2, 11);
+                        RewardKnowledge = Random.Range(50, 116);
+                        RewardGold = sl.Upgrade * RewardGold;
+                        DataController.GetInstance().AddPaidGold(RewardGold);
+                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
                         Getitme = true;
                         if (sl.Sp_item[14].itemCount < 10 && ItemRandomRange <= 50)
                         {

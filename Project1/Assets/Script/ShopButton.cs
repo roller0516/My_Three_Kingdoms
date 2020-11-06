@@ -42,6 +42,8 @@ public class ShopButton : MonoBehaviour
     public Button[] WeaponEquip;
     public TextMeshProUGUI[] GoldWeapnText;
     public TextMeshProUGUI[] GoldArmorText;
+    public Image[] Gold_im_weapon;
+    public Image[] Gold_im_Armor;
     int Weaponcount;
     int Amorcount;
     int Amortemp;
@@ -80,11 +82,13 @@ public class ShopButton : MonoBehaviour
                 Weaponcount = 2;
                 Weapontemp = i;
                 GoldWeapnText[i].gameObject.SetActive(false);
+                Gold_im_weapon[i].gameObject.SetActive(false);
             }
 
             else if (shopitemWeapon[i].PuchaseComplete == true) 
             {
                 GoldWeapnText[i].gameObject.SetActive(false);
+                Gold_im_weapon[i].gameObject.SetActive(false);
                 WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
             }
         }
@@ -100,11 +104,13 @@ public class ShopButton : MonoBehaviour
                 Amorcount = 2;
                 Amortemp = i;
                 GoldArmorText[i].gameObject.SetActive(false);
+                Gold_im_Armor[i].gameObject.SetActive(false);
             }
 
             else if (shopitemAmor[i].PuchaseComplete == true) 
             {
                 GoldArmorText[i].gameObject.SetActive(false);
+                Gold_im_Armor[i].gameObject.SetActive(false);
                 AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
             }
                 

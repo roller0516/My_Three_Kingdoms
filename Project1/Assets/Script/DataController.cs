@@ -60,14 +60,13 @@ public class DataController : MonoBehaviour
         string gold;
         gold = m_gold.ToString();
         gold = PlayerPrefs.GetString("Gold", gold);
-
         m_gold = BigInteger.Parse(gold);
         string Knowledge;
         Knowledge = m_Knowledge.ToString();
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
-        Ticket = PlayerPrefs.GetInt("Ticket");
-        PaidGold = PlayerPrefs.GetInt("PaidGold",0);
+        Ticket = PlayerPrefs.GetInt("Ticket", 0);
+        PaidGold = PlayerPrefs.GetInt("PaidGold", 0);
         Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
         Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");
 
@@ -383,6 +382,7 @@ public class DataController : MonoBehaviour
     #region Ticket
     public void SetTicket(int newTicket)
     {
+        print(Ticket);
         Ticket = newTicket;
         PlayerPrefs.SetInt("Ticket", Ticket);
     }
@@ -413,12 +413,12 @@ public class DataController : MonoBehaviour
     {
 
         PaidGold += newPaidGold;
-        SetTicket(PaidGold);
+        SetPaidGold(PaidGold);
     }
     public void SubPaidGold(int newPaidGold)
     {
         PaidGold -= newPaidGold;
-        SetTicket(PaidGold);
+        SetPaidGold(PaidGold);
     }
     public int GetPaidGold()
     {

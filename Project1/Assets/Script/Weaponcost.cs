@@ -17,6 +17,7 @@ public class Weaponcost : MonoBehaviour
     [HideInInspector]
     public int MaxLevel = 10;
     public TextMeshProUGUI upGradeTex;
+    public Image im;
     ItemList item_l;
     
     private void Start()

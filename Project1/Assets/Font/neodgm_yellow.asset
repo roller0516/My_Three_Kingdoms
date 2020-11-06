@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: neodgm_yellow
   m_EditorClassIdentifier: 
-  hashCode: 1954406704
+  hashCode: -971540527
   material: {fileID: -5679758225294721650}
   materialHashCode: -586593093
   m_Version: 1.1.0
