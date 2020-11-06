@@ -5,17 +5,16 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    AudioSource myAudio;
-    public AudioClip Weapon1Sound;
-    public AudioClip Weapon2Sound;
-    public AudioClip Weapon3Sound;
+    public AudioSource myAudio;
+    public AudioSource BgmSource;
+    public AudioClip[] WeaponSound_array;
     public AudioClip ButtonClickSound;
     public AudioClip Boss_s;
     public AudioClip Tap_s;
     public AudioClip Critical_s;
     public AudioClip HIT;
-
-
+    public AudioClip EquipSuond;
+    public AudioClip[] Bgm;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -23,11 +22,10 @@ public class SoundManager : MonoBehaviour
         {
             instance = this;
         }
-
     }
     void Start()
     {
-        myAudio = GetComponent<AudioSource>();
+        BgmSound(4);
     }
 
     public void WeaponSound(int num)
@@ -35,13 +33,13 @@ public class SoundManager : MonoBehaviour
         switch (num)
         {
             case 1:
-                myAudio.PlayOneShot(Weapon1Sound);
+                myAudio.PlayOneShot(WeaponSound_array[0]);
                 break;
             case 2:
-                myAudio.PlayOneShot(Weapon2Sound);
+                myAudio.PlayOneShot(WeaponSound_array[1]);
                 break;
             case 3:
-                myAudio.PlayOneShot(Weapon3Sound);
+                myAudio.PlayOneShot(WeaponSound_array[2]);
                 break;
             case 4:
                 myAudio.PlayOneShot(Critical_s);
@@ -64,5 +62,15 @@ public class SoundManager : MonoBehaviour
     {
         myAudio.PlayOneShot(HIT);
     }
+    public void EquipSound() 
+    {
+        myAudio.PlayOneShot(EquipSuond);
+    }
+    public void BgmSound(int num) 
+    {
+        BgmSource.clip = Bgm[num];
+        BgmSource.Play();
+    }
+    
 }
 

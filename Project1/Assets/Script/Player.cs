@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         }
     }
     private Animator ani;
-    private ItemList itemlist;
+    public ItemList itemlist;
     public Vector3 startPosition;
     public SkeletonRenderer skeletonRenderer;
     public SkeletonMecanim skeletonAni;

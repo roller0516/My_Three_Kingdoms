@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     public int[] Level;
     private void Awake()
     {
-        int count = 13;
+        int count = 2;
         for (int i = 1; i < upgradeButton.Length + 1; i++)
         {
             upgradeButton[i - 1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
@@ -422,7 +422,6 @@ public class UIManager : MonoBehaviour
                             searchButtons[7].Win(true);
                         }
                         break;
-             
             }
            
         }
@@ -433,6 +432,7 @@ public class UIManager : MonoBehaviour
             Currenttime -= time;
             if (Currenttime <= 0)
             {
+                MonsterSpawn.GetInstance().stg.stageSound();
                 PopUpSystem.GetInstance().ClosePopUp();
                 MonsterSpawn.GetInstance().MimicIsDie = false;
                 FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
@@ -443,6 +443,7 @@ public class UIManager : MonoBehaviour
                 MonsterSpawn.GetInstance().MonsterCount = 0;
                 MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
                 FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().SearchReward();
+                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = false;
                 FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Lose = true;
             }
         }

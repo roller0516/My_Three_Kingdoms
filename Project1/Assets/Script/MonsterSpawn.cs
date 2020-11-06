@@ -101,7 +101,7 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
-            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 115)), 100);
+            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 215)), 100);
             BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
             DataController.GetInstance().SaveStage(this);
         }
@@ -136,7 +136,7 @@ public class MonsterSpawn : MonoBehaviour
                     GameObject go =Instantiate(BossMonster[i], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
                     BossMonster[i].GetComponent<Boss>().BossName = BossMonster[i].name;
                     PrevMonster = go;
-                    print(BossMonster[num].name);
+                    print(BossMonster[i].name);
                 }
             }
             if (stg.curStage > BossMonster.Length)

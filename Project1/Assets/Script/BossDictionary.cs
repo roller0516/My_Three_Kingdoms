@@ -40,17 +40,20 @@ public class BossDictionary : MonoBehaviour
     public List<BossInfo> bossinfo = new List<BossInfo>();
     public List<Sprite> ChagneBossSprite = new List<Sprite>();
     public Image[] iconbutton;
+    public Image[] ribbon;
+    public Image Bossim;
+    
     public TextMeshProUGUI BossNameTEXT;
     public TextMeshProUGUI ContentsTEXT;
     public GameObject SelectImage;
-    public Image Bossim;
+    
+    public string BossName;
     public int num;
     public int prevnum;
-    public string BossName;
+
     private RectTransform rect;
     private GameObject go;
     private int Count;
-    
     private void Start()
     {
         ListAddInfo();
@@ -82,6 +85,7 @@ public class BossDictionary : MonoBehaviour
                 bossinfo[i].IsChange = true;
                 iconbutton[i].sprite = ChagneBossSprite[i];
                 bossinfo[i].BossName = bossName;
+                ribbon[i].sprite = Resources.Load<Sprite>("UI/BossDictionary/red");
             }
         }
         DataController.GetInstance().SaveBossDic(this);
@@ -90,12 +94,14 @@ public class BossDictionary : MonoBehaviour
     {
         SoundManager.instance.ButtonSound();
         PrFabsproduce(num);
-        
     }
     void changeSpriteCheck()
     {
-        for (int i = 0; i < bossinfo.Count; i++)
+        for (int i = 0; i < bossinfo.Count; i++) 
+        {
             ChangeSprite(bossinfo[i].BossName);
+        }
+           
     }
     void ListAddInfo()
     {
@@ -114,6 +120,7 @@ public class BossDictionary : MonoBehaviour
         Add("NoneStage13boss", "망치로 바닥을 내려친다", "진궁");
         Add("NoneStage14boss", "비파를 연주하여 공격한다", "초선");
         Add("NoneStage15boss", "방천화극으로 더욱 강하게 벤다", "여포");
+
         AddChangeSprite("Stage1boss");
         AddChangeSprite("Stage2boss");
         AddChangeSprite("Stage3boss");
@@ -133,7 +140,7 @@ public class BossDictionary : MonoBehaviour
 
     }
 
-    void PrFabsproduce(int num)// 선택이미지 생성
+    void PrFabsproduce(int num)//
     {
         this.num = num;
         
@@ -144,12 +151,11 @@ public class BossDictionary : MonoBehaviour
             go.transform.parent = iconbutton[num].transform;
             go.transform.localScale = Vector3.one;
             Bossim.gameObject.SetActive(true);
-            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num+1).ToString() + "boss_im");
             BossName = bossinfo[num].BossName;
+            NameCheck(BossName);
             UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
             prevnum = num;
             Count++;
-            Textcontents(num);
         }
         else if (Count > 0)
         {
@@ -167,18 +173,34 @@ public class BossDictionary : MonoBehaviour
                     UIManager.GetInstance().equipButton[i].gameObject.SetActive(false);
                 }
             }
-            Textcontents(num);
             BossName = bossinfo[num].BossName;
             Bossim.gameObject.SetActive(true);
-            Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (num + 1).ToString() + "boss_im");
+            NameCheck(BossName);
             go.transform.parent = iconbutton[num].transform;
             go.transform.position = iconbutton[num].transform.position;
             prevnum = num;
         }
     }
-    void Textcontents(int num) 
+   
+    void NameCheck(string name)
     {
-        BossNameTEXT.text = bossinfo[num].BossNameText;
-        ContentsTEXT.text = bossinfo[num].Contents;
+        for (int i = 0; i < bossinfo.Count; i++) 
+        {
+            if (name == ChagneBossSprite[i].name)
+            {
+                Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/Stage" + (i + 1).ToString() + "boss_im");
+                BossNameTEXT.text = bossinfo[i].BossNameText;
+                ContentsTEXT.text = bossinfo[i].Contents;
+            }
+            else if (name == bossinfo[i].BossName)
+            {
+                BossNameTEXT.text = "???";
+                ContentsTEXT.text = "???";
+                Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/" + (i + 1));
+            }
+        }
+            
+            
+        
     }
 }

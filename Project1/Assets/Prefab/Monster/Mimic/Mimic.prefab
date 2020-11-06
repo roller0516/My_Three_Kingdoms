@@ -154,14 +154,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dacd3771a175d74ab94d2818de2f102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: {fileID: 1760992571876156, guid: bfbb1577c0cf6194893d32135866cd83, type: 3}
+  hit: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
   Crihit: {fileID: 1347330118340980, guid: a270d4b31a4d11a4b8302acf069f853a, type: 3}
   damageText: {fileID: 3244603216399354654, guid: d7b4cccee89c92d49b7d65c4620f0e40,
     type: 3}
   CridamageText: {fileID: 1913563109280866281, guid: 92af598fc0264e9429a488df6bd637ad,
     type: 3}
   moveSpeed: 0
-  MaxHp: 3000000
+  MaxHp: 100000
   Hpbar: {fileID: 0}
   HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
     type: 3}

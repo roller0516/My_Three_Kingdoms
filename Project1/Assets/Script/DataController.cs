@@ -576,8 +576,18 @@ public class DataController : MonoBehaviour
         }
         PlayerPrefs.SetString("SkinOnWeapon", shopbutton.SkinOnWeapon.ToString());
     }
+    public void LoadSpecialitem(SpecialitemList specialitemlist) 
+    {
+        for (int i = 0; i < specialitemlist.Sp_item.Count; i++)
+        {
+            specialitemlist.Sp_item[i].itemCount = PlayerPrefs.GetInt("specialitemCount" + i, 0);
+        }
+    }
+    public void SaveSpecialitem(SpecialitemList specialitemlist) 
+    {
+        for (int i = 0; i< specialitemlist.Sp_item.Count;i++) 
+        {
+            PlayerPrefs.SetInt("specialitemCount" + i, specialitemlist.Sp_item[i].itemCount);
+        }
+    }
 }
-
-
-
-

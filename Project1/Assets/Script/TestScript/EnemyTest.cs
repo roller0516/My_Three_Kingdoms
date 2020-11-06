@@ -68,7 +68,7 @@ public class EnemyTest : MonoBehaviour
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         HitCount = 0;
-        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
+        goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 10), 100);
         knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
     }
 
@@ -261,12 +261,10 @@ public class EnemyTest : MonoBehaviour
                 else
                 {
                     num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-
                 }
                 SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
-                //SetKnowledgeReward(GetKnowledgeReward());
+                print(GetGoldReward());
                 DataController.GetInstance().AddGold(GetGoldReward());
-                DataController.GetInstance().AddKnowledge(GetKnowledgeReward());
                 MonsterSpawn.instance.IsDie = true;
                 Destroy(this.gameObject, 2f);
                 Hpbar.gameObject.SetActive(false);

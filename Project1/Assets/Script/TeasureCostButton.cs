@@ -109,7 +109,7 @@ public class TeasureCostButton : MonoBehaviour
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
-        CurrentCost += ((StartCurrentCost * 106) / 100);// 지불하는 값을 업그레이드
+        CurrentCost += ((StartCurrentCost * 125) / 100);// 지불하는 값을 업그레이드
         goldByUpgrade += KnowledgeByUpgrade;
     }
     public void TeasureAbility(string name)

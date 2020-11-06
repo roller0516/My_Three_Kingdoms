@@ -16,7 +16,9 @@ public class SearchButton : MonoBehaviour
     bool timerTrue;
     public Image[] itemImage;
     public Image rewardimage;
-    
+    public static bool Getitme;
+    int RewardGold;
+    int RewardKnowledge;
     private void Start()
     {
         sl = GameObject.Find("Canvas").GetComponent<SpecialitemList>();
@@ -34,6 +36,7 @@ public class SearchButton : MonoBehaviour
     }
     void SetitemImage(string imgName)
     {
+        print(imgName);
         switch (imgName)
         {
             case "하북":
@@ -77,171 +80,272 @@ public class SearchButton : MonoBehaviour
         {
             PopUpSystem.GetInstance().ClosePopUp();
             FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = true;
+            MonsterSpawn.GetInstance().stg.stageSound();
             switch (S_Name)
             {
-
                 case "하북":
-                    if (RandomRange1 <= 30)
+                    RewardGold = Random.Range(2, 11);
+                    RewardKnowledge = Random.Range(50, 116);
+                    RewardGold = sl.Upgrade * RewardGold;
+                    DataController.GetInstance().AddPaidGold(RewardGold);
+                    DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    if (RandomRange1 <= 10)
                     {
-                        print("1");
-
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        
+                        Getitme = true;
                         if (sl.Sp_item[0].itemCount < 10 && ItemRandomRange <= 50)
                         {
-                            rewardimage.sprite =  Resources.Load<Sprite>("UI/Treasure/special1");
-
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special1");
                             sl.Sp_item[0].itemCount++;
-                            print(sl.Sp_item[0].itemCount);
                         }
-                        else if (sl.Sp_item[1].itemCount < 10  && ItemRandomRange >= 51)
+                        else if (sl.Sp_item[1].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special2");
                             sl.Sp_item[1].itemCount++;
-                            print(sl.Sp_item[1].itemCount);
                         }
+                        else if (sl.Sp_item[0].itemCount == 10 && sl.Sp_item[1].itemCount < 10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special2");
+                            sl.Sp_item[1].itemCount++;
+                        }
+                        else if (sl.Sp_item[1].itemCount == 10&& sl.Sp_item[0].itemCount < 10) 
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special1");
+                            sl.Sp_item[0].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
+                        }
+                        
                     }
                     break;
                 case "청서":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[2].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special3");
                             sl.Sp_item[2].itemCount++;
-                            print(sl.Sp_item[2].itemCount);
                         }
                         else if (sl.Sp_item[3].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special4");
                             sl.Sp_item[3].itemCount++;
-                            print(sl.Sp_item[3].itemCount);
+                        }
+                        else if (sl.Sp_item[2].itemCount == 10&& sl.Sp_item[3].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special4");
+                            sl.Sp_item[3].itemCount++;
+                        }
+                        else if (sl.Sp_item[3].itemCount == 10&& sl.Sp_item[2].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special3");
+                            sl.Sp_item[2].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
                         }
                     }
                     break;
 
                 case "중원":
 
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[4].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special5");
                             sl.Sp_item[4].itemCount++;
-                            print(sl.Sp_item[4].itemCount);
                         }
                         else if (sl.Sp_item[5].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
                             sl.Sp_item[5].itemCount++;
-                            print(sl.Sp_item[5].itemCount);
+                        }
+                        else if (sl.Sp_item[4].itemCount == 10&& sl.Sp_item[5].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                            sl.Sp_item[5].itemCount++;
+                        }
+                        else if (sl.Sp_item[5].itemCount == 10&& sl.Sp_item[4].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special5");
+                            sl.Sp_item[4].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
                         }
                     }
-
-
                     break;
 
                 case "강동":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[6].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special7");
                             sl.Sp_item[6].itemCount++;
-                            print(sl.Sp_item[6].itemCount);
                         }
                         else if (sl.Sp_item[7].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special8");
                             sl.Sp_item[7].itemCount++;
-                            print(sl.Sp_item[7].itemCount);
+                        }
+                        else if (sl.Sp_item[6].itemCount == 10&& sl.Sp_item[5].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special8");
+                            sl.Sp_item[7].itemCount++;
+                        }
+                        else if (sl.Sp_item[7].itemCount == 10&& sl.Sp_item[6].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special7");
+                            sl.Sp_item[6].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
                         }
                     }
+                    
                     break;
-
                 case "관중":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[8].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special9");
                             sl.Sp_item[8].itemCount++;
-                            print(sl.Sp_item[8].itemCount);
                         }
                         else if (sl.Sp_item[9].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special10");
                             sl.Sp_item[9].itemCount++;
-                            print(sl.Sp_item[9].itemCount);
+                        }
+                        else if (sl.Sp_item[8].itemCount ==10 && sl.Sp_item[9].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special10");
+                            sl.Sp_item[9].itemCount++;
+                        }
+                        else if (sl.Sp_item[9].itemCount ==10 && sl.Sp_item[8].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special9");
+                            sl.Sp_item[8].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
                         }
                     }
+                   
                     break;
                 case "형북":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[10].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special11");
                             sl.Sp_item[10].itemCount++;
-                            print(sl.Sp_item[10].itemCount);
                         }
                         else if (sl.Sp_item[11].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special12");
                             sl.Sp_item[11].itemCount++;
-                            print(sl.Sp_item[11].itemCount);
+                        }
+                        else if (sl.Sp_item[10].itemCount == 10 && sl.Sp_item[11].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special12");
+                            sl.Sp_item[11].itemCount++;
+                        }
+                        else if (sl.Sp_item[11].itemCount == 10 && sl.Sp_item[10].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special11");
+                            sl.Sp_item[10].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
                         }
                     }
+                    
                     break;
                 case "형남":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[12].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special13");
                             sl.Sp_item[12].itemCount++;
-                            print(sl.Sp_item[12].itemCount);
                         }
                         else if (sl.Sp_item[13].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special14");
                             sl.Sp_item[13].itemCount++;
-                            print(sl.Sp_item[13].itemCount);
+                        }
+                        else if (sl.Sp_item[12].itemCount == 10 && sl.Sp_item[13].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special14");
+                            sl.Sp_item[13].itemCount++;
+                        }
+                        else if (sl.Sp_item[13].itemCount == 10 && sl.Sp_item[12].itemCount<10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special13");
+                            sl.Sp_item[12].itemCount++;
+                        }
+                        else 
+                        {
+                            Getitme = false;
                         }
                     }
+
                     break;
                 case "파촉":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
-                        FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure1");
+                        Getitme = true;
                         if (sl.Sp_item[14].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special15");
                             sl.Sp_item[14].itemCount++;
-                            print(sl.Sp_item[14].itemCount);
                         }
                         else if (sl.Sp_item[15].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
                             sl.Sp_item[15].itemCount++;
-                            print(sl.Sp_item[15].itemCount);
+                        }
+                        else if (sl.Sp_item[14].itemCount == 10 && sl.Sp_item[15].itemCount < 10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                            sl.Sp_item[15].itemCount++;
+                        }
+                        else if (sl.Sp_item[15].itemCount == 10 && sl.Sp_item[14].itemCount <10)
+                        {
+                            rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special15");
+                            sl.Sp_item[14].itemCount++;
+                        }
+                        else
+                        {
+                            Getitme = false;
                         }
                     }
                     break;
             }
+            DataController.GetInstance().SaveSpecialitem(sl);
         }
-        
     }
     private void Update()
     {
         RandomRange1 = Random.Range(1,101);
         ItemRandomRange = Random.Range(1, 101);
-
+        
     }
     public string GetName()
     {
@@ -251,4 +355,5 @@ public class SearchButton : MonoBehaviour
     {
         S_Name = name;
     }
+    
 }

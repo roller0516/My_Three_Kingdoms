@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using UnityEngine.UI;
+using TMPro;
 [System.Serializable]
 public class ShopitemWeapon
 {
@@ -39,6 +40,8 @@ public class ShopButton : MonoBehaviour
     public List<ShopitemArmor> shopitemAmor = new List<ShopitemArmor>();
     public Button[] AmorEquip;
     public Button[] WeaponEquip;
+    public TextMeshProUGUI[] GoldWeapnText;
+    public TextMeshProUGUI[] GoldArmorText;
     int Weaponcount;
     int Amorcount;
     int Amortemp;
@@ -66,32 +69,45 @@ public class ShopButton : MonoBehaviour
         shopitemAmor.Add(new ShopitemArmor("황금 갑옷", 650, false, false));
         shopitemAmor.Add(new ShopitemArmor("용포", 700, false, false));
         DataController.GetInstance().LoadShop(this);
-        for (int i = 0; i < shopitemWeapon.Count;i++)
+
+        for (int i = 0; i < shopitemWeapon.Count; i++)
         {
+            GoldWeapnText[i].text = shopitemWeapon[i].Cost.ToString();
+
             if (shopitemWeapon[i].PuchaseComplete == true && shopitemWeapon[i].isUsing == true)
             {
                 WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
                 Weaponcount = 2;
                 Weapontemp = i;
+                GoldWeapnText[i].gameObject.SetActive(false);
             }
-                
-            else if (shopitemWeapon[i].PuchaseComplete == true)
+
+            else if (shopitemWeapon[i].PuchaseComplete == true) 
+            {
+                GoldWeapnText[i].gameObject.SetActive(false);
                 WeaponEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
+            }
         }
         for (int i = 0; i < shopitemAmor.Count; i++)
         {
+            GoldArmorText[i].text = shopitemAmor[i].Cost.ToString();
             if (shopitemAmor[i].PuchaseComplete == true && shopitemAmor[i].isUsing == true)
             {
-                Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (i+1));
+                Player.Instance.skeletonAni.skeleton.SetSkin("animation/" + (i + 1));
                 Player.Instance.skeletonAni.skeleton.SetSlotsToSetupPose();
 
                 AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equipment");
                 Amorcount = 2;
                 Amortemp = i;
+                GoldArmorText[i].gameObject.SetActive(false);
+            }
+
+            else if (shopitemAmor[i].PuchaseComplete == true) 
+            {
+                GoldArmorText[i].gameObject.SetActive(false);
+                AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
             }
                 
-            else if (shopitemAmor[i].PuchaseComplete == true)
-                AmorEquip[i].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
         }
        
     }
