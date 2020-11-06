@@ -125,6 +125,7 @@ public class UIManager : MonoBehaviour
                     item_l.bt[i].interactable = true;
                     weaponcost[i].upGradeTex.gameObject.SetActive(true);
                     item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/nomalbutton");
+                    weaponcost[i].upGradeTex.gameObject.SetActive(true);
                 }
                 else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
