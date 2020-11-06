@@ -128,9 +128,11 @@ public class UIManager : MonoBehaviour
                 }
                 else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
+                    weaponcost[i].im.gameObject.SetActive(false);
                     item_l.bt[i].interactable = false;
                     item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/Complete");
                     weaponcost[i].upGradeTex.gameObject.SetActive(false);
+                    
                     if (i == item_l.weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
                         return;
                     else if (item_l.weaponData.dataArray[i + 1].Level == 0) 
