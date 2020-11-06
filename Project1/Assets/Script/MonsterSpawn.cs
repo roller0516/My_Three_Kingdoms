@@ -101,7 +101,7 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
-            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 115)), 100);
+            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 215)), 100);
             BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
             DataController.GetInstance().SaveStage(this);
         }

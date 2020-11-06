@@ -443,6 +443,7 @@ public class UIManager : MonoBehaviour
                 MonsterSpawn.GetInstance().MonsterCount = 0;
                 MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
                 FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().SearchReward();
+                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = false;
                 FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Lose = true;
             }
         }

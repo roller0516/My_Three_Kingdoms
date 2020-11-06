@@ -17,6 +17,8 @@ public class SearchButton : MonoBehaviour
     public Image[] itemImage;
     public Image rewardimage;
     public static bool Getitme;
+    int RewardGold;
+    int RewardKnowledge;
     private void Start()
     {
         sl = GameObject.Find("Canvas").GetComponent<SpecialitemList>();
@@ -79,12 +81,17 @@ public class SearchButton : MonoBehaviour
             PopUpSystem.GetInstance().ClosePopUp();
             FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = true;
             MonsterSpawn.GetInstance().stg.stageSound();
-            print(S_Name);
             switch (S_Name)
             {
                 case "하북":
-                    if (RandomRange1 <= 100)
+                    RewardGold = Random.Range(2, 11);
+                    RewardKnowledge = Random.Range(50, 116);
+                    RewardGold = sl.Upgrade * RewardGold;
+                    DataController.GetInstance().AddPaidGold(RewardGold);
+                    DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    if (RandomRange1 <= 10)
                     {
+                        
                         Getitme = true;
                         if (sl.Sp_item[0].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -110,10 +117,11 @@ public class SearchButton : MonoBehaviour
                         {
                             Getitme = false;
                         }
+                        
                     }
                     break;
                 case "청서":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[2].itemCount < 10 && ItemRandomRange <= 50)
@@ -145,7 +153,7 @@ public class SearchButton : MonoBehaviour
 
                 case "중원":
 
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[4].itemCount < 10 && ItemRandomRange <= 50)
@@ -173,12 +181,10 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
-
-
                     break;
 
                 case "강동":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[6].itemCount < 10 && ItemRandomRange <= 50)
@@ -209,7 +215,7 @@ public class SearchButton : MonoBehaviour
                     
                     break;
                 case "관중":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[8].itemCount < 10 && ItemRandomRange <= 50)
@@ -240,7 +246,7 @@ public class SearchButton : MonoBehaviour
                    
                     break;
                 case "형북":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[10].itemCount < 10 && ItemRandomRange <= 50)
@@ -271,7 +277,7 @@ public class SearchButton : MonoBehaviour
                     
                     break;
                 case "형남":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[12].itemCount < 10 && ItemRandomRange <= 50)
@@ -302,7 +308,7 @@ public class SearchButton : MonoBehaviour
 
                     break;
                 case "파촉":
-                    if (RandomRange1 <= 30)
+                    if (RandomRange1 <= 10)
                     {
                         Getitme = true;
                         if (sl.Sp_item[14].itemCount < 10 && ItemRandomRange <= 50)
@@ -339,6 +345,7 @@ public class SearchButton : MonoBehaviour
     {
         RandomRange1 = Random.Range(1,101);
         ItemRandomRange = Random.Range(1, 101);
+        
     }
     public string GetName()
     {

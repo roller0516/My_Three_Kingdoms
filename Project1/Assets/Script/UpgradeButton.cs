@@ -45,10 +45,10 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
     }
-    public void UpgradeTik()
+    public void UpgradeTik(int num)
     {
         Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
-        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + 1, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
+        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + num, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
         Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
         CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
     }

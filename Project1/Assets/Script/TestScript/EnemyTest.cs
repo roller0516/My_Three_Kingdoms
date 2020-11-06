@@ -261,9 +261,9 @@ public class EnemyTest : MonoBehaviour
                 else
                 {
                     num = UIManager.GetInstance().Teasurecost_Nomal[1].goldByUpgrade;
-
                 }
                 SetGoldReward(GetGoldReward() + ((GetGoldReward() * num * 100) / 10000));
+                print(GetGoldReward());
                 DataController.GetInstance().AddGold(GetGoldReward());
                 MonsterSpawn.instance.IsDie = true;
                 Destroy(this.gameObject, 2f);

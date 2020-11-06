@@ -24,7 +24,7 @@ public class StageManager : MonoBehaviour
     }
     private void stageCount() 
     {
-        text.text = curStage.ToString() + "장";
+        text.text = "제"+curStage.ToString() + "장";
         if (curStage >= 100)
         {
            
