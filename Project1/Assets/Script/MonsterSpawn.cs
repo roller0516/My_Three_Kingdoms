@@ -32,14 +32,16 @@ public class MonsterSpawn : MonoBehaviour
     public bool IsDie = false;
     public bool boss_IsDie = false;
     public bool MimicIsDie = false;
-    GameObject PrevMonster;
+    public bool BossSummonON;
+    public bool BossFail;
+    public GameObject PrevMonster;
     public Transform SpawnPoints;
     public GameObject[] Monster;
     public GameObject[] BossMonster;
     public GameObject MimicMonster;
 
-    private Vector3 startPosition;
-    private Fadeinout fade;
+    public Vector3 startPosition;
+    public Fadeinout fade;
     
     public BigInteger BossHpCount = 2850;
     public BigInteger MonsterHpCount = 570;
@@ -97,6 +99,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (boss_IsDie == true)
         {
+            BossSummonON = false;
             boss_IsDie = false;
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
@@ -120,11 +123,14 @@ public class MonsterSpawn : MonoBehaviour
             if (PrevMonster != null)
                 Destroy(PrevMonster.gameObject);
             MimicHp(UIManager.GetInstance().SearchName);
+            UIManager.GetInstance().Starttime = 30;
             MonsterCount++;
             Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
         }
         else if (stg.MonsterCount % stg.MaxStage == 0) //보스 스폰
         {
+            UIManager.GetInstance().Starttime = 60;
+            BossSummonON = true;
             SoundManager.instance.BossSound();
             CurTime = 0;
             MonsterCount++;

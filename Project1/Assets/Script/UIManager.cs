@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Numerics;
 using Vector3 = UnityEngine.Vector3;
+using System.Collections;
 
 
 public class UIManager : MonoBehaviour
@@ -428,7 +429,24 @@ public class UIManager : MonoBehaviour
             }
            
         }
-        if (PopUpSystem.GetInstance().EnterDeongun == true)
+        if (MonsterSpawn.GetInstance().BossSummonON == true)
+        {
+            timeText.gameObject.SetActive(true);
+            time = Time.deltaTime;
+            Currenttime -= time;
+            if (Currenttime <= 0)
+            {
+                time = 0;
+                Currenttime = Starttime;
+                StartCoroutine("BossNoDeath");
+                MonsterSpawn.GetInstance().stg.MonsterCount = 1;
+                if (MonsterSpawn.GetInstance().PrevMonster != null)
+                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject,1.2f);
+                MonsterSpawn.GetInstance().BossSummonON = false;
+                MonsterSpawn.GetInstance().BossFail = true;
+            }
+        }
+        else if (PopUpSystem.GetInstance().EnterDeongun == true)
         {
             timeText.gameObject.SetActive(true);
             time = Time.deltaTime;
@@ -455,6 +473,16 @@ public class UIManager : MonoBehaviour
             Currenttime = Starttime;
             timeText.gameObject.SetActive(false);
         }
-        timeText.text = Currenttime.ToString("0");
+        timeText.text = "남은시간"+Currenttime.ToString("0")+"초";
+    }
+    IEnumerator BossNoDeath()
+    {
+        MonsterSpawn.GetInstance().transform.position = MonsterSpawn.GetInstance().startPosition;
+        MonsterSpawn.GetInstance().MonsterCount = 1;
+        yield return new WaitForSeconds(0.5f);
+        MonsterSpawn.GetInstance().fade.Fade();
+        yield return new WaitForSeconds(0.5f);
+        MonsterSpawn.GetInstance().MonsterCount = 0;
+        Player.Instance.transform.position = Player.Instance.startPosition;
     }
 }

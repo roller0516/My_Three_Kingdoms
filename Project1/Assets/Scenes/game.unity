@@ -5240,6 +5240,9 @@ MonoBehaviour:
   IsDie: 0
   boss_IsDie: 0
   MimicIsDie: 0
+  BossSummonON: 0
+  BossFail: 0
+  PrevMonster: {fileID: 0}
   SpawnPoints: {fileID: 2057976386}
   Monster:
   - {fileID: 4682435649003521602, guid: fdd35e65ef39bfc418365bb32f67f474, type: 3}
@@ -5266,6 +5269,8 @@ MonoBehaviour:
   - {fileID: 4934612125293769846, guid: 46b4d074f1ca6cd4099345d6ce73133e, type: 3}
   MimicMonster: {fileID: 6341480437774138340, guid: 3bfa15a224c95954b9e2f52ddba758ef,
     type: 3}
+  startPosition: {x: 0, y: 0, z: 0}
+  fade: {fileID: 0}
   stg: {fileID: 0}
 --- !u!1 &2131190495
 GameObject:
@@ -8998,6 +9003,33 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504291097523612348, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: MaxSkillcooltime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795593304095948053, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 69ebd340962c3f545a6baeb595f7fd7d,
+        type: 2}
+    - target: {fileID: 4795593304095948053, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4248389539692533835, guid: 69ebd340962c3f545a6baeb595f7fd7d,
+        type: 2}
+    - target: {fileID: 8880400932260921544, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: UpgradeNameText
+      value: "\uBCF4\uC2A4 \uC2A4\uD0AC \uB300\uAE30\uC2DC\uAC04 \uAC10\uC18C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880400932260921544, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: MaxLevel
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8552696e0315ff42a7089a6f8850a34, type: 3}
