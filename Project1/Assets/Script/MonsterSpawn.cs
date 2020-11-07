@@ -43,8 +43,8 @@ public class MonsterSpawn : MonoBehaviour
     public Vector3 startPosition;
     public Fadeinout fade;
     
-    public BigInteger BossHpCount = 2850;
-    public BigInteger MonsterHpCount = 570;
+    public BigInteger BossHpCount = 800;
+    public BigInteger MonsterHpCount = 100;
 
     public StageManager stg;
     private void Awake()

@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
     public int[] Level;
     private void Awake()
     {
-        int count = 2;
+        int count = 4;
         for (int i = 1; i < upgradeButton.Length + 1; i++)
         {
             upgradeButton[i - 1] = GameObject.Find("Button" + i).GetComponent<UpgradeButton>();
