@@ -12,7 +12,7 @@ public class ItemList : MonoBehaviour
     public Slider[] WeaponGradeSlider;
     public BigInteger item_Attack;
     public int maxLevel = 10;
-    ShopButton shop;
+    private ShopButton shop;
     private int StartAttackByUpgrade = 1;
 
     private void Start()
@@ -44,6 +44,7 @@ public class ItemList : MonoBehaviour
         }
         DataController.GetInstance().Saveitem(this);
     }
+
     public void Update()
     {
         if(shop.SkinOnWeapon == false)
@@ -87,10 +88,12 @@ public class ItemList : MonoBehaviour
                 break;
         }
     }
+
     public void AttechmentPlayeritem(string itemname)
     {
         Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", itemname);
     }
+
     public void AttachmentCheck()
     {
         for (int i = 0; i < weaponData.dataArray.Length; i++)

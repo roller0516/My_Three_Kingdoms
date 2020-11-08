@@ -37,7 +37,6 @@ public class DamageText : MonoBehaviour
     {
         text.text = Damage.ToString(); /*Text_Damage().ToString();*/
         transform.Translate(new Vector3(0, 2 * Time.deltaTime, 0));
-        //Color_.a = Mathf.Lerp(text.color.a, 0, Time.deltaTime * alphaSpeed);
        
     }
 

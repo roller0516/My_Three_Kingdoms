@@ -165,7 +165,7 @@ MonoBehaviour:
   knockbackPower: 1
   moveSpeed: 0.5
   Hpbar: {fileID: 0}
-  HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
+  HpbarBasic: {fileID: 5555713624055502308, guid: 4808b19a6a0e6c7498e2aefc609f77d8,
     type: 3}
 --- !u!65 &3326395477266109114
 BoxCollider:

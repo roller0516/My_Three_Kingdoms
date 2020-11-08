@@ -45,9 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fx
+    uniqueID: 2975260991
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: AboveObject
-    uniqueID: 2196093183
     locked: 0

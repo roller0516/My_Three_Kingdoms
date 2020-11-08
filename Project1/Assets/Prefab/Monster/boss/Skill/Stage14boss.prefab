@@ -154,4 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Monster: {fileID: 0}
   moveSpeed: 0.5
-  Maxhitcount: 0
+  Maxhitcount: 14

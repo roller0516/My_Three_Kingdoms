@@ -170,7 +170,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1, z: 1}
-  m_Center: {x: 0, y: 0.19, z: 0}
+  m_Center: {x: 0, y: 0.22, z: 0}
 --- !u!114 &4049847502466637095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,5 +194,5 @@ MonoBehaviour:
   knockbackPower: 1
   moveSpeed: 0.5
   Hpbar: {fileID: 0}
-  HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
+  HpbarBasic: {fileID: 5555713624055502308, guid: 4808b19a6a0e6c7498e2aefc609f77d8,
     type: 3}

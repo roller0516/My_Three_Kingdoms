@@ -6,6 +6,7 @@ using TMPro;
 using System.Numerics;
 using Common;
 using Vector3 = UnityEngine.Vector3;
+using Quaternion = UnityEngine.Quaternion;
 
 
 public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -19,7 +20,9 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public BigInteger CurrentCost1;
     [HideInInspector]
     public BigInteger goldByUpgrade;
-
+    public GameObject ParentsTr;
+    public GameObject FX;
+    public RectTransform ParentsRr;
     [HideInInspector]
     public int Level = 0;
 
@@ -54,14 +57,17 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void PurChaseUpgrade(int num) //구매 함수
     {
-        SoundManager.instance.ButtonSound();
+        SoundManager.instance.Purchase();
         if (Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
+                ParentsRr = ParentsTr.GetComponent<RectTransform>();
+                GameObject Clone = Instantiate(FX, ParentsRr.position, Quaternion.identity);
+                Clone.transform.SetParent(ParentsTr.transform);
                 DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
-                
+                Destroy(Clone, 1f);
                 UpdateUpgrade();
                 
                 DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure1,10000))+goldByUpgrade);

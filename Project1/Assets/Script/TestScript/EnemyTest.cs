@@ -6,6 +6,7 @@ using System.Numerics;
 using Vector3 = UnityEngine.Vector3;
 using Vector2 = UnityEngine.Vector2;
 using Quaternion = UnityEngine.Quaternion;
+using System.Collections;
 
 public class EnemyTest : MonoBehaviour
 {
@@ -106,9 +107,9 @@ public class EnemyTest : MonoBehaviour
         float d = Vector2.Distance(target.position, transform.position);
         if (MonsterSpawn.GetInstance().BossFail == true)
         {
-            Player.Instance._AniState = Player.AnimState.Groggy;
             Player.Instance.moveSpeed = 0f;
             moveSpeed = 0f;
+            StartCoroutine("Startmove");
         }
         else if (MonsterSpawn.GetInstance().BossFail == false)
         {
@@ -118,11 +119,12 @@ public class EnemyTest : MonoBehaviour
                 Player.Instance.moveSpeed = 3f;
                 Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
                 Player.Instance._AniState = Player.AnimState.moveSpeedup;
+                FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
             }
             else if (d > 2f && d <= 3f) // 2.1 ~ 3f
             {
                 //Player.Instance._AniState = Player.AnimState.Idle;
-
+                FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
                 if (_AniState == AnimState.die) // 몬스터의 애니메이션이 Die면 속도가 0
                     moveSpeed = 0f;
                 else // 다른 애니메이션이면 move 속도 2
@@ -133,7 +135,6 @@ public class EnemyTest : MonoBehaviour
             }
             else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
             {
-                FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = true;
                 if (HitCount == 0)
                 {
                     Player.Instance._AniState = Player.AnimState.Attack;
@@ -290,5 +291,10 @@ public class EnemyTest : MonoBehaviour
             return;
         }
     }
-    
+
+    IEnumerator Startmove()
+    {
+        yield return new WaitForSeconds(0.5f);
+        MonsterSpawn.GetInstance().BossFail = false;
+    }
 }

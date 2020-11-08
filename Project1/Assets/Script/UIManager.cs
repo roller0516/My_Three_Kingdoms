@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI Knowledge;
     public TextMeshProUGUI Ticket;
     public TextMeshProUGUI PaidGold;
+
     public float time;
     public float Starttime;
     public float Currenttime;
@@ -51,8 +52,6 @@ public class UIManager : MonoBehaviour
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     public EquipCheck[] equipButton;
-    
-    //public TeasureCostButton[] Teasurecost_Special = new TeasureCostButton[15];
     
     public string SearchName;
     ItemList item_l;
@@ -125,8 +124,9 @@ public class UIManager : MonoBehaviour
                 {
                     item_l.bt[i].interactable = true;
                     weaponcost[i].upGradeTex.gameObject.SetActive(true);
+                    weaponcost[i].im.gameObject.SetActive(true);
                     item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/nomalbutton");
-                    weaponcost[i].upGradeTex.gameObject.SetActive(true);
+                    print("");
                 }
                 else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
@@ -134,7 +134,6 @@ public class UIManager : MonoBehaviour
                     item_l.bt[i].interactable = false;
                     item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/Complete");
                     weaponcost[i].upGradeTex.gameObject.SetActive(false);
-                    
                     if (i == item_l.weaponData.dataArray.Length - 1)// i가 마지막일때는 return으로 빠져나간다.
                         return;
                     else if (item_l.weaponData.dataArray[i + 1].Level == 0) 
@@ -142,6 +141,7 @@ public class UIManager : MonoBehaviour
                         weaponcost[i + 1].upGradeTex.gameObject.SetActive(true);
                         item_l.im[i + 1].sprite = Resources.Load<Sprite>("UI/Weapon/nomalbutton");
                         item_l.bt[i + 1].interactable = true;
+                        weaponcost[i+1].im.gameObject.SetActive(true);
                     }
                 }
             }
@@ -429,6 +429,7 @@ public class UIManager : MonoBehaviour
             }
            
         }
+
         if (MonsterSpawn.GetInstance().BossSummonON == true)
         {
             timeText.gameObject.SetActive(true);
@@ -439,13 +440,13 @@ public class UIManager : MonoBehaviour
                 time = 0;
                 Currenttime = Starttime;
                 StartCoroutine("BossNoDeath");
-                MonsterSpawn.GetInstance().stg.MonsterCount = 1;
+                MonsterSpawn.GetInstance().stg.MonsterCount -=4;
                 if (MonsterSpawn.GetInstance().PrevMonster != null)
-                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject,1.2f);
+                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject,2f);
                 MonsterSpawn.GetInstance().BossSummonON = false;
-                MonsterSpawn.GetInstance().BossFail = true;
             }
         }
+
         else if (PopUpSystem.GetInstance().EnterDeongun == true)
         {
             timeText.gameObject.SetActive(true);
@@ -453,11 +454,12 @@ public class UIManager : MonoBehaviour
             Currenttime -= time;
             if (Currenttime <= 0)
             {
+                print("aaa");
+                PopUpSystem.GetInstance().EnterDeongun = false;
                 MonsterSpawn.GetInstance().stg.stageSound();
                 PopUpSystem.GetInstance().ClosePopUp();
                 MonsterSpawn.GetInstance().MimicIsDie = false;
                 FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
-                PopUpSystem.GetInstance().EnterDeongun = false;
                 time = 0;
                 Currenttime = Starttime;
                 Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y +20f, Player.Instance.transform.position.z);
@@ -479,10 +481,11 @@ public class UIManager : MonoBehaviour
     {
         MonsterSpawn.GetInstance().transform.position = MonsterSpawn.GetInstance().startPosition;
         MonsterSpawn.GetInstance().MonsterCount = 1;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         MonsterSpawn.GetInstance().fade.Fade();
         yield return new WaitForSeconds(0.5f);
         MonsterSpawn.GetInstance().MonsterCount = 0;
         Player.Instance.transform.position = Player.Instance.startPosition;
+        MonsterSpawn.GetInstance().BossFail = true;
     }
 }

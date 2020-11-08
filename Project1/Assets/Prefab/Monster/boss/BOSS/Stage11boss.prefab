@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9224234fd0c7cca4e8550698da997c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossName: Stage10boss
+  BossName: Stage11boss
   hitCount: 0
   hit: {fileID: 1760992571876156, guid: bfbb1577c0cf6194893d32135866cd83, type: 3}
   Crihit: {fileID: 1347330118340980, guid: a270d4b31a4d11a4b8302acf069f853a, type: 3}
@@ -181,7 +181,7 @@ MonoBehaviour:
   knockbackPower: 1
   moveSpeed: 0.5
   Hpbar: {fileID: 0}
-  HpbarBasic: {fileID: 7823910449497127726, guid: 698cad54139f4b04b9896f95e5d8f297,
+  HpbarBasic: {fileID: 5555713624055502308, guid: 4808b19a6a0e6c7498e2aefc609f77d8,
     type: 3}
 --- !u!65 &7951342821502789970
 BoxCollider:

@@ -494,6 +494,7 @@ public class DataController : MonoBehaviour
     public void LoadStage(MonsterSpawn mosterSpawn)
     {
         mosterSpawn.stg.curStage = PlayerPrefs.GetInt("Stage", 1);
+        mosterSpawn.stg.MonsterCount = PlayerPrefs.GetInt("MonsterCount", 1);
         string MonsterHP = mosterSpawn.MonsterHpCount.ToString();
         MonsterHP = PlayerPrefs.GetString("MonsterHpCount", MonsterHP);
         mosterSpawn.MonsterHpCount = BigInteger.Parse(MonsterHP);
@@ -507,6 +508,7 @@ public class DataController : MonoBehaviour
         PlayerPrefs.SetInt("Stage", (int)mosterSpawn.stg.curStage);
         PlayerPrefs.SetString("MonsterHpCount", mosterSpawn.MonsterHpCount.ToString());
         PlayerPrefs.SetString("BossHpCount", mosterSpawn.BossHpCount.ToString());
+        PlayerPrefs.SetInt("MonsterCount", mosterSpawn.stg.MonsterCount);
     }
     public void LoadTeasure(TeasureCostButton TeasureButton)
     {

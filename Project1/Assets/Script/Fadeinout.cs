@@ -110,7 +110,8 @@ public class Fadeinout : MonoBehaviour
                     {
                         skeletonAni.AnimationState.SetAnimation(0, "6-1", true);
                         skeletonAni.AnimationState.AddAnimation(0, "6-2", false,0);
-                       
+                        SoundManager.instance.Treasurefail();
+
                     }
                     else if (TouchCount >= 2)
                     {
@@ -144,6 +145,7 @@ public class Fadeinout : MonoBehaviour
         ClickOn = false;
         yield return new WaitForSeconds(2.6f);
         ani.speed = 1;
+        SoundManager.instance.TreasureSuccess();
         ClickOn = true;
     }
     

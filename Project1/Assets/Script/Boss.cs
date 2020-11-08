@@ -49,6 +49,7 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
+        print(BossName);
         sl = GameObject.FindWithTag("Canvas").GetComponent<SpecialitemList>();
         ani = GetComponent<Animator>(); // 애니메이션
         skeletonRenderer = GetComponent<SkeletonRenderer>();//스파인
@@ -98,53 +99,63 @@ public class Boss : MonoBehaviour
     {
         float d = Vector2.Distance(target.position, transform.position);
 
-        if (d > 3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
+        if (MonsterSpawn.GetInstance().BossFail == true)
         {
-            Player.Instance.Monster = this.gameObject;
-            Player.Instance.moveSpeed = 3f;
-            Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
-            Player.Instance._AniState = Player.AnimState.moveSpeedup;
-        }
-        else if (d > 2f && d <= 3f) // 2.1 ~ 3f
-        {
-            Player.Instance._AniState = Player.AnimState.Idle;
-
-            if (_AniState == AnimState.die) // 몬스터의 애니메이션이 Die면 속도가 0
-                moveSpeed = 0f;
-            else // 다른 애니메이션이면 move 속도 2
-            {
-                _AniState = AnimState.move;
-                moveSpeed = 2f;
-            }
-        }
-        else if (d <=2  && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
-        {
-            FindObjectOfType< CreatureSummon >().GetComponent< CreatureSummon >().Skillbutton.interactable = true;
-            if (hitCount == 0)
-            {
-                Player.Instance._AniState = Player.AnimState.Attack;
-            }
-            else if (hitCount == 1)
-            {
-                Player.Instance._AniState = Player.AnimState.Attack2;
-            }
-            else if (hitCount == 2)
-            {
-                Player.Instance._AniState = Player.AnimState.Attack3;
-            }
-            if (hitCount == 3)
-                hitCount = 0;
+            Player.Instance._AniState = Player.AnimState.Groggy;
             Player.Instance.moveSpeed = 0f;
-            _AniState = AnimState.Idle;
-            moveSpeed = 0;
+            moveSpeed = 0f;
         }
-        else if (d > 4f) // 거리가 4보다 클때
+        else if (MonsterSpawn.GetInstance().BossFail == false)
         {
-            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
-            Player.Instance._AniState = Player.AnimState.move;
-            Player.Instance.moveSpeed = 2f;
-            moveSpeed = 2f;
-            _AniState = AnimState.move;
+            if (d > 3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
+            {
+                Player.Instance.Monster = this.gameObject;
+                Player.Instance.moveSpeed = 3f;
+                Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
+                Player.Instance._AniState = Player.AnimState.moveSpeedup;
+                FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
+            }
+            else if (d > 2f && d <= 3f) // 2.1 ~ 3f
+            {
+                Player.Instance._AniState = Player.AnimState.Idle;
+                FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
+                if (_AniState == AnimState.die) // 몬스터의 애니메이션이 Die면 속도가 0
+                    moveSpeed = 0f;
+                else // 다른 애니메이션이면 move 속도 2
+                {
+                    _AniState = AnimState.move;
+                    moveSpeed = 2f;
+                }
+            }
+            else if (d <= 2 && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
+            {
+                
+                if (hitCount == 0)
+                {
+                    Player.Instance._AniState = Player.AnimState.Attack;
+                }
+                else if (hitCount == 1)
+                {
+                    Player.Instance._AniState = Player.AnimState.Attack2;
+                }
+                else if (hitCount == 2)
+                {
+                    Player.Instance._AniState = Player.AnimState.Attack3;
+                }
+                if (hitCount == 3)
+                    hitCount = 0;
+                Player.Instance.moveSpeed = 0f;
+                _AniState = AnimState.Idle;
+                moveSpeed = 0;
+            }
+            else if (d > 4f) // 거리가 4보다 클때
+            {
+                FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
+                Player.Instance._AniState = Player.AnimState.move;
+                Player.Instance.moveSpeed = 2f;
+                moveSpeed = 2f;
+                _AniState = AnimState.move;
+            }
         }
     }
     public void TakeDamage(BigInteger damage) // 데미지 함수

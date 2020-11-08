@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
         my_PlayerDamage = Playerdata.Damage + itemlist.item_Attack;
 
         SetCurrentAnimation(_AniState);
-        
     }
     
     private void SetCurrentAnimation(AnimState _state) // 플레이어 애니메이션 

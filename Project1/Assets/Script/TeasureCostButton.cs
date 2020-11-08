@@ -42,6 +42,7 @@ public class TeasureCostButton : MonoBehaviour
 
     public void PurChaseUpgrade() //구매 함수
     {
+        SoundManager.instance.Purchase();
         if (Level < MaxLevel)
         {
             if (DataController.GetInstance().GetKnowledge() >= CurrentCost)

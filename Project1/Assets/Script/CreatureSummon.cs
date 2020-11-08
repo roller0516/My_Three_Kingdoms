@@ -12,7 +12,7 @@ public class CreatureSummon : MonoBehaviour
     public float skillcooltime;
     public float MaxSkillcooltime;
     public float CrurrentTime;
-    bool BossSkillOn;
+    public bool BossSkillOn;
     public bool BossSkillCheck;
     public GameObject[] Creatures;
     public string CreatureName;

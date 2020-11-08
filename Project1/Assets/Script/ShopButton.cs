@@ -127,6 +127,8 @@ public class ShopButton : MonoBehaviour
         
         if (shopitemAmor[num].PuchaseComplete == true)
         {
+            GoldArmorText[num].gameObject.SetActive(false);
+            Gold_im_Armor[num].gameObject.SetActive(false);
             if (Amortemp != num)
             {
                 Amorcount = 1;
@@ -189,6 +191,8 @@ public class ShopButton : MonoBehaviour
     {
         if (shopitemWeapon[num].PuchaseComplete == true)
         {
+            GoldWeapnText[num].gameObject.SetActive(false);
+            Gold_im_weapon[num].gameObject.SetActive(false);
             if (Weapontemp != num)
             {
                 Weaponcount = 1;
@@ -224,8 +228,10 @@ public class ShopButton : MonoBehaviour
     }
     public void puchaseArmor(int num)
     {
+        
         if (DataController.GetInstance().GetPaidGold() >= shopitemAmor[num].Cost && shopitemAmor[num].PuchaseComplete == false)
         {
+            SoundManager.instance.Purchase();
             DataController.GetInstance().SubPaidGold(shopitemAmor[num].Cost);
             ChangeSkin_Amor(num);
             AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
@@ -234,13 +240,16 @@ public class ShopButton : MonoBehaviour
         }
         else 
         {
+            SoundManager.instance.EquipSound();
             ChangeSkin_Amor(num);
         }
     }
     public void puchaseWeapon(int num)
     {
+        
         if (DataController.GetInstance().GetPaidGold() >= shopitemWeapon[num].Cost && shopitemWeapon[num].PuchaseComplete == false)
         {
+            SoundManager.instance.Purchase();
             DataController.GetInstance().SubPaidGold(shopitemWeapon[num].Cost);
             ChangeSkin_Weapon(num);
             WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
@@ -249,6 +258,7 @@ public class ShopButton : MonoBehaviour
         }
         else
         {
+            SoundManager.instance.EquipSound();
             ChangeSkin_Weapon(num);
             Amorcount = 1;
         }

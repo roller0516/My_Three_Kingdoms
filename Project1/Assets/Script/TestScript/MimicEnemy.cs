@@ -95,6 +95,7 @@ public class MimicEnemy : MonoBehaviour
 
         if (d > 3f && d < 4f) // 거리가 2보단크고 3보다 작을때 2~ 3.9
         {
+            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
             Player.Instance.Monster = this.gameObject;
             Player.Instance.moveSpeed = 3f;
             Player.Instance.moveSpeed = Mathf.Lerp(Player.Instance.moveSpeed, 0, Time.deltaTime);
@@ -103,6 +104,7 @@ public class MimicEnemy : MonoBehaviour
         }
         else if (d > 2f && d <= 3f) // 2.1 ~ 3f
         {
+            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
             ani.speed = 1;
             if (_AniState == AnimState.die) // 몬스터의 애니메이션이 Die면 속도가 0
                 moveSpeed = 0f;
@@ -113,7 +115,7 @@ public class MimicEnemy : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
-            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = true;
+
             if (HitCount == 0)
             {
                 Player.Instance._AniState = Player.AnimState.Attack;
@@ -144,7 +146,7 @@ public class MimicEnemy : MonoBehaviour
     public void TakeDamage(BigInteger damage) // 데미지 함수
     {
         HitCount++;
-        SoundManager.instance.HitSound();
+        SoundManager.instance.MimicHit();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성
                                                                                                                                    //go.transform.parent = this.transform;
@@ -204,7 +206,7 @@ public class MimicEnemy : MonoBehaviour
     }
     public void CreatureDamage(BigInteger damage) // 데미지 함수
     {
-        SoundManager.instance.HitSound();
+        SoundManager.instance.MimicHit();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성
                                                                                                                                    //go.transform.parent = this.transform;
@@ -222,7 +224,7 @@ public class MimicEnemy : MonoBehaviour
                 Hpbar.gameObject.SetActive(false);
                 _AniState = AnimState.die;
                 MonsterSpawn.instance.MimicIsDie = true;
-                Destroy(this.gameObject, 1f);
+                Destroy(this.gameObject, 2f);
                 Hpbar.gameObject.SetActive(false);
             }
             count++;
@@ -243,6 +245,6 @@ public class MimicEnemy : MonoBehaviour
     public void Deth()
     {
         Hpbar.gameObject.SetActive(false);
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,1f);
     }
 }

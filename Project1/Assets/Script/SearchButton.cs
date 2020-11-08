@@ -380,7 +380,7 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     if (RandomRange1 <= 10)
                     {
-                        RewardGold = Random.Range(2, 11);
+                        RewardGold = Random.Range(20, 30);
                         RewardKnowledge = Random.Range(50, 116);
                         RewardGold = sl.Upgrade * RewardGold;
                         DataController.GetInstance().AddPaidGold(RewardGold);

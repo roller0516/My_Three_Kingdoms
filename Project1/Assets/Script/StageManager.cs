@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class StageManager : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    //public Slider MonsterCountSlider;
-    public float MonsterCount = 1;
+    public int MonsterCount = 1;
     public float curStage = 1;
-    public float MaxStage =10;
+    public float MaxStage =5;
+    public float BossStage = 50;
     public MeshRenderer[] BackGroud = new MeshRenderer[3];
 
     private void Start()

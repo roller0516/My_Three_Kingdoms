@@ -11,9 +11,13 @@ public class SoundManager : MonoBehaviour
     public AudioClip ButtonClickSound;
     public AudioClip Boss_s;
     public AudioClip Tap_s;
+    public AudioClip Purchase_s;
     public AudioClip Critical_s;
     public AudioClip HIT;
+    public AudioClip Mimichit;
     public AudioClip EquipSuond;
+    public AudioClip TreasureFail;
+    public AudioClip TreasuerSuccess;
     public AudioClip[] Bgm;
     private void Awake()
     {
@@ -71,6 +75,21 @@ public class SoundManager : MonoBehaviour
         BgmSource.clip = Bgm[num];
         BgmSource.Play();
     }
-    
+    public void Purchase()
+    {
+        myAudio.PlayOneShot(Purchase_s);
+    }
+    public void MimicHit()
+    {
+        myAudio.PlayOneShot(Mimichit);
+    }
+    public void Treasurefail()
+    {
+        myAudio.PlayOneShot(TreasureFail);
+    }
+    public void TreasureSuccess()
+    {
+        myAudio.PlayOneShot(TreasuerSuccess);
+    }
 }
 

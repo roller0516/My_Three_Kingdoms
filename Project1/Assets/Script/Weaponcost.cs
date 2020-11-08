@@ -30,7 +30,7 @@ public class Weaponcost : MonoBehaviour
 
     public void PurChaseUpgrade(int num) //구매 함수
     {
-        SoundManager.instance.ButtonSound();
+        SoundManager.instance.Purchase();
         if (item_l.weaponData.dataArray[num].Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost)
@@ -113,14 +113,17 @@ public class Weaponcost : MonoBehaviour
                 break;
         }
     }
+
     public void UpdateUI()//ui의 변화를 받아온다
     {
         upGradeTex.text = "" + CurrentCost;
     }
+
     private void Update()
     {
         ScarceCost_textColor();
     }
+
     public void ScarceCost_textColor()//재화 부족시 컬러변경
     {
         for (int i = 0; i < item_l.weaponData.dataArray.Length; i ++)
