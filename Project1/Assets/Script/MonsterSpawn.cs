@@ -49,7 +49,7 @@ public class MonsterSpawn : MonoBehaviour
     public Vector3 startPosition;
     public Fadeinout fade;
     
-    public BigInteger BossHpCount = 1000000000;
+    public BigInteger BossHpCount = 6300;
     public BigInteger MonsterHpCount = 100;
 
     public StageManager stg;
@@ -115,7 +115,7 @@ public class MonsterSpawn : MonoBehaviour
                 IsDie = false;
                 stg.MonsterCount++;
                 stg.curStage++;
-                MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 100)), 100);
+                MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 130)), 100);
                 StartCoroutine("MaxMonsterDie");
                 DataController.GetInstance().SaveStage(this);
             }
@@ -134,7 +134,7 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
-            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 100)), 100);
+            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 100)), 130);
             BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
             DataController.GetInstance().SaveStage(this);
         }

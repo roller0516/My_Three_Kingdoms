@@ -9068,7 +9068,7 @@ MonoBehaviour:
   button_: {fileID: 7059433881822976093}
   Level_img: {fileID: 7059433882362360309}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 2520
+  GoldByUpgrade: 162
   StartCurrentCost: 
 --- !u!1 &7059433881824683619
 GameObject:
@@ -9984,7 +9984,7 @@ MonoBehaviour:
   button_: {fileID: 7059433881834908686}
   Level_img: {fileID: 7059433882961493238}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 2790000000000000000000000
+  GoldByUpgrade: 27795302832778
   StartCurrentCost: 
 --- !u!1 &7059433881835585860
 GameObject:
@@ -20429,7 +20429,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882028309071}
   Level_img: {fileID: 7059433883645381632}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 81600000000000000000000
+  GoldByUpgrade: 9265100944259
   StartCurrentCost: 
 --- !u!1 &7059433882030352512
 GameObject:
@@ -21888,7 +21888,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882045517074}
   Level_img: {fileID: 7059433881691333780}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 40800
+  GoldByUpgrade: 1458
   StartCurrentCost: 
 --- !u!1 &7059433882046057909
 GameObject:
@@ -29029,7 +29029,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882171483490}
   Level_img: {fileID: 7059433882698439893}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 5580000000000000000000000
+  GoldByUpgrade: 62539431373750
   StartCurrentCost: 
 --- !u!1 &7059433882172266604
 GameObject:
@@ -33719,7 +33719,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882243143190}
   Level_img: {fileID: 7059433883665378361}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 22000000000000
+  GoldByUpgrade: 7845264902
   StartCurrentCost: 
 --- !u!1 &7059433882245076336
 GameObject:
@@ -49043,7 +49043,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882508292169}
   Level_img: {fileID: 7059433881868179237}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 46000000000000000
+  GoldByUpgrade: 158866614271
   StartCurrentCost: 
 --- !u!1 &7059433882511858239
 GameObject:
@@ -51814,7 +51814,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882559983468}
   Level_img: {fileID: 7059433882022663041}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 144
+  GoldByUpgrade: 18
   StartCurrentCost: 
 --- !u!1 &7059433882560447811
 GameObject:
@@ -54806,7 +54806,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882612871789}
   Level_img: {fileID: 7059433883146871076}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 1200000
+  GoldByUpgrade: 13122
   StartCurrentCost: 
 --- !u!1 &7059433882615300545
 GameObject:
@@ -59113,7 +59113,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882667331288}
   Level_img: {fileID: 7059433883314472954}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 4800000000000
+  GoldByUpgrade: 2324522934
   StartCurrentCost: 
 --- !u!1 &7059433882668648805
 GameObject:
@@ -59439,7 +59439,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882669718085}
   Level_img: {fileID: 7059433883108999174}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 24000000
+  GoldByUpgrade: 118098
   StartCurrentCost: 
 --- !u!1 &7059433882669732361
 GameObject:
@@ -66196,7 +66196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 7200
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7059433882803640599
@@ -68129,7 +68129,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882832382084}
   Level_img: {fileID: 7059433883031760371}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 480000000
+  GoldByUpgrade: 1062882
   StartCurrentCost: 
 --- !u!1 &7059433882836893575
 GameObject:
@@ -74830,7 +74830,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882943128810}
   Level_img: {fileID: 7059433882178710213}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 660000000000000
+  GoldByUpgrade: 47071589414
   StartCurrentCost: 
 --- !u!1 &7059433882948284454
 GameObject:
@@ -76698,7 +76698,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882974500905}
   Level_img: {fileID: 7059433882044812293}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 1440000000
+  GoldByUpgrade: 9565938
   StartCurrentCost: 
 --- !u!1 &7059433882975783758
 GameObject:
@@ -78216,7 +78216,7 @@ MonoBehaviour:
   button_: {fileID: 7059433882997900478}
   Level_img: {fileID: 7059433881736306017}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 27000000000000000
+  GoldByUpgrade: 305023899399
   StartCurrentCost: 
 --- !u!1 &7059433882998649698
 GameObject:
@@ -80566,7 +80566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 3600
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7059433883038076256
@@ -83586,7 +83586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 10800
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7059433883084458976
@@ -92580,7 +92580,7 @@ MonoBehaviour:
   button_: {fileID: 7059433883280112451}
   Level_img: {fileID: 7059433882795829066}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 156000000000
+  GoldByUpgrade: 258280326
   StartCurrentCost: 
 --- !u!1 &7059433883281372576
 GameObject:
@@ -94003,7 +94003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 3600
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7059433883301237769
@@ -97813,7 +97813,7 @@ MonoBehaviour:
   button_: {fileID: 7059433883364080411}
   Level_img: {fileID: 7059433883249096513}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 6
+  GoldByUpgrade: 2
   StartCurrentCost: 
 --- !u!1 &7059433883365042557
 GameObject:
@@ -101856,7 +101856,7 @@ MonoBehaviour:
   button_: {fileID: 7059433883432474448}
   Level_img: {fileID: 7059433882216339633}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 37800000000
+  GoldByUpgrade: 86093442
   StartCurrentCost: 
 --- !u!1 &7059433883433065777
 GameObject:
@@ -104409,7 +104409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1800
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7059433883471661515
@@ -109640,7 +109640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1800
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7059433883572010680
@@ -120440,7 +120440,7 @@ MonoBehaviour:
   button_: {fileID: 7059433883779878965}
   Level_img: {fileID: 7059433882740719518}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 84000000000000000
+  GoldByUpgrade: 686303773649
   StartCurrentCost: 
 --- !u!1 &7059433883780657324
 GameObject:
@@ -121084,7 +121084,7 @@ MonoBehaviour:
   button_: {fileID: 7059433883785094477}
   Level_img: {fileID: 7059433882673731170}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 300000000000000000000
+  GoldByUpgrade: 6176733962839
   StartCurrentCost: 
 --- !u!1 &7059433883786690404
 GameObject:
