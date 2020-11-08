@@ -527,10 +527,13 @@ public class DataController : MonoBehaviour
         player.Critical = PlayerPrefs.GetInt("Critical", Player.Instance.Critical);
         player.CriticalPer = PlayerPrefs.GetInt("CriticalPer", Player.Instance.CriticalPer);
     }
-   
     public void LoadSkilltime(SKillCooltime skill)
     {
         skill.MaxSkillcooltime = PlayerPrefs.GetFloat("skill", skill.MaxSkillcooltime);
+    }
+    public void LoadCreatureSummon(CreatureSummon creaturesummon)
+    {
+        creaturesummon.MaxSkillcooltime = PlayerPrefs.GetFloat("CreatureSkillButton", creaturesummon.MaxSkillcooltime);
     }
     public void LoadBossDic(BossDictionary bossdic)
     {

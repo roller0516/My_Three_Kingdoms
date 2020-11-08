@@ -160,6 +160,11 @@ public class TeasureCostButton : MonoBehaviour
 
                 break;
             case "treasure_6":
+                float time2 = GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime;
+                float time3 = GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().MaxSkillcooltime;
+                time2 = time3 * (1 - ((float)goldByUpgrade / 100));
+                GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime = time2;
+                PlayerPrefs.SetFloat("CreatureSkillButton", GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime);
                 break;
             case "treasure_8":
                 Player.Instance.CriticalPer += 2;

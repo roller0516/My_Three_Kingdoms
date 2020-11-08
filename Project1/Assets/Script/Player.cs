@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     public enum AnimState
     {
-        Idle, move, Attack, moveSpeedup,Attack2,Attack3
+        Idle, move, Attack, moveSpeedup,Attack2,Attack3 , Groggy
     }
 
     private static Player s_instance = null;
@@ -89,6 +89,9 @@ public class Player : MonoBehaviour
                 break;
             case AnimState.moveSpeedup:
                 ani.SetFloat("MoveSpeed",2.0f);
+                break;
+            case AnimState.Groggy:
+                ani.SetInteger("AniState", (int)AnimState.Groggy);
                 break;
         }
     }

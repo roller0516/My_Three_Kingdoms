@@ -19,7 +19,9 @@ public class CreatureSummon : MonoBehaviour
 
     private void Start()
     {
+        DataController.GetInstance().LoadCreatureSummon(this);
         CrurrentTime = MaxSkillcooltime;
+        
     }
     public void Boss_SkillOn()
     {

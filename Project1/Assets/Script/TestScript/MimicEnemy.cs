@@ -113,6 +113,7 @@ public class MimicEnemy : MonoBehaviour
         }
         else if (d <= 2f && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
+            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = true;
             if (HitCount == 0)
             {
                 Player.Instance._AniState = Player.AnimState.Attack;
@@ -133,6 +134,7 @@ public class MimicEnemy : MonoBehaviour
         }
         else if (d > 4f) // 거리가 4보다 클때
         {
+            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             moveSpeed = 0;
@@ -152,14 +154,22 @@ public class MimicEnemy : MonoBehaviour
         Hp -= damage;// hp 뺌
 
 
-         if (Hp <= 0)
-         {
-             Hpbar.gameObject.SetActive(false);
-             _AniState = AnimState.die;
-             MonsterSpawn.instance.MimicIsDie = true;
-             Destroy(this.gameObject, 1f);
-             Hpbar.gameObject.SetActive(false);
-         }
+        if (Hp <= 0)
+        {
+            if (count == 0)
+            {
+                Hpbar.gameObject.SetActive(false);
+                _AniState = AnimState.die;
+                MonsterSpawn.instance.MimicIsDie = true;
+                Destroy(this.gameObject, 1f);
+                Hpbar.gameObject.SetActive(false);
+            }
+            count++;
+        }
+        else if (count > 0)
+        {
+            return;
+        }
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
@@ -177,11 +187,19 @@ public class MimicEnemy : MonoBehaviour
 
         if (Hp <= 0)
         {
-            Hpbar.gameObject.SetActive(false);
-            _AniState = AnimState.die;
-            MonsterSpawn.instance.MimicIsDie = true;
-            Destroy(this.gameObject, 1f);
-            Hpbar.gameObject.SetActive(false);
+            if (count == 0)
+            {
+                Hpbar.gameObject.SetActive(false);
+                _AniState = AnimState.die;
+                MonsterSpawn.instance.MimicIsDie = true;
+                Destroy(this.gameObject, 1f);
+                Hpbar.gameObject.SetActive(false);
+            }
+            count++;
+        }
+        else if (count > 0)
+        {
+            return;
         }
     }
     public void CreatureDamage(BigInteger damage) // 데미지 함수

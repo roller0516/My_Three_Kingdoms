@@ -97,28 +97,23 @@ public class DamageText : MonoBehaviour
     //    int num = numlist.Count < 2 ? numlist[0] : numlist[numlist.Count - 1] * p + numlist[numlist.Count - 2];
 
 
-
     //    if (num < 1000)
     //        return num.ToString();
 
     //    float f = (num / (float)p);
 
-    //    return f.ToString("N1") + GetUnitText(numlist.Count - 1);
+    //    return f.ToString("N1") + GetUnitText();
     //}
 
-    //private string GetUnitText(int index)
+    //private string GetUnitText()
     //{
-    //    int idx = index - 1;
-    //    if (idx < 0) return "";
-    //    int repeatCount = (index / 26) + 1;
-    //    string retstr = "";
-    //    for (int i = 0; i < repeatCount; i++)
-    //    {
-    //        retstr += (char)(64 + index % 26);
-    //    }
-    //    return retstr;
+    //    string unit = "";
+    //    if () { }
+    //    else if (Damage >= 10000)
+    //        unit = "만";
+    //    else if (Damage >= 10000)
+    //        unit = "만";
+
+    //    return unit;
     //}
-
-
-    
 }

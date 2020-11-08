@@ -7254,9 +7254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_slicing-sword
-  increase: 576000
+  increase: 388800
   goldByUpgrade: 0
-  StartCost: 1058150
+  StartCost: 1088600
   MaxLevel: 10
   upGradeTex: {fileID: 3263438258962862317}
   im: {fileID: 495480299691116934}
@@ -10995,7 +10995,7 @@ MonoBehaviour:
   button_: {fileID: 5946907798338464356}
   Level_img: {fileID: 1988003851217383972}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 22000000000000
+  GoldByUpgrade: 7845264902
   StartCurrentCost: 
 --- !u!1 &884417307273374607
 GameObject:
@@ -11153,9 +11153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 24524881920000
+  increase: 18139852800
   goldByUpgrade: 0
-  StartCost: 34161891746150
+  StartCost: 50791587800
   MaxLevel: 10
   upGradeTex: {fileID: 4404140221378999518}
   im: {fileID: 6659703532483015896}
@@ -16628,7 +16628,7 @@ MonoBehaviour:
   button_: {fileID: 2921758319109128259}
   Level_img: {fileID: 684302149117272217}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 4800000000000
+  GoldByUpgrade: 2324522934
   StartCurrentCost: 
 --- !u!1 &1256371082236908011
 GameObject:
@@ -18899,9 +18899,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 2332432000
+  increase: 83980800
   goldByUpgrade: 0
-  StartCost: 3561890150
+  StartCost: 235146200
   MaxLevel: 10
   upGradeTex: {fileID: 2953589386108673490}
   im: {fileID: 4995193398440046847}
@@ -19340,9 +19340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 79721330039321000000000
+  increase: 5077997833420800
   goldByUpgrade: 0
-  StartCost: 991431084821705000000000
+  StartCost: 14218393933578200
   MaxLevel: 10
   upGradeTex: {fileID: 1322320701595000825}
   im: {fileID: 1804753402965981624}
@@ -20622,7 +20622,7 @@ MonoBehaviour:
   button_: {fileID: 7758476731701344625}
   Level_img: {fileID: 2806536288960159484}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 300000000000000000000
+  GoldByUpgrade: 6176733962839
   StartCurrentCost: 
 --- !u!1 &1574329221301514136
 GameObject:
@@ -21739,7 +21739,7 @@ MonoBehaviour:
   button_: {fileID: 5598283025720121920}
   Level_img: {fileID: 4299665301605974112}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 81600000000000000000000
+  GoldByUpgrade: 9265100944259
   StartCurrentCost: 
 --- !u!1 &1666188735149516933
 GameObject:
@@ -22796,7 +22796,7 @@ MonoBehaviour:
   button_: {fileID: 6657204675781329157}
   Level_img: {fileID: 5306214422850980351}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 40800
+  GoldByUpgrade: 1458
   StartCurrentCost: 
 --- !u!1 &1755178220668551373
 GameObject:
@@ -26224,7 +26224,7 @@ MonoBehaviour:
   button_: {fileID: 8375639523400846275}
   Level_img: {fileID: 4164000068951821673}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 1440000000
+  GoldByUpgrade: 9565938
   StartCurrentCost: 
 --- !u!1 &1969159205712074342
 GameObject:
@@ -26328,7 +26328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 3600
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &1988003851217383972
@@ -27376,7 +27376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 7200
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &2077297834655831887
@@ -34562,9 +34562,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 129024000
+  increase: 13996800
   goldByUpgrade: 0
-  StartCost: 207266150
+  StartCost: 39191000
   MaxLevel: 10
   upGradeTex: {fileID: 2606841479327505567}
   im: {fileID: 7571590942476530054}
@@ -42739,7 +42739,7 @@ MonoBehaviour:
   button_: {fileID: 4844725462707386756}
   Level_img: {fileID: 5843967363197192292}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 5580000000000000000000000
+  GoldByUpgrade: 62539431373750
   StartCurrentCost: 
 --- !u!1 &3254096914136461021
 GameObject:
@@ -44576,9 +44576,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 17854114037760000
+  increase: 653034700800
   goldByUpgrade: 0
-  StartCost: 23823297354146200
+  StartCost: 1828497162200
   MaxLevel: 10
   upGradeTex: {fileID: 2571543631074078518}
   im: {fileID: 8091915603155494285}
@@ -51341,7 +51341,7 @@ MonoBehaviour:
   button_: {fileID: 6578149170707366105}
   Level_img: {fileID: 1256371082236908011}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 660000000000000
+  GoldByUpgrade: 47071589414
   StartCurrentCost: 
 --- !u!1 &3883265185859231398
 GameObject:
@@ -51815,9 +51815,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapom_rusty-sword
-  increase: 4800
+  increase: 10800
   goldByUpgrade: 0
-  StartCost: 11750
+  StartCost: 30200
   MaxLevel: 10
   upGradeTex: {fileID: 1387832534658547093}
   im: {fileID: 8922188705071168967}
@@ -55838,9 +55838,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_wooden-stick
-  increase: 100
+  increase: 300
   goldByUpgrade: 0
-  StartCost: 650
+  StartCost: 800
   MaxLevel: 10
   upGradeTex: {fileID: 8051623301279488822}
   im: {fileID: 1625446997238815233}
@@ -56000,9 +56000,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_war-ax
-  increase: 8064000
+  increase: 2332800
   goldByUpgrade: 0
-  StartCost: 13730150
+  StartCost: 6531800
   MaxLevel: 10
   upGradeTex: {fileID: 2995757097505529420}
   im: {fileID: 8196607708212092929}
@@ -56934,7 +56934,7 @@ MonoBehaviour:
   button_: {fileID: 263240039794317845}
   Level_img: {fileID: 6254844521892203021}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 84000000000000000
+  GoldByUpgrade: 686303773649
   StartCurrentCost: 
 --- !u!1 &4383839140207237254
 GameObject:
@@ -57372,9 +57372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 582758282192486000000
+  increase: 141055495372800
   goldByUpgrade: 0
-  StartCost: 742005094478584000000
+  StartCost: 394955387043800
   MaxLevel: 10
   upGradeTex: {fileID: 1225612662408333473}
   im: {fileID: 9201778685783430432}
@@ -58458,7 +58458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1800
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &4484374777088627647
@@ -62056,7 +62056,7 @@ MonoBehaviour:
   button_: {fileID: 6381899729352084456}
   Level_img: {fileID: 6313553264847769646}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 6
+  GoldByUpgrade: 2
   StartCurrentCost: 
 --- !u!1 &4831280547119816884
 GameObject:
@@ -62210,7 +62210,7 @@ MonoBehaviour:
   button_: {fileID: 1368239464819909567}
   Level_img: {fileID: 6896311797070479448}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 2520
+  GoldByUpgrade: 162
   StartCurrentCost: 
 --- !u!1 &4842191397305907378
 GameObject:
@@ -63024,9 +63024,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_wooden-sword
-  increase: 600
+  increase: 1800
   goldByUpgrade: 0
-  StartCost: 2150
+  StartCost: 5000
   MaxLevel: 10
   upGradeTex: {fileID: 6657100026951420987}
   im: {fileID: 2653309632068284168}
@@ -76702,7 +76702,7 @@ MonoBehaviour:
   button_: {fileID: 4045798952491823928}
   Level_img: {fileID: 1032641984268024168}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 37800000000
+  GoldByUpgrade: 86093442
   StartCurrentCost: 
 --- !u!1 &6041276407539757819
 GameObject:
@@ -76860,9 +76860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_dagger
-  increase: 48000
+  increase: 64800
   goldByUpgrade: 0
-  StartCost: 98150
+  StartCost: 181400
   MaxLevel: 10
   upGradeTex: {fileID: 1558214801480270918}
   im: {fileID: 3860854911282772697}
@@ -80882,7 +80882,7 @@ MonoBehaviour:
   button_: {fileID: 18145416388484936}
   Level_img: {fileID: 7827515113373134853}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 156000000000
+  GoldByUpgrade: 258280326
   StartCurrentCost: 
 --- !u!1 &6415494153416065369
 GameObject:
@@ -81072,7 +81072,7 @@ MonoBehaviour:
   button_: {fileID: 2243797391002331305}
   Level_img: {fileID: 3578731470886204147}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 144
+  GoldByUpgrade: 18
   StartCurrentCost: 
 --- !u!1 &6425575629610397369
 GameObject:
@@ -82944,9 +82944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 31888533201572900000000000
+  increase: 30467987000524800
   goldByUpgrade: 0
-  StartCost: 39257670926709100000000000
+  StartCost: 85310363601469400
   MaxLevel: 10
   upGradeTex: {fileID: 5003917165889998852}
   im: {fileID: 6617616282490571402}
@@ -83052,7 +83052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 10800
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &6538765271605867453
@@ -89272,9 +89272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 637646929920000
+  increase: 108839116800
   goldByUpgrade: 0
-  StartCost: 868007877026150
+  StartCost: 304749527000
   MaxLevel: 10
   upGradeTex: {fileID: 8696691918568118490}
   im: {fileID: 3819589977143796974}
@@ -91473,9 +91473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 17139949476249600000
+  increase: 23509249228800
   goldByUpgrade: 0
-  StartCost: 22127216476101000000
+  StartCost: 65825897840600
   MaxLevel: 10
   upGradeTex: {fileID: 8285136136706269841}
   im: {fileID: 8470887809445121464}
@@ -95473,7 +95473,7 @@ MonoBehaviour:
   button_: {fileID: 8574054699623125505}
   Level_img: {fileID: 2481703321655679056}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 46000000000000000
+  GoldByUpgrade: 158866614271
   StartCurrentCost: 
 --- !u!1 &7413488624389953606
 GameObject:
@@ -95919,8 +95919,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 62.699966, y: 304}
-  m_SizeDelta: {x: 310, y: 273}
+  m_AnchoredPosition: {x: -4, y: 283.18}
+  m_SizeDelta: {x: 335.05, y: 295.06}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6196977844911009232
 CanvasRenderer:
@@ -96243,7 +96243,7 @@ MonoBehaviour:
   button_: {fileID: 836880274921773334}
   Level_img: {fileID: 2356445200435764613}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 480000000
+  GoldByUpgrade: 1062882
   StartCurrentCost: 
 --- !u!1 &7466147334963458681
 GameObject:
@@ -97755,7 +97755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1800
+  MaxTime: 600
   CurTime: 0
   isDone: 0
 --- !u!1 &7573634110216932648
@@ -98408,9 +98408,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 1021870080000
+  increase: 3023308800
   goldByUpgrade: 0
-  StartCost: 1462049186150
+  StartCost: 8465264600
   MaxLevel: 10
   upGradeTex: {fileID: 344931051615920278}
   im: {fileID: 7430543354985862810}
@@ -99323,7 +99323,7 @@ MonoBehaviour:
   button_: {fileID: 7916152986244759080}
   Level_img: {fileID: 2719795041133848783}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 2790000000000000000000000
+  GoldByUpgrade: 27795302832778
   StartCurrentCost: 
 --- !u!1 &7655146471738540143
 GameObject:
@@ -100822,9 +100822,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 46448640000
+  increase: 503884800
   goldByUpgrade: 0
-  StartCost: 68589986150
+  StartCost: 1410877400
   MaxLevel: 10
   upGradeTex: {fileID: 1497620569820343213}
   im: {fileID: 6638990639272287560}
@@ -100995,7 +100995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: -80}
+  m_AnchoredPosition: {x: 36, y: -63}
   m_SizeDelta: {x: 468.3, y: 118.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8948065552620171111
@@ -101053,8 +101053,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 33
+  m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -101069,7 +101069,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -101089,7 +101089,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 5.8201904, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -105393,7 +105393,7 @@ MonoBehaviour:
   button_: {fileID: 8819241390732717691}
   Level_img: {fileID: 6125000921847843662}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 24000000
+  GoldByUpgrade: 118098
   StartCurrentCost: 
 --- !u!1 &8077237148531478799
 GameObject:
@@ -106672,9 +106672,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 20979298158929500000000
+  increase: 846332972236800
   goldByUpgrade: 0
-  StartCost: 742005094478584000000
+  StartCost: 2369732322263000
   MaxLevel: 10
   upGradeTex: {fileID: 1383675536188823196}
   im: {fileID: 8408662117123532995}
@@ -112998,7 +112998,7 @@ MonoBehaviour:
   button_: {fileID: 2003799528658358536}
   Level_img: {fileID: 5538287118203299016}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 27000000000000000
+  GoldByUpgrade: 305023899399
   StartCurrentCost: 
 --- !u!1 &8604579642385350685
 GameObject:
@@ -114484,7 +114484,7 @@ MonoBehaviour:
   button_: {fileID: 2890587529505799139}
   Level_img: {fileID: 8787063592715589110}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 1200000
+  GoldByUpgrade: 13122
   StartCurrentCost: 
 --- !u!1 &8682913192321243845
 GameObject:
@@ -115802,7 +115802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 15}
+  m_AnchoredPosition: {x: 36, y: 24}
   m_SizeDelta: {x: 468.3, y: 118.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1906609922383763862
@@ -115859,8 +115859,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -119081,9 +119081,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 535623421132800000
+  increase: 3918208204800
   goldByUpgrade: 0
-  StartCost: 702279630789023000
+  StartCost: 10970982973400
   MaxLevel: 10
   upGradeTex: {fileID: 6683942467786694318}
   im: {fileID: 7512280157570506677}

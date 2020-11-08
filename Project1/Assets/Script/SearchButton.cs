@@ -84,6 +84,7 @@ public class SearchButton : MonoBehaviour
             switch (S_Name)
             {
                 case "하북":
+                    print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
                     RewardGold = sl.Upgrade * RewardGold;
@@ -91,7 +92,7 @@ public class SearchButton : MonoBehaviour
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
                     if (RandomRange1 <= 10)
                     {
-                        
+                        print("아이템 얻음");
                         Getitme = true;
                         if (sl.Sp_item[0].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -119,15 +120,22 @@ public class SearchButton : MonoBehaviour
                         }
                         
                     }
+                    else
+                    {
+                        Getitme = false;
+                    }
                     break;
                 case "청서":
+                    print(S_Name);
+                    RewardGold = Random.Range(2, 11);
+                    RewardKnowledge = Random.Range(50, 116);
+                    RewardGold = sl.Upgrade * RewardGold;
+                    DataController.GetInstance().AddPaidGold(RewardGold);
+                    DataController.GetInstance().AddKnowledge(RewardKnowledge);
                     if (RandomRange1 <= 10)
                     {
-                        RewardGold = Random.Range(2, 11);
-                        RewardKnowledge = Random.Range(50, 116);
-                        RewardGold = sl.Upgrade * RewardGold;
-                        DataController.GetInstance().AddPaidGold(RewardGold);
-                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                        print("아이템 얻음");
+                        
                         Getitme = true;
                         if (sl.Sp_item[2].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -154,17 +162,23 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
+                    else
+                    {
+                        Getitme = false;
+                    }
                     break;
 
                 case "중원":
-
+                    print(S_Name);
+                    RewardGold = Random.Range(2, 11);
+                    RewardKnowledge = Random.Range(50, 116);
+                    RewardGold = sl.Upgrade * RewardGold;
+                    DataController.GetInstance().AddPaidGold(RewardGold);
+                    DataController.GetInstance().AddKnowledge(RewardKnowledge);
                     if (RandomRange1 <= 10)
                     {
-                        RewardGold = Random.Range(2, 11);
-                        RewardKnowledge = Random.Range(50, 116);
-                        RewardGold = sl.Upgrade * RewardGold;
-                        DataController.GetInstance().AddPaidGold(RewardGold);
-                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                        print("아이템 얻음");
+                        
                         Getitme = true;
                         if (sl.Sp_item[4].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -191,16 +205,22 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
+                    else
+                    {
+                        Getitme = false;
+                    }
                     break;
 
                 case "강동":
+                    print(S_Name);
+                    RewardGold = Random.Range(2, 11);
+                    RewardKnowledge = Random.Range(50, 116);
+                    RewardGold = sl.Upgrade * RewardGold;
+                    DataController.GetInstance().AddPaidGold(RewardGold);
+                    DataController.GetInstance().AddKnowledge(RewardKnowledge);
                     if (RandomRange1 <= 10)
                     {
-                        RewardGold = Random.Range(2, 11);
-                        RewardKnowledge = Random.Range(50, 116);
-                        RewardGold = sl.Upgrade * RewardGold;
-                        DataController.GetInstance().AddPaidGold(RewardGold);
-                        DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                        
                         Getitme = true;
                         if (sl.Sp_item[6].itemCount < 10 && ItemRandomRange <= 50)
                         {
@@ -227,9 +247,14 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
-                    
+                    else
+                    {
+                        Getitme = false;
+                    }
+
                     break;
                 case "관중":
+                    print(S_Name);
                     if (RandomRange1 <= 10)
                     {
                         RewardGold = Random.Range(2, 11);
@@ -263,9 +288,14 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
-                   
+                    else
+                    {
+                        Getitme = false;
+                    }
+
                     break;
                 case "형북":
+                    print(S_Name);
                     if (RandomRange1 <= 10)
                     {
                         RewardGold = Random.Range(2, 11);
@@ -299,9 +329,14 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
-                    
+                    else
+                    {
+                        Getitme = false;
+                    }
+
                     break;
                 case "형남":
+                    print(S_Name);
                     if (RandomRange1 <= 10)
                     {
                         RewardGold = Random.Range(2, 11);
@@ -335,9 +370,14 @@ public class SearchButton : MonoBehaviour
                             Getitme = false;
                         }
                     }
+                    else
+                    {
+                        Getitme = false;
+                    }
 
                     break;
                 case "파촉":
+                    print(S_Name);
                     if (RandomRange1 <= 10)
                     {
                         RewardGold = Random.Range(2, 11);
@@ -370,6 +410,10 @@ public class SearchButton : MonoBehaviour
                         {
                             Getitme = false;
                         }
+                    }
+                    else
+                    {
+                        Getitme = false;
                     }
                     break;
             }

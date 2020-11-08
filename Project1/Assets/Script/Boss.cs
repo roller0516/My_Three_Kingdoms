@@ -119,6 +119,7 @@ public class Boss : MonoBehaviour
         }
         else if (d <=2  && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
         {
+            FindObjectOfType< CreatureSummon >().GetComponent< CreatureSummon >().Skillbutton.interactable = true;
             if (hitCount == 0)
             {
                 Player.Instance._AniState = Player.AnimState.Attack;
@@ -139,6 +140,7 @@ public class Boss : MonoBehaviour
         }
         else if (d > 4f) // 거리가 4보다 클때
         {
+            FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             moveSpeed = 2f;
