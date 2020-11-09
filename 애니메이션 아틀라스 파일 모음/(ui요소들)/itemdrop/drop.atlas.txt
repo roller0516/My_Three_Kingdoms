@@ -1,0 +1,41 @@
+
+drop.png
+size: 209,103
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 160, 51
+  size: 50, 47
+  orig: 50, 47
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 104, 2
+  size: 48, 47
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+3
+  rotate: true
+  xy: 104, 51
+  size: 50, 54
+  orig: 50, 54
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 2
+  size: 100, 99
+  orig: 100, 99
+  offset: 0, 0
+  index: -1
+sha
+  rotate: false
+  xy: 154, 39
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
