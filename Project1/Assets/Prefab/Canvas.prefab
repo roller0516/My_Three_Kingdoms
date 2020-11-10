@@ -6888,9 +6888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_wooden-branch
-  increase: 50
+  increase: 100
   goldByUpgrade: 0
-  StartCost: 150
+  StartCost: 200
   MaxLevel: 10
   upGradeTex: {fileID: 5461399768088926976}
   im: {fileID: 7439233369904568646}
@@ -7404,9 +7404,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 24524881920000
+  increase: 415134720000
   goldByUpgrade: 0
-  StartCost: 34161891746150
+  StartCost: 728908506900
   MaxLevel: 10
   upGradeTex: {fileID: 4953265167955814190}
   im: {fileID: 2062100189431909317}
@@ -9328,9 +9328,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_wooden-stick
-  increase: 100
+  increase: 400
   goldByUpgrade: 0
-  StartCost: 650
+  StartCost: 1300
   MaxLevel: 10
   upGradeTex: {fileID: 3646207854598674188}
   im: {fileID: 3383303856841437047}
@@ -23500,9 +23500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapom_rusty-sword
-  increase: 4800
+  increase: 8000
   goldByUpgrade: 0
-  StartCost: 11750
+  StartCost: 26900
   MaxLevel: 10
   upGradeTex: {fileID: 7890396278471439350}
   im: {fileID: 1471526617645392659}
@@ -24910,9 +24910,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 17854114037760000
+  increase: 87178291200000
   goldByUpgrade: 0
-  StartCost: 23823297354146200
+  StartCost: 143535252186900
   MaxLevel: 10
   upGradeTex: {fileID: 5914424642589076934}
   im: {fileID: 6401348906759206878}
@@ -28346,9 +28346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 129024000
+  increase: 24192000
   goldByUpgrade: 0
-  StartCost: 207266150
+  StartCost: 51930900
   MaxLevel: 10
   upGradeTex: {fileID: 2234601159181700264}
   im: {fileID: 34198563491517486}
@@ -31640,9 +31640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_slicing-sword
-  increase: 576000
+  increase: 336000
   goldByUpgrade: 0
-  StartCost: 1058150
+  StartCost: 858900
   MaxLevel: 10
   upGradeTex: {fileID: 8769277444980297466}
   im: {fileID: 1563584876174840441}
@@ -40983,9 +40983,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 31888533201572900000000000
+  increase: 3406062811447300000000
   goldByUpgrade: 0
-  StartCost: 39257670926709100000000000
+  StartCost: 4942859307914390000000
   MaxLevel: 10
   upGradeTex: {fileID: 598972487461066632}
   im: {fileID: 7778044144253269357}
@@ -48219,7 +48219,7 @@ MonoBehaviour:
   UpgradeName: weapon_dagger
   increase: 48000
   goldByUpgrade: 0
-  StartCost: 98150
+  StartCost: 138900
   MaxLevel: 10
   upGradeTex: {fileID: 6861140172007960851}
   im: {fileID: 1714669898876871490}
@@ -56827,9 +56827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 2332432000
+  increase: 241920000
   goldByUpgrade: 0
-  StartCost: 3561890150
+  StartCost: 487386900
   MaxLevel: 10
   upGradeTex: {fileID: 4357719765307435550}
   im: {fileID: 3689547006652869608}
@@ -72958,9 +72958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 582758282192486000000
+  increase: 426824913715200000
   goldByUpgrade: 0
-  StartCost: 742005094478584000000
+  StartCost: 653632006087387000
   MaxLevel: 10
   upGradeTex: {fileID: 1156992793727637527}
   im: {fileID: 7463175082946419650}
@@ -73768,9 +73768,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 637646929920000
+  increase: 5811886080000
   goldByUpgrade: 0
-  StartCost: 868007877026150
+  StartCost: 9861872346900
   MaxLevel: 10
   upGradeTex: {fileID: 4189287635786063017}
   im: {fileID: 507825417034004560}
@@ -73930,9 +73930,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 17139949476249600000
+  increase: 23712495206400000
   goldByUpgrade: 0
-  StartCost: 22127216476101000000
+  StartCost: 37107130720986900
   MaxLevel: 10
   upGradeTex: {fileID: 6382245733314195280}
   im: {fileID: 6766152580937874984}
@@ -75671,9 +75671,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 535623421132800000
+  increase: 1394852659200000
   goldByUpgrade: 0
-  StartCost: 702279630789023000
+  StartCost: 2235814240986900
   MaxLevel: 10
   upGradeTex: {fileID: 614520934192000835}
   im: {fileID: 2064959662969767156}
@@ -76206,9 +76206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 20979298158929500000000
+  increase: 8109673360588800000
   goldByUpgrade: 0
-  StartCost: 742005094478584000000
+  StartCost: 12177904676397800000
   MaxLevel: 10
   upGradeTex: {fileID: 7631493460877836078}
   im: {fileID: 4147877930927899954}
@@ -78025,9 +78025,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 46448640000
+  increase: 2661120000
   goldByUpgrade: 0
-  StartCost: 68589986150
+  StartCost: 5083866900
   MaxLevel: 10
   upGradeTex: {fileID: 6969925450306480349}
   im: {fileID: 4943734567718348587}
@@ -84329,9 +84329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_war-ax
-  increase: 8064000
+  increase: 2688000
   goldByUpgrade: 0
-  StartCost: 13730150
+  StartCost: 6234900
   MaxLevel: 10
   upGradeTex: {fileID: 3289560867411784360}
   im: {fileID: 7879920583479080977}
@@ -89285,9 +89285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 79721330039321000000000
+  increase: 162193467211776000000
   goldByUpgrade: 0
-  StartCost: 991431084821705000000000
+  StartCost: 239248758772884000000
   MaxLevel: 10
   upGradeTex: {fileID: 4886538047514982274}
   im: {fileID: 6784514558827834594}
@@ -105855,9 +105855,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_double-edged-ax
-  increase: 1021870080000
+  increase: 31933440000
   goldByUpgrade: 0
-  StartCost: 1462049186150
+  StartCost: 58306266900
   MaxLevel: 10
   upGradeTex: {fileID: 2071817328235459425}
   im: {fileID: 8091571398779201319}
@@ -110268,9 +110268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeName: weapon_wooden-sword
-  increase: 600
+  increase: 1600
   goldByUpgrade: 0
-  StartCost: 2150
+  StartCost: 6100
   MaxLevel: 10
   upGradeTex: {fileID: 6285466788519826897}
   im: {fileID: 3890274077242443362}
