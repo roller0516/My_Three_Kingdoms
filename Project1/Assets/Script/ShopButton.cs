@@ -237,6 +237,8 @@ public class ShopButton : MonoBehaviour
             AmorEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
             Amorcount = 1;
             shopitemAmor[num].PuchaseComplete = true;
+            GoldArmorText[num].gameObject.SetActive(false);
+            Gold_im_Armor[num].gameObject.SetActive(false);
         }
         else 
         {
@@ -255,6 +257,8 @@ public class ShopButton : MonoBehaviour
             WeaponEquip[num].image.sprite = Resources.Load<Sprite>("UI/Shop/w_equip");
             Weaponcount = 1;
             shopitemWeapon[num].PuchaseComplete = true;
+            GoldWeapnText[num].gameObject.SetActive(false);
+            Gold_im_weapon[num].gameObject.SetActive(false);
         }
         else
         {

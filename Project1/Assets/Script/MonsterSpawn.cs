@@ -49,8 +49,8 @@ public class MonsterSpawn : MonoBehaviour
     public Vector3 startPosition;
     public Fadeinout fade;
     
-    public BigInteger BossHpCount = 6300;
-    public BigInteger MonsterHpCount = 100;
+    public BigInteger BossHpCount = 3000;
+    public BigInteger MonsterHpCount = 50;
 
     public StageManager stg;
     private void Awake()
@@ -115,7 +115,7 @@ public class MonsterSpawn : MonoBehaviour
                 IsDie = false;
                 stg.MonsterCount++;
                 stg.curStage++;
-                MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 130)), 100);
+                MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 115)), 100);
                 StartCoroutine("MaxMonsterDie");
                 DataController.GetInstance().SaveStage(this);
             }
@@ -134,7 +134,7 @@ public class MonsterSpawn : MonoBehaviour
             stg.MonsterCount++;
             StartCoroutine("BossDeath");
             stg.curStage++;
-            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 100)), 130);
+            MonsterHpCount = BigInteger.Divide((BigInteger.Multiply(MonsterHpCount, 100)), 115);
             BossHpCount = BigInteger.Multiply(MonsterHpCount,5);
             DataController.GetInstance().SaveStage(this);
         }
@@ -243,28 +243,28 @@ public class MonsterSpawn : MonoBehaviour
         switch (Name)
         {
             case "하북":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "100000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "10000";
                 break;
             case "청서":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "2000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "200000";
                 break;
             case "중원":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "3000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "300000";
                 break;
             case "강동":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "4000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "400000";
                 break;
             case "관중":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "5000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "500000";
                 break;
             case "형북":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "60000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "6000000";
                 break;
             case "형남":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "700000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "70000000";
                 break;
             case "파촉":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "8000000000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "800000000";
                 break;
         }
 
