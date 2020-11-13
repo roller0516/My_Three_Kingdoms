@@ -102,8 +102,7 @@ public class EnemyTest : MonoBehaviour
 
     private void Distance()// 플레이어와의 거리를 계산한다.
     {
-        print(MonsterSpawn.GetInstance().BossFail);
-        print(Player.Instance._AniState);
+
         float d = Vector2.Distance(target.position, transform.position);
         if (MonsterSpawn.GetInstance().BossFail == true)
         {

@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_2_10;UNITY_2019_2;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;UNITY_ASTC_ONLY_DECOMPRESS;ANDROID_USE_SWAPPY;ENABLE_ONSCREEN_KEYBOARD;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_2_10;UNITY_2019_2;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;UNITY_ASTC_ONLY_DECOMPRESS;ANDROID_USE_SWAPPY;ENABLE_ONSCREEN_KEYBOARD;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH;USE_ADMOB;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -63,6 +63,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GleyPlugins\Ads\Example\Implementation.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Example\TestAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\AdSettings.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\AdTypeSettings.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\Advertisements.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\AdvertiserSettings.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\Constants.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\FileLoader.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\ICustomAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\MediationSettings.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\ScreenWriter.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomAdColony.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomAdmob.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomAppLovin.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomChartboost.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomFacebook.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomHeyzap.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomIronSource.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomMoPub.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomUnityAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\SupportedAdvertisers\CustomVungle.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\UserSettings.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\BoltSupport\MobileAdsBoltSupport.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\HideBanner.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\InitializeGleyAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\IsInterstitialAvailable.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\IsRewardedVideoAvailable.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\RemoveAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\SetConsentToNo.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\SetConsentToYes.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\ShowBanner.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\ShowInterstitial.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\ShowRewardedVideo.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\GameFlowSupport\UserConsentWasSet.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\HideBanner.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\InitializePlaymakerAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\IsInterstitialAvailable.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\IsRewardedVideoAvailable.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\RemoveAds.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\SetConsentToNo.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\SetConsentToYes.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\ShowBanner.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\ShowInterstitial.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\ShowRewardedVideo.cs" />
+    <Compile Include="Assets\GleyPlugins\Ads\Scripts\VisualScriptingSupport\PlayMakerSupport\Actions\UserConsentWasSet.cs" />
     <Compile Include="Assets\Hit &amp; Slashes Vol.3\Demo Scene\ButtonAnimation.cs" />
     <Compile Include="Assets\Hit &amp; Slashes Vol.3\Demo Scene\GameManager.cs" />
     <Compile Include="Assets\Hit &amp; Slashes Vol.3\SelfDestruct.cs" />
@@ -75,6 +120,8 @@
     <Compile Include="Assets\QuickSheet\Example\Difficulty.cs" />
     <Compile Include="Assets\QuickSheet\Runtime\ExposePropertyAttribute.cs" />
     <Compile Include="Assets\QuickSheet\Runtime\Util\ConvertExt.cs" />
+    <Compile Include="Assets\Script\Ads\AdService.cs" />
+    <Compile Include="Assets\Script\Ads\NPService.cs" />
     <Compile Include="Assets\Script\BigDecimal.cs" />
     <Compile Include="Assets\Script\Boss.cs" />
     <Compile Include="Assets\Script\BossDictionary.cs" />
@@ -333,6 +380,23 @@
     <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\UISelectableExtension.cs" />
     <Compile Include="Assets\unity-ui-extensions\Scripts\VR Extensions\VRCursor.cs" />
     <Compile Include="Assets\unity-ui-extensions\Scripts\VR Extensions\VRInputModule.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Base\NPDemoBase.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Base\NPDisabledFeatureDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\AddressBookDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\BillingDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\CloudServicesDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\GameServicesDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\MediaLibraryDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\NetworkConnectivityDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\NotificationDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\RateMyAppAdvanced.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\RemoteNotificationTest.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\SharingDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\TwitterDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\UIDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\UtilityDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Features\WebViewDemo.cs" />
+    <Compile Include="Assets\VoxelBusters\NativePlugins\Demo\Scripts\Utility\Utility.cs" />
     <None Include="Assets\Animation\Boss\stage4boss\boss_1_4.atlas.txt" />
     <None Include="Assets\unity-ui-extensions\Resources\Shaders\UIAdditive.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -348,6 +412,7 @@
     <None Include="Assets\QuickSheet\GDataPlugin\Templates\DataClass.txt" />
     <None Include="Assets\Animation\Boss\stage8boss\boss_2_3.atlas.txt" />
     <None Include="Assets\Animation\Boss\stage7boss\boss_2_2.atlas.txt" />
+    <None Include="Assets\GleyPlugins\Ads\Scripts\Version.txt" />
     <None Include="Assets\unity-ui-extensions\Resources\Shaders\UI Particle Premultiply Blend.shader" />
     <None Include="Assets\unity-ui-extensions\Resources\Shaders\UISoftAdditive.shader" />
     <None Include="Assets\Animation\Boss\stage5boss\boss_1_5.atlas.txt" />
@@ -405,6 +470,7 @@
     <None Include="Assets\Animation\Player_ani\Main.atlas.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\QuickSheet\ExcelPlugin\Templates\DataClass.txt" />
+    <None Include="Assets\GleyPlugins\Ads\AdOrderFile\AdOrder.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\unity-ui-extensions\Resources\Shaders\UIScreen.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
@@ -413,6 +479,9 @@
     <None Include="Assets\Animation\Monster\Monster2-1\monster_2stage_2.atlas.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
@@ -429,23 +498,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
@@ -459,11 +519,17 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
@@ -1004,6 +1070,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{2574C794-DA02-A8F8-8732-33138443F073}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="spine-unity-examples.csproj">
       <Project>{6E04799D-1A57-F6A2-035B-D92D31633359}</Project>
       <Name>spine-unity-examples</Name>
@@ -1019,6 +1089,14 @@
     <ProjectReference Include="spine-unity-editor.csproj">
       <Project>{89782D97-AF75-5463-27DC-7182F31383E2}</Project>
       <Name>spine-unity-editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="GoogleMobileAds.csproj">
+      <Project>{8335DDC0-FF4F-B730-9698-07E61CB7E4E5}</Project>
+      <Name>GoogleMobileAds</Name>
+    </ProjectReference>
+    <ProjectReference Include="GoogleMobileAds.Editor.csproj">
+      <Project>{301EB109-BE85-1C0D-036A-AF778AAACDF9}</Project>
+      <Name>GoogleMobileAds.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

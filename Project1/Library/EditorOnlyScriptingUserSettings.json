@@ -1,1 +1,1 @@
-{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[],"m_AllowUnsafeCode":false}
+{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"USES_CLOUD_SERVICES;USES_GAME_SERVICES"},{"first":4,"second":"USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH"},{"first":7,"second":"USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH;USE_ADMOB;USE_ADMOB_PATCH"},{"first":14,"second":"USES_CLOUD_SERVICES;USES_GAME_SERVICES"},{"first":25,"second":"USES_CLOUD_SERVICES;USES_GAME_SERVICES"}],"m_AllowUnsafeCode":false}

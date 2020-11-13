@@ -10,30 +10,34 @@ public class EquipCheck : MonoBehaviour
     public string Name;
     public void EquipCheck_method()
     {
-        Equip = true;
         if (EquipCount == 1)
         {
             Equip = false;
             EquipCount = 0;
             UIManager.GetInstance().equipButton[BossDictionary.GetInstance().num].GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/equip");
+            FindObjectOfType<CreatureSummon>().gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/skill_default");
         }
         else if (EquipCount == 0)
         {
-            if (UIManager.GetInstance().equipButton[BossDictionary.GetInstance().num].Equip == true)
+            Equip = true;
+            if (UIManager.GetInstance().equipButton[BossDictionary.GetInstance().num].Equip == true && BossDictionary.GetInstance().bossinfo[BossDictionary.GetInstance().num].IsChange == true)
             {
-                for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++) 
+                for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
                 {
-                    print(BossDictionary.GetInstance().num);
-                    if (i == BossDictionary.GetInstance().num)
+                    if (i == BossDictionary.GetInstance().num )
+                    {
+                        FindObjectOfType<CreatureSummon>().gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/Boss" + (i + 1) + "Icon");
+                        UIManager.GetInstance().equipButton[i].GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/equipment");
+                        EquipCount++;
                         continue;
+                    }
                     UIManager.GetInstance().equipButton[i].Equip = false;
-                    UIManager.GetInstance().equipButton[i].GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/equip");
                     UIManager.GetInstance().equipButton[i].EquipCount = 0;
+                    UIManager.GetInstance().equipButton[i].GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/equip");
                 }
+                
             }
-            GameObject.FindObjectOfType<CreatureSummon>().gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/Boss" + (BossDictionary.GetInstance().num + 1) + "Icon");
-            UIManager.GetInstance().equipButton[BossDictionary.GetInstance().num].GetComponent<Button>().image.sprite = Resources.Load<Sprite>("UI/BossDictionary/equipment");
-            EquipCount++;
+            
         }
     }
 }

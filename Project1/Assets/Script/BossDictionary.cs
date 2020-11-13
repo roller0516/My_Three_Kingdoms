@@ -159,8 +159,6 @@ public class BossDictionary : MonoBehaviour
         }
         else if (Count > 0)
         {
-            print(prevnum);
-            print(num);
             if (prevnum != num)
             {
                 UIManager.GetInstance().equipButton[num].gameObject.SetActive(true);
@@ -199,8 +197,5 @@ public class BossDictionary : MonoBehaviour
                 Bossim.sprite = Resources.Load<Sprite>("UI/BossDictionary/" + (i + 1));
             }
         }
-            
-            
-        
     }
 }
