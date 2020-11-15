@@ -35,7 +35,7 @@ public class ItemList : MonoBehaviour
                 UpgradeWeapon(weaponData.dataArray[i].Level, i);
                 if (i >= 1) // 나무막대기 이상의 급부터
                 {
-                    if (weaponData.dataArray[i].Isusing == true)
+                    if (weaponData.dataArray[i].Isusing == true&& weaponData.dataArray[i].Level>1)
                         if (shop.SkinOnWeapon == false)
                             AttechmentPlayeritem(weaponData.dataArray[i].UID);
                     weaponData.dataArray[i-1].Isusing = false;

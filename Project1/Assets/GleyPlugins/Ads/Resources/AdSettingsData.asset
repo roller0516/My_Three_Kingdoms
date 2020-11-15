@@ -105,11 +105,11 @@ MonoBehaviour:
         displayName: Banner ID
         notRequired: 0
       idInterstitial:
-        id: 
+        id: ca-app-pub-3940256099942544/1033173712
         displayName: Interstitial ID
         notRequired: 0
       idRewarded:
-        id: 
+        id: ca-app-pub-3940256099942544/5224354917
         displayName: Rewarded Video ID
         notRequired: 0
       hasBanner: 1

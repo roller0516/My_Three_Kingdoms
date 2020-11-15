@@ -45,7 +45,7 @@ public class MonsterSpawn : MonoBehaviour
     public MonsterSpawnStage[] MonsterByStage;
     public GameObject[] BossMonster;
     public GameObject MimicMonster;
-
+    int bossStage = 0;
     public Vector3 startPosition;
     public Fadeinout fade;
     
@@ -150,6 +150,7 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (PopUpSystem.GetInstance().gameObject.activeSelf && PopUpSystem.GetInstance().EnterDeongun)
         {
+            UIManager.GetInstance().timeText.gameObject.SetActive(true);
             UIManager.GetInstance().Starttime = 30;
             UIManager.GetInstance().Currenttime = 30;
             if (PrevMonster != null)
@@ -160,7 +161,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         else if (stg.MonsterCount % stg.BossStage == 0) //보스 스폰
         {
-            int bossStage = 0;
+            UIManager.GetInstance().timeText.gameObject.SetActive(true);
             UIManager.GetInstance().Starttime = 60;
             UIManager.GetInstance().Currenttime = 60;
             BossSummonON = true;
@@ -168,7 +169,7 @@ public class MonsterSpawn : MonoBehaviour
             CurTime = 0;
             MonsterCount++;
 
-            if (stg.curStage > BossMonster.Length) // 랜덤으로 생성
+            if (stg.curStage > 150) // 랜덤으로 생성
             {
                 GameObject go = Instantiate(BossMonster[BossRandomRange], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
                 PrevMonster = go;
@@ -204,11 +205,13 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator Death()
     {
+        stg.StageText();
         yield return new WaitForSeconds(0.1f);
         transform.position = new Vector2(transform.position.x + 3f, transform.position.y);
     }
     IEnumerator BossDeath()
     {
+        stg.StageText();
         transform.position = startPosition;
         MonsterCount = 1;
         yield return new WaitForSeconds(0.3f);
@@ -219,6 +222,7 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator MimicDeath()
     {
+        stg.StageText();
         transform.position = startPosition;
         MonsterCount = 1;
         fade.SearchReward();
@@ -230,6 +234,7 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator MaxMonsterDie()
     {
+        stg.StageText();
         transform.position = startPosition;
         MonsterCount = 1;
         yield return new WaitForSeconds(0.3f);

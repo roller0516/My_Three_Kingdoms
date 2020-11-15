@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using System.Numerics;
-using Common;
+using System.Collections;
 using Vector3 = UnityEngine.Vector3;
-using Quaternion = UnityEngine.Quaternion;
+
 
 
 public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -20,9 +20,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public BigInteger CurrentCost1;
     [HideInInspector]
     public BigInteger goldByUpgrade;
-    public GameObject ParentsTr;
-    public GameObject FX;
-    public RectTransform ParentsRr;
     [HideInInspector]
     public int Level = 0;
 
@@ -39,11 +36,12 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public string StartGoldByUpgrade;
     public string GoldByUpgrade;
     public string StartCurrentCost;
-    
+    public ParticleSystem Fx;
     float CurTime;
     bool PressDown = false;
     private void Start()
     {
+        
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
@@ -58,24 +56,25 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void PurChaseUpgrade(int num) //구매 함수
     {
         SoundManager.instance.Purchase();
+        
         if (Level < MaxLevel)
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
-                ParentsRr = ParentsTr.GetComponent<RectTransform>();
-                GameObject Clone = Instantiate(FX, ParentsRr.position, Quaternion.identity);
-                Clone.transform.SetParent(ParentsTr.transform);
+                Fx.gameObject.SetActive(true);
                 DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
-                Destroy(Clone, 1f);
                 UpdateUpgrade();
                 
                 DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure1,10000))+goldByUpgrade);
                 goldByUpgrade = (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade;
                 UpdateUI();
+                StartCoroutine("FxTime");
                 DataController.GetInstance().SaveUpgradeButton(this);
+                
             }
         }
+        
     }
     public void UpdateUpgrade() // 업그레이드 공식
     {
@@ -154,5 +153,12 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerDown(PointerEventData eventData)
     {
         PressDown = true;
+    }
+    IEnumerator FxTime()
+    {
+        Fx.Play();
+        yield return new WaitForSeconds(0.2f);
+        Fx.gameObject.SetActive(false);
+        Fx.Stop();
     }
 }

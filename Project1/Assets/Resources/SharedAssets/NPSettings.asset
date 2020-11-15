@@ -21,7 +21,7 @@ MonoBehaviour:
       m_usesGameServices: 1
       m_mediaLibrary:
         value: 0
-        usesCamera: 1
+        usesCamera: 0
         usesPhotoAlbum: 1
       m_usesNetworkConnectivity: 0
       m_notificationService:
@@ -96,9 +96,7 @@ MonoBehaviour:
       m_consumerKey: 
       m_consumerSecret: 
   m_gameServicesSettings:
-    m_leaderboardMetadataCollection:
-    - m_globalID: 
-      m_platformIDs: []
+    m_leaderboardMetadataCollection: []
     m_achievementMetadataCollection: []
     m_iOS:
       m_showDefaultAchievementCompletionBanner: 1

@@ -52,17 +52,12 @@ public class MimicEnemy : MonoBehaviour
         ani = GetComponent<Animator>(); // 애니메이션
 
         target = Player.Instance.transform; // 플레이어를 타겟으로 한다
-
-
-        // 무기변경 랜덤으로 변경
         Hp = BigInteger.Parse( MaxHp);
         cam = Camera.main;
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         HitCount = 0;
-        goldreward = BigInteger.Divide(BigInteger.Multiply(BigInteger.Parse(MaxHp), 115), 100);
-        knowledgereward = BigInteger.Divide(BigInteger.Multiply(BigInteger.Parse(MaxHp), 5), 100);
     }
 
     private void Update()
@@ -154,24 +149,7 @@ public class MimicEnemy : MonoBehaviour
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
         Hp -= damage;// hp 뺌
-
-
-        if (Hp <= 0)
-        {
-            if (count == 0)
-            {
-                Hpbar.gameObject.SetActive(false);
-                _AniState = AnimState.die;
-                MonsterSpawn.instance.MimicIsDie = true;
-                Destroy(this.gameObject, 1f);
-                Hpbar.gameObject.SetActive(false);
-            }
-            count++;
-        }
-        else if (count > 0)
-        {
-            return;
-        }
+        HpCheck();
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
@@ -187,52 +165,18 @@ public class MimicEnemy : MonoBehaviour
 
         Hp -= damage;// hp 뺌
 
-        if (Hp <= 0)
-        {
-            if (count == 0)
-            {
-                Hpbar.gameObject.SetActive(false);
-                _AniState = AnimState.die;
-                MonsterSpawn.instance.MimicIsDie = true;
-                Destroy(this.gameObject, 1f);
-                Hpbar.gameObject.SetActive(false);
-            }
-            count++;
-        }
-        else if (count > 0)
-        {
-            return;
-        }
+        HpCheck();
     }
     public void CreatureDamage(BigInteger damage) // 데미지 함수
     {
         SoundManager.instance.MimicHit();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
         Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성
-                                                                                                                                   //go.transform.parent = this.transform;
-
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
-
-
         Hp -= damage;// hp 뺌
 
-        if (Hp <= 0)
-        {
-            if (count == 0)
-            {
-                Hpbar.gameObject.SetActive(false);
-                _AniState = AnimState.die;
-                MonsterSpawn.instance.MimicIsDie = true;
-                Destroy(this.gameObject, 2f);
-                Hpbar.gameObject.SetActive(false);
-            }
-            count++;
-        }
-        else if (count > 0)
-        {
-            return;
-        }
+        
     }
 
     public void SetHpbar()
@@ -242,9 +186,27 @@ public class MimicEnemy : MonoBehaviour
         Hpbar.value = (float.Parse(num.ToString()) / 100);
         Hpbar.transform.position = cam.WorldToScreenPoint(this.transform.position + new Vector3(0, 1.3f, 0));
     }
+    public void HpCheck()
+    {
+        if (Hp <= 0)
+        {
+            if (count == 0)
+            {
+                Hpbar.gameObject.SetActive(false);
+                _AniState = AnimState.die;
+                MonsterSpawn.instance.MimicIsDie = true;
+                Deth();
+            }
+            count++;
+        }
+        else if (count > 0)
+        {
+            return;
+        }
+    }
     public void Deth()
     {
         Hpbar.gameObject.SetActive(false);
-        Destroy(this.gameObject,1f);
+        Destroy(this.gameObject,2f);
     }
 }

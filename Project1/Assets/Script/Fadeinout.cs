@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Spine.Unity;
+using Spine;
 
 public class Fadeinout : MonoBehaviour
 {
@@ -60,18 +61,21 @@ public class Fadeinout : MonoBehaviour
     {
         if (SkeletonGraphic.activeSelf == true)
         {
-            aniCheck = true;
+            //aniCheck = true;
+            
             if (Win)
             {
                 Lose = false;
-                if (aniCheck == true && TouchCount == 0)
-                {
-                    ani.speed = 0;
-                    aniCheck = false;
-                    skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
-                }
                 if (ClickOn == true) 
                 {
+                    
+                    if (/*aniCheck == true && */TouchCount == 0)
+                    {
+                        ani.speed = 0;
+                        //aniCheck = false;
+                        
+                        skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
+                    }
                     if (Input.GetMouseButtonDown(0))
                     {
                         TouchCount++;
@@ -79,36 +83,47 @@ public class Fadeinout : MonoBehaviour
                         {
                             getitem();
                             StartCoroutine("rewardCoroutine");
+                            skeletonAni.SkeletonDataAsset.GetAnimationStateData().SetMix("2", "3", 0.4f);
                             skeletonAni.AnimationState.SetAnimation(0, "3", false);
                             skeletonAni.AnimationState.AddAnimation(0, "4", false, 0);
                             skeletonAni.AnimationState.AddAnimation(0, "5-1", false, 0);
                             skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
+                            
                         }
                         else if (TouchCount >= 2)
                         {
-                            ani.SetBool("Treasure1", false);
-                            ani.SetBool("Treasure2", false);
+                            //skeletonAni.AnimationState.SetEmptyAnimations(0);
                             skeletonAni.AnimationState.SetEmptyAnimations(0);
                             skeletonAni.AnimationState.SetAnimation(0, "1", false);
-
+                            ani.SetBool("Treasure1", false);
+                            ani.SetBool("Treasure2", false);
                             SkeletonGraphic.SetActive(false);
                             TouchCount = 0;
+                            Win = false;
                         }
 
                     }
+
                 }
+                
             }
             else if (Lose)
             {
-                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().ani.SetTrigger("Treasure2");
-                ani.speed = 0;
+                
                 Win = false;
+                if (/*aniCheck == true && */TouchCount == 0)
+                {
+                    //aniCheck = false;
+                    skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
+                }
                 if (Input.GetMouseButtonDown(0))
                 {
                     TouchCount++;
+                   
                     if (TouchCount == 1)
                     {
-                        skeletonAni.AnimationState.SetAnimation(0, "6-1", true);
+                        skeletonAni.SkeletonDataAsset.GetAnimationStateData().SetMix("2", "6-1", 0.4f);
+                        skeletonAni.AnimationState.SetAnimation(0, "6-1", false);
                         skeletonAni.AnimationState.AddAnimation(0, "6-2", false,0);
                         SoundManager.instance.Treasurefail();
 
@@ -117,9 +132,11 @@ public class Fadeinout : MonoBehaviour
                     {
                         skeletonAni.AnimationState.SetEmptyAnimations(0);
                         skeletonAni.AnimationState.SetAnimation(0, "1", false);
-
+                        
+                        //skeletonAni.AnimationState.SetAnimation(0, "1", false);
                         SkeletonGraphic.SetActive(false);
                         TouchCount = 0;
+                        Lose = false;
                     }
 
                 }
@@ -128,16 +145,13 @@ public class Fadeinout : MonoBehaviour
     }
     void getitem() 
     {
-        for (int i = 0; i < UIManager.GetInstance().searchButtons.Length; i++)
+        if (SearchButton.Getitme == true)
         {
-            if (SearchButton.Getitme == true)
-            {
-                ani.SetBool("Treasure1", true);
-            }
-            else 
-            {
-                ani.SetBool("Treasure2", true);
-            }
+            ani.SetBool("Treasure1", true);
+        }
+        else
+        {
+            ani.SetBool("Treasure2", true);
         }
     }
     IEnumerator rewardCoroutine() 

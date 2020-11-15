@@ -358,26 +358,6 @@ public class DataController : MonoBehaviour
         }
 
     }
-    //public void AddGoldPerClick(string name_ , BigInteger newGoldPerClick)
-    //{
-    //    string name = name_;
-
-    //    if (name == "GoldPerClick0") 
-    //    {
-    //        m_goldperClick = BigInteger.Add(m_goldperClick, newGoldPerClick);
-    //        SetGoldPerClick(name, m_goldperClick);
-    //    }
-    //    else if (name == "GoldPerClick1")
-    //    {
-    //        m_goldperClick1 = BigInteger.Add(m_goldperClick1, newGoldPerClick);
-    //        SetGoldPerClick(name, m_goldperClick1);
-    //    }
-    //    else if (name == "GoldPerClick2")
-    //    {
-    //        m_goldperClick2 = BigInteger.Add(m_goldperClick2, newGoldPerClick);
-    //        SetGoldPerClick(name, m_goldperClick2);
-    //    }
-
     #endregion
     #region Ticket
     public void SetTicket(int newTicket)

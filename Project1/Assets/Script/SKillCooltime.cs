@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using ProjectD;
 public class SKillCooltime : MonoBehaviour
 {
     public TextMeshProUGUI cooltime;
     public Image Backgroudimage;
     public Button Skillbutton;
+    public GameObject AdsPopUP;
     public float skillcooltime;
     public float MaxSkillcooltime;
     public float skilldurationtime;
@@ -23,6 +24,19 @@ public class SKillCooltime : MonoBehaviour
     void Update()
     {
         AttackSpeedCooltime();
+    }
+    public void AdsPopUp()
+    {
+        AdsPopUP.SetActive(true);
+    }
+    public void AdsPopUpClose()
+    {
+        AdsPopUP.SetActive(false);
+    }
+    public void AdsShow()
+    {
+        AdService.Instance.ShowInterstitial(Attack_speedSkillOn);
+        AdsPopUpClose();
     }
     public void Attack_speedSkillOn()
     {

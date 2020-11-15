@@ -62,6 +62,7 @@ public class BossDictionary : MonoBehaviour
         {
             iconbutton[i].sprite = bossinfo[i].BossImage;
         }
+        rect = iconbutton[num].GetComponent<RectTransform>();
         DataController.GetInstance().LoadBossDic(this);
     }
     private void Update()
@@ -146,10 +147,11 @@ public class BossDictionary : MonoBehaviour
         
         if (Count == 0)
         {
-            rect = iconbutton[num].GetComponent<RectTransform>();
+            
             go = Instantiate(SelectImage, rect.position, Quaternion.identity);
-            go.transform.parent = iconbutton[num].transform;
-            go.transform.localScale = Vector3.one;
+            go.transform.SetParent(iconbutton[num].transform);
+            go.transform.position = new Vector3(iconbutton[num].transform.position.x, iconbutton[num].transform.position.y - 5.4f, iconbutton[num].transform.position.z);
+            go.gameObject.transform.localScale = Vector3.one;
             Bossim.gameObject.SetActive(true);
             BossName = bossinfo[num].BossName;
             NameCheck(BossName);
@@ -174,8 +176,8 @@ public class BossDictionary : MonoBehaviour
             BossName = bossinfo[num].BossName;
             Bossim.gameObject.SetActive(true);
             NameCheck(BossName);
-            go.transform.parent = iconbutton[num].transform;
-            go.transform.position = iconbutton[num].transform.position;
+            go.transform.SetParent(iconbutton[num].transform); 
+            go.transform.position = new Vector3( iconbutton[num].transform.position.x, iconbutton[num].transform.position.y-5.4f, iconbutton[num].transform.position.z);
             prevnum = num;
         }
     }

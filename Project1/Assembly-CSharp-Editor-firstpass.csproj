@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.2.10f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -51,9 +53,6 @@
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2019.2.10f1</UnityVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.2.10f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -118,67 +117,67 @@
     <None Include="Assets\Standard Assets\VoxelBusters\NativePlugins\Plugins\Features\NotificationService\Editor\google-services.template" />
     <None Include="Assets\Standard Assets\VoxelBusters\NativePlugins\Editor\CPNPDependencies.xml" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -370,70 +369,73 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OOXML">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OOXML.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OOXML.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXml4Net.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXmlFormats.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/ExcelPlugin/Editor/Library/NPOI.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.AccessControl">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.AccessControl.DLL</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.AccessControl.DLL</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Client.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Documents">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Documents.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Documents.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Extensions">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Extensions.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Spreadsheets">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Spreadsheets.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.136.0">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/QuickSheet/GDataPlugin/Editor/Google/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.136.0">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll</HintPath>
+    <Reference Include="Google.IOSResolver_v1.2.161">
+      <HintPath>D:/TeamProject1/Project1/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.161.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.136.0">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll</HintPath>
+    <Reference Include="Google.JarResolver_v1.2.161">
+      <HintPath>D:/TeamProject1/Project1/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.161.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver_v1.2.161">
+      <HintPath>D:/TeamProject1/Project1/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.161.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.161">
+      <HintPath>D:/TeamProject1/Project1/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.161.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/won1/Desktop/TeamProject1/Project1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>D:/TeamProject1/Project1/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -807,10 +809,6 @@
       <Project>{C2164FEC-FCDB-9D06-EB26-BDE962D12EA3}</Project>
       <Name>spine-unity-examples-editor</Name>
     </ProjectReference>
-    <ProjectReference Include="spine-unity-editor.csproj">
-      <Project>{89782D97-AF75-5463-27DC-7182F31383E2}</Project>
-      <Name>spine-unity-editor</Name>
-    </ProjectReference>
     <ProjectReference Include="GoogleMobileAds.csproj">
       <Project>{8335DDC0-FF4F-B730-9698-07E61CB7E4E5}</Project>
       <Name>GoogleMobileAds</Name>
@@ -818,6 +816,10 @@
     <ProjectReference Include="GoogleMobileAds.Editor.csproj">
       <Project>{301EB109-BE85-1C0D-036A-AF778AAACDF9}</Project>
       <Name>GoogleMobileAds.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity-editor.csproj">
+      <Project>{89782D97-AF75-5463-27DC-7182F31383E2}</Project>
+      <Name>spine-unity-editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

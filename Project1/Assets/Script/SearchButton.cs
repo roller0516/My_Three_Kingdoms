@@ -80,7 +80,7 @@ public class SearchButton : MonoBehaviour
         {
             PopUpSystem.GetInstance().ClosePopUp();
             FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = true;
-            MonsterSpawn.GetInstance().stg.stageSound();
+            MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage/50));
             switch (S_Name)
             {
                 case "하북":

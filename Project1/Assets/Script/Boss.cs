@@ -62,7 +62,6 @@ public class Boss : MonoBehaviour
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
         Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
         Hpbar.transform.SetAsFirstSibling();
-        knowledgereward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 5), 100);
         goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         hitCount = 0;
     }
@@ -117,7 +116,6 @@ public class Boss : MonoBehaviour
             }
             else if (d > 2f && d <= 3f) // 2.1 ~ 3f
             {
-                Player.Instance._AniState = Player.AnimState.Idle;
                 FindObjectOfType<CreatureSummon>().GetComponent<CreatureSummon>().Skillbutton.interactable = false;
                 if (_AniState == AnimState.die) // 몬스터의 애니메이션이 Die면 속도가 0
                     moveSpeed = 0f;
@@ -129,8 +127,11 @@ public class Boss : MonoBehaviour
             }
             else if (d <= 2 && Hp > 0) // 2보다 크거나 같고 hp가 0보다 클때
             {
-                
-                if (hitCount == 0)
+                if (UIManager.GetInstance().Currenttime <= 0.1)
+                {
+                    Player.Instance._AniState = Player.AnimState.Idle;
+                }
+                else if (hitCount == 0)
                 {
                     Player.Instance._AniState = Player.AnimState.Attack;
                 }
@@ -179,7 +180,6 @@ public class Boss : MonoBehaviour
         dam.Damage = damage;
         Hp -= damage;// hp 뺌
         HpCheck();
-
     }
     public void CreatureDamage(BigInteger damage) // 데미지 함수
     {

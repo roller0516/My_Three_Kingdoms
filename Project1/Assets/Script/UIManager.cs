@@ -52,7 +52,6 @@ public class UIManager : MonoBehaviour
     public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     public EquipCheck[] equipButton;
-    
     public string SearchName;
     ItemList item_l;
     [HideInInspector]
@@ -92,12 +91,12 @@ public class UIManager : MonoBehaviour
         }
         SearchButton();
         WeaponUpdate();
-        Gold.text = GetGoldText();
-        Knowledge.text = KnowledgeText();
         GoldPerClickText(GoldPerClickDisPlayer);
         GoldCostClickText(GoldCostClickDisPlayer);
         WeaponCostText(WeaponCostDisPlay);
         AtkText(Atktext);
+        Gold.text = GetGoldText();
+        Knowledge.text = KnowledgeText();
         Ticket.text = DataController.GetInstance().GetTicket().ToString();
     }
     public void TeasureButton() 
@@ -126,7 +125,6 @@ public class UIManager : MonoBehaviour
                     weaponcost[i].upGradeTex.gameObject.SetActive(true);
                     weaponcost[i].im.gameObject.SetActive(true);
                     item_l.im[i].sprite = Resources.Load<Sprite>("UI/Weapon/nomalbutton");
-                    print("");
                 }
                 else if (item_l.weaponData.dataArray[i].Level == 10)
                 {
@@ -358,8 +356,29 @@ public class UIManager : MonoBehaviour
     }
     public void SearchButton()
     {
-        if (MonsterSpawn.GetInstance().MimicIsDie == true)
+        if (MonsterSpawn.GetInstance().BossSummonON == true)//보스 소환 
         {
+            time = Time.deltaTime;
+            Currenttime -= time;
+            if (Currenttime <= 0)
+            {
+                MonsterSpawn.GetInstance().BossSummonON = false;
+                time = 0;
+                Currenttime = Starttime;
+                StartCoroutine("BossNoDeath");
+                MonsterSpawn.GetInstance().stg.MonsterCount -=4;
+                if (MonsterSpawn.GetInstance().PrevMonster != null)
+                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject,2f);
+            }
+        }
+        if (PopUpSystem.GetInstance().EnterDeongun == true)
+        {
+            MonsterSpawn.GetInstance().stg.text.text = "어느보물방...";
+            time = Time.deltaTime;
+            Currenttime -= time;
+            timeText.text = "남은시간" + Currenttime.ToString("0") + "초";
+            if (MonsterSpawn.GetInstance().MimicIsDie == true)
+             {
                 switch (SearchName)
                 {
                     case "하북":
@@ -426,48 +445,22 @@ public class UIManager : MonoBehaviour
                             searchButtons[7].Win(true);
                         }
                         break;
-            }
-           
-        }
+                }
 
-        if (MonsterSpawn.GetInstance().BossSummonON == true)
-        {
-            timeText.gameObject.SetActive(true);
-            time = Time.deltaTime;
-            Currenttime -= time;
+            }
             if (Currenttime <= 0)
             {
-                time = 0;
-                Currenttime = Starttime;
-                StartCoroutine("BossNoDeath");
-                MonsterSpawn.GetInstance().stg.MonsterCount -=4;
-                if (MonsterSpawn.GetInstance().PrevMonster != null)
-                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject,2f);
-                MonsterSpawn.GetInstance().BossSummonON = false;
-            }
-        }
-
-        else if (PopUpSystem.GetInstance().EnterDeongun == true)
-        {
-            timeText.gameObject.SetActive(true);
-            time = Time.deltaTime;
-            Currenttime -= time;
-            if (Currenttime <= 0)
-            {
-                print("aaa");
                 PopUpSystem.GetInstance().EnterDeongun = false;
-                MonsterSpawn.GetInstance().stg.stageSound();
                 PopUpSystem.GetInstance().ClosePopUp();
-                MonsterSpawn.GetInstance().MimicIsDie = false;
-                FindObjectOfType<MimicEnemy>().GetComponent<MimicEnemy>().Deth();
+                MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage / 50));
+                Player.Instance.Monster.GetComponent<MimicEnemy>().Deth();
                 time = 0;
                 Currenttime = Starttime;
                 Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y +20f, Player.Instance.transform.position.z);
                 MonsterSpawn.GetInstance().MonsterCount = 0;
                 MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
-                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().SearchReward();
-                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Win = false;
-                FindObjectOfType<Fadeinout>().GetComponent<Fadeinout>().Lose = true;
+                MonsterSpawn.GetInstance().fade.SearchReward();
+                MonsterSpawn.GetInstance().fade.Lose = true;
             }
         }
         else if (PopUpSystem.GetInstance().EnterDeongun == false)
@@ -475,7 +468,6 @@ public class UIManager : MonoBehaviour
             Currenttime = Starttime;
             timeText.gameObject.SetActive(false);
         }
-        timeText.text = "남은시간"+Currenttime.ToString("0")+"초";
     }
     IEnumerator BossNoDeath()
     {

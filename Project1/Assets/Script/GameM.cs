@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ProjectD;
 
 public class GameM : MonoBehaviour
 {
@@ -32,9 +34,13 @@ public class GameM : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        //PlayerPrefs.DeleteAll();
     }
-
+    Action Onable;
+    public void Start()
+    {
+        //NPService.Instance.Synchronise();
+        //NPService.Instance.Login(Onable);
+    }
     public void SceneChagne(int number) 
     {
         SceneManager.LoadScene(number);
