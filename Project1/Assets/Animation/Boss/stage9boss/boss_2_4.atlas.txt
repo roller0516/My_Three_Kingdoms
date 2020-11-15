@@ -1,0 +1,174 @@
+
+boss_2_4.png
+size: 348,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 303, 188
+  size: 79, 43
+  orig: 81, 45
+  offset: 1, 1
+  index: -1
+2
+  rotate: false
+  xy: 294, 42
+  size: 35, 33
+  orig: 37, 35
+  offset: 1, 1
+  index: -1
+3
+  rotate: false
+  xy: 72, 180
+  size: 145, 87
+  orig: 147, 89
+  offset: 1, 1
+  index: -1
+4
+  rotate: false
+  xy: 72, 94
+  size: 123, 84
+  orig: 125, 86
+  offset: 1, 1
+  index: -1
+5
+  rotate: false
+  xy: 219, 191
+  size: 82, 76
+  orig: 84, 78
+  offset: 1, 1
+  index: -1
+6
+  rotate: true
+  xy: 197, 104
+  size: 74, 37
+  orig: 76, 39
+  offset: 1, 1
+  index: -1
+7
+  rotate: true
+  xy: 212, 32
+  size: 70, 37
+  orig: 72, 39
+  offset: 1, 1
+  index: -1
+bangcheon
+  rotate: false
+  xy: 2, 31
+  size: 68, 236
+  orig: 68, 236
+  offset: 0, 0
+  index: -1
+bangcheon_gori
+  rotate: true
+  xy: 212, 4
+  size: 26, 50
+  orig: 68, 236
+  offset: 24, 88
+  index: -1
+body
+  rotate: false
+  xy: 294, 77
+  size: 37, 37
+  orig: 39, 39
+  offset: 1, 1
+  index: -1
+cape
+  rotate: true
+  xy: 285, 116
+  size: 70, 40
+  orig: 70, 40
+  offset: 0, 0
+  index: -1
+eye clos
+  rotate: false
+  xy: 264, 24
+  size: 38, 4
+  orig: 40, 6
+  offset: 1, 1
+  index: -1
+eye open
+  rotate: false
+  xy: 251, 42
+  size: 41, 6
+  orig: 43, 8
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 72, 2
+  size: 68, 90
+  orig: 70, 92
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: false
+  xy: 142, 2
+  size: 68, 90
+  orig: 70, 92
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: true
+  xy: 2, 2
+  size: 27, 33
+  orig: 27, 33
+  offset: 0, 0
+  index: -1
+l hair
+  rotate: false
+  xy: 236, 121
+  size: 47, 68
+  orig: 47, 68
+  offset: 0, 0
+  index: -1
+l leg
+  rotate: true
+  xy: 264, 8
+  size: 14, 28
+  orig: 14, 28
+  offset: 0, 0
+  index: -1
+l shold
+  rotate: true
+  xy: 327, 153
+  size: 33, 19
+  orig: 33, 19
+  offset: 0, 0
+  index: -1
+r arm
+  rotate: true
+  xy: 37, 8
+  size: 21, 29
+  orig: 24, 31
+  offset: 1, 1
+  index: -1
+r hair
+  rotate: false
+  xy: 251, 50
+  size: 41, 64
+  orig: 41, 64
+  offset: 0, 0
+  index: -1
+r leg
+  rotate: false
+  xy: 331, 47
+  size: 14, 28
+  orig: 14, 28
+  offset: 0, 0
+  index: -1
+r shold
+  rotate: true
+  xy: 327, 122
+  size: 29, 19
+  orig: 29, 19
+  offset: 0, 0
+  index: -1
+sha
+  rotate: false
+  xy: 264, 30
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
