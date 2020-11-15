@@ -15,22 +15,22 @@ MonoBehaviour:
   m_lastOpenedDateString: 
   m_applicationSettings:
     m_supportedFeatures:
-      m_usesAddressBook: 0
-      m_usesBilling: 0
+      m_usesAddressBook: 1
+      m_usesBilling: 1
       m_usesCloudServices: 1
       m_usesGameServices: 1
       m_mediaLibrary:
-        value: 0
-        usesCamera: 0
+        value: 1
+        usesCamera: 1
         usesPhotoAlbum: 1
-      m_usesNetworkConnectivity: 0
+      m_usesNetworkConnectivity: 1
       m_notificationService:
-        value: 0
+        value: 1
         usesLocalNotification: 1
         usesRemoteNotification: 1
-      m_usesSharing: 0
-      m_usesTwitter: 0
-      m_usesWebView: 0
+      m_usesSharing: 1
+      m_usesTwitter: 1
+      m_usesWebView: 1
     m_supportedAddonServices:
       m_usesSoomlaGrow: 0
       m_usesOneSignal: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
     m_iOS:
       m_showDefaultAchievementCompletionBanner: 1
     m_android:
-      m_playServicesApplicationID: 346769522118
-      m_serverClientID: 346769522118-mt47um5i6vtecg2fobdcrh9d400otvj3.apps.googleusercontent.com
+      m_playServicesApplicationID: 
+      m_serverClientID: 
       m_showDefaultErrorDialogs: 1
       m_allowAutoLogin: 1
     m_achievementIDCollection: []
