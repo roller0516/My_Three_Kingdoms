@@ -1,9 +1,0 @@
-<projectSettings>
-  <projectSetting name="com.google.external-dependency-managerAnalyticsCookie" value="cd9459352e13436a88cacca6544469a6" />
-  <projectSetting name="com.google.external-dependency-managerAnalyticsEnabled" value="True" />
-  <projectSetting name="Google.IOSResolver.VerboseLoggingEnabled" value="False" />
-  <projectSetting name="Google.PackageManagerResolver.VerboseLoggingEnabled" value="False" />
-  <projectSetting name="Google.VersionHandler.VerboseLoggingEnabled" value="False" />
-  <projectSetting name="GooglePlayServices.PromptBeforeAutoResolution" value="False" />
-  <projectSetting name="GooglePlayServices.UseJetifier" value="True" />
-</projectSettings>
