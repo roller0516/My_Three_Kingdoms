@@ -251,25 +251,25 @@ public class MonsterSpawn : MonoBehaviour
                 MimicMonster.GetComponent<MimicEnemy>().MaxHp = "5000";
                 break;
             case "청서":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "20000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "15000";
                 break;
             case "중원":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "80000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "45000";
                 break;
             case "강동":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "320000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "135000";
                 break;
             case "관중":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "1280000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "405000";
                 break;
             case "형북":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "5120000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "1215000";
                 break;
             case "형남":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "204800000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "3645000";
                 break;
             case "파촉":
-                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "819200000";
+                MimicMonster.GetComponent<MimicEnemy>().MaxHp = "10935000";
                 break;
         }
 
