@@ -65,7 +65,7 @@ public class DataController : MonoBehaviour
         Knowledge = m_Knowledge.ToString();
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
-        Ticket = PlayerPrefs.GetInt("Ticket", 0);
+        Ticket = PlayerPrefs.GetInt("Ticket", 10);
         PaidGold = PlayerPrefs.GetInt("PaidGold", 0);
         Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
         Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");

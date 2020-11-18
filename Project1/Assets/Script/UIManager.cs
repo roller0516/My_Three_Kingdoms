@@ -356,117 +356,52 @@ public class UIManager : MonoBehaviour
     }
     public void SearchButton()
     {
+        Enter();
+        bosssummonCheck();
+        if (Currenttime <= 0)
+        {
+            timeText.gameObject.SetActive(false);
+            PopUpSystem.GetInstance().EnterDeongun = false;
+            PopUpSystem.GetInstance().ClosePopUp();
+            MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage / 51));
+            Player.Instance.Monster.GetComponent<MimicEnemy>().Deth();
+            time = 0;
+            Currenttime = Starttime;
+            Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y + 20f, Player.Instance.transform.position.z);
+            MonsterSpawn.GetInstance().MonsterCount = 0;
+            MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
+            MonsterSpawn.GetInstance().fade.SearchReward();
+            MonsterSpawn.GetInstance().fade.Lose = true;
+        }
+    }
+    void bosssummonCheck() 
+    {
         if (MonsterSpawn.GetInstance().BossSummonON == true)//보스 소환 
         {
             time = Time.deltaTime;
             Currenttime -= time;
+            timeText.text = "남은시간" + Currenttime.ToString("0") + "초";
             if (Currenttime <= 0)
             {
                 MonsterSpawn.GetInstance().BossSummonON = false;
                 time = 0;
                 Currenttime = Starttime;
                 StartCoroutine("BossNoDeath");
-                MonsterSpawn.GetInstance().stg.MonsterCount -=4;
+                MonsterSpawn.GetInstance().stg.MonsterCount -= 4;
                 if (MonsterSpawn.GetInstance().PrevMonster != null)
-                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject,2f);
+                    Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject, 2f);
+                timeText.gameObject.SetActive(false);
             }
         }
+    }
+    void Enter() 
+    {
         if (PopUpSystem.GetInstance().EnterDeongun == true)
         {
             MonsterSpawn.GetInstance().stg.text.text = "어느보물방...";
             time = Time.deltaTime;
             Currenttime -= time;
             timeText.text = "남은시간" + Currenttime.ToString("0") + "초";
-            if (MonsterSpawn.GetInstance().MimicIsDie == true)
-             {
-                switch (SearchName)
-                {
-                    case "하북":
-                        searchButtons[0].isWin = true;
-                        if (searchButtons[0].isWin == true)
-                        {
-                            searchButtons[0].isWin = false;
-                            searchButtons[0].Win(true);
-                        }
-                        break;
-                    case "청서":
-                        searchButtons[1].isWin = true;
-                        if (searchButtons[1].isWin == true)
-                        {
-                            searchButtons[1].isWin = false;
-                            searchButtons[1].Win(true);
-                        }
-                        break;
-                    case "중원":
-                        searchButtons[2].isWin = true;
-                        if (searchButtons[2].isWin == true)
-                        {
-                            searchButtons[2].isWin = false;
-                            searchButtons[2].Win(true);
-                        }
-                        break;
-                    case "강동":
-                        searchButtons[3].isWin = true;
-                        if (searchButtons[3].isWin == true)
-                        {
-                            searchButtons[3].isWin = false;
-                            searchButtons[3].Win(true);
-                        }
-                        break;
-                    case "관중":
-                        searchButtons[4].isWin = true;
-                        if (searchButtons[4].isWin == true)
-                        {
-                            searchButtons[4].isWin = false;
-                            searchButtons[4].Win(true);
-                        }
-                        break;
-                    case "형북":
-                        searchButtons[5].isWin = true;
-                        if (searchButtons[5].isWin == true)
-                        {
-                            searchButtons[5].isWin = false;
-                            searchButtons[5].Win(true);
-                        }
-                        break;
-                    case "형남":
-                        searchButtons[6].isWin = true;
-                        if (searchButtons[6].isWin == true)
-                        {
-                            searchButtons[6].isWin = false;
-                            searchButtons[6].Win(true);
-                        }
-                        break;
-                    case "파촉":
-                        searchButtons[7].isWin = true;
-                        if (searchButtons[7].isWin == true)
-                        {
-                            searchButtons[7].isWin = false;
-                            searchButtons[7].Win(true);
-                        }
-                        break;
-                }
-
-            }
-            if (Currenttime <= 0)
-            {
-                PopUpSystem.GetInstance().EnterDeongun = false;
-                PopUpSystem.GetInstance().ClosePopUp();
-                MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage / 50));
-                Player.Instance.Monster.GetComponent<MimicEnemy>().Deth();
-                time = 0;
-                Currenttime = Starttime;
-                Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y +20f, Player.Instance.transform.position.z);
-                MonsterSpawn.GetInstance().MonsterCount = 0;
-                MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
-                MonsterSpawn.GetInstance().fade.SearchReward();
-                MonsterSpawn.GetInstance().fade.Lose = true;
-            }
-        }
-        else if (PopUpSystem.GetInstance().EnterDeongun == false)
-        {
-            Currenttime = Starttime;
-            timeText.gameObject.SetActive(false);
         }
     }
     IEnumerator BossNoDeath()

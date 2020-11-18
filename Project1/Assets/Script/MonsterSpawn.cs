@@ -77,7 +77,7 @@ public class MonsterSpawn : MonoBehaviour
             {
                 BossRandomRange = Random.Range(0, 16);
             }
-            else if (stg.curStage >= 100)
+            else if (stg.curStage >= 101)
             {
                 RandomRange1 = Random.Range(0, 6);
                 if (RandomRange1 < 3)
@@ -87,7 +87,7 @@ public class MonsterSpawn : MonoBehaviour
                 SpawnMonster(2, RandomRange1);
             }
             
-            else if (stg.curStage >= 50)
+            else if (stg.curStage >= 51)
             {
                 RandomRange1 = Random.Range(0, 6);
                 if (RandomRange1 < 3)
@@ -96,7 +96,7 @@ public class MonsterSpawn : MonoBehaviour
                     RandomRange2 = 0;
                 SpawnMonster(1, RandomRange1);
             }
-            else if (stg.curStage < 50)
+            else if (stg.curStage < 51)
             {
                 RandomRange1 = Random.Range(0, 3);
                 RandomRange2 = Random.Range(0, 3);
@@ -129,6 +129,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (boss_IsDie == true)
         {
+            UIManager.GetInstance().timeText.gameObject.SetActive(false);
             BossSummonON = false;
             boss_IsDie = false;
             stg.MonsterCount++;
@@ -140,6 +141,76 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (MimicIsDie == true)
         {
+            print(MimicIsDie);
+            UIManager.GetInstance().timeText.gameObject.SetActive(false);
+            switch (UIManager.GetInstance().SearchName)
+            {
+                case "하북":
+                    UIManager.GetInstance().searchButtons[0].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[0].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[0].isWin = false;
+                        UIManager.GetInstance().searchButtons[0].Win(true);
+                    }
+                    break;
+                case "청서":
+                    UIManager.GetInstance().searchButtons[1].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[1].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[1].isWin = false;
+                        UIManager.GetInstance().searchButtons[1].Win(true);
+                    }
+                    break;
+                case "중원":
+                    UIManager.GetInstance().searchButtons[2].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[2].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[2].isWin = false;
+                        UIManager.GetInstance().searchButtons[2].Win(true);
+                    }
+                    break;
+                case "강동":
+                    UIManager.GetInstance().searchButtons[3].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[3].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[3].isWin = false;
+                        UIManager.GetInstance().searchButtons[3].Win(true);
+                    }
+                    break;
+                case "관중":
+                    UIManager.GetInstance().searchButtons[4].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[4].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[4].isWin = false;
+                        UIManager.GetInstance().searchButtons[4].Win(true);
+                    }
+                    break;
+                case "형북":
+                    UIManager.GetInstance().searchButtons[5].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[5].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[5].isWin = false;
+                        UIManager.GetInstance().searchButtons[5].Win(true);
+                    }
+                    break;
+                case "형남":
+                    UIManager.GetInstance().searchButtons[6].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[6].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[6].isWin = false;
+                        UIManager.GetInstance().searchButtons[6].Win(true);
+                    }
+                    break;
+                case "파촉":
+                    UIManager.GetInstance().searchButtons[7].isWin = true;
+                    if (UIManager.GetInstance().searchButtons[7].isWin == true)
+                    {
+                        UIManager.GetInstance().searchButtons[7].isWin = false;
+                        UIManager.GetInstance().searchButtons[7].Win(true);
+                    }
+                    break;
+            }
+            fade.Win = true;
             MimicIsDie = false;
             PopUpSystem.GetInstance().EnterDeongun = false;
             StartCoroutine("MimicDeath");
@@ -150,9 +221,9 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (PopUpSystem.GetInstance().gameObject.activeSelf && PopUpSystem.GetInstance().EnterDeongun)
         {
-            UIManager.GetInstance().timeText.gameObject.SetActive(true);
             UIManager.GetInstance().Starttime = 30;
             UIManager.GetInstance().Currenttime = 30;
+            UIManager.GetInstance().timeText.gameObject.SetActive(true);
             if (PrevMonster != null)
                 Destroy(PrevMonster.gameObject);
             MimicHp(UIManager.GetInstance().SearchName);
@@ -161,9 +232,9 @@ public class MonsterSpawn : MonoBehaviour
         }
         else if (stg.MonsterCount % stg.BossStage == 0) //보스 스폰
         {
-            UIManager.GetInstance().timeText.gameObject.SetActive(true);
             UIManager.GetInstance().Starttime = 60;
             UIManager.GetInstance().Currenttime = 60;
+            UIManager.GetInstance().timeText.gameObject.SetActive(true);
             BossSummonON = true;
             SoundManager.instance.BossSound();
             CurTime = 0;

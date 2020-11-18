@@ -11,7 +11,7 @@ public class Fadeinout : MonoBehaviour
     public GameObject SearchRewardPanel;
     public GameObject SkeletonGraphic;
     public Image Panel;
-    SkeletonGraphic skeletonAni;
+    public SkeletonGraphic skeletonAni;
     float time = 0f;
     float f_time = 1f;
     int TouchCount;
@@ -19,10 +19,10 @@ public class Fadeinout : MonoBehaviour
     public bool Win;
     public bool Lose;
     public Animator ani;
-    public bool ClickOn ;
-    public void Start()
+    public bool ClickOn;
+
+    private void Start()
     {
-        skeletonAni = SearchRewardPanel.gameObject.GetComponent<SkeletonGraphic>();
         ClickOn = true;
     }
     public void Fade()
@@ -61,18 +61,18 @@ public class Fadeinout : MonoBehaviour
     {
         if (SkeletonGraphic.activeSelf == true)
         {
-            //aniCheck = true;
-            
+            print("ClickOn:"+ClickOn);
+            print("Win"+Win);
             if (Win)
             {
+                ClickOn = true;
                 Lose = false;
                 if (ClickOn == true) 
                 {
-                    
                     if (/*aniCheck == true && */TouchCount == 0)
                     {
+                        print("성공 했음");
                         ani.speed = 0;
-                        //aniCheck = false;
                         
                         skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
                     }
@@ -90,9 +90,8 @@ public class Fadeinout : MonoBehaviour
                             skeletonAni.AnimationState.AddAnimation(0, "5-2", true, 0);
                             
                         }
-                        else if (TouchCount >= 2)
+                        else if (TouchCount >= 2 && aniCheck == true)
                         {
-                            //skeletonAni.AnimationState.SetEmptyAnimations(0);
                             skeletonAni.AnimationState.SetEmptyAnimations(0);
                             skeletonAni.AnimationState.SetAnimation(0, "1", false);
                             ani.SetBool("Treasure1", false);
@@ -109,17 +108,17 @@ public class Fadeinout : MonoBehaviour
             }
             else if (Lose)
             {
-                
+                print(Lose);
                 Win = false;
-                if (/*aniCheck == true && */TouchCount == 0)
+                if (TouchCount == 0)
                 {
-                    //aniCheck = false;
+                    print("실패 했음");
                     skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
                     TouchCount++;
-                   
+                    print("실패 터치");
                     if (TouchCount == 1)
                     {
                         skeletonAni.SkeletonDataAsset.GetAnimationStateData().SetMix("2", "6-1", 0.4f);
@@ -132,8 +131,6 @@ public class Fadeinout : MonoBehaviour
                     {
                         skeletonAni.AnimationState.SetEmptyAnimations(0);
                         skeletonAni.AnimationState.SetAnimation(0, "1", false);
-                        
-                        //skeletonAni.AnimationState.SetAnimation(0, "1", false);
                         SkeletonGraphic.SetActive(false);
                         TouchCount = 0;
                         Lose = false;
@@ -161,6 +158,7 @@ public class Fadeinout : MonoBehaviour
         ani.speed = 1;
         SoundManager.instance.TreasureSuccess();
         ClickOn = true;
+        aniCheck = true;
     }
     
 }

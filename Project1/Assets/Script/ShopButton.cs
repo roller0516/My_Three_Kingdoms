@@ -121,6 +121,14 @@ public class ShopButton : MonoBehaviour
     {
         if (SkinOnWeapon == true)
             setSkin();
+        for (int i = 0; i < shopitemWeapon.Count;i++) 
+        {
+            Weapon_textColor(i);
+        }
+        for (int i = 0; i < shopitemAmor.Count; i++) 
+        {
+            Armor_textColor(i);
+        }
     }
     public void ChangeSkin_Amor(int num) 
     {
@@ -289,6 +297,30 @@ public class ShopButton : MonoBehaviour
         {
             if(shopitemWeapon[i].isUsing== true)
                 Player.Instance.skeletonRenderer.skeleton.SetAttachment("weapon", "weapon10" + (i + 1));
+        }
+    }
+    public void Armor_textColor(int num)//재화 부족시 컬러변경
+    {
+
+         if (DataController.GetInstance().GetPaidGold() < shopitemAmor[num].Cost)
+         {
+            GoldArmorText[num].color = Color.red;
+         }
+         else
+         {
+            GoldArmorText[num].color = Color.yellow;
+         }
+    }
+    public void Weapon_textColor(int num)//재화 부족시 컬러변경
+    {
+
+        if (DataController.GetInstance().GetPaidGold() < shopitemWeapon[num].Cost)
+        {
+            GoldWeapnText[num].color = Color.red;
+        }
+        else
+        {
+            GoldWeapnText[num].color = Color.yellow;
         }
     }
 }

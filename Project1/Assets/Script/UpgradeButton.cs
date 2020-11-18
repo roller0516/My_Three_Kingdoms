@@ -41,7 +41,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     bool PressDown = false;
     private void Start()
     {
-        
         DataController.GetInstance().LoadUpgradeButton(this);
         Level_img = transform.Find("LevelUp_img").gameObject;
         UpdateUI();
@@ -61,11 +60,11 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
+                
                 Fx.gameObject.SetActive(true);
                 DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
                 UpdateUpgrade();
-                
                 DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure1,10000))+goldByUpgrade);
                 goldByUpgrade = (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade;
                 UpdateUI();

@@ -34,7 +34,6 @@ public class TeasureCostButton : MonoBehaviour
 
     private void Start()
     {
-        
         CurrentCost = StartCurrentCost;
         DataController.GetInstance().LoadTeasure(this);
         UpdateUI();
@@ -128,8 +127,9 @@ public class TeasureCostButton : MonoBehaviour
                     {
                         DataController.GetInstance().SetGoldPerClick("GoldPerClick" + i, num + (num2 * goldByUpgrade * UIManager.GetInstance().upgradeButton[i].Level * 100) / 10000);
                         UIManager.GetInstance().upgradeButton[i].goldByUpgrade = DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i);
+                        DataController.GetInstance().SaveUpgradeButton(UIManager.GetInstance().upgradeButton[i]);
                     }
-                        
+                        print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i));
                 }
                 DataController.GetInstance().Teasure1Ability = goldByUpgrade;
                 PlayerPrefs.SetInt("Teasure1Ability", DataController.GetInstance().Teasure1Ability);
@@ -148,6 +148,7 @@ public class TeasureCostButton : MonoBehaviour
                     num = UIManager.GetInstance().upgradeButton[i].CurrentCost;
                     num2 = num * goldByUpgrade;
                     UIManager.GetInstance().upgradeButton[i].CurrentCost1 = ((num * 100) - num2) / 100;
+                    DataController.GetInstance().SaveUpgradeButton(UIManager.GetInstance().upgradeButton[i]);
                 }
                 DataController.GetInstance().Teasure2Ability = goldByUpgrade;
                 PlayerPrefs.SetInt("Teasure2Ability", DataController.GetInstance().Teasure2Ability);
