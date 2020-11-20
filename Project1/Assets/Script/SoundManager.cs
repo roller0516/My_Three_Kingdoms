@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip EquipSuond;
     public AudioClip TreasureFail;
     public AudioClip TreasuerSuccess;
+    public AudioClip weaponbuttonsound;
     public AudioClip[] Bgm;
     private void Awake()
     {
@@ -90,6 +91,11 @@ public class SoundManager : MonoBehaviour
     public void TreasureSuccess()
     {
         myAudio.PlayOneShot(TreasuerSuccess);
+    }
+
+    public void WeaponButtonSound()
+    {
+        myAudio.PlayOneShot(weaponbuttonsound);
     }
 }
 
