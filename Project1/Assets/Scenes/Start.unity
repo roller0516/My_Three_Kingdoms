@@ -657,16 +657,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9a8bb465c4e24bb4f956688e54f5e7be, type: 3}
   - {fileID: 8300000, guid: 640de96046ba2d74abfa5be34592f349, type: 3}
   - {fileID: 8300000, guid: 290aea7f2adfed949866d41d9843cb40, type: 3}
-  ButtonClickSound: {fileID: 8300000, guid: bdafe971912831a4888f65c1ca7eb982, type: 3}
+  ButtonClickSound: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
   Boss_s: {fileID: 8300000, guid: 226e83e73ca2ed5479d7b168ae00c67a, type: 3}
-  Tap_s: {fileID: 8300000, guid: 7e9975cdaf23a7841a36f744e23ed3ac, type: 3}
-  Purchase_s: {fileID: 8300000, guid: bdafe971912831a4888f65c1ca7eb982, type: 3}
+  Tap_s: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
+  Purchase_s: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
   Critical_s: {fileID: 8300000, guid: fae291ac9beeea74c87d0db4416ab3c0, type: 3}
   HIT: {fileID: 8300000, guid: 7bde6701774663c45a40190c54868835, type: 3}
   Mimichit: {fileID: 8300000, guid: 1eb92daf8a8ab2040b903e149fa55402, type: 3}
   EquipSuond: {fileID: 8300000, guid: d68d1af35c71d7446a99cac26777650e, type: 3}
   TreasureFail: {fileID: 8300000, guid: 8bd1af6588763874c9df318fc1fafb54, type: 3}
   TreasuerSuccess: {fileID: 8300000, guid: 9782cab77a1981d41b24bb8923fa34df, type: 3}
+  weaponbuttonsound: {fileID: 8300000, guid: 1764cefb23940fa4da90bcc1aaf4e13b, type: 3}
   Bgm:
   - {fileID: 8300000, guid: 46d79314b5e826f449dafce12970f4e8, type: 3}
   - {fileID: 8300000, guid: 8f9fa11acf5de294095dbc8bc26f84a0, type: 3}
