@@ -6739,7 +6739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 60
+  MaxTime: 40
   CurTime: 0
   isDone: 0
 --- !u!1 &410046061986497806
@@ -8273,7 +8273,7 @@ MonoBehaviour:
   button_: {fileID: 6088370141732872984}
   Level_img: {fileID: 1856645420714282223}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 305023899399
+  GoldByUpgrade: 61004779879800
   StartCurrentCost: 
   Fx: {fileID: 7761778843439760872}
 --- !u!1 &513492751106059175
@@ -9197,7 +9197,7 @@ MonoBehaviour:
   button_: {fileID: 1032131814466011682}
   Level_img: {fileID: 5291472892657069266}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 2324522934
+  GoldByUpgrade: 23245229340
   StartCurrentCost: 
   Fx: {fileID: 7761778843793592423}
 --- !u!1 &554870430041017047
@@ -16211,7 +16211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 60
+  MaxTime: 5
   CurTime: 0
   isDone: 0
 --- !u!1 &1104867506959932591
@@ -17282,7 +17282,7 @@ MonoBehaviour:
   button_: {fileID: 8932183821624825945}
   Level_img: {fileID: 8141210688046976810}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 47071589414
+  GoldByUpgrade: 1412147682420
   StartCurrentCost: 
   Fx: {fileID: 7761778844909375488}
 --- !u!1 &1184288705350882271
@@ -17480,7 +17480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 100
   CurTime: 0
   isDone: 0
 --- !u!1 &1196985990945286692
@@ -24842,7 +24842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 30
+  MaxTime: 20
   CurTime: 0
   isDone: 0
 --- !u!1 &1697764257588752603
@@ -27006,7 +27006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 180
+  MaxTime: 20
   CurTime: 0
   isDone: 0
 --- !u!1 &1847621079254393330
@@ -30796,7 +30796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 240
   CurTime: 0
   isDone: 0
 --- !u!1 &2240782850602084647
@@ -36040,7 +36040,7 @@ MonoBehaviour:
   button_: {fileID: 1080086780006437539}
   Level_img: {fileID: 7932790775956020293}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 158866614271
+  GoldByUpgrade: 15886661427100
   StartCurrentCost: 
   Fx: {fileID: 7761778845138114944}
 --- !u!1 &2498665167225976170
@@ -37641,7 +37641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 300
+  MaxTime: 120
   CurTime: 0
   isDone: 0
 --- !u!1 &2590120119268584635
@@ -45221,7 +45221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 50
   CurTime: 0
   isDone: 0
 --- !u!1 &3041720499999428902
@@ -46387,7 +46387,7 @@ MonoBehaviour:
   button_: {fileID: 4262947604068948393}
   Level_img: {fileID: 7843124338109616292}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 62539431373750
+  GoldByUpgrade: 62539431373750000000000
   StartCurrentCost: 
   Fx: {fileID: 7761778844486640722}
 --- !u!1 &3082496580559343013
@@ -58345,7 +58345,7 @@ MonoBehaviour:
   button_: {fileID: 454600241366499709}
   Level_img: {fileID: 6364741154701809349}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 686303773649
+  GoldByUpgrade: 366028679278800
   StartCurrentCost: 
   Fx: {fileID: 7761778843824078150}
 --- !u!1 &4082766770281894663
@@ -66637,7 +66637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 120
   CurTime: 0
   isDone: 0
 --- !u!1 &4613086819006531559
@@ -67023,7 +67023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 120
+  MaxTime: 10
   CurTime: 0
   isDone: 0
 --- !u!1 &4635831884391227868
@@ -69868,7 +69868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 200
   CurTime: 0
   isDone: 0
 --- !u!1 &4838216843434471926
@@ -76365,7 +76365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 35
   CurTime: 0
   isDone: 0
 --- !u!1 &5250002710520373097
@@ -78444,7 +78444,7 @@ MonoBehaviour:
   button_: {fileID: 5738675058322844660}
   Level_img: {fileID: 6287340300528089638}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 9265100944259
+  GoldByUpgrade: 9265100944259000000
   StartCurrentCost: 
   Fx: {fileID: 7761778844494224667}
 --- !u!1 &5372849814801769820
@@ -98832,7 +98832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 30
   CurTime: 0
   isDone: 0
 --- !u!1 &6753453910769734047
@@ -105690,7 +105690,7 @@ MonoBehaviour:
   button_: {fileID: 8278160356709744423}
   Level_img: {fileID: 603122627948753022}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 6176733962839
+  GoldByUpgrade: 75767339628390000
   StartCurrentCost: 
   Fx: {fileID: 7761778843705299415}
 --- !u!1 &7279454917759814992
@@ -106125,7 +106125,7 @@ MonoBehaviour:
   button_: {fileID: 1470939639145329628}
   Level_img: {fileID: 3501633420572498519}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 27795302832778
+  GoldByUpgrade: 136481514113340000000
   StartCurrentCost: 
   Fx: {fileID: 7761778844401557241}
 --- !u!1 &7294437852920530215
@@ -116323,7 +116323,7 @@ MonoBehaviour:
   button_: {fileID: 7293902150813698720}
   Level_img: {fileID: 3265166208707566622}
   StartGoldByUpgrade: 0
-  GoldByUpgrade: 7845264902
+  GoldByUpgrade: 78452649020
   StartCurrentCost: 
   Fx: {fileID: 7761778843411069038}
 --- !u!1 &8071338705167445654
@@ -120751,7 +120751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 600
+  MaxTime: 30
   CurTime: 0
   isDone: 0
 --- !u!1 &8353511316578896236
@@ -123774,7 +123774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05f4aa7c3d3a247b5268490e6cbe77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 120
+  MaxTime: 60
   CurTime: 0
   isDone: 0
 --- !u!1 &8583036979161572550
