@@ -32,6 +32,7 @@ public class CreatureSummon : MonoBehaviour
                 CreatureName = BossDictionary.GetInstance().BossName;
                 if (CreatureName == Creatures[i].name)
                 {
+                    
                     Instantiate(Creatures[i], new Vector3(Player.Instance.transform.position.x-1f, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
                     BossSkillOn = true;
                     Skillbutton.interactable = false;

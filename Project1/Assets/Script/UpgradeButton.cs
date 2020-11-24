@@ -37,6 +37,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public string GoldByUpgrade;
     public string StartCurrentCost;
     public ParticleSystem Fx;
+    public ParticleSystem Fx2;
     float CurTime;
     bool PressDown = false;
     private void Start()
@@ -89,6 +90,8 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         if (Level != MaxLevel)
         {
+            if (Level > 0)
+                Fx2.gameObject.SetActive(true);
             if (DataController.GetInstance().GetGold() < CurrentCost1)
             {
                 Level_img.SetActive(false);
@@ -156,7 +159,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     IEnumerator FxTime()
     {
         Fx.Play();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         Fx.gameObject.SetActive(false);
         Fx.Stop();
     }

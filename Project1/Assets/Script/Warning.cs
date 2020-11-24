@@ -10,6 +10,8 @@ public class Warning : MonoBehaviour
     public void Fade()
     {
         StartCoroutine(FadeFlow());
+        
+        
     }
     IEnumerator FadeFlow()
     {
@@ -23,6 +25,7 @@ public class Warning : MonoBehaviour
             Panel.color = AlPha;
             yield return null;
         }
+        SoundManager.instance.WarningSound();
         time = 0f;
         while (AlPha.a > 0f)
         {
@@ -39,6 +42,7 @@ public class Warning : MonoBehaviour
             yield return null;
         }
         time = 0f;
+        SoundManager.instance.WarningSound();
         while (AlPha.a > 0f)
         {
             time += Time.deltaTime * 1f;

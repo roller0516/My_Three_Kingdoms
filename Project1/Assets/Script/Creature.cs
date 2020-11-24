@@ -35,7 +35,7 @@ public class Creature : MonoBehaviour
     void Start()
     {
         Monster = Player.Instance.Monster;
-
+        SoundManager.instance.creturesound();
         ani = GetComponent<Animator>();
     }
     private void Update()
@@ -69,6 +69,7 @@ public class Creature : MonoBehaviour
     {
         if (Monster == null || Monster.activeSelf == false)
         {
+            SoundManager.instance.creturesound();
             Destroy(this.gameObject, 1);
             yield break;
         }
@@ -83,6 +84,7 @@ public class Creature : MonoBehaviour
             }
             else
             {
+                SoundManager.instance.creturesound();
                 Destroy(this.gameObject, 1);
                 hit = 0;
             }
@@ -92,6 +94,7 @@ public class Creature : MonoBehaviour
     {
         if (Monster == null || Monster.activeSelf == false)
         {
+            SoundManager.instance.creturesound();
             Destroy(this.gameObject, 1);
             yield break;
         }
@@ -106,6 +109,7 @@ public class Creature : MonoBehaviour
             }
             else
             {
+                SoundManager.instance.creturesound();
                 Destroy(this.gameObject, 1);
                 hit = 0;
             }
@@ -117,6 +121,7 @@ public class Creature : MonoBehaviour
     {
         if (Monster == null || Monster.activeSelf == false)
         {
+            SoundManager.instance.creturesound();
             Destroy(this.gameObject, 1);
             yield break;
         }
@@ -131,6 +136,7 @@ public class Creature : MonoBehaviour
             }
             else
             {
+                SoundManager.instance.creturesound();
                 Destroy(this.gameObject, 1);
                 hit = 0;
             }

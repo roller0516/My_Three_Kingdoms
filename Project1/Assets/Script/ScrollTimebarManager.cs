@@ -7,18 +7,11 @@ public class ScrollTimebarManager : MonoBehaviour
 {
     public Slider[] Timebar;
     public ScrollTime[] time;
-    UIManager uimanager;
-    private void Start()
-    {
-        uimanager = GameObject.FindWithTag("Canvas").GetComponent<UIManager>();
-    }
     private void Update()
     {
         HandleTime();
         //각 스크립트마다 레벨을 받아서 실행시킨다 
         ButtonLevel();
-
-
     }
     public void HandleTime()
     {
@@ -31,7 +24,7 @@ public class ScrollTimebarManager : MonoBehaviour
     {
         for (int i = 0; i < Timebar.Length; i++)
         {
-            if (uimanager.Level[i] > 0)
+            if (UIManager.GetInstance().Level[i] > 0)
                 time[i].CurTimeFuc();
         }
     }

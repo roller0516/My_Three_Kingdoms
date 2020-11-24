@@ -48,6 +48,7 @@ public class MonsterSpawn : MonoBehaviour
     int bossStage = 0;
     public Vector3 startPosition;
     public Fadeinout fade;
+    public Warning warning;
     
     public BigInteger BossHpCount = 3000;
     public BigInteger MonsterHpCount = 50;
@@ -65,6 +66,7 @@ public class MonsterSpawn : MonoBehaviour
     {
         fade = FindObjectOfType<Fadeinout>();
         stg = FindObjectOfType<StageManager>();
+        warning = FindObjectOfType<Warning>();
         startPosition = this.transform.position;
         DataController.GetInstance().LoadStage(this);
     }
@@ -232,23 +234,21 @@ public class MonsterSpawn : MonoBehaviour
         }
         else if (stg.MonsterCount % stg.BossStage == 0) //보스 스폰
         {
-            UIManager.GetInstance().Starttime = 60;
-            UIManager.GetInstance().Currenttime = 60;
-            UIManager.GetInstance().timeText.gameObject.SetActive(true);
+            StartCoroutine("BossSpwan");
             BossSummonON = true;
-            SoundManager.instance.BossSound();
+            
             CurTime = 0;
             MonsterCount++;
 
             if (stg.curStage > 150) // 랜덤으로 생성
             {
-                GameObject go = Instantiate(BossMonster[BossRandomRange], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
+                GameObject go = Instantiate(BossMonster[BossRandomRange], new Vector3(SpawnPoints.transform.position.x+10, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
                 PrevMonster = go;
             }
             else
             {
                 bossStage = (int)(((stg.curStage / 10) - 1));
-                GameObject go = Instantiate(BossMonster[bossStage], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+                GameObject go = Instantiate(BossMonster[bossStage], new Vector3(SpawnPoints.transform.position.x+10, SpawnPoints.transform.position.y, 0), Quaternion.identity);
                 PrevMonster = go;
             }
         }
@@ -290,6 +290,15 @@ public class MonsterSpawn : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         MonsterCount = 0;
         Player.Instance.transform.position = Player.Instance.startPosition;
+    }
+    IEnumerator BossSpwan()
+    {
+        warning.Fade();
+        yield return new WaitForSeconds(0.3f);
+        UIManager.GetInstance().Starttime = 60;
+        UIManager.GetInstance().Currenttime = 60;
+        UIManager.GetInstance().timeText.gameObject.SetActive(true);
+        SoundManager.instance.BossSound();
     }
     IEnumerator MimicDeath()
     {

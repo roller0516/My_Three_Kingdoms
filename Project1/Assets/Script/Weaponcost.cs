@@ -19,7 +19,9 @@ public class Weaponcost : MonoBehaviour
     public TextMeshProUGUI upGradeTex;
     public Image im;
     ItemList item_l;
-    
+    public ParticleSystem particle;
+
+
     private void Start()
     {
         CurrentCost = BigInteger.Parse( StartCost);
@@ -35,6 +37,8 @@ public class Weaponcost : MonoBehaviour
             SoundManager.instance.WeaponButtonSound();
             if (DataController.GetInstance().GetGold() >= CurrentCost)
             {
+                
+                StartCoroutine("StartParticle");
                 DataController.GetInstance().SubGold(CurrentCost);
                 
                 UpdateUpgrade(num);
@@ -141,5 +145,13 @@ public class Weaponcost : MonoBehaviour
             }
             
         }
+    }
+    IEnumerator StartParticle() 
+    {
+        particle.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        particle.Play();
+        yield return new WaitForSeconds(0.1f);
+        particle.gameObject.SetActive(false);
     }
 }

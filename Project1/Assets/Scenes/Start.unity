@@ -657,7 +657,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9a8bb465c4e24bb4f956688e54f5e7be, type: 3}
   - {fileID: 8300000, guid: 640de96046ba2d74abfa5be34592f349, type: 3}
   - {fileID: 8300000, guid: 290aea7f2adfed949866d41d9843cb40, type: 3}
-  ButtonClickSound: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
+  ButtonClickSound: {fileID: 8300000, guid: c7a72a2608dc22848ba75217571c0043, type: 3}
   Boss_s: {fileID: 8300000, guid: 226e83e73ca2ed5479d7b168ae00c67a, type: 3}
   Tap_s: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
   Purchase_s: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
@@ -668,11 +668,13 @@ MonoBehaviour:
   TreasureFail: {fileID: 8300000, guid: 8bd1af6588763874c9df318fc1fafb54, type: 3}
   TreasuerSuccess: {fileID: 8300000, guid: 9782cab77a1981d41b24bb8923fa34df, type: 3}
   weaponbuttonsound: {fileID: 8300000, guid: 1764cefb23940fa4da90bcc1aaf4e13b, type: 3}
+  warningsound: {fileID: 8300000, guid: 4d9c1aff3a834934e9c8a9c39b543bc6, type: 3}
+  CreatureSpwanSound: {fileID: 8300000, guid: 62190b0485c6173459441c2f5620d25e, type: 3}
   Bgm:
-  - {fileID: 8300000, guid: 46d79314b5e826f449dafce12970f4e8, type: 3}
-  - {fileID: 8300000, guid: 8f9fa11acf5de294095dbc8bc26f84a0, type: 3}
-  - {fileID: 8300000, guid: 8368d6e3dde957a45b6fa68015468e9b, type: 3}
-  - {fileID: 8300000, guid: d2cb2991fe0098d479e3a00c40011aa0, type: 3}
+  - {fileID: 8300000, guid: a05f892701223224ab90300aa143bfb0, type: 3}
+  - {fileID: 8300000, guid: 2ef3f9352be344044943ea4937633f6c, type: 3}
+  - {fileID: 8300000, guid: af0be26bcc2e0c7488d603ba03ce23d0, type: 3}
+  - {fileID: 8300000, guid: 4d78b3e8331d04f44b0e177d08df92a6, type: 3}
   - {fileID: 8300000, guid: 4781c71b09362cd48a2246114a4ca06a, type: 3}
 --- !u!4 &712882298
 Transform:

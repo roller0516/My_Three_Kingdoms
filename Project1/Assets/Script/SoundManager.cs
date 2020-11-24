@@ -19,6 +19,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip TreasureFail;
     public AudioClip TreasuerSuccess;
     public AudioClip weaponbuttonsound;
+    public AudioClip warningsound;
+    public AudioClip CreatureSpwanSound;
     public AudioClip[] Bgm;
     private void Awake()
     {
@@ -96,6 +98,14 @@ public class SoundManager : MonoBehaviour
     public void WeaponButtonSound()
     {
         myAudio.PlayOneShot(weaponbuttonsound);
+    }
+    public void WarningSound() 
+    {
+        myAudio.PlayOneShot(warningsound);
+    }
+    public void creturesound()
+    {
+        myAudio.PlayOneShot(CreatureSpwanSound);
     }
 }
 
