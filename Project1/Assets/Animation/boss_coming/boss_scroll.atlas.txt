@@ -1,0 +1,34 @@
+
+boss_scroll.png
+size: 804,148
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 103
+  size: 800, 43
+  orig: 802, 45
+  offset: 1, 1
+  index: -1
+11
+  rotate: false
+  xy: 2, 30
+  size: 673, 26
+  orig: 675, 28
+  offset: 1, 1
+  index: -1
+2
+  rotate: false
+  xy: 2, 58
+  size: 800, 43
+  orig: 802, 45
+  offset: 1, 1
+  index: -1
+22
+  rotate: false
+  xy: 2, 2
+  size: 672, 26
+  orig: 674, 28
+  offset: 1, 1
+  index: -1
