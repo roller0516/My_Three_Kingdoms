@@ -23,11 +23,11 @@ public class StageManager : MonoBehaviour
             return;
         }
         else
-            stageSound((int)(curStage / 51));
+            stageSound((int)(curStage / 50)+1);
     }
     private void Update()
     {
-        if (curStage == 1 || curStage % 51 == 0)
+        if (curStage == 1 || curStage % 50 == 1)
         {
             if (curStage >= 150)
             {
@@ -35,7 +35,7 @@ public class StageManager : MonoBehaviour
                 return;
             }
             StartCoroutine("ChangeStageRendder");
-            stageSound((int)(curStage / 51));
+            stageSound((int)(curStage / 50)+1);
         }
         else
         {
@@ -44,7 +44,7 @@ public class StageManager : MonoBehaviour
     }
     private void stageCount() 
     {
-        
+
         if (curStage >= 101)
         {
             for (int i = 0; i < BackGroud.Length; i++)
@@ -52,9 +52,8 @@ public class StageManager : MonoBehaviour
                 BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround03", typeof(Material)) as Material;
             }
         }
-        else if (curStage >= 51)
+        else if (curStage >= 51&& curStage <101)
         {
-            
             for (int i = 0; i < BackGroud.Length; i++)
             {
                 BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround02", typeof(Material)) as Material;

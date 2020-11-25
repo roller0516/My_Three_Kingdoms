@@ -28,7 +28,7 @@ MonoBehaviour:
     atk_8: 17
     atk_9: 18
     atk_10: 19
-    isusing: 1
+    isusing: 0
   - uid: weapon2
     leveled_atk: 2
     level: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
     atk_8: 34
     atk_9: 36
     atk_10: 38
-    isusing: 0
+    isusing: 1
   - uid: weapon3
     leveled_atk: 3
     level: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
     atk_8: 544
     atk_9: 576
     atk_10: 608
-    isusing: 0
+    isusing: 1
   - uid: weapon7
     leveled_atk: 7
     level: 0

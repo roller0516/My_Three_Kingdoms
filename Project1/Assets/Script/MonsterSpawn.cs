@@ -72,12 +72,17 @@ public class MonsterSpawn : MonoBehaviour
     }
     private void Update()
     {
-
         if (CurTime >= SpawnTime && MonsterCount<MaxCount)
         {
-            if (stg.curStage >= 150)
+            if (stg.curStage > 150)
             {
                 BossRandomRange = Random.Range(0, 16);
+                RandomRange1 = Random.Range(0, 6);
+                if (RandomRange1 < 3)
+                    RandomRange2 = Random.Range(0, 2);
+                else
+                    RandomRange2 = 0;
+                SpawnMonster(2, RandomRange1);
             }
             else if (stg.curStage >= 101)
             {
@@ -143,7 +148,6 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (MimicIsDie == true)
         {
-            print(MimicIsDie);
             UIManager.GetInstance().timeText.gameObject.SetActive(false);
             switch (UIManager.GetInstance().SearchName)
             {
