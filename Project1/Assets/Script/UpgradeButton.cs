@@ -48,10 +48,13 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void UpgradeTik(int num)
     {
-        Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
-        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + num, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
-        Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
-        CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
+        //Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
+        //DataController.GetInstance().SetGoldPerClick("GoldPerClick" + num, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
+        //Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
+        //CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
+
+
+        print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + num));
     }
     public void PurChaseUpgrade(int num) //구매 함수
     {

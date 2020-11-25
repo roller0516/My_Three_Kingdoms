@@ -148,7 +148,6 @@ public class SpecialitemList : MonoBehaviour
                     break;
             }
         }
-        
     }
 
     public void Additem(string itemName, int itemCount, int AbilityCount,bool AbiliOn)
