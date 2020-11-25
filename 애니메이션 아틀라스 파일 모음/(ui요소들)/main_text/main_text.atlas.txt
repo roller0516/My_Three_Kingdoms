@@ -1,0 +1,13 @@
+
+main_text.png
+size: 492,41
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+t6
+  rotate: false
+  xy: 2, 2
+  size: 488, 37
+  orig: 500, 167
+  offset: 6, 70
+  index: -1
