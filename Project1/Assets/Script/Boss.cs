@@ -272,6 +272,7 @@ public class Boss : MonoBehaviour
             DataController.GetInstance().AddTicket(10);
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
+            Destroy(Hpbar.gameObject, 2f);
         }
     }
 }

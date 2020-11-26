@@ -6,7 +6,7 @@ using TMPro;
 using System.Numerics;
 using System.Collections;
 using Vector3 = UnityEngine.Vector3;
-
+using Quaternion = UnityEngine.Quaternion;
 
 
 public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -31,7 +31,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public TextMeshProUGUI upGradeTex;
     public Button button_;
     public GameObject Level_img;
-
+    public Transform FxParentTr;
     public string StartGoldByUpgrade;
     public string GoldByUpgrade;
     public string StartCurrentCost;
@@ -61,14 +61,14 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
-                Fx.gameObject.SetActive(true);
+                ParticleSystem xx = Instantiate(Fx, FxParentTr);
+                xx.transform.SetParent(FxParentTr);
                 DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
                 UpdateUpgrade();
                 DataController.GetInstance().SetGoldPerClick("GoldPerClick"+num, (BigInteger.Divide(Teasure1,10000))+goldByUpgrade);
                 goldByUpgrade = (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade;
                 UpdateUI();
-                StartCoroutine("FxTime");
                 DataController.GetInstance().SaveUpgradeButton(this);
             }
         }
@@ -154,11 +154,5 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         PressDown = true;
     }
-    IEnumerator FxTime()
-    {
-        Fx.Play();
-        yield return new WaitForSeconds(0.3f);
-        Fx.gameObject.SetActive(false);
-        Fx.Stop();
-    }
+
 }

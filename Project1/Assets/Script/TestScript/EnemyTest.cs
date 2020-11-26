@@ -282,6 +282,7 @@ public class EnemyTest : MonoBehaviour
                 MonsterSpawn.instance.IsDie = true;
                 Destroy(this.gameObject, 2f);
                 Hpbar.gameObject.SetActive(false);
+                Destroy(Hpbar.gameObject, 2f);
             }
             count++;
         }

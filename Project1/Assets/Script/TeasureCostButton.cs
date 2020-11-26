@@ -19,8 +19,8 @@ public class TeasureCostButton : MonoBehaviour
     [HideInInspector]
     public int Level = 0;
     public int MaxLevel;
-
-
+    public Transform FxParentTr;
+    public ParticleSystem Fx;
     public Text LevelTex;
     public TextMeshProUGUI upGradeTex;
     public TextMeshProUGUI EffectTex;
@@ -46,7 +46,8 @@ public class TeasureCostButton : MonoBehaviour
         {
             if (DataController.GetInstance().GetKnowledge() >= CurrentCost)
             {
-            
+                ParticleSystem xx = Instantiate(Fx, FxParentTr);
+                xx.transform.SetParent(FxParentTr);
                 DataController.GetInstance().SubKnowledge(CurrentCost);
                 Level++;
                 UpdateUpgrade();
@@ -66,7 +67,7 @@ public class TeasureCostButton : MonoBehaviour
         upGradeTex.text = "" + CurrentCost;
         if (UpgradeName == "treasure_8")
             EffectTex.text = UpgradeNameText + (goldByUpgrade + 100) + "%";
-        else if (UpgradeName == "treasure_8")
+        else if (UpgradeName == "treasure_6")
             EffectTex.text = UpgradeNameText + TEXTtime + "초";
         else
             EffectTex.text = UpgradeNameText + goldByUpgrade + "%";
