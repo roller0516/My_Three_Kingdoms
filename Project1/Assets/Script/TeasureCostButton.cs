@@ -31,7 +31,7 @@ public class TeasureCostButton : MonoBehaviour
     public int StartKnowledgeByUpgrade;//처음 지식 업그레이드양
     public int KnowledgeByUpgrade;// 지식 증가량
     public int StartCurrentCost;
-
+    public float TEXTtime;
     private void Start()
     {
         CurrentCost = StartCurrentCost;
@@ -64,8 +64,10 @@ public class TeasureCostButton : MonoBehaviour
         LevelTex.text =  Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
-        if(UpgradeName == "treasure_8")
-            EffectTex.text = UpgradeNameText+ (goldByUpgrade+100) + "%";
+        if (UpgradeName == "treasure_8")
+            EffectTex.text = UpgradeNameText + (goldByUpgrade + 100) + "%";
+        else if (UpgradeName == "treasure_8")
+            EffectTex.text = UpgradeNameText + TEXTtime + "초";
         else
             EffectTex.text = UpgradeNameText + goldByUpgrade + "%";
 
@@ -159,15 +161,14 @@ public class TeasureCostButton : MonoBehaviour
                 time1 = time * (1-((float)goldByUpgrade / 100));
                 GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime = time1;
                 PlayerPrefs.SetFloat("skill", GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime);
-
                 break;
             case "treasure_6":
                 GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime -= 0.5f;
+                TEXTtime += 0.5f;
                 PlayerPrefs.SetFloat("CreatureSkillButton", GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime);
                 break;
             case "treasure_8":
                 Player.Instance.CriticalPer += 2;
-                
                 PlayerPrefs.SetInt("CriticalPer", Player.Instance.CriticalPer);
                 break;
         }

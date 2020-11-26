@@ -191,6 +191,8 @@ MonoBehaviour:
     type: 3}
   CridamageText: {fileID: 1913563109280866281, guid: 92af598fc0264e9429a488df6bd637ad,
     type: 3}
+  RootingTicket: {fileID: 2211789978839915469, guid: 7b94e89eb808480418d41627de5e19c2,
+    type: 3}
   knockbackPower: 1
   moveSpeed: 0.5
   Hpbar: {fileID: 0}

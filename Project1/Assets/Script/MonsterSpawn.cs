@@ -289,7 +289,7 @@ public class MonsterSpawn : MonoBehaviour
         stg.StageText();
         transform.position = startPosition;
         MonsterCount = 1;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         fade.Fade();
         yield return new WaitForSeconds(0.5f);
         MonsterCount = 0;

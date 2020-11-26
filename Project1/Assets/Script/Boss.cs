@@ -27,6 +27,7 @@ public class Boss : MonoBehaviour
     public GameObject Crihit;
     public GameObject damageText;
     public GameObject CridamageText;
+    public GameObject RootingTicket;
     
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
@@ -219,6 +220,7 @@ public class Boss : MonoBehaviour
     {
         if (Hp <= 0)
         {
+            Instantiate(RootingTicket, gameObject.transform.position, Quaternion.identity);
             _AniState = AnimState.die;
             int num;
             if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
