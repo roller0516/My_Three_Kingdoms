@@ -660,8 +660,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 290aea7f2adfed949866d41d9843cb40, type: 3}
   ButtonClickSound: {fileID: 8300000, guid: c1d2355ae56682a48a3b37ef7746d000, type: 3}
   Boss_s: {fileID: 8300000, guid: 226e83e73ca2ed5479d7b168ae00c67a, type: 3}
-  Tap_s: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
-  Purchase_s: {fileID: 8300000, guid: 8d3f8f60d23f2984a8a478ad7bf9b0b1, type: 3}
+  Tap_s: {fileID: 8300000, guid: c7a72a2608dc22848ba75217571c0043, type: 3}
+  Purchase_s: {fileID: 8300000, guid: c7a72a2608dc22848ba75217571c0043, type: 3}
   Critical_s: {fileID: 8300000, guid: fae291ac9beeea74c87d0db4416ab3c0, type: 3}
   HIT: {fileID: 8300000, guid: 7bde6701774663c45a40190c54868835, type: 3}
   Mimichit: {fileID: 8300000, guid: 1eb92daf8a8ab2040b903e149fa55402, type: 3}
@@ -672,11 +672,11 @@ MonoBehaviour:
   warningsound: {fileID: 8300000, guid: 4d9c1aff3a834934e9c8a9c39b543bc6, type: 3}
   CreatureSpwanSound: {fileID: 8300000, guid: 62190b0485c6173459441c2f5620d25e, type: 3}
   Bgm:
-  - {fileID: 8300000, guid: 273eaea22cbe77b4c99efb440c89f98d, type: 3}
-  - {fileID: 8300000, guid: 828c44ef57197da478b807e137d52e7d, type: 3}
-  - {fileID: 8300000, guid: d4a74581b00ffd94187ae49d86f47e39, type: 3}
-  - {fileID: 8300000, guid: 7f8eb8c128ce15b42a7a326164d0e28d, type: 3}
-  - {fileID: 8300000, guid: 4781c71b09362cd48a2246114a4ca06a, type: 3}
+  - {fileID: 8300000, guid: a32ddf0dfb39f204e94df414e40d0b34, type: 3}
+  - {fileID: 8300000, guid: 106fd406b894fa2439634a4a5d992645, type: 3}
+  - {fileID: 8300000, guid: 2a0f16fec0137954d80c6f9c0e1345c6, type: 3}
+  - {fileID: 8300000, guid: 80e7e2ac4ec10214ea8479a057f7a781, type: 3}
+  - {fileID: 8300000, guid: 6738cd3e7979fc142961a592b225ddbd, type: 3}
 --- !u!4 &712882298
 Transform:
   m_ObjectHideFlags: 0
