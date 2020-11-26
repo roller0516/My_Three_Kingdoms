@@ -273,15 +273,15 @@ namespace VoxelBusters.NativePlugins
 
 			if (m_supportedFeatures.UsesMediaLibrary)
 			{
-				if (m_supportedFeatures.MediaLibrary.usesCamera)
-				{
-					WriteUsesPermission(_xmlWriter:	_xmlWriter,
-				    	                _name: 		"android.permission.CAMERA",
-				        	            _features:	new Feature[] {
-													new Feature("android.hardware.camera", false),
-													new Feature("android.hardware.camera.autofocus", false)},
-				                    _comment:	"Media Library");
-				}
+				//if (m_supportedFeatures.MediaLibrary.usesCamera)
+				//{
+				//	WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				//    	                _name: 		"android.permission.CAMERA",
+				//        	            _features:	new Feature[] {
+				//									new Feature("android.hardware.camera", false),
+				//									new Feature("android.hardware.camera.autofocus", false)},
+				//                    _comment:	"Media Library");
+				//}
 
 				if (m_supportedFeatures.MediaLibrary.usesPhotoAlbum)
 				{
@@ -317,17 +317,17 @@ namespace VoxelBusters.NativePlugins
 
 			}
 
-			if(m_supportedFeatures.UsesWebView)
-			{
-				// Used for file uploads
-				WriteUsesPermission(_xmlWriter:	_xmlWriter,
-					_name: 		"android.permission.CAMERA",
-					_features:	new Feature[] {
-						new Feature("android.hardware.camera", false),
-						new Feature("android.hardware.camera.autofocus", false)},
-					_comment:	"Webview - Uses for file uploading from camera");
+			//if(m_supportedFeatures.UsesWebView)
+			//{
+			//	// Used for file uploads
+			//	WriteUsesPermission(_xmlWriter:	_xmlWriter,
+			//		_name: 		"android.permission.CAMERA",
+			//		_features:	new Feature[] {
+			//			new Feature("android.hardware.camera", false),
+			//			new Feature("android.hardware.camera.autofocus", false)},
+			//		_comment:	"Webview - Uses for file uploading from camera");
 
-			}
+			//}
 
 #endif
 

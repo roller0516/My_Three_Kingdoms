@@ -84,8 +84,9 @@ public class Creature : MonoBehaviour
             }
             else
             {
-                SoundManager.instance.creturesound();
                 Destroy(this.gameObject, 1);
+                yield return new WaitForSeconds(0.9f);
+                SoundManager.instance.creturesound();
                 hit = 0;
             }
         }
@@ -109,8 +110,10 @@ public class Creature : MonoBehaviour
             }
             else
             {
-                SoundManager.instance.creturesound();
+                
                 Destroy(this.gameObject, 1);
+                yield return new WaitForSeconds(0.9f);
+                SoundManager.instance.creturesound();
                 hit = 0;
             }
         }
@@ -136,8 +139,9 @@ public class Creature : MonoBehaviour
             }
             else
             {
-                SoundManager.instance.creturesound();
                 Destroy(this.gameObject, 1);
+                yield return new WaitForSeconds(0.9f);
+                SoundManager.instance.creturesound();
                 hit = 0;
             }
         }

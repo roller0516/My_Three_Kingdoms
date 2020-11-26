@@ -131,7 +131,7 @@ public class TeasureCostButton : MonoBehaviour
                     }
                         print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i));
                 }
-                DataController.GetInstance().Teasure1Ability = goldByUpgrade;
+                DataController.GetInstance().Teasure1Ability += 1;
                 PlayerPrefs.SetInt("Teasure1Ability", DataController.GetInstance().Teasure1Ability);
                 break;
             case "treasure_2":
@@ -150,7 +150,7 @@ public class TeasureCostButton : MonoBehaviour
                     UIManager.GetInstance().upgradeButton[i].CurrentCost1 = ((num * 100) - num2) / 100;
                     DataController.GetInstance().SaveUpgradeButton(UIManager.GetInstance().upgradeButton[i]);
                 }
-                DataController.GetInstance().Teasure2Ability = goldByUpgrade;
+                DataController.GetInstance().Teasure2Ability += 1;
                 PlayerPrefs.SetInt("Teasure2Ability", DataController.GetInstance().Teasure2Ability);
                 break;
             case "treasure_5":
@@ -162,10 +162,7 @@ public class TeasureCostButton : MonoBehaviour
 
                 break;
             case "treasure_6":
-                float time2 = GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime;
-                float time3 = GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().MaxSkillcooltime;
-                time2 = time3 * (1 - ((float)goldByUpgrade / 100));
-                GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime = time2;
+                GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime -= 0.5f;
                 PlayerPrefs.SetFloat("CreatureSkillButton", GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime);
                 break;
             case "treasure_8":

@@ -173,6 +173,7 @@ public class Boss : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        _AniState = AnimState.hit;
         hitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성

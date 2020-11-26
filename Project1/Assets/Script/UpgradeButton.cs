@@ -26,7 +26,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public int MaxLevel = 1000;
     BigInteger Teasure1;
     BigInteger Teasure2;
-    BigInteger num;
 
     public TextMeshProUGUI LevelTex;
     public TextMeshProUGUI upGradeTex;
@@ -48,12 +47,10 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
     public void UpgradeTik(int num)
     {
-        //Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
-        //DataController.GetInstance().SetGoldPerClick("GoldPerClick" + num, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
-        //Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
-        //CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
-
-
+        Teasure1 = BigInteger.Multiply(Level, BigInteger.Multiply(BigInteger.Multiply(DataController.GetInstance().Teasure1Ability, 100), BigInteger.Parse(GoldByUpgrade)));
+        DataController.GetInstance().SetGoldPerClick("GoldPerClick" + num, (BigInteger.Divide(Teasure1, 10000)) + goldByUpgrade);
+        Teasure2 = BigInteger.Multiply(DataController.GetInstance().Teasure2Ability, CurrentCost);
+        CurrentCost1 = ((CurrentCost * 100) - Teasure2) / 100;
         print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + num));
     }
     public void PurChaseUpgrade(int num) //구매 함수
@@ -64,7 +61,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
-                
                 Fx.gameObject.SetActive(true);
                 DataController.GetInstance().SubGold(CurrentCost1);
                 Level++;
@@ -74,7 +70,6 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 UpdateUI();
                 StartCoroutine("FxTime");
                 DataController.GetInstance().SaveUpgradeButton(this);
-                
             }
         }
         
