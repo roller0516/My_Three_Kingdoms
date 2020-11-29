@@ -17,13 +17,12 @@ public class StageManager : MonoBehaviour
     {
         stageCount();
         StageText();
-        if (curStage >= 150)
-        {
+        if (curStage >=101)
             stageSound(2);
-            return;
-        }
-        else
-            stageSound((int)(curStage / 50)+1);
+        else if(curStage >= 51 && curStage < 101)
+            stageSound(1);
+        else if (curStage <51)
+            stageSound(0);
     }
     private void Update()
     {

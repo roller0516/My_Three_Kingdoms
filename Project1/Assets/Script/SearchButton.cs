@@ -78,7 +78,6 @@ public class SearchButton : MonoBehaviour
     {
         if (WIN)
         {
-            print("이겼어요~~~");
             PopUpSystem.GetInstance().ClosePopUp();
             MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage/51));
             switch (S_Name)
@@ -87,6 +86,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView) 
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -129,6 +134,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -172,6 +183,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -215,6 +232,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -257,6 +280,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -299,6 +328,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -341,6 +376,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(2, 11);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
@@ -382,6 +423,12 @@ public class SearchButton : MonoBehaviour
                     print(S_Name);
                     RewardGold = Random.Range(20, 30);
                     RewardKnowledge = Random.Range(50, 116);
+                    if (PopUpSystem.GetInstance().ADView)
+                    {
+                        PopUpSystem.GetInstance().ADView = false;
+                        sl.Upgrade = +2;
+                        print(sl.Upgrade);
+                    }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);

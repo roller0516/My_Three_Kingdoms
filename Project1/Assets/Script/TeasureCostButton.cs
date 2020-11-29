@@ -21,9 +21,10 @@ public class TeasureCostButton : MonoBehaviour
     public int MaxLevel;
     public Transform FxParentTr;
     public ParticleSystem Fx;
-    public Text LevelTex;
+    public TextMeshProUGUI LevelTex;
     public TextMeshProUGUI upGradeTex;
     public TextMeshProUGUI EffectTex;
+    public TextMeshProUGUI EffectNumberTex;
     public Button button_;
     public GameObject img;
     //public GameObject Level_img;
@@ -62,15 +63,18 @@ public class TeasureCostButton : MonoBehaviour
     
     public void UpdateUI()//ui의 변화를 받아온다
     {
-        LevelTex.text =  Level.ToString();
+        LevelTex.text = "Lv" + "."+Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
-        if (UpgradeName == "treasure_8")
-            EffectTex.text = UpgradeNameText + (goldByUpgrade + 100) + "%";
+        EffectTex.text = UpgradeNameText;
+        if (UpgradeName == "treasure_8") 
+        {
+            EffectNumberTex.text = (goldByUpgrade + 100) + "%";
+        }
         else if (UpgradeName == "treasure_6")
-            EffectTex.text = UpgradeNameText + TEXTtime + "초";
+            EffectNumberTex.text = UpgradeNameText + TEXTtime+" " + "초";
         else
-            EffectTex.text = UpgradeNameText + goldByUpgrade + "%";
+            EffectNumberTex.text =goldByUpgrade + "%";
 
         if (Level == MaxLevel)
         {
@@ -108,6 +112,7 @@ public class TeasureCostButton : MonoBehaviour
         if (Level>0)
         {
             EffectTex.color = new Color(70f / 255f, 255f / 255f, 0f / 255f, 255f / 255f);
+            EffectNumberTex.color = new Color(70f / 255f, 255f / 255f, 0f / 255f, 255f / 255f);
         }
     }
     public void UpdateUpgrade() // 업그레이드 공식

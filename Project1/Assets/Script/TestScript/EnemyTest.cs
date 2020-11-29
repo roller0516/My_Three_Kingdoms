@@ -47,8 +47,6 @@ public class EnemyTest : MonoBehaviour
     {
         rig = GetComponent<Rigidbody>();
     }
-
-
     private void Start()
     {
         count = 0;
@@ -66,7 +64,7 @@ public class EnemyTest : MonoBehaviour
         Hp = MaxHp;
         cam = Camera.main;
         Hpbar = Instantiate(HpbarBasic , this.gameObject.transform.position,Quaternion.identity) as Slider;
-        Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
+        Hpbar.transform.SetParent(transform.Find("HpCanvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         HitCount = 0;
         goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 10), 100);

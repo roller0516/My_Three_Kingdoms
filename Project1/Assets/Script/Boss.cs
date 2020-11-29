@@ -61,7 +61,7 @@ public class Boss : MonoBehaviour
         // 무기변경 랜덤으로 변경
         Hp = MaxHp;
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
-        Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
+        Hpbar.transform.SetParent(transform.Find("HpCanvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         hitCount = 0;

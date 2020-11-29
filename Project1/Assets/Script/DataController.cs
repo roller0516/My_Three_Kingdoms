@@ -496,12 +496,14 @@ public class DataController : MonoBehaviour
         TeasureButton.CurrentCost = PlayerPrefs.GetInt(NAME + "teasureCost", TeasureButton.CurrentCost);
         TeasureButton.goldByUpgrade = PlayerPrefs.GetInt(NAME + "teasureUpgrade", TeasureButton.goldByUpgrade);
         TeasureButton.Level = PlayerPrefs.GetInt(NAME + "teasureLevel", TeasureButton.Level);
+        TeasureButton.TEXTtime= PlayerPrefs.GetFloat(NAME + "teasuretime", TeasureButton.TEXTtime);
     }
     public void SaveTeasure(TeasureCostButton TeasureButton)
     {
         string NAME = TeasureButton.UpgradeName;
         PlayerPrefs.SetInt(NAME + "teasureCost", TeasureButton.CurrentCost);
         PlayerPrefs.SetInt(NAME + "teasureUpgrade", TeasureButton.goldByUpgrade);
+        PlayerPrefs.SetFloat(NAME + "teasuretime", TeasureButton.TEXTtime);
         PlayerPrefs.SetInt(NAME + "teasureLevel", TeasureButton.Level);
     }
     public void LoadPlayer(Player player)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using ProjectD;
 
 public class PopUpSystem : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PopUpSystem : MonoBehaviour
     Action onClickCancel;
     private static PopUpSystem instance;
     public Animator ani;
+    public bool ADView;
 
     public static PopUpSystem GetInstance()
     {
@@ -70,6 +72,27 @@ public class PopUpSystem : MonoBehaviour
         else
         {
             print("티켓이부족합니다");
+        }
+    }
+    public void AdEnterDeongun() 
+    {
+        AdService.Instance.ShowInterstitial(FreeEnterDeongun);
+        ADView = true;
+    }
+    void FreeEnterDeongun() 
+    {
+        EnterDeongun = true;
+        MonsterSpawn.GetInstance().BossSummonON = false;
+        if (EnterDeongun)
+        {
+            SoundManager.instance.BgmSound(3);
+            DataController.GetInstance().SubTicket(1);
+            Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+            MonsterSpawn.GetInstance().MonsterCount = 0;
+            MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
+            contentsText.text = "수색중입니다...";
+            buttonobj.SetActive(false);
+            Contentsobj.SetActive(false);
         }
     }
     public void OnClickCancel() 

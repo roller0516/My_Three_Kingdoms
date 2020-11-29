@@ -13,7 +13,6 @@ public class Fadeinout : MonoBehaviour
     public Image Panel;
     public SkeletonGraphic skeletonAni;
     float time = 0f;
-    float f_time = 1f;
     int TouchCount;
     bool aniCheck;
     public bool Win;
@@ -61,17 +60,14 @@ public class Fadeinout : MonoBehaviour
     {
         if (SkeletonGraphic.activeSelf == true)
         {
-            print("ClickOn:"+ClickOn);
-            print("Win"+Win);
             if (Win)
             {
                 ClickOn = true;
                 Lose = false;
                 if (ClickOn == true) 
                 {
-                    if (/*aniCheck == true && */TouchCount == 0)
+                    if (TouchCount == 0)
                     {
-                        print("성공 했음");
                         ani.speed = 0;
                         
                         skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
@@ -99,6 +95,7 @@ public class Fadeinout : MonoBehaviour
                             SkeletonGraphic.SetActive(false);
                             TouchCount = 0;
                             Win = false;
+                            aniCheck = false;
                         }
 
                     }
@@ -112,13 +109,11 @@ public class Fadeinout : MonoBehaviour
                 Win = false;
                 if (TouchCount == 0)
                 {
-                    print("실패 했음");
                     skeletonAni.AnimationState.AddAnimation(0, "2", true, 0);
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
                     TouchCount++;
-                    print("실패 터치");
                     if (TouchCount == 1)
                     {
                         skeletonAni.SkeletonDataAsset.GetAnimationStateData().SetMix("2", "6-1", 0.4f);
@@ -155,6 +150,7 @@ public class Fadeinout : MonoBehaviour
     {
         ClickOn = false;
         yield return new WaitForSeconds(2.6f);
+        print(aniCheck);
         ani.speed = 1;
         SoundManager.instance.TreasureSuccess();
         ClickOn = true;

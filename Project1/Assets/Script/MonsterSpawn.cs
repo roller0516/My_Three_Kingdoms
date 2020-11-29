@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Numerics;
+using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 using Vector2 = UnityEngine.Vector2;
 using Quaternion = UnityEngine.Quaternion;
@@ -230,8 +231,12 @@ public class MonsterSpawn : MonoBehaviour
             UIManager.GetInstance().Starttime = 30;
             UIManager.GetInstance().Currenttime = 30;
             UIManager.GetInstance().timeText.gameObject.SetActive(true);
-            if (PrevMonster != null)
+            if (PrevMonster != null) 
+            {
+                
                 Destroy(PrevMonster.gameObject);
+            }
+               
             MimicHp(UIManager.GetInstance().SearchName);
             MonsterCount++;
             Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
@@ -289,9 +294,8 @@ public class MonsterSpawn : MonoBehaviour
         stg.StageText();
         transform.position = startPosition;
         MonsterCount = 1;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         fade.Fade();
-        yield return new WaitForSeconds(0.5f);
         MonsterCount = 0;
         Player.Instance.transform.position = Player.Instance.startPosition;
     }
@@ -323,7 +327,6 @@ public class MonsterSpawn : MonoBehaviour
         MonsterCount = 1;
         yield return new WaitForSeconds(0.3f);
         fade.Fade();
-        yield return new WaitForSeconds(0.5f);
         MonsterCount = 0;
         Player.Instance.transform.position = Player.Instance.startPosition;
     }
