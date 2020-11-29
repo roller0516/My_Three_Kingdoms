@@ -72,7 +72,7 @@ public class TeasureCostButton : MonoBehaviour
             EffectNumberTex.text = (goldByUpgrade + 100) + "%";
         }
         else if (UpgradeName == "treasure_6")
-            EffectNumberTex.text = UpgradeNameText + TEXTtime+" " + "초";
+            EffectNumberTex.text =  TEXTtime+" " + "초";
         else
             EffectNumberTex.text =goldByUpgrade + "%";
 
