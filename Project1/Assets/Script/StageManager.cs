@@ -34,7 +34,12 @@ public class StageManager : MonoBehaviour
                 return;
             }
             StartCoroutine("ChangeStageRendder");
-            stageSound((int)(curStage / 50)+1);
+            if (curStage >= 101)
+                stageSound(2);
+            else if (curStage >= 51 && curStage < 101)
+                stageSound(1);
+            else if (curStage < 51)
+                stageSound(0);
         }
         else
         {
