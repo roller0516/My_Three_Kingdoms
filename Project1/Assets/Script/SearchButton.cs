@@ -16,6 +16,9 @@ public class SearchButton : MonoBehaviour
     bool timerTrue;
     public Image[] itemImage;
     public Image rewardimage;
+    public TextMeshProUGUI Gold_Text;
+    public TextMeshProUGUI Knowledge_Text;
+    public TextMeshProUGUI itemName_Text;
     public static bool Getitme;
     int RewardGold;
     int RewardKnowledge;
@@ -72,7 +75,6 @@ public class SearchButton : MonoBehaviour
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special16");
                 break;
         }
-
     }
     public void Win(bool WIN)
     {
@@ -90,11 +92,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
-                        print(sl.Upgrade);
+                        RewardKnowledge = 2 * RewardKnowledge;
                     }
                     RewardGold = sl.Upgrade * RewardGold;
+                    
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         print("아이템 얻음");
@@ -102,21 +107,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[0].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special1");
+                            itemName_Text.text = sl.Sp_item[0].itemName;
                             sl.Sp_item[0].itemCount++;
                         }
                         else if (sl.Sp_item[1].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special2");
+                            itemName_Text.text = sl.Sp_item[1].itemName;
                             sl.Sp_item[1].itemCount++;
                         }
                         else if (sl.Sp_item[0].itemCount == 10 && sl.Sp_item[1].itemCount < 10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special2");
+                            itemName_Text.text = sl.Sp_item[1].itemName;
                             sl.Sp_item[1].itemCount++;
                         }
                         else if (sl.Sp_item[1].itemCount == 10&& sl.Sp_item[0].itemCount < 10) 
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special1");
+                            itemName_Text.text = sl.Sp_item[0].itemName;
                             sl.Sp_item[0].itemCount++;
                         }
                         else 
@@ -138,11 +147,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         print("아이템 얻음");
@@ -151,21 +163,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[2].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special3");
+                            itemName_Text.text = sl.Sp_item[2].itemName;
                             sl.Sp_item[2].itemCount++;
                         }
                         else if (sl.Sp_item[3].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special4");
+                            itemName_Text.text = sl.Sp_item[3].itemName;
                             sl.Sp_item[3].itemCount++;
                         }
                         else if (sl.Sp_item[2].itemCount == 10&& sl.Sp_item[3].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special4");
+                            itemName_Text.text = sl.Sp_item[3].itemName;
                             sl.Sp_item[3].itemCount++;
                         }
                         else if (sl.Sp_item[3].itemCount == 10&& sl.Sp_item[2].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special3");
+                            itemName_Text.text = sl.Sp_item[2].itemName;
                             sl.Sp_item[2].itemCount++;
                         }
                         else 
@@ -187,11 +203,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         print("아이템 얻음");
@@ -200,21 +219,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[4].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special5");
+                            itemName_Text.text = sl.Sp_item[4].itemName;
                             sl.Sp_item[4].itemCount++;
                         }
                         else if (sl.Sp_item[5].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                            itemName_Text.text = sl.Sp_item[5].itemName;
                             sl.Sp_item[5].itemCount++;
                         }
                         else if (sl.Sp_item[4].itemCount == 10&& sl.Sp_item[5].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                            itemName_Text.text = sl.Sp_item[5].itemName;
                             sl.Sp_item[5].itemCount++;
                         }
                         else if (sl.Sp_item[5].itemCount == 10&& sl.Sp_item[4].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special5");
+                            itemName_Text.text = sl.Sp_item[4].itemName;
                             sl.Sp_item[4].itemCount++;
                         }
                         else 
@@ -236,11 +259,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         
@@ -248,21 +274,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[6].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special7");
+                            itemName_Text.text = sl.Sp_item[6].itemName;
                             sl.Sp_item[6].itemCount++;
                         }
                         else if (sl.Sp_item[7].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special8");
+                            itemName_Text.text = sl.Sp_item[7].itemName;
                             sl.Sp_item[7].itemCount++;
                         }
                         else if (sl.Sp_item[6].itemCount == 10&& sl.Sp_item[5].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special8");
+                            itemName_Text.text = sl.Sp_item[7].itemName;
                             sl.Sp_item[7].itemCount++;
                         }
                         else if (sl.Sp_item[7].itemCount == 10&& sl.Sp_item[6].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special7");
+                            itemName_Text.text = sl.Sp_item[6].itemName;
                             sl.Sp_item[6].itemCount++;
                         }
                         else 
@@ -284,11 +314,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     Getitme = true;
                     if (RandomRange1 <= 30)
                     {
@@ -296,21 +329,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[8].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special9");
+                            itemName_Text.text = sl.Sp_item[8].itemName;
                             sl.Sp_item[8].itemCount++;
                         }
                         else if (sl.Sp_item[9].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special10");
+                            itemName_Text.text = sl.Sp_item[9].itemName;
                             sl.Sp_item[9].itemCount++;
                         }
                         else if (sl.Sp_item[8].itemCount ==10 && sl.Sp_item[9].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special10");
+                            itemName_Text.text = sl.Sp_item[9].itemName;
                             sl.Sp_item[9].itemCount++;
                         }
                         else if (sl.Sp_item[9].itemCount ==10 && sl.Sp_item[8].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special9");
+                            itemName_Text.text = sl.Sp_item[8].itemName;
                             sl.Sp_item[8].itemCount++;
                         }
                         else 
@@ -332,11 +369,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         
@@ -344,21 +384,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[10].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special11");
+                            itemName_Text.text = sl.Sp_item[10].itemName;
                             sl.Sp_item[10].itemCount++;
                         }
                         else if (sl.Sp_item[11].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special12");
+                            itemName_Text.text = sl.Sp_item[11].itemName;
                             sl.Sp_item[11].itemCount++;
                         }
                         else if (sl.Sp_item[10].itemCount == 10 && sl.Sp_item[11].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special12");
+                            itemName_Text.text = sl.Sp_item[11].itemName;
                             sl.Sp_item[11].itemCount++;
                         }
                         else if (sl.Sp_item[11].itemCount == 10 && sl.Sp_item[10].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special11");
+                            itemName_Text.text = sl.Sp_item[10].itemName;
                             sl.Sp_item[10].itemCount++;
                         }
                         else 
@@ -380,32 +424,39 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         Getitme = true;
                         if (sl.Sp_item[12].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special13");
+                            itemName_Text.text = sl.Sp_item[12].itemName;
                             sl.Sp_item[12].itemCount++;
                         }
                         else if (sl.Sp_item[13].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special14");
+                            itemName_Text.text = sl.Sp_item[13].itemName;
                             sl.Sp_item[13].itemCount++;
                         }
                         else if (sl.Sp_item[12].itemCount == 10 && sl.Sp_item[13].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special14");
+                            itemName_Text.text = sl.Sp_item[13].itemName;
                             sl.Sp_item[13].itemCount++;
                         }
                         else if (sl.Sp_item[13].itemCount == 10 && sl.Sp_item[12].itemCount<10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special13");
+                            itemName_Text.text = sl.Sp_item[12].itemName;
                             sl.Sp_item[12].itemCount++;
                         }
                         else 
@@ -427,11 +478,14 @@ public class SearchButton : MonoBehaviour
                     {
                         PopUpSystem.GetInstance().ADView = false;
                         sl.Upgrade = +2;
+                        RewardKnowledge = 2 * RewardKnowledge;
                         print(sl.Upgrade);
                     }
                     RewardGold = sl.Upgrade * RewardGold;
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
+                    Gold_Text.text = RewardGold.ToString();
+                    Knowledge_Text.text = RewardKnowledge.ToString();
                     if (RandomRange1 <= 30)
                     {
                         
@@ -439,21 +493,25 @@ public class SearchButton : MonoBehaviour
                         if (sl.Sp_item[14].itemCount < 10 && ItemRandomRange <= 50)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special15");
+                            itemName_Text.text = sl.Sp_item[14].itemName;
                             sl.Sp_item[14].itemCount++;
                         }
                         else if (sl.Sp_item[15].itemCount < 10 && ItemRandomRange >= 51)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                            itemName_Text.text = sl.Sp_item[15].itemName;
                             sl.Sp_item[15].itemCount++;
                         }
                         else if (sl.Sp_item[14].itemCount == 10 && sl.Sp_item[15].itemCount < 10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                            itemName_Text.text = sl.Sp_item[15].itemName;
                             sl.Sp_item[15].itemCount++;
                         }
                         else if (sl.Sp_item[15].itemCount == 10 && sl.Sp_item[14].itemCount <10)
                         {
                             rewardimage.sprite = Resources.Load<Sprite>("UI/Treasure/special15");
+                            itemName_Text.text = sl.Sp_item[14].itemName;
                             sl.Sp_item[14].itemCount++;
                         }
                         else

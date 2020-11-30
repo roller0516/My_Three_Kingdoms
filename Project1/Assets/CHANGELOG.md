@@ -1,3 +1,32 @@
+# [3.3.0](https://github.com/mob-sakai/ParticleEffectForUGUI/compare/3.2.0...3.3.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* the particles may disappear unintentionally ([2ec81da](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/2ec81da04877d63593dd863133b6da149dcd79e6)), closes [#117](https://github.com/mob-sakai/ParticleEffectForUGUI/issues/117)
+
+
+### Features
+
+* ignore rendering of particle systems that do not have a SharedMaterial and TrailMaterial ([08c4aba](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/08c4aba8ab9b5a041d4350a72dae62d25530afca)), closes [#118](https://github.com/mob-sakai/ParticleEffectForUGUI/issues/118)
+* show/hide materials in inspector ([4b4aebf](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/4b4aebff8cdaff9acc696a1094e170e65631135f))
+* shrink rendering by material ([46a7ddd](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/46a7dddd11c3e030192cd998ae1a79441f5e5c14)), closes [#113](https://github.com/mob-sakai/ParticleEffectForUGUI/issues/113)
+
+# [3.2.0](https://github.com/mob-sakai/ParticleEffectForUGUI/compare/3.1.1...3.2.0) (2020-11-15)
+
+
+### Features
+
+* compatibility with other IMaterialModifier ([08273cb](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/08273cb0c340ccb4f35120dc804c37d758da9ce1)), closes [#115](https://github.com/mob-sakai/ParticleEffectForUGUI/issues/115)
+
+## [3.1.1](https://github.com/mob-sakai/ParticleEffectForUGUI/compare/3.1.0...3.1.1) (2020-11-09)
+
+
+### Bug Fixes
+
+* error on build in Unity 2019.3.11-15 ([68669c7](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/68669c739676f2354db4913a0e2296ab1715ee1f)), closes [#114](https://github.com/mob-sakai/ParticleEffectForUGUI/issues/114)
+* null Reference when creating New Scene after Prefab was open in PrefabMode ([22bcecd](https://github.com/mob-sakai/ParticleEffectForUGUI/commit/22bcecd0abd6ad651fcf066e5c9efe9a43fd217a)), closes [#111](https://github.com/mob-sakai/ParticleEffectForUGUI/issues/111)
+
 # [3.1.0](https://github.com/mob-sakai/ParticleEffectForUGUI/compare/3.0.1...3.1.0) (2020-10-28)
 
 

@@ -77,6 +77,7 @@ public class PopUpSystem : MonoBehaviour
     public void AdEnterDeongun() 
     {
         AdService.Instance.ShowInterstitial(FreeEnterDeongun);
+
         ADView = true;
     }
     void FreeEnterDeongun() 
