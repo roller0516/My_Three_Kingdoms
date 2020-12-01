@@ -58,13 +58,15 @@ public class PopUpSystem : MonoBehaviour
     {
         if (DataController.GetInstance().GetTicket() >= 1&& MonsterSpawn.GetInstance().Teleport)
         {
+            
             EnterDeongun = true;
             MonsterSpawn.GetInstance().BossSummonON = false;
             if (EnterDeongun)
             {
+                MonsterSpawn.GetInstance().fade.Fade();
                 SoundManager.instance.BgmSound(3);
                 DataController.GetInstance().SubTicket(1);
-                Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+                StartCoroutine("teleport");
                 MonsterSpawn.GetInstance().MonsterCount = 0;
                 MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
                 contentsText.text = "수색중입니다...";
@@ -97,9 +99,10 @@ public class PopUpSystem : MonoBehaviour
             MonsterSpawn.GetInstance().BossSummonON = false;
             if (EnterDeongun)
             {
+                MonsterSpawn.GetInstance().fade.Fade();
                 SoundManager.instance.BgmSound(3);
                 DataController.GetInstance().SubTicket(1);
-                Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+                StartCoroutine("teleport");
                 MonsterSpawn.GetInstance().MonsterCount = 0;
                 MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
                 contentsText.text = "수색중입니다...";
@@ -107,6 +110,13 @@ public class PopUpSystem : MonoBehaviour
                 Contentsobj.SetActive(false);
             }
         }
+    }
+    IEnumerator teleport() 
+    {
+        yield return new WaitForSeconds(0.85f);
+        MonsterSpawn.GetInstance().fade.Fade();
+        yield return new WaitForSeconds(0.2f);
+        Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
     }
     public void AddTicketAD() 
     {

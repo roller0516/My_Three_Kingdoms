@@ -9676,6 +9676,7 @@ MonoBehaviour:
   MimicIsDie: 0
   BossSummonON: 0
   BossFail: 0
+  Teleport: 1
   PrevMonster: {fileID: 0}
   SpawnPoints: {fileID: 2057976386}
   MonsterByStage:
@@ -14108,6 +14109,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenADpopUP
       objectReference: {fileID: 0}
+    - target: {fileID: 1351274334563694186, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: UpgradeNameText
+      value: "\uBCF4\uC2A4 \uC2A4\uD0AC \uCFE8\uD0C0\uC784       \uCD08\uAC10\uC18C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351274334563694186, guid: f8552696e0315ff42a7089a6f8850a34,
+        type: 3}
+      propertyPath: LevelTex
+      value: 
+      objectReference: {fileID: 2143842785394221247}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8552696e0315ff42a7089a6f8850a34, type: 3}
 --- !u!224 &2143842785394221245 stripped
@@ -14126,6 +14137,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ede6ad30ff974ad43b3f1740ca615ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2143842785394221247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7357089925172671573, guid: f8552696e0315ff42a7089a6f8850a34,
+    type: 3}
+  m_PrefabInstance: {fileID: 2143842785394221244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &2143842785394221248 stripped
