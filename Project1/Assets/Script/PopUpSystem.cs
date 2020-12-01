@@ -12,6 +12,8 @@ public class PopUpSystem : MonoBehaviour
     public bool EnterDeongun;
     public GameObject buttonobj;
     public GameObject Contentsobj;
+    public GameObject ad;
+    public GameObject ad2;
     Action onClickOkay;
     Action onClickCancel;
     private static PopUpSystem instance;
@@ -48,12 +50,13 @@ public class PopUpSystem : MonoBehaviour
 
     public void ClosePopUp()
     {
+
         ani.SetTrigger("Close");
         PopUp.SetActive(false);
     }
     public void OnClickOkay() 
     {
-        if (DataController.GetInstance().GetTicket() >= 1)
+        if (DataController.GetInstance().GetTicket() >= 1&& MonsterSpawn.GetInstance().Teleport)
         {
             EnterDeongun = true;
             MonsterSpawn.GetInstance().BossSummonON = false;
@@ -69,32 +72,67 @@ public class PopUpSystem : MonoBehaviour
                 Contentsobj.SetActive(false);
             }
         }
-        else
+        else if(DataController.GetInstance().GetTicket() ==0)
         {
-            print("티켓이부족합니다");
+            ad2.gameObject.SetActive(true);
         }
     }
     public void AdEnterDeongun() 
     {
-        AdService.Instance.ShowInterstitial(FreeEnterDeongun);
-
+        if (DataController.GetInstance().GetTicket() ==0)
+        {
+            ad.SetActive(false);
+            ad2.gameObject.SetActive(true);
+            return;
+        }
+        else if(MonsterSpawn.GetInstance().Teleport)
+            AdService.Instance.ShowInterstitial(FreeEnterDeongun);
         ADView = true;
     }
     void FreeEnterDeongun() 
     {
-        EnterDeongun = true;
-        MonsterSpawn.GetInstance().BossSummonON = false;
-        if (EnterDeongun)
+        if (DataController.GetInstance().GetTicket() >= 1 )
         {
-            SoundManager.instance.BgmSound(3);
-            DataController.GetInstance().SubTicket(1);
-            Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
-            MonsterSpawn.GetInstance().MonsterCount = 0;
-            MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
-            contentsText.text = "수색중입니다...";
-            buttonobj.SetActive(false);
-            Contentsobj.SetActive(false);
+            EnterDeongun = true;
+            MonsterSpawn.GetInstance().BossSummonON = false;
+            if (EnterDeongun)
+            {
+                SoundManager.instance.BgmSound(3);
+                DataController.GetInstance().SubTicket(1);
+                Player.Instance.transform.position = new Vector3(-262.43f, Player.Instance.transform.position.y - 20f, Player.Instance.transform.position.z);
+                MonsterSpawn.GetInstance().MonsterCount = 0;
+                MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y - 20, MonsterSpawn.GetInstance().transform.position.z);
+                contentsText.text = "수색중입니다...";
+                buttonobj.SetActive(false);
+                Contentsobj.SetActive(false);
+            }
         }
+    }
+    public void AddTicketAD() 
+    {
+        AdService.Instance.ShowInterstitial(AddTicket);
+    }
+    void AddTicket() 
+    {
+        DataController.GetInstance().AddTicket(3);
+    }
+    public void OpenADpopUP() 
+    {
+        ad.SetActive(true);
+    }
+
+    public void OnADPoPUpYes() 
+    {
+        AdEnterDeongun();
+    }
+    public void OnADPoPUpNo()
+    {
+        ad.SetActive(false);
+    }
+    public void OnADPoPUpNo2()
+    {
+        
+        ad2.SetActive(false);
     }
     public void OnClickCancel() 
     {

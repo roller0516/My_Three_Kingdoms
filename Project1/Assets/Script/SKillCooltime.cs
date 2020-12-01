@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 using ProjectD;
@@ -13,6 +14,7 @@ public class SKillCooltime : MonoBehaviour
     public float MaxSkillcooltime;
     public float skilldurationtime;
     public float CrurrentTime;
+    public ParticleSystem particle;
     bool Attack_SpeedskillOn;
     bool SkillStart;
     
@@ -64,19 +66,29 @@ public class SKillCooltime : MonoBehaviour
 
             Backgroudimage.fillAmount = 1.0f - (Mathf.SmoothStep(0, 100, skillcooltime / CrurrentTime) / 100);
             cooltime.gameObject.SetActive(true);
-            cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
-
+            if (CrurrentTime - skillcooltime > 0)
+                cooltime.text = ((CrurrentTime - skillcooltime)).ToString("N1");
+            else
+                cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
             if (skillcooltime >= CrurrentTime)
             {
                 cooltime.gameObject.SetActive(false);
                 skillcooltime = 0;
                 Attack_SpeedskillOn = false;
+                StartCoroutine("StartParticle");
             }
         }
         else if (Attack_SpeedskillOn == false)
         {
             Skillbutton.interactable = true;
         }
+    }
+    IEnumerator StartParticle()
+    {
+        particle.gameObject.SetActive(true);
+        particle.Play();
+        yield return new WaitForSeconds(1);
+        particle.gameObject.SetActive(false);
     }
 }
 

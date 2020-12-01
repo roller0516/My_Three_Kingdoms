@@ -40,6 +40,7 @@ public class MonsterSpawn : MonoBehaviour
     public bool MimicIsDie = false;
     public bool BossSummonON;
     public bool BossFail;
+    public bool Teleport = true;
     public GameObject PrevMonster;
     public Transform SpawnPoints;
     [SerializeField]
@@ -65,6 +66,7 @@ public class MonsterSpawn : MonoBehaviour
     }
     private void Start()
     {
+        Teleport = true;
         fade = FindObjectOfType<Fadeinout>();
         stg = FindObjectOfType<StageManager>();
         warning = FindObjectOfType<Warning>();
@@ -291,13 +293,20 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator BossDeath()
     {
-        stg.StageText();
-        transform.position = startPosition;
-        MonsterCount = 1;
-        yield return new WaitForSeconds(0.3f);
-        fade.Fade();
-        MonsterCount = 0;
-        Player.Instance.transform.position = Player.Instance.startPosition;
+        if (Teleport) 
+        {
+            Teleport = false;
+            stg.StageText();
+            transform.position = startPosition;
+            MonsterCount = 1;
+            yield return new WaitForSeconds(0.3f);
+            fade.Fade();
+            yield return new WaitForSeconds(0.5f);
+            MonsterCount = 0;
+            Player.Instance.transform.position = Player.Instance.startPosition;
+            Teleport = true;
+
+        }
     }
     IEnumerator BossSpwan()
     {
@@ -310,25 +319,36 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator MimicDeath()
     {
-        stg.StageText();
-        transform.position = startPosition;
-        MonsterCount = 1;
-        fade.SearchReward();
-        yield return new WaitForSeconds(0.3f);
-        fade.Fade();
-        yield return new WaitForSeconds(0.5f);
-        MonsterCount = 0;
-        Player.Instance.transform.position = Player.Instance.startPosition;
+        if (Teleport)
+        {
+            Teleport = false;
+            stg.StageText();
+            transform.position = startPosition;
+            MonsterCount = 1;
+            fade.SearchReward();
+            yield return new WaitForSeconds(0.3f);
+            fade.Fade();
+            yield return new WaitForSeconds(0.5f);
+            MonsterCount = 0;
+            Player.Instance.transform.position = Player.Instance.startPosition;
+            Teleport = true;
+        }
     }
     IEnumerator MaxMonsterDie()
     {
-        stg.StageText();
-        transform.position = startPosition;
-        MonsterCount = 1;
-        yield return new WaitForSeconds(0.3f);
-        fade.Fade();
-        MonsterCount = 0;
-        Player.Instance.transform.position = Player.Instance.startPosition;
+        if (Teleport) 
+        {
+            Teleport = false;
+            stg.StageText();
+            transform.position = startPosition;
+            MonsterCount = 1;
+            yield return new WaitForSeconds(0.3f);
+            fade.Fade();
+            yield return new WaitForSeconds(0.5f);
+            MonsterCount = 0;
+            Player.Instance.transform.position = Player.Instance.startPosition;
+            Teleport = true;
+        }
     }
     void MimicHp(string Name) 
     {

@@ -15,7 +15,9 @@ public class CreatureSummon : MonoBehaviour
     public bool BossSkillOn;
     public bool BossSkillCheck;
     public GameObject[] Creatures;
+    public ParticleSystem particle;
     public string CreatureName;
+    bool ParticleOn;
 
     private void Start()
     {
@@ -51,18 +53,29 @@ public class CreatureSummon : MonoBehaviour
             skillcooltime += Time.deltaTime;
             Backgroudimage.fillAmount = 1.0f - (Mathf.SmoothStep(0, 100, skillcooltime / CrurrentTime) / 100);
             cooltime.gameObject.SetActive(true);
-            cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
+            if (CrurrentTime - skillcooltime > 0)
+                cooltime.text = ((CrurrentTime - skillcooltime)).ToString("N1");
+            else
+                cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
             if (skillcooltime >= CrurrentTime)
             {
                 cooltime.gameObject.SetActive(false);
                 skillcooltime = 0;
                 BossSkillOn = false;
+                StartCoroutine("StartParticle");
             }
         }
         else if (BossSkillOn == false)
         {
             Skillbutton.interactable = true;
         }
+    }
+    IEnumerator StartParticle()
+    {
+        particle.gameObject.SetActive(true);
+        particle.Play();
+        yield return new WaitForSeconds(1);
+        particle.gameObject.SetActive(false);
     }
 
 }

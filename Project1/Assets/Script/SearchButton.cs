@@ -95,7 +95,6 @@ public class SearchButton : MonoBehaviour
                         RewardKnowledge = 2 * RewardKnowledge;
                     }
                     RewardGold = sl.Upgrade * RewardGold;
-                    
                     DataController.GetInstance().AddPaidGold(RewardGold);
                     DataController.GetInstance().AddKnowledge(RewardKnowledge);
                     Gold_Text.text = RewardGold.ToString();

@@ -269,7 +269,7 @@ public class Boss : MonoBehaviour
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             BossDictionary.GetInstance().ChangeSprite(BossName);
-            DataController.GetInstance().AddTicket(10);
+            DataController.GetInstance().AddTicket(5);
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
             Destroy(Hpbar.gameObject, 2f);
