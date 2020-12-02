@@ -178,6 +178,8 @@ MonoBehaviour:
     type: 3}
   CridamageText: {fileID: 1913563109280866281, guid: 92af598fc0264e9429a488df6bd637ad,
     type: 3}
+  CreatureDamageText: {fileID: 7706422895436503616, guid: 0cf4635ab15bd6d4f9504702f0cc0a3b,
+    type: 3}
   knockbackPower: 1
   moveSpeed: 0.5
   Hpbar: {fileID: 0}

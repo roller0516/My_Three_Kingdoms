@@ -25,15 +25,12 @@ public class Creature : MonoBehaviour
     {
         Move, Attack
     }
-    private AnimState _AniState;
     private Animator ani;
-    private Transform target;
     public GameObject Monster;
     public GameObject BossFX;
     public float moveSpeed = 0.5f;
     public int Maxhitcount;
     int hit = 0;
-    BigInteger AttackDamage;    
     // Start is called before the first frame update
     void Start()
     {

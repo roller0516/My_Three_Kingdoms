@@ -21,6 +21,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip weaponbuttonsound;
     public AudioClip warningsound;
     public AudioClip CreatureSpwanSound;
+    public AudioClip Trainging_Effect;
     public AudioClip[] Bgm;
     private void Awake()
     {
@@ -106,6 +107,10 @@ public class SoundManager : MonoBehaviour
     public void creturesound()
     {
         myAudio.PlayOneShot(CreatureSpwanSound);
+    }
+    public void trainiong_effect() 
+    {
+        myAudio.PlayOneShot(Trainging_Effect);
     }
 }
 

@@ -47,6 +47,7 @@ public class TeasureCostButton : MonoBehaviour
         {
             if (DataController.GetInstance().GetKnowledge() >= CurrentCost)
             {
+                SoundManager.instance.trainiong_effect();
                 ParticleSystem xx = Instantiate(Fx, FxParentTr);
                 xx.transform.SetParent(FxParentTr);
                 DataController.GetInstance().SubKnowledge(CurrentCost);

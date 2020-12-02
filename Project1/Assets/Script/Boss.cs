@@ -28,7 +28,8 @@ public class Boss : MonoBehaviour
     public GameObject damageText;
     public GameObject CridamageText;
     public GameObject RootingTicket;
-    
+    public GameObject CreatureDamageText;
+
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
 
@@ -188,7 +189,7 @@ public class Boss : MonoBehaviour
         _AniState = AnimState.hit;
         SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);// 데미지 텍스트 생성
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
+        Instantiate(CreatureDamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
         Hp -= damage;// hp 뺌

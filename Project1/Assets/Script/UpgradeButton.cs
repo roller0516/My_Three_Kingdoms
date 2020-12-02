@@ -61,6 +61,7 @@ public class UpgradeButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             if (DataController.GetInstance().GetGold() >= CurrentCost1)
             {
+                SoundManager.instance.trainiong_effect();
                 ParticleSystem xx = Instantiate(Fx, FxParentTr);
                 xx.transform.SetParent(FxParentTr);
                 DataController.GetInstance().SubGold(CurrentCost1);
