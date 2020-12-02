@@ -139,7 +139,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (boss_IsDie == true)
         {
-            UIManager.GetInstance().timeText.gameObject.SetActive(false);
+            UIManager.GetInstance().Timer.gameObject.SetActive(false);
             BossSummonON = false;
             boss_IsDie = false;
             stg.MonsterCount++;
@@ -151,7 +151,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (MimicIsDie == true)
         {
-            UIManager.GetInstance().timeText.gameObject.SetActive(false);
+            UIManager.GetInstance().Timer.gameObject.SetActive(false);
             switch (UIManager.GetInstance().SearchName)
             {
                 case "하북":
@@ -232,7 +232,7 @@ public class MonsterSpawn : MonoBehaviour
         {
             UIManager.GetInstance().Starttime = 30;
             UIManager.GetInstance().Currenttime = 30;
-            UIManager.GetInstance().timeText.gameObject.SetActive(true);
+            UIManager.GetInstance().Timer.gameObject.SetActive(true);
             if (PrevMonster != null) 
             {
                 
@@ -299,23 +299,28 @@ public class MonsterSpawn : MonoBehaviour
             stg.StageText();
             transform.position = startPosition;
             MonsterCount = 1;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(1);
             fade.Fade();
             yield return new WaitForSeconds(0.5f);
             MonsterCount = 0;
             Player.Instance.transform.position = Player.Instance.startPosition;
             Teleport = true;
-
         }
     }
     IEnumerator BossSpwan()
     {
-        warning.Fade();
-        yield return new WaitForSeconds(0.3f);
-        UIManager.GetInstance().Starttime = 60;
-        UIManager.GetInstance().Currenttime = 60;
-        UIManager.GetInstance().timeText.gameObject.SetActive(true);
-        SoundManager.instance.BossSound();
+        if (PopUpSystem.GetInstance().EnterDeongun == true)
+            yield break;
+        else 
+        {
+            stg.StageText();
+            warning.Fade();
+            yield return new WaitForSeconds(0.3f);
+            UIManager.GetInstance().Starttime = 60;
+            UIManager.GetInstance().Currenttime = 60;
+            UIManager.GetInstance().Timer.gameObject.SetActive(true);
+            SoundManager.instance.BossSound();
+        }
     }
     IEnumerator MimicDeath()
     {
@@ -336,7 +341,9 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator MaxMonsterDie()
     {
-        if (Teleport) 
+        if (PopUpSystem.GetInstance().EnterDeongun == true)
+            yield break;
+        else if (Teleport)
         {
             Teleport = false;
             stg.StageText();

@@ -17,29 +17,14 @@ public class StageManager : MonoBehaviour
     {
         stageCount();
         StageText();
-        if (curStage >=101)
-            stageSound(2);
-        else if(curStage >= 51 && curStage < 101)
-            stageSound(1);
-        else if (curStage <51)
-            stageSound(0);
+        StageSound_p();
     }
     private void Update()
     {
         if (curStage == 1 || curStage % 50 == 1)
         {
-            if (curStage >= 150)
-            {
-                stageSound(2);
-                return;
-            }
             StartCoroutine("ChangeStageRendder");
-            if (curStage >= 101)
-                stageSound(2);
-            else if (curStage >= 51 && curStage < 101)
-                stageSound(1);
-            else if (curStage < 51)
-                stageSound(0);
+            StageSound_p();
         }
         else
         {
@@ -70,6 +55,15 @@ public class StageManager : MonoBehaviour
                 BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround01", typeof(Material)) as Material;
             }
         }
+    }
+    public void StageSound_p() 
+    {
+        if (curStage >= 101)
+            stageSound(2);
+        else if (curStage >= 51 && curStage < 101)
+            stageSound(1);
+        else if (curStage < 51)
+            stageSound(0);
     }
     public void stageSound(int num)
     {

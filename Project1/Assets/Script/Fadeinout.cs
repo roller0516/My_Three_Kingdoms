@@ -150,10 +150,10 @@ public class Fadeinout : MonoBehaviour
     {
         ClickOn = false;
         yield return new WaitForSeconds(2.6f);
-        print(aniCheck);
         ani.speed = 1;
         SoundManager.instance.TreasureSuccess();
         ClickOn = true;
+        yield return new WaitForSeconds(3f);
         aniCheck = true;
     }
     

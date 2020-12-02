@@ -50,7 +50,6 @@ public class PopUpSystem : MonoBehaviour
 
     public void ClosePopUp()
     {
-
         ani.SetTrigger("Close");
         PopUp.SetActive(false);
     }
@@ -58,7 +57,8 @@ public class PopUpSystem : MonoBehaviour
     {
         if (DataController.GetInstance().GetTicket() >= 1&& MonsterSpawn.GetInstance().Teleport)
         {
-            
+            ad.gameObject.SetActive(false);
+            ad2.gameObject.SetActive(false);
             EnterDeongun = true;
             MonsterSpawn.GetInstance().BossSummonON = false;
             if (EnterDeongun)
@@ -81,13 +81,13 @@ public class PopUpSystem : MonoBehaviour
     }
     public void AdEnterDeongun() 
     {
-        if (DataController.GetInstance().GetTicket() ==0)
+        if (DataController.GetInstance().GetTicket() == 0)
         {
             ad.SetActive(false);
             ad2.gameObject.SetActive(true);
             return;
         }
-        else if(MonsterSpawn.GetInstance().Teleport)
+        else if (MonsterSpawn.GetInstance().Teleport)
             AdService.Instance.ShowInterstitial(FreeEnterDeongun);
         ADView = true;
     }
@@ -95,6 +95,8 @@ public class PopUpSystem : MonoBehaviour
     {
         if (DataController.GetInstance().GetTicket() >= 1 )
         {
+            ad.gameObject.SetActive(false);
+            ad2.gameObject.SetActive(false);
             EnterDeongun = true;
             MonsterSpawn.GetInstance().BossSummonON = false;
             if (EnterDeongun)
@@ -125,6 +127,7 @@ public class PopUpSystem : MonoBehaviour
     void AddTicket() 
     {
         DataController.GetInstance().AddTicket(3);
+        ad2.gameObject.SetActive(false);
     }
     public void OpenADpopUP() 
     {
@@ -141,7 +144,6 @@ public class PopUpSystem : MonoBehaviour
     }
     public void OnADPoPUpNo2()
     {
-        
         ad2.SetActive(false);
     }
     public void OnClickCancel() 

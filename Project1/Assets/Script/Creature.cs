@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
+using Quaternion = UnityEngine.Quaternion;
 using Spine.Unity;
 using System.Numerics;
 
@@ -27,6 +29,7 @@ public class Creature : MonoBehaviour
     private Animator ani;
     private Transform target;
     public GameObject Monster;
+    public GameObject BossFX;
     public float moveSpeed = 0.5f;
     public int Maxhitcount;
     int hit = 0;
@@ -34,6 +37,7 @@ public class Creature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Monster = Player.Instance.Monster;
         SoundManager.instance.creturesound();
         ani = GetComponent<Animator>();
@@ -69,8 +73,9 @@ public class Creature : MonoBehaviour
     {
         if (Monster == null || Monster.activeSelf == false)
         {
+            Instantiate(BossFX,gameObject.transform);
             SoundManager.instance.creturesound();
-            Destroy(this.gameObject, 1);
+            Destroy(this.gameObject,0.5f);
             yield break;
         }
         else
@@ -84,8 +89,10 @@ public class Creature : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject, 1);
-                yield return new WaitForSeconds(0.9f);
+                Destroy(this.gameObject, 0.5f);
+                yield return new WaitForSeconds(0.1f);
+                Instantiate(BossFX, gameObject.transform);
+                yield return new WaitForSeconds(0.3f);
                 SoundManager.instance.creturesound();
                 hit = 0;
             }
@@ -95,8 +102,9 @@ public class Creature : MonoBehaviour
     {
         if (Monster == null || Monster.activeSelf == false)
         {
+            Instantiate(BossFX, gameObject.transform);
             SoundManager.instance.creturesound();
-            Destroy(this.gameObject, 1);
+            Destroy(this.gameObject, 0.5f);
             yield break;
         }
         else
@@ -110,9 +118,10 @@ public class Creature : MonoBehaviour
             }
             else
             {
-                
-                Destroy(this.gameObject, 1);
-                yield return new WaitForSeconds(0.9f);
+                Destroy(this.gameObject, 0.5f);
+                yield return new WaitForSeconds(0.1f);
+                Instantiate(BossFX, gameObject.transform);
+                yield return new WaitForSeconds(0.3f);
                 SoundManager.instance.creturesound();
                 hit = 0;
             }
@@ -125,7 +134,8 @@ public class Creature : MonoBehaviour
         if (Monster == null || Monster.activeSelf == false)
         {
             SoundManager.instance.creturesound();
-            Destroy(this.gameObject, 1);
+            Instantiate(BossFX, gameObject.transform);
+            Destroy(this.gameObject, 0.5f);
             yield break;
         }
         else
@@ -139,8 +149,10 @@ public class Creature : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject, 1);
-                yield return new WaitForSeconds(0.9f);
+                Destroy(this.gameObject, 0.5f);
+                yield return new WaitForSeconds(0.1f);
+                Instantiate(BossFX, gameObject.transform);
+                yield return new WaitForSeconds(0.3f);
                 SoundManager.instance.creturesound();
                 hit = 0;
             }

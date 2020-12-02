@@ -66,7 +66,7 @@ public class SKillCooltime : MonoBehaviour
 
             Backgroudimage.fillAmount = 1.0f - (Mathf.SmoothStep(0, 100, skillcooltime / CrurrentTime) / 100);
             cooltime.gameObject.SetActive(true);
-            if (CrurrentTime - skillcooltime > 0)
+            if (CrurrentTime - skillcooltime < 1)
                 cooltime.text = ((CrurrentTime - skillcooltime)).ToString("N1");
             else
                 cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();

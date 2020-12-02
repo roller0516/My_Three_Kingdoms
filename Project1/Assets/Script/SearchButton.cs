@@ -19,6 +19,7 @@ public class SearchButton : MonoBehaviour
     public TextMeshProUGUI Gold_Text;
     public TextMeshProUGUI Knowledge_Text;
     public TextMeshProUGUI itemName_Text;
+    public TextMeshProUGUI RecommendedAttack_Text;
     public static bool Getitme;
     int RewardGold;
     int RewardKnowledge;
@@ -45,34 +46,42 @@ public class SearchButton : MonoBehaviour
             case "하북":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special1");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special2");
+                RecommendedAttack_Text.text = "160";
                 break;
             case "청서":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special3");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special4");
+                RecommendedAttack_Text.text = "360";
                 break;
             case "중원":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special5");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special6");
+                RecommendedAttack_Text.text = "1.6A";
                 break;
             case "강동":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special7");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special8");
+                RecommendedAttack_Text.text = "7.7A";
                 break;
             case "관중":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special9");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special10");
+                RecommendedAttack_Text.text = "49.5A";
                 break;
             case "형북":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special11");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special12");
+                RecommendedAttack_Text.text = "328.0A";
                 break;
             case "형남":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special13");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special14");
+                RecommendedAttack_Text.text = "2.6B";
                 break;
             case "파촉":
                 itemImage[0].sprite = Resources.Load<Sprite>("UI/Treasure/special15");
                 itemImage[1].sprite = Resources.Load<Sprite>("UI/Treasure/special16");
+                RecommendedAttack_Text.text = "22.0B";
                 break;
         }
     }
@@ -81,7 +90,7 @@ public class SearchButton : MonoBehaviour
         if (WIN)
         {
             PopUpSystem.GetInstance().ClosePopUp();
-            MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage/51));
+            MonsterSpawn.GetInstance().stg.StageSound_p();
             switch (S_Name)
             {
                 case "하북":
