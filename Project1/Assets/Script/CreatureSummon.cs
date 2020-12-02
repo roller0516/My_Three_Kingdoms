@@ -67,7 +67,7 @@ public class CreatureSummon : MonoBehaviour
     }
     IEnumerator StartSmoke() 
     {
-        Instantiate(BossFX, new Vector3(Player.Instance.transform.position.x - 1f, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
+        
         for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
         {
             if (UIManager.GetInstance().equipButton[i].Equip)
@@ -75,6 +75,7 @@ public class CreatureSummon : MonoBehaviour
                 CreatureName = BossDictionary.GetInstance().BossName;
                 if (CreatureName == Creatures[i].name)
                 {
+                    Instantiate(BossFX, new Vector3(Player.Instance.transform.position.x - 1f, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
                     Skillbutton.interactable = false;
                     BossSkillOn = true;
                     yield return new WaitForSeconds(0.2f);

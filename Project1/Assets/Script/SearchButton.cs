@@ -41,6 +41,7 @@ public class SearchButton : MonoBehaviour
     void SetitemImage(string imgName)
     {
         print(imgName);
+        SoundManager.instance.ButtonSound();
         switch (imgName)
         {
             case "하북":

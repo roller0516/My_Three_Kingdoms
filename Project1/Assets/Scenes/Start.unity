@@ -671,6 +671,7 @@ MonoBehaviour:
   weaponbuttonsound: {fileID: 8300000, guid: 1764cefb23940fa4da90bcc1aaf4e13b, type: 3}
   warningsound: {fileID: 8300000, guid: 4d9c1aff3a834934e9c8a9c39b543bc6, type: 3}
   CreatureSpwanSound: {fileID: 8300000, guid: 62190b0485c6173459441c2f5620d25e, type: 3}
+  Trainging_Effect: {fileID: 8300000, guid: 1fc3240b1e4e1c744935d3bf20936fd7, type: 3}
   Bgm:
   - {fileID: 8300000, guid: a32ddf0dfb39f204e94df414e40d0b34, type: 3}
   - {fileID: 8300000, guid: 106fd406b894fa2439634a4a5d992645, type: 3}
