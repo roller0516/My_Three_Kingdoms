@@ -362,9 +362,11 @@ public class UIManager : MonoBehaviour
         bosssummonCheck();
         if (Currenttime <= 0)
         {
+            print("1");
             Timer.gameObject.SetActive(false);
             PopUpSystem.GetInstance().EnterDeongun = false;
             PopUpSystem.GetInstance().ClosePopUp();
+            MonsterSpawn.GetInstance().stg.Count = 0;
             MonsterSpawn.GetInstance().stg.StageSound_p();
             Player.Instance.Monster.GetComponent<MimicEnemy>().Deth();
             time = 0;

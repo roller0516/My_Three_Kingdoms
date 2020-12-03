@@ -326,6 +326,7 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (Teleport)
         {
+            stg.Count = 0;
             Teleport = false;
             stg.StageText();
             transform.position = startPosition;

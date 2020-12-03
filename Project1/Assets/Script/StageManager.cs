@@ -21,6 +21,7 @@ public class StageManager : MonoBehaviour
     }
     private void Update()
     {
+        
         if (curStage == 1 || curStage % 50 == 1)
         {
             StartCoroutine("ChangeStageRendder");
@@ -72,6 +73,7 @@ public class StageManager : MonoBehaviour
             SoundManager.instance.BgmSource.Stop();
             SoundManager.instance.BgmSound(num);
             SoundManager.instance.BgmSource.Play();
+            print("11111"+Count);
         }
         Count = 1; 
     }
