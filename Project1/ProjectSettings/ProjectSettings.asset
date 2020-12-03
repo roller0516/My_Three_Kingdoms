@@ -175,7 +175,7 @@ PlayerSettings:
     tvOS: 
   buildNumber:
     iPhone: 
-  AndroidBundleVersionCode: 7
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
