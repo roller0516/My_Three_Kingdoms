@@ -19,11 +19,12 @@ public class TeasureCostButton : MonoBehaviour
     [HideInInspector]
     public int Level = 0;
     public int MaxLevel;
-
-
-    public Text LevelTex;
+    public Transform FxParentTr;
+    public ParticleSystem Fx;
+    public TextMeshProUGUI LevelTex;
     public TextMeshProUGUI upGradeTex;
     public TextMeshProUGUI EffectTex;
+    public TextMeshProUGUI EffectNumberTex;
     public Button button_;
     public GameObject img;
     //public GameObject Level_img;
@@ -31,7 +32,7 @@ public class TeasureCostButton : MonoBehaviour
     public int StartKnowledgeByUpgrade;//처음 지식 업그레이드양
     public int KnowledgeByUpgrade;// 지식 증가량
     public int StartCurrentCost;
-
+    public float TEXTtime;
     private void Start()
     {
         CurrentCost = StartCurrentCost;
@@ -46,7 +47,9 @@ public class TeasureCostButton : MonoBehaviour
         {
             if (DataController.GetInstance().GetKnowledge() >= CurrentCost)
             {
-            
+                SoundManager.instance.trainiong_effect();
+                ParticleSystem xx = Instantiate(Fx, FxParentTr);
+                xx.transform.SetParent(FxParentTr);
                 DataController.GetInstance().SubKnowledge(CurrentCost);
                 Level++;
                 UpdateUpgrade();
@@ -61,13 +64,18 @@ public class TeasureCostButton : MonoBehaviour
     
     public void UpdateUI()//ui의 변화를 받아온다
     {
-        LevelTex.text =  Level.ToString();
+        LevelTex.text = "Lv" + "."+Level.ToString();
 
         upGradeTex.text = "" + CurrentCost;
-        if(UpgradeName == "treasure_8")
-            EffectTex.text = UpgradeNameText+ (goldByUpgrade+100) + "%";
+        EffectTex.text = UpgradeNameText;
+        if (UpgradeName == "treasure_8") 
+        {
+            EffectNumberTex.text = (goldByUpgrade + 100) + "%";
+        }
+        else if (UpgradeName == "treasure_6")
+            EffectNumberTex.text =  TEXTtime.ToString();
         else
-            EffectTex.text = UpgradeNameText + goldByUpgrade + "%";
+            EffectNumberTex.text =goldByUpgrade + "%";
 
         if (Level == MaxLevel)
         {
@@ -105,6 +113,7 @@ public class TeasureCostButton : MonoBehaviour
         if (Level>0)
         {
             EffectTex.color = new Color(70f / 255f, 255f / 255f, 0f / 255f, 255f / 255f);
+            EffectNumberTex.color = new Color(70f / 255f, 255f / 255f, 0f / 255f, 255f / 255f);
         }
     }
     public void UpdateUpgrade() // 업그레이드 공식
@@ -131,7 +140,7 @@ public class TeasureCostButton : MonoBehaviour
                     }
                         print(DataController.GetInstance().GetGoldPerClick("GoldPerClick" + i));
                 }
-                DataController.GetInstance().Teasure1Ability = goldByUpgrade;
+                DataController.GetInstance().Teasure1Ability += 1;
                 PlayerPrefs.SetInt("Teasure1Ability", DataController.GetInstance().Teasure1Ability);
                 break;
             case "treasure_2":
@@ -150,7 +159,7 @@ public class TeasureCostButton : MonoBehaviour
                     UIManager.GetInstance().upgradeButton[i].CurrentCost1 = ((num * 100) - num2) / 100;
                     DataController.GetInstance().SaveUpgradeButton(UIManager.GetInstance().upgradeButton[i]);
                 }
-                DataController.GetInstance().Teasure2Ability = goldByUpgrade;
+                DataController.GetInstance().Teasure2Ability += 1;
                 PlayerPrefs.SetInt("Teasure2Ability", DataController.GetInstance().Teasure2Ability);
                 break;
             case "treasure_5":
@@ -159,18 +168,14 @@ public class TeasureCostButton : MonoBehaviour
                 time1 = time * (1-((float)goldByUpgrade / 100));
                 GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime = time1;
                 PlayerPrefs.SetFloat("skill", GameObject.Find("SkillButton").GetComponent<SKillCooltime>().CrurrentTime);
-
                 break;
             case "treasure_6":
-                float time2 = GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime;
-                float time3 = GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().MaxSkillcooltime;
-                time2 = time3 * (1 - ((float)goldByUpgrade / 100));
-                GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime = time2;
+                GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime -= 0.5f;
+                TEXTtime += 0.5f;
                 PlayerPrefs.SetFloat("CreatureSkillButton", GameObject.Find("CreatureSkillButton").GetComponent<CreatureSummon>().CrurrentTime);
                 break;
             case "treasure_8":
                 Player.Instance.CriticalPer += 2;
-                
                 PlayerPrefs.SetInt("CriticalPer", Player.Instance.CriticalPer);
                 break;
         }

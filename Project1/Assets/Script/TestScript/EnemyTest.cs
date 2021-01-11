@@ -26,7 +26,7 @@ public class EnemyTest : MonoBehaviour
     public GameObject Crihit;
     public GameObject damageText;
     public GameObject CridamageText;
-
+    public GameObject CreatureDamageText;
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
 
@@ -47,8 +47,6 @@ public class EnemyTest : MonoBehaviour
     {
         rig = GetComponent<Rigidbody>();
     }
-
-
     private void Start()
     {
         count = 0;
@@ -66,7 +64,7 @@ public class EnemyTest : MonoBehaviour
         Hp = MaxHp;
         cam = Camera.main;
         Hpbar = Instantiate(HpbarBasic , this.gameObject.transform.position,Quaternion.identity) as Slider;
-        Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
+        Hpbar.transform.SetParent(transform.Find("HpCanvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         HitCount = 0;
         goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 10), 100);
@@ -194,7 +192,7 @@ public class EnemyTest : MonoBehaviour
         ani.SetTrigger("hit");
         SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, -1), Quaternion.identity);
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성
+        Instantiate(CreatureDamageText, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, -1), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
         Hp -= damage;// hp 뺌
@@ -282,6 +280,7 @@ public class EnemyTest : MonoBehaviour
                 MonsterSpawn.instance.IsDie = true;
                 Destroy(this.gameObject, 2f);
                 Hpbar.gameObject.SetActive(false);
+                Destroy(Hpbar.gameObject, 2f);
             }
             count++;
         }

@@ -27,7 +27,9 @@ public class Boss : MonoBehaviour
     public GameObject Crihit;
     public GameObject damageText;
     public GameObject CridamageText;
-    
+    public GameObject RootingTicket;
+    public GameObject CreatureDamageText;
+
     public float knockbackPower = 1;
     public float moveSpeed = 0.5f;
 
@@ -60,7 +62,7 @@ public class Boss : MonoBehaviour
         // 무기변경 랜덤으로 변경
         Hp = MaxHp;
         Hpbar = Instantiate(HpbarBasic, this.gameObject.transform.position, Quaternion.identity) as Slider;
-        Hpbar.transform.SetParent(GameObject.Find("Canvas").transform);
+        Hpbar.transform.SetParent(transform.Find("HpCanvas").transform);
         Hpbar.transform.SetAsFirstSibling();
         goldreward = BigInteger.Divide(BigInteger.Multiply(MaxHp, 115), 100);
         hitCount = 0;
@@ -173,6 +175,7 @@ public class Boss : MonoBehaviour
     }
     public void CriticalDamage(BigInteger damage) // 데미지 함수
     {
+        _AniState = AnimState.hit;
         hitCount++;
         Instantiate(Crihit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);
         Instantiate(CridamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
@@ -186,7 +189,7 @@ public class Boss : MonoBehaviour
         _AniState = AnimState.hit;
         SoundManager.instance.HitSound();
         Instantiate(hit, new Vector3(this.transform.position.x, this.transform.position.y + 1f, -1), Quaternion.identity);// 데미지 텍스트 생성
-        Instantiate(damageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
+        Instantiate(CreatureDamageText, new Vector3(this.transform.position.x, this.transform.position.y + 2f, -1), Quaternion.identity);// 데미지 텍스트 생성
         DamageText dam = FindObjectOfType<DamageText>();
         dam.Damage = damage;
         Hp -= damage;// hp 뺌
@@ -218,6 +221,7 @@ public class Boss : MonoBehaviour
     {
         if (Hp <= 0)
         {
+            Instantiate(RootingTicket, gameObject.transform.position, Quaternion.identity);
             _AniState = AnimState.die;
             int num;
             if (sl.Sp_item[2].itemCount == 10 && sl.Sp_item[3].itemCount == 10 && sl.Sp_item[14].itemCount == 10)
@@ -266,9 +270,10 @@ public class Boss : MonoBehaviour
             Player.Instance._AniState = Player.AnimState.move;
             Player.Instance.moveSpeed = 2f;
             BossDictionary.GetInstance().ChangeSprite(BossName);
-            DataController.GetInstance().AddTicket(10);
+            DataController.GetInstance().AddTicket(5);
             Destroy(this.gameObject, 2f);
             Hpbar.gameObject.SetActive(false);
+            Destroy(Hpbar.gameObject, 2f);
         }
     }
 }

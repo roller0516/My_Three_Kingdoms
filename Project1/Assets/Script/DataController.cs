@@ -65,7 +65,7 @@ public class DataController : MonoBehaviour
         Knowledge = m_Knowledge.ToString();
         Knowledge = PlayerPrefs.GetString("Knowledge", Knowledge);
         m_Knowledge = BigInteger.Parse(Knowledge);
-        Ticket = PlayerPrefs.GetInt("Ticket", 10);
+        Ticket = PlayerPrefs.GetInt("Ticket", 0);
         PaidGold = PlayerPrefs.GetInt("PaidGold", 0);
         Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
         Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");
@@ -496,12 +496,14 @@ public class DataController : MonoBehaviour
         TeasureButton.CurrentCost = PlayerPrefs.GetInt(NAME + "teasureCost", TeasureButton.CurrentCost);
         TeasureButton.goldByUpgrade = PlayerPrefs.GetInt(NAME + "teasureUpgrade", TeasureButton.goldByUpgrade);
         TeasureButton.Level = PlayerPrefs.GetInt(NAME + "teasureLevel", TeasureButton.Level);
+        TeasureButton.TEXTtime= PlayerPrefs.GetFloat(NAME + "teasuretime", TeasureButton.TEXTtime);
     }
     public void SaveTeasure(TeasureCostButton TeasureButton)
     {
         string NAME = TeasureButton.UpgradeName;
         PlayerPrefs.SetInt(NAME + "teasureCost", TeasureButton.CurrentCost);
         PlayerPrefs.SetInt(NAME + "teasureUpgrade", TeasureButton.goldByUpgrade);
+        PlayerPrefs.SetFloat(NAME + "teasuretime", TeasureButton.TEXTtime);
         PlayerPrefs.SetInt(NAME + "teasureLevel", TeasureButton.Level);
     }
     public void LoadPlayer(Player player)

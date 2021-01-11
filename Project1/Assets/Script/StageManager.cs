@@ -17,25 +17,15 @@ public class StageManager : MonoBehaviour
     {
         stageCount();
         StageText();
-        if (curStage >= 150)
-        {
-            stageSound(2);
-            return;
-        }
-        else
-            stageSound((int)(curStage / 51));
+        StageSound_p();
     }
     private void Update()
     {
-        if (curStage == 1 || curStage % 51 == 0)
+        
+        if (curStage == 1 || curStage % 50 == 1)
         {
-            if (curStage >= 150)
-            {
-                stageSound(2);
-                return;
-            }
             StartCoroutine("ChangeStageRendder");
-            stageSound((int)(curStage / 51));
+            StageSound_p();
         }
         else
         {
@@ -44,7 +34,7 @@ public class StageManager : MonoBehaviour
     }
     private void stageCount() 
     {
-        
+
         if (curStage >= 101)
         {
             for (int i = 0; i < BackGroud.Length; i++)
@@ -52,9 +42,8 @@ public class StageManager : MonoBehaviour
                 BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround03", typeof(Material)) as Material;
             }
         }
-        else if (curStage >= 51)
+        else if (curStage >= 51&& curStage <101)
         {
-            
             for (int i = 0; i < BackGroud.Length; i++)
             {
                 BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround02", typeof(Material)) as Material;
@@ -68,6 +57,15 @@ public class StageManager : MonoBehaviour
             }
         }
     }
+    public void StageSound_p() 
+    {
+        if (curStage >= 101)
+            stageSound(2);
+        else if (curStage >= 51 && curStage < 101)
+            stageSound(1);
+        else if (curStage < 51)
+            stageSound(0);
+    }
     public void stageSound(int num)
     {
         if (Count == 0)
@@ -75,6 +73,7 @@ public class StageManager : MonoBehaviour
             SoundManager.instance.BgmSource.Stop();
             SoundManager.instance.BgmSound(num);
             SoundManager.instance.BgmSource.Play();
+            print("11111"+Count);
         }
         Count = 1; 
     }

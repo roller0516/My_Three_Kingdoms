@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
         }
         return instance;
     }
+    public Image Backgroudimage;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI Gold;
     public TextMeshProUGUI Knowledge;
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
     public GameObject weaponTap;
     public GameObject TeasureTap;
     public GameObject SearchTap;
+    public GameObject Timer;
     //버튼 텍스트
     
     public bool TR_Check;
@@ -360,10 +362,12 @@ public class UIManager : MonoBehaviour
         bosssummonCheck();
         if (Currenttime <= 0)
         {
-            timeText.gameObject.SetActive(false);
+            print("1");
+            Timer.gameObject.SetActive(false);
             PopUpSystem.GetInstance().EnterDeongun = false;
             PopUpSystem.GetInstance().ClosePopUp();
-            MonsterSpawn.GetInstance().stg.stageSound((int)(MonsterSpawn.GetInstance().stg.curStage / 51));
+            MonsterSpawn.GetInstance().stg.Count = 0;
+            MonsterSpawn.GetInstance().stg.StageSound_p();
             Player.Instance.Monster.GetComponent<MimicEnemy>().Deth();
             time = 0;
             Currenttime = Starttime;
@@ -371,7 +375,7 @@ public class UIManager : MonoBehaviour
             MonsterSpawn.GetInstance().MonsterCount = 0;
             MonsterSpawn.GetInstance().transform.position = new Vector3(-254, MonsterSpawn.GetInstance().transform.position.y + 20f, MonsterSpawn.GetInstance().transform.position.z);
             MonsterSpawn.GetInstance().fade.SearchReward();
-            MonsterSpawn.GetInstance().fade.Lose = true;
+            MonsterSpawn.GetInstance().fade.Lose = true;   
         }
     }
     void bosssummonCheck() 
@@ -380,7 +384,9 @@ public class UIManager : MonoBehaviour
         {
             time = Time.deltaTime;
             Currenttime -= time;
-            timeText.text = "남은시간" + Currenttime.ToString("0") + "초";
+            Backgroudimage.fillAmount = (Mathf.SmoothStep(0, 100, Currenttime / Starttime) / 100);
+            print(Backgroudimage.fillAmount);
+            timeText.text = Currenttime.ToString("0");
             if (Currenttime <= 0)
             {
                 MonsterSpawn.GetInstance().BossSummonON = false;
@@ -390,7 +396,7 @@ public class UIManager : MonoBehaviour
                 MonsterSpawn.GetInstance().stg.MonsterCount -= 4;
                 if (MonsterSpawn.GetInstance().PrevMonster != null)
                     Destroy(MonsterSpawn.GetInstance().PrevMonster.gameObject, 2f);
-                timeText.gameObject.SetActive(false);
+                Timer.gameObject.SetActive(false);
             }
         }
     }
@@ -401,7 +407,8 @@ public class UIManager : MonoBehaviour
             MonsterSpawn.GetInstance().stg.text.text = "어느보물방...";
             time = Time.deltaTime;
             Currenttime -= time;
-            timeText.text = "남은시간" + Currenttime.ToString("0") + "초";
+            Backgroudimage.fillAmount = (Mathf.SmoothStep(0, 100, Currenttime / Starttime) / 100);
+            timeText.text = Currenttime.ToString("0");
         }
     }
     IEnumerator BossNoDeath()

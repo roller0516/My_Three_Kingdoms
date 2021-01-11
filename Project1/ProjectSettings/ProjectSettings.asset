@@ -16,13 +16,13 @@ PlayerSettings:
   productName: "\uB098\uB9CC\uC758\uC0BC\uAD6D\uC9C0"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
-  m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenLogoStyle: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -39,7 +39,11 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 43afb07b899001440a29d4cdc87a1f2a, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -171,9 +175,9 @@ PlayerSettings:
     tvOS: 
   buildNumber:
     iPhone: 
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 16
-  AndroidTargetSdkVersion: 29
+  AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -276,7 +280,7 @@ PlayerSettings:
   m_AndroidBanners:
   - width: 320
     height: 180
-    banner: {fileID: 0}
+    banner: {fileID: 2800000, guid: 65bb3d80e02aa574ab7cdc68917c12f1, type: 3}
   androidGamepadSupportLevel: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
@@ -623,7 +627,7 @@ PlayerSettings:
   monoEnv: 
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
-  blurSplashScreenBackground: 1
+  blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 256
   webGLExceptionSupport: 1
@@ -640,11 +644,11 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USES_ADDRESS_BOOK;USES_BILLING;USES_MEDIA_LIBRARY;USES_NETWORK_CONNECTIVITY;USES_NOTIFICATION_SERVICE;USES_SHARING;USES_TWITTER;USES_WEBVIEW
-    4: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH;USES_ADDRESS_BOOK;USES_BILLING;USES_MEDIA_LIBRARY;USES_NETWORK_CONNECTIVITY;USES_NOTIFICATION_SERVICE;USES_SHARING;USES_TWITTER;USES_WEBVIEW
-    7: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH;USE_ADMOB;USE_ADMOB_PATCH;USES_ADDRESS_BOOK;USES_BILLING;USES_MEDIA_LIBRARY;USES_NETWORK_CONNECTIVITY;USES_NOTIFICATION_SERVICE;USES_SHARING;USES_TWITTER;USES_WEBVIEW
-    14: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USES_ADDRESS_BOOK;USES_BILLING;USES_MEDIA_LIBRARY;USES_NETWORK_CONNECTIVITY;USES_NOTIFICATION_SERVICE;USES_SHARING;USES_TWITTER;USES_WEBVIEW
-    25: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USES_ADDRESS_BOOK;USES_BILLING;USES_MEDIA_LIBRARY;USES_NETWORK_CONNECTIVITY;USES_NOTIFICATION_SERVICE;USES_SHARING;USES_TWITTER;USES_WEBVIEW
+    1: USES_CLOUD_SERVICES;USES_GAME_SERVICES
+    4: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH
+    7: USES_CLOUD_SERVICES;USES_GAME_SERVICES;USE_ADMOB_PATCH;USE_ADMOB;USE_ADMOB_PATCH
+    14: USES_CLOUD_SERVICES;USES_GAME_SERVICES
+    25: USES_CLOUD_SERVICES;USES_GAME_SERVICES
   platformArchitecture: {}
   scriptingBackend:
     Android: 1

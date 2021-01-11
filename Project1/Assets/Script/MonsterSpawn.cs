@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Numerics;
+using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 using Vector2 = UnityEngine.Vector2;
 using Quaternion = UnityEngine.Quaternion;
@@ -39,6 +40,7 @@ public class MonsterSpawn : MonoBehaviour
     public bool MimicIsDie = false;
     public bool BossSummonON;
     public bool BossFail;
+    public bool Teleport = true;
     public GameObject PrevMonster;
     public Transform SpawnPoints;
     [SerializeField]
@@ -48,8 +50,9 @@ public class MonsterSpawn : MonoBehaviour
     int bossStage = 0;
     public Vector3 startPosition;
     public Fadeinout fade;
+    public Warning warning;
     
-    public BigInteger BossHpCount = 2000;
+    public BigInteger BossHpCount = 3000;
     public BigInteger MonsterHpCount = 50;
 
     public StageManager stg;
@@ -63,19 +66,26 @@ public class MonsterSpawn : MonoBehaviour
     }
     private void Start()
     {
+        Teleport = true;
         fade = FindObjectOfType<Fadeinout>();
         stg = FindObjectOfType<StageManager>();
+        warning = FindObjectOfType<Warning>();
         startPosition = this.transform.position;
         DataController.GetInstance().LoadStage(this);
     }
     private void Update()
     {
-
         if (CurTime >= SpawnTime && MonsterCount<MaxCount)
         {
-            if (stg.curStage >= 150)
+            if (stg.curStage > 150)
             {
                 BossRandomRange = Random.Range(0, 16);
+                RandomRange1 = Random.Range(0, 6);
+                if (RandomRange1 < 3)
+                    RandomRange2 = Random.Range(0, 2);
+                else
+                    RandomRange2 = 0;
+                SpawnMonster(2, RandomRange1);
             }
             else if (stg.curStage >= 101)
             {
@@ -129,7 +139,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (boss_IsDie == true)
         {
-            UIManager.GetInstance().timeText.gameObject.SetActive(false);
+            UIManager.GetInstance().Timer.gameObject.SetActive(false);
             BossSummonON = false;
             boss_IsDie = false;
             stg.MonsterCount++;
@@ -141,8 +151,7 @@ public class MonsterSpawn : MonoBehaviour
         }
         if (MimicIsDie == true)
         {
-            print(MimicIsDie);
-            UIManager.GetInstance().timeText.gameObject.SetActive(false);
+            UIManager.GetInstance().Timer.gameObject.SetActive(false);
             switch (UIManager.GetInstance().SearchName)
             {
                 case "하북":
@@ -223,32 +232,34 @@ public class MonsterSpawn : MonoBehaviour
         {
             UIManager.GetInstance().Starttime = 30;
             UIManager.GetInstance().Currenttime = 30;
-            UIManager.GetInstance().timeText.gameObject.SetActive(true);
-            if (PrevMonster != null)
+            UIManager.GetInstance().Timer.gameObject.SetActive(true);
+            if (PrevMonster != null) 
+            {
+                
                 Destroy(PrevMonster.gameObject);
+            }
+               
             MimicHp(UIManager.GetInstance().SearchName);
             MonsterCount++;
             Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
         }
         else if (stg.MonsterCount % stg.BossStage == 0) //보스 스폰
         {
-            UIManager.GetInstance().Starttime = 60;
-            UIManager.GetInstance().Currenttime = 60;
-            UIManager.GetInstance().timeText.gameObject.SetActive(true);
+            StartCoroutine("BossSpwan");
             BossSummonON = true;
-            SoundManager.instance.BossSound();
+            
             CurTime = 0;
             MonsterCount++;
 
             if (stg.curStage > 150) // 랜덤으로 생성
             {
-                GameObject go = Instantiate(BossMonster[BossRandomRange], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
+                GameObject go = Instantiate(BossMonster[BossRandomRange], new Vector3(SpawnPoints.transform.position.x+10, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
                 PrevMonster = go;
             }
             else
             {
                 bossStage = (int)(((stg.curStage / 10) - 1));
-                GameObject go = Instantiate(BossMonster[bossStage], new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
+                GameObject go = Instantiate(BossMonster[bossStage], new Vector3(SpawnPoints.transform.position.x+10, SpawnPoints.transform.position.y, 0), Quaternion.identity);
                 PrevMonster = go;
             }
         }
@@ -282,37 +293,70 @@ public class MonsterSpawn : MonoBehaviour
     }
     IEnumerator BossDeath()
     {
-        stg.StageText();
-        transform.position = startPosition;
-        MonsterCount = 1;
-        yield return new WaitForSeconds(0.3f);
-        fade.Fade();
-        yield return new WaitForSeconds(0.5f);
-        MonsterCount = 0;
-        Player.Instance.transform.position = Player.Instance.startPosition;
+        if (Teleport) 
+        {
+            Teleport = false;
+            stg.StageText();
+            transform.position = startPosition;
+            MonsterCount = 1;
+            yield return new WaitForSeconds(1);
+            fade.Fade();
+            yield return new WaitForSeconds(0.5f);
+            MonsterCount = 0;
+            Player.Instance.transform.position = Player.Instance.startPosition;
+            Teleport = true;
+        }
+    }
+    IEnumerator BossSpwan()
+    {
+        if (PopUpSystem.GetInstance().EnterDeongun == true)
+            yield break;
+        else 
+        {
+            stg.StageText();
+            warning.Fade();
+            yield return new WaitForSeconds(0.3f);
+            UIManager.GetInstance().Starttime = 60;
+            UIManager.GetInstance().Currenttime = 60;
+            UIManager.GetInstance().Timer.gameObject.SetActive(true);
+            SoundManager.instance.BossSound();
+        }
     }
     IEnumerator MimicDeath()
     {
-        stg.StageText();
-        transform.position = startPosition;
-        MonsterCount = 1;
-        fade.SearchReward();
-        yield return new WaitForSeconds(0.3f);
-        fade.Fade();
-        yield return new WaitForSeconds(0.5f);
-        MonsterCount = 0;
-        Player.Instance.transform.position = Player.Instance.startPosition;
+        if (Teleport)
+        {
+            stg.Count = 0;
+            Teleport = false;
+            stg.StageText();
+            transform.position = startPosition;
+            MonsterCount = 1;
+            fade.SearchReward();
+            yield return new WaitForSeconds(0.3f);
+            fade.Fade();
+            yield return new WaitForSeconds(0.5f);
+            MonsterCount = 0;
+            Player.Instance.transform.position = Player.Instance.startPosition;
+            Teleport = true;
+        }
     }
     IEnumerator MaxMonsterDie()
     {
-        stg.StageText();
-        transform.position = startPosition;
-        MonsterCount = 1;
-        yield return new WaitForSeconds(0.3f);
-        fade.Fade();
-        yield return new WaitForSeconds(0.5f);
-        MonsterCount = 0;
-        Player.Instance.transform.position = Player.Instance.startPosition;
+        if (PopUpSystem.GetInstance().EnterDeongun == true)
+            yield break;
+        else if (Teleport)
+        {
+            Teleport = false;
+            stg.StageText();
+            transform.position = startPosition;
+            MonsterCount = 1;
+            yield return new WaitForSeconds(0.3f);
+            fade.Fade();
+            yield return new WaitForSeconds(0.5f);
+            MonsterCount = 0;
+            Player.Instance.transform.position = Player.Instance.startPosition;
+            Teleport = true;
+        }
     }
     void MimicHp(string Name) 
     {

@@ -153,5 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 0}
+  BossFX: {fileID: 989338739927817971, guid: 61a8cf9ab83a4454688540b34b866dd0, type: 3}
   moveSpeed: 0.5
   Maxhitcount: 11

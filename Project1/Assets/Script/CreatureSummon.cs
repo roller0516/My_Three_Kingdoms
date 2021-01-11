@@ -15,7 +15,10 @@ public class CreatureSummon : MonoBehaviour
     public bool BossSkillOn;
     public bool BossSkillCheck;
     public GameObject[] Creatures;
+    public GameObject BossFX;
+    public ParticleSystem particle;
     public string CreatureName;
+    bool ParticleOn;
 
     private void Start()
     {
@@ -25,19 +28,7 @@ public class CreatureSummon : MonoBehaviour
     }
     public void Boss_SkillOn()
     {
-        for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
-        {
-            if (UIManager.GetInstance().equipButton[i].Equip)
-            {
-                CreatureName = BossDictionary.GetInstance().BossName;
-                if (CreatureName == Creatures[i].name)
-                {
-                    Instantiate(Creatures[i], new Vector3(Player.Instance.transform.position.x-1f, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
-                    BossSkillOn = true;
-                    Skillbutton.interactable = false;
-                }
-            }
-        }
+        StartCoroutine("StartSmoke");
     }
     private void Update()
     {
@@ -50,12 +41,16 @@ public class CreatureSummon : MonoBehaviour
             skillcooltime += Time.deltaTime;
             Backgroudimage.fillAmount = 1.0f - (Mathf.SmoothStep(0, 100, skillcooltime / CrurrentTime) / 100);
             cooltime.gameObject.SetActive(true);
-            cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
+            if (CrurrentTime - skillcooltime <1)
+                cooltime.text = ((CrurrentTime - skillcooltime)).ToString("N1");
+            else
+                cooltime.text = ((int)(CrurrentTime - skillcooltime)).ToString();
             if (skillcooltime >= CrurrentTime)
             {
                 cooltime.gameObject.SetActive(false);
                 skillcooltime = 0;
                 BossSkillOn = false;
+                StartCoroutine("StartParticle");
             }
         }
         else if (BossSkillOn == false)
@@ -63,5 +58,32 @@ public class CreatureSummon : MonoBehaviour
             Skillbutton.interactable = true;
         }
     }
-
+    IEnumerator StartParticle()
+    {
+        particle.gameObject.SetActive(true);
+        particle.Play();
+        yield return new WaitForSeconds(1);
+        particle.gameObject.SetActive(false);
+    }
+    IEnumerator StartSmoke() 
+    {
+        
+        for (int i = 0; i < UIManager.GetInstance().equipButton.Length; i++)
+        {
+            if (UIManager.GetInstance().equipButton[i].Equip)
+            {
+                CreatureName = BossDictionary.GetInstance().BossName;
+                if (CreatureName == Creatures[i].name)
+                {
+                    Instantiate(BossFX, new Vector3(Player.Instance.transform.position.x - 1f, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
+                    Skillbutton.interactable = false;
+                    BossSkillOn = true;
+                    yield return new WaitForSeconds(0.2f);
+                    Instantiate(Creatures[i], new Vector3(Player.Instance.transform.position.x - 1f, Player.Instance.transform.position.y, Player.Instance.transform.position.z), Quaternion.identity);
+                    
+                }
+            }
+        }
+    }
 }
+   

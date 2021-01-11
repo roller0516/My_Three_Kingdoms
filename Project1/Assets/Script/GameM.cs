@@ -9,9 +9,9 @@ public class GameM : MonoBehaviour
 {
 
     public int SceneNumber_cur = 0;
-
     private static GameM instance = null;
-    
+
+    Action login;
     public static GameM GetInstance 
     {
         get 
@@ -35,12 +35,13 @@ public class GameM : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
-    Action Onable;
+    
     public void Start()
     {
         //NPService.Instance.Synchronise();
-        //NPService.Instance.Login(Onable);
+        //NPService.Instance.Login(login);
     }
+
     public void SceneChagne(int number) 
     {
         SceneManager.LoadScene(number);
