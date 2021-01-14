@@ -1,0 +1,202 @@
+
+monster_4stage.png
+size: 965,78
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 334, 8
+  size: 40, 32
+  orig: 42, 34
+  offset: 1, 1
+  index: -1
+h 3/body
+  rotate: false
+  xy: 376, 6
+  size: 34, 34
+  orig: 36, 36
+  offset: 1, 1
+  index: -1
+h 3/hair
+  rotate: true
+  xy: 52, 3
+  size: 15, 28
+  orig: 15, 28
+  offset: 0, 0
+  index: -1
+h 3/head
+  rotate: true
+  xy: 473, 6
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+h 3/headcrying
+  rotate: true
+  xy: 555, 6
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+h 3/l arm
+  rotate: false
+  xy: 449, 50
+  size: 22, 26
+  orig: 22, 26
+  offset: 0, 0
+  index: -1
+h 3/l leg
+  rotate: true
+  xy: 105, 6
+  size: 12, 21
+  orig: 16, 21
+  offset: 3, 0
+  index: -1
+황건적 2/l leg
+  rotate: true
+  xy: 105, 6
+  size: 12, 21
+  orig: 16, 21
+  offset: 3, 0
+  index: -1
+h 3/r arm
+  rotate: false
+  xy: 232, 5
+  size: 24, 24
+  orig: 26, 24
+  offset: 1, 0
+  index: -1
+h 3/r leg
+  rotate: true
+  xy: 128, 6
+  size: 12, 21
+  orig: 14, 21
+  offset: 1, 0
+  index: -1
+황건적 2/r leg
+  rotate: true
+  xy: 128, 6
+  size: 12, 21
+  orig: 14, 21
+  offset: 1, 0
+  index: -1
+hair
+  rotate: false
+  xy: 284, 6
+  size: 48, 34
+  orig: 48, 34
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 637, 6
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: true
+  xy: 719, 6
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: true
+  xy: 202, 7
+  size: 22, 28
+  orig: 22, 28
+  offset: 0, 0
+  index: -1
+l leg
+  rotate: true
+  xy: 444, 2
+  size: 12, 21
+  orig: 16, 21
+  offset: 2, 0
+  index: -1
+r arm
+  rotate: false
+  xy: 177, 2
+  size: 23, 27
+  orig: 23, 27
+  offset: 0, 0
+  index: -1
+r leg
+  rotate: true
+  xy: 82, 4
+  size: 14, 21
+  orig: 14, 21
+  offset: 0, 0
+  index: -1
+sha
+  rotate: false
+  xy: 2, 8
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
+weapon 1
+  rotate: true
+  xy: 281, 42
+  size: 34, 166
+  orig: 34, 230
+  offset: 0, 31
+  index: -1
+weapon 2
+  rotate: true
+  xy: 148, 31
+  size: 45, 131
+  orig: 50, 150
+  offset: 5, 0
+  index: -1
+weapon 3
+  rotate: true
+  xy: 2, 20
+  size: 56, 144
+  orig: 56, 168
+  offset: 0, 13
+  index: -1
+황건적 2/body
+  rotate: true
+  xy: 412, 8
+  size: 32, 30
+  orig: 34, 32
+  offset: 1, 1
+  index: -1
+황건적 2/hair
+  rotate: false
+  xy: 258, 5
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+황건적 2/head
+  rotate: true
+  xy: 801, 6
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+황건적 2/headcrying
+  rotate: true
+  xy: 883, 6
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+황건적 2/l arm
+  rotate: false
+  xy: 444, 16
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+황건적 2/r arm
+  rotate: true
+  xy: 151, 3
+  size: 26, 24
+  orig: 26, 24
+  offset: 0, 0
+  index: -1
