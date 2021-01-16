@@ -1,0 +1,139 @@
+
+boss_4_4.png
+size: 407,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 276, 3
+  size: 96, 129
+  orig: 96, 129
+  offset: 0, 0
+  index: -1
+2
+  rotate: true
+  xy: 135, 63
+  size: 109, 139
+  orig: 109, 140
+  offset: 0, 1
+  index: -1
+3
+  rotate: true
+  xy: 2, 144
+  size: 123, 131
+  orig: 125, 131
+  offset: 1, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 24
+  size: 70, 118
+  orig: 71, 118
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 74, 32
+  size: 49, 110
+  orig: 49, 110
+  offset: 0, 0
+  index: -1
+6
+  rotate: true
+  xy: 135, 174
+  size: 93, 187
+  orig: 95, 189
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 74, 2
+  size: 30, 28
+  orig: 32, 30
+  offset: 1, 1
+  index: -1
+eye clos
+  rotate: true
+  xy: 318, 136
+  size: 36, 4
+  orig: 38, 6
+  offset: 1, 1
+  index: -1
+eye open
+  rotate: true
+  xy: 308, 132
+  size: 40, 8
+  orig: 42, 10
+  offset: 1, 1
+  index: -1
+hair
+  rotate: true
+  xy: 276, 132
+  size: 40, 30
+  orig: 40, 30
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 324, 185
+  size: 82, 80
+  orig: 84, 82
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: true
+  xy: 324, 101
+  size: 82, 80
+  orig: 84, 82
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: true
+  xy: 243, 28
+  size: 33, 30
+  orig: 33, 30
+  offset: 0, 0
+  index: -1
+l leg
+  rotate: false
+  xy: 106, 4
+  size: 14, 26
+  orig: 14, 26
+  offset: 0, 0
+  index: -1
+leg armor
+  rotate: false
+  xy: 2, 2
+  size: 42, 20
+  orig: 42, 20
+  offset: 0, 0
+  index: -1
+r arm
+  rotate: false
+  xy: 276, 102
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+r leg
+  rotate: true
+  xy: 46, 8
+  size: 14, 26
+  orig: 14, 26
+  offset: 0, 0
+  index: -1
+sha
+  rotate: false
+  xy: 122, 14
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
+sword
+  rotate: true
+  xy: 125, 26
+  size: 35, 116
+  orig: 35, 182
+  offset: 0, 29
+  index: -1
