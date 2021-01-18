@@ -155,7 +155,7 @@ public class BossDictionary : MonoBehaviour
     void PrFabsproduce(int num)//
     {
         this.num = num;
-        
+        print(UIManager.GetInstance().equipButton.Length);
         if (Count == 0)
         {
             
