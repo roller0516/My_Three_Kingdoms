@@ -50,8 +50,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] WeaponCostDisPlay;
     // 버튼 갯수
     public SearchButton[] searchButtons;
-    public UpgradeButton[] upgradeButton = new UpgradeButton[20]; // 훈련버튼코스트
-    public Weaponcost[] weaponcost = new Weaponcost[20]; // 무기 버튼 코스트
+    public UpgradeButton[] upgradeButton = new UpgradeButton[24]; // 훈련버튼코스트
+    public Weaponcost[] weaponcost = new Weaponcost[28]; // 무기 버튼 코스트
     public TeasureCostButton[] Teasurecost_Nomal = new TeasureCostButton[6];
     public EquipCheck[] equipButton;
     public string SearchName;
@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
     public int[] Level;
     private void Awake()
     {
+        print(upgradeButton.Length);
         int count = 4;
         for (int i = 1; i < upgradeButton.Length + 1; i++)
         {

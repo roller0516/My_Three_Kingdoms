@@ -295,3 +295,115 @@ MonoBehaviour:
     atk_9: 9437184
     atk_10: 9961472
     isusing: 0
+  - uid: weapon21
+    leveled_atk: 21
+    level: 0
+    atk: 10485760
+    atk_2: 11534336
+    atk_3: 12582912
+    atk_4: 13631488
+    atk_5: 14680064
+    atk_6: 15728640
+    atk_7: 16777216
+    atk_8: 17825792
+    atk_9: 18874368
+    atk_10: 19922944
+    isusing: 0
+  - uid: weapon22
+    leveled_atk: 22
+    level: 0
+    atk: 20971520
+    atk_2: 23068672
+    atk_3: 25165824
+    atk_4: 27262976
+    atk_5: 29360128
+    atk_6: 31457280
+    atk_7: 33554432
+    atk_8: 35651584
+    atk_9: 37748736
+    atk_10: 39845888
+    isusing: 0
+  - uid: weapon23
+    leveled_atk: 23
+    level: 0
+    atk: 41943040
+    atk_2: 46137344
+    atk_3: 50331648
+    atk_4: 54525952
+    atk_5: 58720256
+    atk_6: 62914560
+    atk_7: 67108864
+    atk_8: 71303168
+    atk_9: 75497472
+    atk_10: 79691776
+    isusing: 0
+  - uid: weapon24
+    leveled_atk: 24
+    level: 0
+    atk: 83886080
+    atk_2: 92274688
+    atk_3: 100663296
+    atk_4: 109051904
+    atk_5: 117440512
+    atk_6: 125829120
+    atk_7: 134217728
+    atk_8: 142606336
+    atk_9: 150994944
+    atk_10: 159383552
+    isusing: 0
+  - uid: weapon25
+    leveled_atk: 25
+    level: 0
+    atk: 167772160
+    atk_2: 184549376
+    atk_3: 201326592
+    atk_4: 218103808
+    atk_5: 234881024
+    atk_6: 251658240
+    atk_7: 268435456
+    atk_8: 285212672
+    atk_9: 301989888
+    atk_10: 318767104
+    isusing: 0
+  - uid: weapon26
+    leveled_atk: 26
+    level: 0
+    atk: 335544320
+    atk_2: 369098752
+    atk_3: 402653184
+    atk_4: 436207616
+    atk_5: 469762048
+    atk_6: 503316480
+    atk_7: 536870912
+    atk_8: 570425344
+    atk_9: 603979776
+    atk_10: 637534208
+    isusing: 0
+  - uid: weapon27
+    leveled_atk: 27
+    level: 0
+    atk: 671088640
+    atk_2: 738197504
+    atk_3: 805306368
+    atk_4: 872415232
+    atk_5: 939524096
+    atk_6: 1006632960
+    atk_7: 1073741824
+    atk_8: 1140850688
+    atk_9: 1207959552
+    atk_10: 1275068416
+    isusing: 0
+  - uid: weapon28
+    leveled_atk: 28
+    level: 0
+    atk: 1342177280
+    atk_2: 1476395008
+    atk_3: 1610612736
+    atk_4: 1744830464
+    atk_5: 1879048192
+    atk_6: 2013265920
+    atk_7: 2147483648
+    atk_8: 2281701376
+    atk_9: 2415919104
+    atk_10: 2550136832
+    isusing: 0
