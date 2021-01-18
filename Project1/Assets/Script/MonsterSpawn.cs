@@ -77,7 +77,7 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (CurTime >= SpawnTime && MonsterCount<MaxCount)
         {
-            if (stg.curStage > 150)
+            if (stg.curStage > 200)
             {
                 BossRandomRange = Random.Range(0, 16);
                 RandomRange1 = Random.Range(0, 6);
@@ -85,7 +85,13 @@ public class MonsterSpawn : MonoBehaviour
                     RandomRange2 = Random.Range(0, 2);
                 else
                     RandomRange2 = 0;
-                SpawnMonster(2, RandomRange1);
+                SpawnMonster(3, RandomRange1);
+            }
+            else if (stg.curStage >= 150)
+            {
+                RandomRange1 = Random.Range(0, 3);
+                RandomRange2 = Random.Range(0, 3);
+                SpawnMonster(3, RandomRange1);
             }
             else if (stg.curStage >= 101)
             {
@@ -96,7 +102,7 @@ public class MonsterSpawn : MonoBehaviour
                     RandomRange2 = 0;
                 SpawnMonster(2, RandomRange1);
             }
-            
+
             else if (stg.curStage >= 51)
             {
                 RandomRange1 = Random.Range(0, 6);
@@ -251,7 +257,7 @@ public class MonsterSpawn : MonoBehaviour
             CurTime = 0;
             MonsterCount++;
 
-            if (stg.curStage > 150) // 랜덤으로 생성
+            if (stg.curStage > 200) // 랜덤으로 생성
             {
                 GameObject go = Instantiate(BossMonster[BossRandomRange], new Vector3(SpawnPoints.transform.position.x+10, SpawnPoints.transform.position.y, 0), Quaternion.identity); ;
                 PrevMonster = go;

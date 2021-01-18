@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         skeletonAni = GetComponent<SkeletonMecanim>();
+        
+        
     }
     private void Start()
     {

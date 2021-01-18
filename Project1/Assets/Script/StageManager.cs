@@ -34,8 +34,15 @@ public class StageManager : MonoBehaviour
     }
     private void stageCount() 
     {
+        if (curStage >= 151)
+        {
+            for (int i = 0; i < BackGroud.Length; i++)
+            {
+                BackGroud[i].GetComponent<MeshRenderer>().material = Resources.Load("Material/BackGround04", typeof(Material)) as Material;
+            }
+        }
 
-        if (curStage >= 101)
+        else if (curStage >= 101 && curStage < 151)
         {
             for (int i = 0; i < BackGroud.Length; i++)
             {
@@ -59,7 +66,9 @@ public class StageManager : MonoBehaviour
     }
     public void StageSound_p() 
     {
-        if (curStage >= 101)
+        if (curStage >= 151)
+            stageSound(2);// 수정해야함
+        else if (curStage >= 101 && curStage < 151)
             stageSound(2);
         else if (curStage >= 51 && curStage < 101)
             stageSound(1);
@@ -73,7 +82,6 @@ public class StageManager : MonoBehaviour
             SoundManager.instance.BgmSource.Stop();
             SoundManager.instance.BgmSound(num);
             SoundManager.instance.BgmSource.Play();
-            print("11111"+Count);
         }
         Count = 1; 
     }
