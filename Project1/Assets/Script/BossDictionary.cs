@@ -121,11 +121,11 @@ public class BossDictionary : MonoBehaviour
         Add("NoneStage13boss", "망치로 바닥을 내려친다", "진궁");
         Add("NoneStage14boss", "비파를 연주하여 공격한다", "초선");
         Add("NoneStage15boss", "방천화극으로 더욱 강하게 벤다", "여포");
-        Add("NoneStage16boss", "방천화극으로 더욱 강하게 벤다", "여포");
-        Add("NoneStage17boss", "방천화극으로 더욱 강하게 벤다", "여포");
-        Add("NoneStage18boss", "방천화극으로 더욱 강하게 벤다", "여포");
-        Add("NoneStage19boss", "방천화극으로 더욱 강하게 벤다", "여포");
-        Add("NoneStage20boss", "방천화극으로 더욱 강하게 벤다", "여포");
+        Add("NoneStage16boss", "반월도를 휘둘러 참격을 날린다", "공손월");
+        Add("NoneStage17boss", "단검으로 급소를 찌른다", "관정");
+        Add("NoneStage18boss", "필살의 기세로 둔기를 내려친다", "엄강");
+        Add("NoneStage19boss", "지면을 내리쳐 폭발을 일으킨다", "전해");
+        Add("NoneStage20boss", "흔들리는 창날로 베어버린다", "공손찬");
 
         AddChangeSprite("Stage1boss");
         AddChangeSprite("Stage2boss");
