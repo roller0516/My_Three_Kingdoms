@@ -44,6 +44,12 @@ public class DataController : MonoBehaviour
     BigInteger m_goldperClick17=0;
     BigInteger m_goldperClick18=0;
     BigInteger m_goldperClick19=0;
+    BigInteger m_goldperClick20 = 0;
+    BigInteger m_goldperClick21 = 0;
+    BigInteger m_goldperClick22 = 0;
+    BigInteger m_goldperClick23 = 0;
+
+
     BigInteger m_Knowledge;
     int Ticket = 0;
     int PaidGold = 0;
@@ -70,26 +76,7 @@ public class DataController : MonoBehaviour
         Teasure1Ability = PlayerPrefs.GetInt("Teasure1Ability");
         Teasure2Ability = PlayerPrefs.GetInt("Teasure2Ability");
 
-        key.Add(m_goldperClick.ToString());
-        key.Add(m_goldperClick1.ToString());
-        key.Add(m_goldperClick2.ToString());
-        key.Add(m_goldperClick3.ToString());
-        key.Add(m_goldperClick4.ToString());
-        key.Add(m_goldperClick5.ToString());
-        key.Add(m_goldperClick6.ToString());
-        key.Add(m_goldperClick7.ToString());
-        key.Add(m_goldperClick8 .ToString());
-        key.Add(m_goldperClick9 .ToString());
-        key.Add(m_goldperClick10.ToString());
-        key.Add(m_goldperClick11.ToString());
-        key.Add(m_goldperClick12.ToString());
-        key.Add(m_goldperClick13.ToString());
-        key.Add(m_goldperClick14.ToString());
-        key.Add(m_goldperClick15.ToString());
-        key.Add(m_goldperClick16.ToString());
-        key.Add(m_goldperClick17.ToString());
-        key.Add(m_goldperClick18.ToString());
-        key.Add(m_goldperClick19.ToString());
+        AddBigintegerList();
 
 
         for (int i = 0; i < key.Count; i++)
@@ -157,10 +144,48 @@ public class DataController : MonoBehaviour
                 case 19:
                     m_goldperClick19 = BigInteger.Parse(key[i]);
                     break;
+                case 20:
+                    m_goldperClick20 = BigInteger.Parse(key[i]);
+                    break;
+                case 21:
+                    m_goldperClick21 = BigInteger.Parse(key[i]);
+                    break;
+                case 22:
+                    m_goldperClick22 = BigInteger.Parse(key[i]);
+                    break;
+                case 23:
+                    m_goldperClick23 = BigInteger.Parse(key[i]);
+                    break;
             }
         }
     }
-
+    public void AddBigintegerList() 
+    {
+        key.Add(m_goldperClick.ToString());
+        key.Add(m_goldperClick1.ToString());
+        key.Add(m_goldperClick2.ToString());
+        key.Add(m_goldperClick3.ToString());
+        key.Add(m_goldperClick4.ToString());
+        key.Add(m_goldperClick5.ToString());
+        key.Add(m_goldperClick6.ToString());
+        key.Add(m_goldperClick7.ToString());
+        key.Add(m_goldperClick8.ToString());
+        key.Add(m_goldperClick9.ToString());
+        key.Add(m_goldperClick10.ToString());
+        key.Add(m_goldperClick11.ToString());
+        key.Add(m_goldperClick12.ToString());
+        key.Add(m_goldperClick13.ToString());
+        key.Add(m_goldperClick14.ToString());
+        key.Add(m_goldperClick15.ToString());
+        key.Add(m_goldperClick16.ToString());
+        key.Add(m_goldperClick17.ToString());
+        key.Add(m_goldperClick18.ToString());
+        key.Add(m_goldperClick19.ToString());
+        key.Add(m_goldperClick20.ToString());
+        key.Add(m_goldperClick21.ToString());
+        key.Add(m_goldperClick22.ToString());
+        key.Add(m_goldperClick23.ToString());
+    }
     #region Gold
     public void SetGold(BigInteger newGold)
     {
@@ -250,6 +275,14 @@ public class DataController : MonoBehaviour
             return m_goldperClick18;
         else if (num == "GoldPerClick19")
             return m_goldperClick19;
+        else if (num == "GoldPerClick20")
+            return m_goldperClick20;
+        else if (num == "GoldPerClick21")
+            return m_goldperClick21;
+        else if (num == "GoldPerClick22")
+            return m_goldperClick22;
+        else if (num == "GoldPerClick23")
+            return m_goldperClick23;
         return 0;
     }
     public void SetGoldPerClick(string name_, BigInteger newGoldPerClick)
@@ -355,6 +388,26 @@ public class DataController : MonoBehaviour
         {
             m_goldperClick19 = newGoldPerClick;
             PlayerPrefs.SetString("GoldPerClick19", m_goldperClick19.ToString());
+        }
+        else if (name == "GoldPerClick20")
+        {
+            m_goldperClick19 = newGoldPerClick;
+            PlayerPrefs.SetString("GoldPerClick20", m_goldperClick20.ToString());
+        }
+        else if (name == "GoldPerClick21")
+        {
+            m_goldperClick19 = newGoldPerClick;
+            PlayerPrefs.SetString("GoldPerClick21", m_goldperClick21.ToString());
+        }
+        else if (name == "GoldPerClick22")
+        {
+            m_goldperClick19 = newGoldPerClick;
+            PlayerPrefs.SetString("GoldPerClick22", m_goldperClick22.ToString());
+        }
+        else if (name == "GoldPerClick23")
+        {
+            m_goldperClick19 = newGoldPerClick;
+            PlayerPrefs.SetString("GoldPerClick23", m_goldperClick23.ToString());
         }
 
     }

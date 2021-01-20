@@ -1,0 +1,223 @@
+
+boss_4_5.png
+size: 570,523
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 410, 30
+  size: 79, 43
+  orig: 81, 45
+  offset: 1, 1
+  index: -1
+2
+  rotate: false
+  xy: 508, 307
+  size: 35, 33
+  orig: 37, 35
+  offset: 1, 1
+  index: -1
+3
+  rotate: true
+  xy: 430, 155
+  size: 145, 87
+  orig: 147, 89
+  offset: 1, 1
+  index: -1
+4
+  rotate: false
+  xy: 302, 89
+  size: 123, 84
+  orig: 125, 86
+  offset: 1, 1
+  index: -1
+5
+  rotate: false
+  xy: 326, 11
+  size: 82, 76
+  orig: 84, 78
+  offset: 1, 1
+  index: -1
+6
+  rotate: true
+  xy: 508, 342
+  size: 74, 37
+  orig: 76, 39
+  offset: 1, 1
+  index: -1
+7
+  rotate: true
+  xy: 507, 83
+  size: 70, 37
+  orig: 72, 39
+  offset: 1, 1
+  index: -1
+bangcheon
+  rotate: true
+  xy: 2, 6
+  size: 74, 242
+  orig: 75, 258
+  offset: 0, 6
+  index: -1
+body
+  rotate: false
+  xy: 532, 418
+  size: 32, 25
+  orig: 34, 27
+  offset: 1, 1
+  index: -1
+cape
+  rotate: true
+  xy: 519, 235
+  size: 70, 40
+  orig: 70, 40
+  offset: 0, 0
+  index: -1
+eye clos
+  rotate: false
+  xy: 326, 5
+  size: 34, 4
+  orig: 36, 6
+  offset: 1, 1
+  index: -1
+eye open
+  rotate: false
+  xy: 507, 75
+  size: 36, 6
+  orig: 38, 8
+  offset: 1, 1
+  index: -1
+hair
+  rotate: true
+  xy: 532, 465
+  size: 56, 36
+  orig: 56, 36
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 246, 2
+  size: 78, 78
+  orig: 80, 80
+  offset: 1, 1
+  index: -1
+headcrying
+  rotate: false
+  xy: 427, 75
+  size: 78, 78
+  orig: 80, 80
+  offset: 1, 1
+  index: -1
+l arm
+  rotate: false
+  xy: 519, 203
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+l leg
+  rotate: false
+  xy: 466, 2
+  size: 14, 26
+  orig: 16, 26
+  offset: 1, 0
+  index: -1
+l shold
+  rotate: true
+  xy: 547, 348
+  size: 36, 17
+  orig: 36, 17
+  offset: 0, 0
+  index: -1
+leg armor
+  rotate: false
+  xy: 532, 445
+  size: 36, 18
+  orig: 36, 18
+  offset: 0, 0
+  index: -1
+r arm
+  rotate: false
+  xy: 547, 386
+  size: 21, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+r leg
+  rotate: false
+  xy: 482, 2
+  size: 14, 26
+  orig: 16, 26
+  offset: 1, 0
+  index: -1
+r shold
+  rotate: true
+  xy: 519, 171
+  size: 30, 17
+  orig: 30, 17
+  offset: 0, 0
+  index: -1
+s1
+  rotate: false
+  xy: 410, 3
+  size: 54, 25
+  orig: 74, 27
+  offset: 19, 1
+  index: -1
+s2
+  rotate: false
+  xy: 2, 82
+  size: 285, 63
+  orig: 287, 65
+  offset: 1, 1
+  index: -1
+s3
+  rotate: false
+  xy: 304, 418
+  size: 226, 103
+  orig: 228, 107
+  offset: 1, 3
+  index: -1
+s4
+  rotate: false
+  xy: 2, 267
+  size: 296, 125
+  orig: 298, 127
+  offset: 1, 1
+  index: -1
+s5
+  rotate: false
+  xy: 2, 394
+  size: 300, 127
+  orig: 302, 129
+  offset: 1, 1
+  index: -1
+s6
+  rotate: false
+  xy: 302, 175
+  size: 126, 125
+  orig: 253, 127
+  offset: 126, 1
+  index: -1
+s7
+  rotate: false
+  xy: 2, 147
+  size: 298, 118
+  orig: 301, 120
+  offset: 2, 1
+  index: -1
+s8
+  rotate: false
+  xy: 304, 302
+  size: 202, 114
+  orig: 241, 116
+  offset: 38, 1
+  index: -1
+sha
+  rotate: true
+  xy: 289, 97
+  size: 48, 10
+  orig: 50, 12
+  offset: 1, 1
+  index: -1
