@@ -391,22 +391,22 @@ public class DataController : MonoBehaviour
         }
         else if (name == "GoldPerClick20")
         {
-            m_goldperClick19 = newGoldPerClick;
+            m_goldperClick20 = newGoldPerClick;
             PlayerPrefs.SetString("GoldPerClick20", m_goldperClick20.ToString());
         }
         else if (name == "GoldPerClick21")
         {
-            m_goldperClick19 = newGoldPerClick;
+            m_goldperClick21 = newGoldPerClick;
             PlayerPrefs.SetString("GoldPerClick21", m_goldperClick21.ToString());
         }
         else if (name == "GoldPerClick22")
         {
-            m_goldperClick19 = newGoldPerClick;
+            m_goldperClick22 = newGoldPerClick;
             PlayerPrefs.SetString("GoldPerClick22", m_goldperClick22.ToString());
         }
         else if (name == "GoldPerClick23")
         {
-            m_goldperClick19 = newGoldPerClick;
+            m_goldperClick23 = newGoldPerClick;
             PlayerPrefs.SetString("GoldPerClick23", m_goldperClick23.ToString());
         }
 

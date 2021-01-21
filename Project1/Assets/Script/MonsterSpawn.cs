@@ -79,15 +79,12 @@ public class MonsterSpawn : MonoBehaviour
         {
             if (stg.curStage > 200)
             {
-                BossRandomRange = Random.Range(0, 16);
-                RandomRange1 = Random.Range(0, 6);
-                if (RandomRange1 < 3)
-                    RandomRange2 = Random.Range(0, 2);
-                else
-                    RandomRange2 = 0;
+                BossRandomRange = Random.Range(0, 21);
+                RandomRange1 = Random.Range(0, 3);
+                RandomRange2 = Random.Range(0, 3);
                 SpawnMonster(3, RandomRange1);
             }
-            else if (stg.curStage >= 150)
+            else if (stg.curStage >= 151)
             {
                 RandomRange1 = Random.Range(0, 3);
                 RandomRange2 = Random.Range(0, 3);
