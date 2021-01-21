@@ -80,7 +80,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!95 &5381757906031284586
 Animator:
   serializedVersion: 3
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 7ac58b5eb85517d43a9ada4faa71f66d, type: 2}
   initialSkinName: 
-  initialFlipX: 0
+  initialFlipX: 1
   initialFlipY: 0
   updateMode: 3
   updateWhenInvisible: 3

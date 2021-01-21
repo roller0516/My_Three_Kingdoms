@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9224234fd0c7cca4e8550698da997c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossName: Stage1boss
+  BossName: Stage18boss
   hitCount: 0
   hit: {fileID: 1760992571876156, guid: bfbb1577c0cf6194893d32135866cd83, type: 3}
   Crihit: {fileID: 1347330118340980, guid: a270d4b31a4d11a4b8302acf069f853a, type: 3}
