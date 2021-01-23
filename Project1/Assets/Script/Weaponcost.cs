@@ -115,6 +115,30 @@ public class Weaponcost : MonoBehaviour
            case 19:
                 CurrentCost += BigInteger.Parse(increase);
                 break;
+            case 20:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 21:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 22:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 23:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 24:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 25:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 26:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
+            case 27:
+                CurrentCost += BigInteger.Parse(increase);
+                break;
         }
     }
 
