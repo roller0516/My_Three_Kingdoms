@@ -100,14 +100,20 @@ public class Player : MonoBehaviour
     public void Attack() //공격 
     {
         crt = Random.Range(1, 101);
+        
         if (crt <= Critical)
         {
-            if (Monster.tag == "Boss") 
+            if (Monster == null || Monster.activeSelf == false)
+            {
+                print("Bug");
+                return;
+            }
+            else if (Monster.tag == "Monster") 
             {
                 AttackSound(4);
                 Monster.GetComponent<Boss>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
             }
-            else if (Monster.tag == "Monster")
+            else if (Monster.tag == "Boss")
             {
                 AttackSound(4);
                 Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
@@ -120,16 +126,20 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (Monster.tag == "Boss") 
+            if (Monster == null || Monster.activeSelf == false)
             {
-                AttackSound(Monster.GetComponent<Boss>().hitCount + 1);
-                Monster.GetComponent<Boss>().TakeDamage(my_PlayerDamage);
+                print("Bug");
+                return;
             }
-                
             else if (Monster.tag == "Monster")
             {
                 AttackSound(Monster.GetComponent<EnemyTest>().HitCount + 1);
                 Monster.GetComponent<EnemyTest>().TakeDamage(my_PlayerDamage);
+            }
+            else if (Monster.tag == "Boss")
+            {
+                AttackSound(Monster.GetComponent<Boss>().hitCount + 1);
+                Monster.GetComponent<Boss>().TakeDamage(my_PlayerDamage);
             }
             else if (Monster.tag == "Monster1")
             {

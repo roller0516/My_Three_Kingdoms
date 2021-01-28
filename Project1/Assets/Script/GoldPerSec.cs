@@ -7,7 +7,7 @@ using System.Numerics;
 
 public class GoldPerSec : MonoBehaviour
 {
-    private int Count = 20;
+    private int Count = 24;
     private ScrollTime[] time_scroll;
 
     void Start()

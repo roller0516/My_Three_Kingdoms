@@ -32,6 +32,8 @@ public class MonsterSpawn : MonoBehaviour
     public float CurTime;
     public int MaxCount;
     public int MonsterCount;
+    public int MimicMaxCount;
+    public int MimicCount;
     public int RandomRange1;
     public int RandomRange2;
     public int BossRandomRange;
@@ -231,8 +233,9 @@ public class MonsterSpawn : MonoBehaviour
     }
     public void SpawnMonster(int num,int num2)
     {
-        if (PopUpSystem.GetInstance().gameObject.activeSelf && PopUpSystem.GetInstance().EnterDeongun)
+        if (PopUpSystem.GetInstance().gameObject.activeSelf && PopUpSystem.GetInstance().EnterDeongun && MimicCount < MimicMaxCount)
         {
+            print("미믹");
             UIManager.GetInstance().Starttime = 30;
             UIManager.GetInstance().Currenttime = 30;
             UIManager.GetInstance().Timer.gameObject.SetActive(true);
@@ -244,6 +247,7 @@ public class MonsterSpawn : MonoBehaviour
                
             MimicHp(UIManager.GetInstance().SearchName);
             MonsterCount++;
+            MimicCount++;
             Instantiate(MimicMonster, new Vector3(SpawnPoints.transform.position.x, SpawnPoints.transform.position.y, 0), Quaternion.identity);
         }
         else if (stg.MonsterCount % stg.BossStage == 0) //보스 스폰
@@ -339,6 +343,7 @@ public class MonsterSpawn : MonoBehaviour
             fade.Fade();
             yield return new WaitForSeconds(0.5f);
             MonsterCount = 0;
+            MimicCount = 0;
             Player.Instance.transform.position = Player.Instance.startPosition;
             Teleport = true;
         }
