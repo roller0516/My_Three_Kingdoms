@@ -111,12 +111,12 @@ public class Player : MonoBehaviour
             else if (Monster.tag == "Monster") 
             {
                 AttackSound(4);
-                Monster.GetComponent<Boss>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+                Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
             }
             else if (Monster.tag == "Boss")
             {
                 AttackSound(4);
-                Monster.GetComponent<EnemyTest>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
+                Monster.GetComponent<Boss>().CriticalDamage(BigInteger.Add(my_PlayerDamage, (BigInteger.Multiply(my_PlayerDamage, (CriticalPer / 100)))));
             }
             else if (Monster.tag == "Monster1")
             {
